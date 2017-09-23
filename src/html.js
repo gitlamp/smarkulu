@@ -10,7 +10,6 @@ if (process.env.NODE_ENV === `production`) {
 }
 
 class HTML extends React.Component {
-
   render() {
     let style
     if (process.env.NODE_ENV === `production`) {

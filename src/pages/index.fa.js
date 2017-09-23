@@ -4,9 +4,9 @@ import Helmet from 'react-helmet'
 
 const IndexPage = () => (
   <div>
-    <h1>Home Page</h1>
-    <p>Welcome to Taskulu.</p>
-    <p>Now go build something great.</p>
+    <h1>خانه</h1>
+    <p>به تسکولو خوش آمدید.</p>
+    <Link to="/product">امکانات</Link>
   </div>
 )
 

@@ -4,7 +4,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.merge({
       resolve: {
         alias: {
-          normalize: 'normalize.scss/normalize.scss'
+          normalize: 'normalize.scss/normalize.scss',
         }
       }
     })
@@ -17,7 +17,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.merge({
       resolve: {
         alias: {
-          normalize: 'normalize.scss/normalize.scss'
+          normalize: 'normalize.scss/normalize.scss',
         }
       }
     })
