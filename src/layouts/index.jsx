@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import graphql from 'graphql'
 import Helmet from 'react-helmet'
+import 'isomorphic-fetch'
+import graphql from 'graphql'
 import { addLocaleData, IntlProvider } from 'react-intl'
 
 import en from 'react-intl/locale-data/en'
@@ -14,18 +15,28 @@ import '../scss/main.scss'
 addLocaleData([...en, ...fa])
 
 class TemplateWrapper extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    const { children, location, data } = props
+    var url = location.pathname
+
+    // Set initial state
     this.state = {
+      resStat: false,
       countryCode: 'IR'
     }
   }
   componentDidMount() {
+    
+    /**
+     * Checking geo location
+     */
     let url = 'https://freegeoip.net/json/'
     fetch(url)
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
+          resStat: true,
           countryCode: responseJson.country_code
         })
       })
@@ -34,12 +45,20 @@ class TemplateWrapper extends React.Component {
       })
   }
   render() {
-    if(this.state.countryCode !== 'IR') {
-      var langKey = 'en'
+    let resStat = this.state.resStat
+    let countryCode = this.state.countryCode
+
+    if(!resStat) {
+      return <Loading />
     } else {
-      var langKey = 'fa'
-    }
-    return (
+
+      // Set proper lang key      
+      if(countryCode == 'IR') {
+        var langKey = 'fa'
+      } else {
+        var langKey = 'en'
+      } 
+      return (
       <IntlProvider
           locale={langKey}
           messages={getLangs(langKey)}
@@ -49,7 +68,11 @@ class TemplateWrapper extends React.Component {
             htmlAttributes={{
               'lang': langKey
             }} />
+
+          {/* Header component */}
           <Header locale={langKey} />
+
+          {/* Body component */}
           <div
             style={{
               margin: '0 auto',
@@ -60,14 +83,55 @@ class TemplateWrapper extends React.Component {
           >
             {this.props.children()}
           </div>
+
+          {/* Footer component */}
         </div>
       </IntlProvider>
-    )
+      )
+    }
+  }
+}
+
+/**
+ * Loading for geo locating process
+ */
+class Loading extends React.Component {
+  render() {
+    return (
+    <div style={{
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    }}>
+      <h1>Loading...</h1>
+    </div>
+  )
   }
 }
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
+  location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 }
 
 export default TemplateWrapper
+
+/**
+ * Require metadata
+ */
+export const pageQuery = graphql `
+  query Layout {
+    site {
+      siteMetadata {
+        title
+        description
+        languages {
+          langs
+          defaultLangKey
+        }
+      }
+    }
+  }
+`

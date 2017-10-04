@@ -37,7 +37,7 @@ class HTML extends React.Component {
 
           {/* Header Components */}
           {this.props.headComponents}
-
+          
           {/* Favicons */}
 
           {/* Styles */}

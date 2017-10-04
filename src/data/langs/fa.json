@@ -1,4 +1,9 @@
 {
   "title": "تسکولو",
-  "header.title": "صفحه اصلی"
+  "header.title": "صفحه اصلی",
+  "btn.seeMore": "بیشتر بدانید",
+
+  "features": "امکانات",
+  "pricing": "قیمت‌ها",
+  "demo": "درخواست مشاوره"
 }

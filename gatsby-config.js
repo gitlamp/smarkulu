@@ -1,18 +1,48 @@
+const siteMetadata = require('./src/data/siteMetadata')
+
 module.exports = {
-  siteMetadata: {
-    title: `Taskulu`,
-    siteUrl: `https://www.taskulu.com`,
-    description: `Testing site`
-  },
+  siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`
+      }
+    },
+    `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GA_tracking_ID',
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap'
+    },
+    {
       resolve: 'gatsby-plugin-i18n',
       options: { // Default options
-        postPage: 'src/templates/blog-post.js',
         langKeyForNull: 'any',
-        langKeyDefault: 'en'
+        langKeyDefault: 'en',
+        markdownRemark: {
+          postPage: 'src/templates/blog-post.js',
+          query: `
+          {
+            allSitePage {
+              edges {
+                node {
+                  fields {
+                    langKey 
+                  }
+                }
+              }
+            }
+          }
+          `
+        }
       }
     }
   ]

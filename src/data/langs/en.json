@@ -1,4 +1,9 @@
 {
   "title": "Taskulu",
-  "header.title": "Home Page"
+  "header.title": "Home Page",
+  "btn.seeMore": "See More",
+
+  "features": "Features",
+  "pricing": "Pricing",
+  "demo": "Request a Demo"
 }
