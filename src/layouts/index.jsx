@@ -17,17 +17,17 @@ addLocaleData([...en, ...fa])
 class TemplateWrapper extends React.Component {
   constructor(props) {
     super(props)
-    const { children, location, data } = props
-    var url = location.pathname
-
+    const { children, data } = props
+    const siteMetadata = data.site.siteMetadata
     // Set initial state
     this.state = {
       resStat: false,
-      countryCode: 'IR'
+      countryCode: 'IR',
+      title: siteMetadata.title,
+      description: siteMetadata.description
     }
   }
   componentDidMount() {
-    
     /**
      * Checking geo location
      */
@@ -52,7 +52,7 @@ class TemplateWrapper extends React.Component {
       return <Loading />
     } else {
 
-      // Set proper lang key      
+      // Set proper lang key
       if(countryCode == 'IR') {
         var langKey = 'fa'
       } else {
@@ -64,10 +64,16 @@ class TemplateWrapper extends React.Component {
           messages={getLangs(langKey)}
         >
         <div>
-          <Helmet 
-            htmlAttributes={{
-              'lang': langKey
-            }} />
+          <Helmet>
+            {/* html attributes */}
+            <html lang={langKey} />
+            {/* title attributes and value */}
+            <title>{this.state.title}</title>
+            {/* meta elements */}
+            <meta name="description" content={this.state.description}/>
+            <meta name="robots" content=""/>
+            <meta name="revisit-after" content=""/>
+          </Helmet>
 
           {/* Header component */}
           <Header locale={langKey} />

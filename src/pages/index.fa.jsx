@@ -19,6 +19,8 @@ export const pageQuery = graphql `
           id
           frontmatter {
             title
+            desc
+            link
           }
           excerpt
         }

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
 import { FormattedMessage } from 'react-intl'
 
 class Header extends React.Component {
@@ -20,7 +19,6 @@ class Header extends React.Component {
             padding: '1.45rem 1.0875rem',
           }}
         >
-        
           {/* Logo */}
           <h1 style={{ margin: 0 }}>
             <Link
