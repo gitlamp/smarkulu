@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import 'isomorphic-fetch'
 import graphql from 'graphql'
+import Helmet from 'react-helmet'
 import { addLocaleData, IntlProvider } from 'react-intl'
 
 import en from 'react-intl/locale-data/en'
 import fa from 'react-intl/locale-data/fa'
 import getLangs from '../data/langs'
+import SEO from '../components/SEO'
 import Header from '../components/Header'
+import { setLangKey } from '../components/functions'
 
 import '../scss/main.scss'
 
@@ -22,7 +24,7 @@ class TemplateWrapper extends React.Component {
     // Set initial state
     this.state = {
       resStat: false,
-      countryCode: 'IR',
+      countryCode: '',
       title: siteMetadata.title,
       description: siteMetadata.description
     }
@@ -45,36 +47,22 @@ class TemplateWrapper extends React.Component {
       })
   }
   render() {
-    let resStat = this.state.resStat
-    let countryCode = this.state.countryCode
-
-    if(!resStat) {
+    if(!this.state.resStat) {
       return <Loading />
     } else {
 
       // Set proper lang key
-      if(countryCode == 'IR') {
-        var langKey = 'fa'
-      } else {
-        var langKey = 'en'
-      } 
+      var langKey = setLangKey(this.state.countryCode)
       return (
       <IntlProvider
           locale={langKey}
           messages={getLangs(langKey)}
         >
         <div>
-          <Helmet>
-            {/* html attributes */}
-            <html lang={langKey} />
-            {/* title attributes and value */}
-            <title>{this.state.title}</title>
-            {/* meta elements */}
-            <meta name="description" content={this.state.description}/>
-            <meta name="robots" content=""/>
-            <meta name="revisit-after" content=""/>
-          </Helmet>
-
+          <SEO
+            langKey={langKey}
+            title={this.state.title}
+            generalDes={this.state.description}/>
           {/* Header component */}
           <Header locale={langKey} />
 
@@ -132,6 +120,7 @@ export const pageQuery = graphql `
     site {
       siteMetadata {
         title
+        siteUrl
         description
         languages {
           langs

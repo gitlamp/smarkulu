@@ -1,7 +1,6 @@
 ---
 title: Home Page
 desc: English Description
-link: /
 date:
 url:
 tag:

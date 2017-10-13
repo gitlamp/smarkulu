@@ -20,7 +20,6 @@ export const pageQuery = graphql `
           frontmatter {
             title
             desc
-            link
           }
           excerpt
         }

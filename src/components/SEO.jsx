@@ -1,26 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import graphql from 'graphql'
-
-import TemplateWrapper from '../layouts/index'
 
 class SEO extends React.Component {
   constructor(props) {
     super(props)
+    const currentURL = window.location.href
     // Set initial state
     this.state = {
+      langKey: this.props.langKey,
       title: this.props.title,
       description: this.props.generalDesc,
-      link: '',
       openGraph: {
-        type: this.props.ogType,
-        title: this.props.ogTitle,
-        image: this.props.image,
+        type: 'website',
+        title: this.props.title,
+        image: this.props.ogImage,
         imageWidth: this.props.imageWidth,
         imageHeight: this.props.imageHeight,
-        url: this.props.url,
-        siteName: this.props.siteName,
+        url: currentURL,
+        siteName: 'Taskulu',
         appId: this.props.appId,
         publisher: this.props.publisher,
         publishedTime: this.props.publishedTime,
@@ -28,48 +26,66 @@ class SEO extends React.Component {
         updatedTime: this.props.updatedTime
       },
       twitter: {
-        title: this.props.twitterTitle,
-        url: this.props.twitterUrl,
+        title: this.props.title,
         description: this.props.twitterDesc,
         site: this.props.twitterSiteName,
-        image: this.props.image,
+        image: this.props.twitterImage,
         creator: this.props.twitterCreator,
-        card: this.props.twitterCard,
-        iOS: {
-          iphone: {
-            name: this.props.twitterIphoneName,
-            id: this.props.twitterIphoneId,
-            url: this.props.twitterIphoneUrl
-          },
-          ipad: {
-            name: this.props.twitterIpadName,
-            id: this.props.twitterIpadId,
-            url: this.props.twitterIpadUrl
-          }
+        card: 'summary',
+      },
+      iOS: {
+        iphone: {
+          name: 'Taskulu',
+          id: 1129696826,
+          url: 'https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8'
         },
-        android: {
-          googleplay: {
-            name: this.props.googleplayName,
-            id: this.props.googleplayId,
-            url: this.props.googleplayUrl
-          }
+        ipad: {
+          name: 'Taskulu',
+          id: 1129696826,
+          url: 'https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8'
+        }
+      },
+      android: {
+        googleplay: {
+          name: 'Taskulu',
+          id: 'com.taskulu.app',
+          url: 'https://play.google.com/store/apps/details?id=com.taskulu.app'
         }
       }
     }
   }
   componentWillMount() {
-    this.setState({
-      link: this.props.pageLink
-    })
+    const langKey = this.state.langKey
+    const openGraph = this.state.openGraph
+    const twitter = this.state.twitter
+    switch (langKey) {
+      case 'en':
+      openGraph.appId = '1711491389121582'
+      twitter.site = '@taskulu'
+      this.setState({
+        openGraph,
+        twitter
+      })
+      break
+      case 'fa':
+      openGraph.appId = '854303587954426'
+      twitter.site = '@taskulu_ir'
+      this.setState({
+        openGraph,
+        twitter
+      })
+      break
+      default:
+        console.log('No langKey has been passed')
+    }
   }
   render() {
     return (
       <Helmet>
         {/* General tags */}
+          <html lang={this.state.langKey}/>
           <title>{this.state.title}</title>
           <meta name="description" content={this.state.description}/>
-          {<link href={ 'https:www.taskulu.com' + this.state.link } rel="alternative" hrefLang="en-US"/>}
-          {<link href={ 'https:www.taskulu.com/fa' + this.state.link } rel="alternative"  hrefLang="fa-IR"/>}
         {/* OpenGraph mata */}
           <meta property="og:type" content={this.state.openGraph.type}/>
           <meta property="og:title" content={this.state.openGraph.title}/>
@@ -85,31 +101,30 @@ class SEO extends React.Component {
           <meta property="og:updated_time" content={this.state.openGraph.updatedTime}/>
         {/* Twitter card meta */}
           <meta name="twitter:title" content={this.state.twitter.title}/>
-          <meta name="twitter:url" content/>
           <meta name="twitter:description" content={this.state.twitter.description}/>
           <meta name="twitter:site" content={this.state.twitter.site}/>
           <meta name="twitter:image" content={this.state.twitter.image}/>
           <meta name="twitter:creator" content={this.state.twitter.creator}/>
           <meta name="twitter:card" content={this.state.twitter.card}/>
           {/* iOS app */}
-          <meta name="twitter:app:name:iphone" content={this.state.twitter.iOS.iphone.name}/>
-          <meta name="twitter:app:id:iphone" content={this.state.twitter.iOS.iphone.id}/>
-          <meta name="twitter:app:url:iphone" content={this.state.twitter.iOS.iphone.url}/>
-          <meta name="twitter:app:name:ipad" content={this.state.twitter.iOS.ipad.name}/>
-          <meta name="twitter:app:id:ipad" content={this.state.twitter.iOS.ipad.id}/>
-          <meta name="twitter:app:url:ipad" content={this.state.twitter.iOS.ipad.url}/>
+          <meta name="twitter:app:name:iphone" content={this.state.iOS.iphone.name}/>
+          <meta name="twitter:app:id:iphone" content={this.state.iOS.iphone.id}/>
+          <meta name="twitter:app:url:iphone" content={this.state.iOS.iphone.url}/>
+          <meta name="twitter:app:name:ipad" content={this.state.iOS.ipad.name}/>
+          <meta name="twitter:app:id:ipad" content={this.state.iOS.ipad.id}/>
+          <meta name="twitter:app:url:ipad" content={this.state.iOS.ipad.url}/>
           {/* Android app */}
-          <meta name="twitter:app:name:googleplay" content={this.state.twitter.android.googleplay.name}/>
-          <meta name="twitter:app:id:googleplay" content={this.state.twitter.android.googleplay.id}/>
-          <meta name="twitter:app:url:googleplay" content={this.state.twitter.android.googleplay.url}/>
+          <meta name="twitter:app:name:googleplay" content={this.state.android.googleplay.name}/>
+          <meta name="twitter:app:id:googleplay" content={this.state.android.googleplay.id}/>
+          <meta name="twitter:app:url:googleplay" content={this.state.android.googleplay.url}/>
       </Helmet>
     )
   }
 }
 
-SEO.PropTypes = {
+SEO.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  generalDesc: PropTypes.string.isRequired,
   openGraph: PropTypes.object,
   twitter: PropTypes.object
 }
