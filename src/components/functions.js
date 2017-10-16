@@ -2,7 +2,7 @@ import React from 'react'
 /**
  * Custom functions
  */
-const setLangKey = (langCode) => {
+const getlangKey = (langCode) => {
   var langKey = ''
   if(langCode) {
     if(langCode !== 'IR') {
@@ -16,4 +16,4 @@ const setLangKey = (langCode) => {
   return langKey
 }
 
-export { setLangKey }
+export { getlangKey }

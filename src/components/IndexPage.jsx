@@ -15,10 +15,10 @@ const Index = (props) => {
 
   return (
   <div>
-    {data.allMarkdownRemark.edges.map(({node}) =>
+    {data.allContentYaml.edges.map(({node}) =>
       <div key={node.id}>
-      <h1>{node.frontmatter.title}</h1>
-      <p>{node.excerpt}</p>
+      <h1>{node.body.h1}</h1>
+      <p>{node.body.desc}</p>
       <FormattedMessage id="btn.seeMore">
         {(txt) => (
           <Link to="/fa">{txt}</Link>

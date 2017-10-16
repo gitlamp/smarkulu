@@ -13,6 +13,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
+    `gatsby-transformer-yaml`,
     {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
@@ -35,7 +36,7 @@ module.exports = {
               edges {
                 node {
                   fields {
-                    langKey 
+                    langKey
                   }
                 }
               }

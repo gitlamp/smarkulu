@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import 'isomorphic-fetch'
+import fetch from'isomorphic-fetch'
 import graphql from 'graphql'
 import Helmet from 'react-helmet'
 import { addLocaleData, IntlProvider } from 'react-intl'
@@ -10,7 +10,7 @@ import fa from 'react-intl/locale-data/fa'
 import getLangs from '../data/langs'
 import SEO from '../components/SEO'
 import Header from '../components/Header'
-import { setLangKey } from '../components/functions'
+import { getlangKey } from '../components/functions'
 
 import '../scss/main.scss'
 
@@ -23,7 +23,7 @@ class TemplateWrapper extends React.Component {
     const siteMetadata = data.site.siteMetadata
     // Set initial state
     this.state = {
-      resStat: false,
+      key: false,
       countryCode: '',
       title: siteMetadata.title,
       description: siteMetadata.description
@@ -34,11 +34,11 @@ class TemplateWrapper extends React.Component {
      * Checking geo location
      */
     let url = 'https://freegeoip.net/json/'
-    fetch(url)
+    fetch(url, {mode: 'cors'})
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
-          resStat: true,
+          key: true,
           countryCode: responseJson.country_code
         })
       })
@@ -47,12 +47,11 @@ class TemplateWrapper extends React.Component {
       })
   }
   render() {
-    if(!this.state.resStat) {
+    if(!this.state.key) {
       return <Loading />
     } else {
-
       // Set proper lang key
-      var langKey = setLangKey(this.state.countryCode)
+      var langKey = getlangKey(this.state.countryCode)
       return (
       <IntlProvider
           locale={langKey}
@@ -62,7 +61,7 @@ class TemplateWrapper extends React.Component {
           <SEO
             langKey={langKey}
             title={this.state.title}
-            generalDes={this.state.description}/>
+            generalDesc={this.state.description}/>
           {/* Header component */}
           <Header locale={langKey} />
 

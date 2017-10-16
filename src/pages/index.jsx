@@ -9,19 +9,22 @@ export default (props) => <Index {...props}/>
  */
 export const pageQuery = graphql `
   query IndexPage {
-    allMarkdownRemark(
+    allContentYaml(
       filter: {
-        fields: { langKey: { regex: "/(en|any)/" } }
+        header: { lang: { regex: "/(fa|any)/" } }
       }
-    ) {
+    ){
       edges {
         node {
           id
-          frontmatter {
+          header {
             title
             desc
           }
-          excerpt
+          body {
+            h1
+            desc
+          }
         }
       }
     }
