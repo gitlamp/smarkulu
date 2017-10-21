@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { FormattedMessage } from 'react-intl'
+import { addLocaleData, FormattedMessage } from 'react-intl'
 
 class Header extends React.Component {
   render() {
@@ -22,7 +22,7 @@ class Header extends React.Component {
           {/* Logo */}
           <h1 style={{ margin: 0 }}>
             <Link
-              to={'/' + this.props.locale}
+              to={'/' + this.props.lang}
               style={{
                 color: 'white',
                 textDecoration: 'none',
@@ -35,10 +35,6 @@ class Header extends React.Component {
       </div>
     )
   }
-}
-
-Header.propTypes = {
-  locale: PropTypes.string.isRequired
 }
 
 export default Header

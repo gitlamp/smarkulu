@@ -17,7 +17,7 @@ export default (props) => (
  * Require metadata
  */
 export const pageQuery = graphql `
-query Layout {
+query LayoutEn {
   site {
     siteMetadata {
       title

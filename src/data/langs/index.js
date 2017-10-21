@@ -1,7 +1,7 @@
 import en from './en.json'
 import fa from './fa.json'
 
-const getLangs = (langKey) => {
+const getKey = (langKey) => {
   switch (langKey) {
     case 'en': return en;
     case 'fa': return fa;
@@ -9,4 +9,4 @@ const getLangs = (langKey) => {
   }
 }
 
-export default getLangs
+export default getKey

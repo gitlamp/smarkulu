@@ -27,7 +27,7 @@ class HTML extends React.Component {
         <head>
           {/* Meta-data */}
           <meta charSet="utf-8" />
-          <meta 
+          <meta
           httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"

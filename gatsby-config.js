@@ -28,22 +28,7 @@ module.exports = {
       options: { // Default options
         langKeyForNull: 'any',
         langKeyDefault: 'en',
-        markdownRemark: {
-          postPage: 'src/templates/blog-post.js',
-          query: `
-          {
-            allSitePage {
-              edges {
-                node {
-                  fields {
-                    langKey
-                  }
-                }
-              }
-            }
-          }
-          `
-        }
+        useLangKeyLayout: true
       }
     }
   ]

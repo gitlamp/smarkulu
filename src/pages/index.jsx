@@ -11,7 +11,7 @@ export const pageQuery = graphql `
   query IndexPage {
     allContentYaml(
       filter: {
-        header: { lang: { regex: "/(fa|any)/" } }
+        header: { lang: { regex: "/(en)/" } }
       }
     ){
       edges {

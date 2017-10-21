@@ -5,20 +5,20 @@ import Helmet from 'react-helmet'
 class SEO extends React.Component {
   constructor(props) {
     super(props)
-    const currentURL = window.location.href
     // Set initial state
     this.state = {
-      langKey: this.props.langKey,
+      lang: this.props.pagePath,
       title: this.props.title,
       description: this.props.generalDesc,
       openGraph: {
-        type: 'website',
+        type: this.props.ogType,
         title: this.props.title,
+        description: this.props.ogDesc,
         image: this.props.ogImage,
         imageWidth: this.props.imageWidth,
         imageHeight: this.props.imageHeight,
-        url: currentURL,
-        siteName: 'Taskulu',
+        url: this.props.url,
+        siteName: this.props.ogsiteName,
         appId: this.props.appId,
         publisher: this.props.publisher,
         publishedTime: this.props.publishedTime,
@@ -31,7 +31,7 @@ class SEO extends React.Component {
         site: this.props.twitterSiteName,
         image: this.props.twitterImage,
         creator: this.props.twitterCreator,
-        card: 'summary',
+        card: this.props.twitterCard,
       },
       iOS: {
         iphone: {
@@ -55,12 +55,17 @@ class SEO extends React.Component {
     }
   }
   componentWillMount() {
-    const langKey = this.state.langKey
+    const langKey = this.state.lang
     const openGraph = this.state.openGraph
     const twitter = this.state.twitter
+    if (this.props.generalDesc.length != 0) {
+      openGraph.description = this.props.generalDesc
+      twitter.description = this.props.generalDesc
+    }
     switch (langKey) {
       case 'en':
       openGraph.appId = '1711491389121582'
+      openGraph.publisher = 'https://facebook.com/TaskuluHQ'
       twitter.site = '@taskulu'
       this.setState({
         openGraph,
@@ -69,6 +74,7 @@ class SEO extends React.Component {
       break
       case 'fa':
       openGraph.appId = '854303587954426'
+      openGraph.publisher = 'https://facebook.com/taskuluir'
       twitter.site = '@taskulu_ir'
       this.setState({
         openGraph,
@@ -83,12 +89,13 @@ class SEO extends React.Component {
     return (
       <Helmet>
         {/* General tags */}
-          <html lang={this.state.langKey}/>
+          <html lang={this.state.lang}/>
           <title>{this.state.title}</title>
           <meta name="description" content={this.state.description}/>
         {/* OpenGraph mata */}
           <meta property="og:type" content={this.state.openGraph.type}/>
           <meta property="og:title" content={this.state.openGraph.title}/>
+          <meta property="og:description" content={this.state.openGraph.description}/>
           <meta property="og:image" content={this.state.openGraph.image}/>
           <meta property="og:image:width" content={this.state.openGraph.imageWidth}/>
           <meta property="og:image:height" content={this.state.openGraph.imageHeight}/>
@@ -127,6 +134,11 @@ SEO.propTypes = {
   generalDesc: PropTypes.string.isRequired,
   openGraph: PropTypes.object,
   twitter: PropTypes.object
+}
+
+SEO.defaultProps = {
+  ogType: 'website',
+  ogsiteName: 'Taskulu'
 }
 
 export default SEO
