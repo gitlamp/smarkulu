@@ -1,8 +1,8 @@
 import React from 'react'
 import graphql from 'graphql'
-import Layout from './_layout'
 import { addLocaleData } from 'react-intl'
 
+import Layout from './_layout'
 import lang from '../data/langs/fa.json'
 import fa from 'react-intl/locale-data/fa'
 import 'intl/locale-data/jsonp/fa'
@@ -23,6 +23,17 @@ query LayoutFa {
       title
       siteUrl
       description
+      sourceCodeLink
+      menu {
+        head {
+          label
+          slug
+          items {
+            label
+            slug
+          }
+        }
+      }
       languages {
         langs
         defaultLangKey

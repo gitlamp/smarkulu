@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { addLocaleData, IntlProvider } from 'react-intl'
+import { IntlProvider } from 'react-intl'
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
 import 'intl'
 
 import Header from '../components/Header'
-
 import '../scss/main.scss'
+import '../../node_modules/normalize.scss/normalize.scss'
 
 const TemplateWrapper = (props) => {
     const { children, data, location } = props
@@ -17,14 +17,19 @@ const TemplateWrapper = (props) => {
     const langKey = getCurrentLangKey(langs, defaultLangKey, url)
     const homeLink = `/${langKey}/`
     const menuLang = getLangs(langs, langKey, getUrlForLang(homeLink, url))
-
+    const headerMenu = siteMetadata.menu[0].head
     return (
     <IntlProvider
         locale={langKey}
         messages={props.lang}>
       <div>
-        {/* Header component */}
-        <Header lang={langKey} />
+      {/* Header component */}
+        <Header
+          lang={langKey}
+          isHome={isHome}
+          homeLink={homeLink}
+          menu={headerMenu}
+          url={url}/>
 
         {/* Body component */}
         <div

@@ -2,8 +2,10 @@
   "title": "Taskulu",
   "header.title": "Home Page",
   "btn.seeMore": "See More",
-
   "features": "Features",
   "pricing": "Pricing",
-  "demo": "Request a Demo"
+  "demo": "Request a Demo",
+  "contact": "Contact",
+  "industries": "Industries",
+  "industries.marketing": "Marketing"
 }

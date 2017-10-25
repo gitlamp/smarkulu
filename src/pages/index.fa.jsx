@@ -1,6 +1,7 @@
 import React from 'react'
-import Index from '../components/IndexPage'
 import graphql from 'graphql'
+
+import Index from '../components/IndexPage'
 
 export default (props) => <Index {...props}/>
 

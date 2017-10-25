@@ -6,11 +6,25 @@ module.exports = {
   description: `Flexible task management, realtime chat, time logs and deep integrations. Taskulu helps you get results and scale your team performance.`,
   sourceCodeLink: `https://git.taskulu.com/amirali/smarkulu.git`,
   menu: [
-    {label: 'home', slug: '/'},
-    {label: 'features', slug: '/features'},
-    {label: 'pricing', slug: '/pricing'},
-    {label: 'request a demo', slug: '/enterprise'},
-    {label: 'contact', slug: '/contact'}
+    {
+      head: [
+        {label: 'features', slug: '/features'},
+        {label: 'pricing', slug: '/pricing'},
+        {
+          label: 'industries',
+          slug: '/industries/',
+          items: [
+            {label: 'industries.marketing', slug: 'industries/marketing'}
+          ]
+        },
+        {label: 'demo', slug: '/enterprise'},
+      ]
+    },
+    {
+      foot: [
+        {label: 'contact', slug: '/contact'}
+      ]
+    }
   ],
-  languages,
+  languages
 }

@@ -1,7 +1,7 @@
 /**
  * Custom functions
  */
-const getlangKey = (langCode) => {
+const setlangKey = (langCode) => {
   var langKey = ''
   if(langCode) {
     if(langCode !== 'IR') {
@@ -15,4 +15,12 @@ const getlangKey = (langCode) => {
   return langKey
 }
 
-export { getlangKey }
+const genLink = (lang, link) => {
+  if (lang == 'en') {
+    return link
+  } else {
+    return lang + link
+  }
+}
+
+export { setlangKey, genLink }

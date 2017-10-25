@@ -1,3 +1,5 @@
+var Webpack = require("webpack")
+
 exports.modifyWebpackConfig = ({ config, stage }) => {
   switch (stage) {
     case 'develop':
@@ -8,8 +10,13 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         }
       }
     })
+    config.plugin('webpack-define', Webpack.DefinePlugin, [{
+      $: 'jquery',
+      jquery: 'jquery',
+      jQuery: 'jquery'
+    }])
     break;
-    
+
     case 'develop-html':
     break;
 

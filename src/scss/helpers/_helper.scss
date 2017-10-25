@@ -1,0 +1,8 @@
+@mixin crossPropMaker($prop, $val, $default) {
+  -webkit-#{$prop} : $val;
+  -moz-#{$prop} : $val;
+  -o-#{$prop} : $val;
+  @if $default {
+    #{$prop} : $val;
+  }
+}

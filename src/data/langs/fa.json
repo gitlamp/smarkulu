@@ -2,8 +2,10 @@
   "title": "تسکولو",
   "header.title": "صفحه اصلی",
   "btn.seeMore": "بیشتر بدانید",
-
   "features": "امکانات",
   "pricing": "قیمت‌ها",
-  "demo": "درخواست مشاوره"
+  "demo": "درخواست مشاوره",
+  "contact": "تماس با ما",
+  "industries": "صنایع",
+  "industries.marketing": "بازاریابی"
 }
