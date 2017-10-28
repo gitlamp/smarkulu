@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { FormattedMessage } from 'react-intl'
+import { injectIntl, FormattedMessage } from 'react-intl'
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props)
+    const { data } = props
+  }
   getMenuItems = (menu, langKey) => {
     return menu.map(item => {
-      const slug = `/${langKey}${item.slug}`
+      const slug = (langKey == 'en') ? `${item.slug}` : `/${langKey}${item.slug}`
       const subItems = item.items
       ? (
         <ul style={{display: 'none'}}>
@@ -28,9 +32,7 @@ class Menu extends React.Component {
     })
   }
   render() {
-    // test langKey
-    const langKey = 'fa'
-    const menuItems = this.getMenuItems(this.props.menu, langKey)
+    const menuItems = this.getMenuItems(this.props.menu, this.props.intl.locale)
     return(
       <nav className="siteHeader">
         {menuItems}
@@ -43,4 +45,4 @@ Menu.propTypes = {
   menu: PropTypes.array.isRequired,
 }
 
-export default Menu
+export default injectIntl(Menu)
