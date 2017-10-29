@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "author": "Amirali <amirali@taskulu.com>",
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
     "gatsby": "^1.9.70",
     "gatsby-link": "^1.6.21",
+    "gatsby-plugin-google-analytics": "^1.0.10",
     "gatsby-plugin-google-tagmanager": "^1.0.7",
     "gatsby-plugin-i18n": "^0.3.0",
     "gatsby-plugin-react-helmet": "^1.0.8",
@@ -15,9 +17,9 @@
     "gatsby-transformer-remark": "^1.7.16",
     "gatsby-transformer-yaml": "^1.5.11",
     "intl": "^1.2.5",
-    "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.2.1",
     "normalize.scss": "^0.1.0",
+    "popper.js": "^1.12.6",
     "ptz-i18n": "^0.2.2",
     "react-intl": "^2.4.0"
   },
@@ -33,8 +35,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "json-loader": "^0.5.7",
     "mobx": "^3.3.1",
     "mobx-react": "^4.3.3",
+    "modernizr": "^3.5.0",
+    "modernizr-loader": "^1.0.1",
     "prettier": "^1.6.1"
   },
   "repository": {

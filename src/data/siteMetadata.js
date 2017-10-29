@@ -17,12 +17,12 @@ module.exports = {
             {label: 'industries.marketing', slug: 'industries/marketing'}
           ]
         },
-        {label: 'demo', slug: '/enterprise'},
       ]
     },
     {
       foot: [
-        {label: 'contact', slug: '/contact'}
+        {label: 'contact', slug: '/contact'},
+        {label: 'demo', slug: '/enterprise'},
       ]
     }
   ],

@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider } from 'react-intl'
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
+import Modernizr from 'modernizr'
 import 'intl'
 
 import Header from '../components/Header'
 import '../scss/main.scss'
-import '../../node_modules/normalize.scss/normalize.scss'
+import 'normalize'
 
 const TemplateWrapper = (props) => {
     const { children, data, location } = props
@@ -32,14 +33,7 @@ const TemplateWrapper = (props) => {
           url={url}/>
 
         {/* Body component */}
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
+        <div className="container">
           {children()}
         </div>
 

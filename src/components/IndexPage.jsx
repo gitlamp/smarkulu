@@ -24,7 +24,7 @@ const Index = (props) => {
       <p>{node.body.desc}</p>
       <FormattedMessage id="btn.seeMore">
         {(txt) => (
-          <Link to="/">{txt}</Link>
+          <Link to="/" className="btn-cta">{txt}</Link>
         )}
       </FormattedMessage>
       </div>

@@ -9,34 +9,13 @@ import { genLink } from './functions'
 class Header extends React.Component {
   render() {
     return (
-      <div
-        style={{
-          background: '#34495e',
-          marginBottom: '1.45rem',
-          boxShadow: '0 13px 15px 0 rgba(36,50,66,.2)'
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            margin: '0 auto',
-            maxWidth: 1200,
-            padding: '1.45rem 1.0875rem',
-            flexFlow: 'row nowrap'
-          }}
-        >
+      <div className="container-fluid">
+        <div className="row header-row">
           {/* Logo */}
-          <h1 style={{ margin: 0 }}>
-            <Link
-              to={genLink(this.props.lang, '/')}
-              style={{
-                color: '#fff',
-                textDecoration: 'none',
-              }}
-            >
-              <FormattedMessage id="title"></FormattedMessage>
-            </Link>
-          </h1>
+          <Link to={genLink(this.props.lang, '/')}>
+            <img className="col header-logo" src="logos/logo-blue.svg" alt="blue logo"/>
+          </Link>
+          {/* Navigation */}
           <Menu menu={this.props.menu} url={this.props.url}/>
         </div>
       </div>

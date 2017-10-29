@@ -2,15 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { injectIntl, FormattedMessage } from 'react-intl'
+import { genLink } from './functions'
 
 class Menu extends React.Component {
-  constructor(props) {
-    super(props)
-    const { data } = props
-  }
   getMenuItems = (menu, langKey) => {
     return menu.map(item => {
       const slug = (langKey == 'en') ? `${item.slug}` : `/${langKey}${item.slug}`
+
+      // Check if each item has items
       const subItems = item.items
       ? (
         <ul style={{display: 'none'}}>
@@ -19,6 +18,7 @@ class Menu extends React.Component {
       )
       : null
 
+      // Render all menu items
       return (
         <li key={item.label}>
           <FormattedMessage id={item.label}>
@@ -32,9 +32,22 @@ class Menu extends React.Component {
     })
   }
   render() {
-    const menuItems = this.getMenuItems(this.props.menu, this.props.intl.locale)
+    const langKey = this.props.intl.locale
+    const menuItems = this.getMenuItems(this.props.menu, langKey)
     return(
-      <nav className="siteHeader">
+      <nav className="col header-menu">
+        <div className="header-menu-login">
+          <FormattedMessage id="btn.register">
+            {(txt) =>
+              <a className="btn-primary btn-sm" href={'https://taskulu.com/account/login?go=register;__lang=' + langKey}>{txt}</a>
+            }
+          </FormattedMessage>
+          <FormattedMessage id="btn.login">
+            {(txt) =>
+              <a className="btn-primary btn-sm" href={'https://taskulu.com/account/login?__lang=' + langKey}>{txt}</a>
+            }
+          </FormattedMessage>
+        </div>
         {menuItems}
       </nav>
     )

@@ -15,9 +15,15 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-yaml`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        id: 'GA-TRACKING-ID'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        id: 'GA_tracking_ID',
+        id: 'GTM-5C4L775',
       }
     },
     {
