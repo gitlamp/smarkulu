@@ -4,10 +4,19 @@
   "btn.seeMore": "بیشتر بدانید",
   "btn.register": "عضویت",
   "btn.login": "ورود",
+
+  "home": "خانه",
   "features": "امکانات",
   "pricing": "قیمت‌ها",
   "demo": "درخواست مشاوره",
   "contact": "تماس با ما",
   "industries": "صنایع",
-  "industries.marketing": "بازاریابی"
+  "industries.marketing": "بازاریابی",
+  "company": "شرکت‌ها",
+  "press": "اخبار",
+
+  "col-label-1": "تسکولو",
+  "col-label-2": "مشتریان",
+  "col-label-3": "راهکارهای تیمی",
+  "col-label-4": "منابع"
 }

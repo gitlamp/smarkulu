@@ -1,0 +1,38 @@
+.footer {
+  background: #000;
+  .footer-row {
+    padding: 4rem 7rem 3rem;
+    color: #fff;
+    font-family: $subtitle-font;
+    .footer-list {
+      padding: 0;
+      margin-bottom: 2rem;
+      .footer-list-item {
+        padding-left: .5rem;
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-size: $mid-font;
+          &:hover {
+            color: $cyan;
+          }
+        }
+        &:first-child {
+          padding-left: 0;
+          font-size: 1.2rem;
+          color: $asbestos;
+        }
+      }
+    }
+  }
+  .footer-end {
+    padding: 1rem 7rem;
+    background: $sun-flower;
+    color: #3f3f3f;
+    font-family: $subtitle-font;
+    font-size: $mid-font;
+    *:nth-child(n+2) {
+      margin-left: 2rem;
+    }
+  }
+}

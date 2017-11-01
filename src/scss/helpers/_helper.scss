@@ -6,3 +6,14 @@
     #{$prop} : $val;
   }
 }
+
+// @mixin font-face($name, $filename, $folder) {
+//   @font-face {
+//     font-family: $name;
+//     src: url('../../../#{$folder}/#{$filename}.eot');
+//     src: url('../../../#{$folder}/#{$filename}.eot?#iefix') format('embedded-opentype')
+//          url('../../../#{$folder}/#{$filename}.woff') format('woff')
+//          url('../../../#{$folder}/#{$filename}.woff2') format('woff2')
+//          url('../../../#{$folder}/#{$filename}.ttf') format('truetype')
+//   }
+// }

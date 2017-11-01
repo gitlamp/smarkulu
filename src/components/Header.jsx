@@ -9,11 +9,11 @@ import { genLink } from './functions'
 class Header extends React.Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid header">
         <div className="row header-row">
           {/* Logo */}
           <Link to={genLink(this.props.lang, '/')}>
-            <img className="col header-logo" src="logos/logo-blue.svg" alt="blue logo"/>
+            <img className="col header-logo" src="logos/fa-logo-blue.svg" alt="blue logo"/>
           </Link>
           {/* Navigation */}
           <Menu menu={this.props.menu} url={this.props.url}/>

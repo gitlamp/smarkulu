@@ -1,17 +1,15 @@
-// Components
-@import "components/_buttons.scss";
-
 // Helpers
 @import "helpers/_variables.scss";
 @import "helpers/_helper.scss";
-@import "~bootstrap/scss/bootstrap";
-
+// Components
+@import "components/_buttons.scss";
 // Layouts
 @import "layouts/_index.scss";
 @import "layouts/_header.scss";
 @import "layouts/_footer.scss";
 @import "layouts/_nav.scss";
 @import "layouts/_sidebar.scss";
-
 // Pages
 // @import "pages/";
+// Libraries
+@import "~bootstrap/scss/bootstrap";

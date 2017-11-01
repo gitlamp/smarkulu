@@ -33,6 +33,14 @@ query LayoutEn {
             slug
           }
         }
+        foot {
+          label
+          slug
+          items {
+            label
+            slug
+          }
+        }
       }
       languages {
         langs

@@ -6,6 +6,7 @@ import Modernizr from 'modernizr'
 import 'intl'
 
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import '../scss/main.scss'
 import 'normalize'
 
@@ -19,6 +20,7 @@ const TemplateWrapper = (props) => {
     const homeLink = `/${langKey}/`
     const menuLang = getLangs(langs, langKey, getUrlForLang(homeLink, url))
     const headerMenu = siteMetadata.menu[0].head
+    const footerMenu = siteMetadata.menu[1].foot
     return (
     <IntlProvider
         locale={langKey}
@@ -38,6 +40,7 @@ const TemplateWrapper = (props) => {
         </div>
 
         {/* Footer component */}
+        <Footer menu={footerMenu}/>
       </div>
     </IntlProvider>
     )

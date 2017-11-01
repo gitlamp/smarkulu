@@ -2,12 +2,21 @@
   "title": "Taskulu",
   "header.title": "Home Page",
   "btn.seeMore": "See More",
-  "btn.register": "SIGN UP",
-  "btn.login": "LOGIN",
+  "btn.register": "Sign up",
+  "btn.login": "Login",
+
+  "home": "Home",
   "features": "Features",
   "pricing": "Pricing",
   "demo": "Request a Demo",
   "contact": "Contact",
   "industries": "Industries",
-  "industries.marketing": "Marketing"
+  "industries.marketing": "Marketing",
+  "company": "Company",
+  "press": "Press",
+
+  "col-label-1": "Taskulu",
+  "col-label-2": "Customers",
+  "col-label-3": "Team Solutions",
+  "col-label-4": "Resources"
 }

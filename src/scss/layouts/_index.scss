@@ -1,12 +1,20 @@
-ul {
-  list-style: none
-}
-body {
-  margin: 0;
-  padding: 0;
-}
 /**
- * --------
+ * Font faces
+ */
+// @font-face {
+//   font-family: 'IranSans';
+//   src: url('./fonts/IRANSansWeb.eot');
+// }
+/**
+ * Additional reset styles
+ */
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+/**
+ * gatsby-starter-default styles
  */
 progress {
   vertical-align: baseline;

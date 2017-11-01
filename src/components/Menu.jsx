@@ -36,18 +36,18 @@ class Menu extends React.Component {
     const menuItems = this.getMenuItems(this.props.menu, langKey)
     return(
       <nav className="col header-menu">
-        <div className="header-menu-login">
-          <FormattedMessage id="btn.register">
+        <li className="header-menu-login">
+          {/* <FormattedMessage id="btn.register">
             {(txt) =>
-              <a className="btn-primary btn-sm" href={'https://taskulu.com/account/login?go=register;__lang=' + langKey}>{txt}</a>
+              <a className="btn btn-sm" href={'https://taskulu.com/account/login?go=register;__lang=' + langKey}>{txt}</a>
             }
-          </FormattedMessage>
+          </FormattedMessage> */}
           <FormattedMessage id="btn.login">
             {(txt) =>
-              <a className="btn-primary btn-sm" href={'https://taskulu.com/account/login?__lang=' + langKey}>{txt}</a>
+              <a className="btn btn-sm" href={'https://taskulu.com/account/login?__lang=' + langKey}>{txt}</a>
             }
           </FormattedMessage>
-        </div>
+        </li>
         {menuItems}
       </nav>
     )
