@@ -8,11 +8,13 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       test: /\.modernizrrc$/,
       loader: 'modernizr-loader!json-loader'
     })
-    config.loader('custom-font', {
-      test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-      loader: 'url-loader?limit=100000'
-    })
     config.merge({
+      module: {
+        loaders: {
+          test: /\.(eot|svg|ttf|woff|woff2)$/,
+          loader: 'file-loader?name=/fonts/[name].[ext]'
+        }
+      },
       resolve: {
         alias: {
           normalize: 'normalize.scss/normalize.scss',

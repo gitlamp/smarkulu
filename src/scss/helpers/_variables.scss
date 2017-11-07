@@ -1,13 +1,13 @@
 // Font Types
 $title-font: 'Archivo Black', sans-serif;
-$subtitle-font: 'Nunito', sans-serif;
-$body-font: 'Rajdhani', sans-serif;
+$subtitle-font: 'Nunito', IranSans, sans-serif;
+$body-font: 'Rajdhani', IranSans, sans-serif;
 
 // Font Sizes
-$huge-font: 1.5rem;
-$large-font: 1.3em;
+$huge-font: 2.5rem;
+$large-font: 1.5em;
 $mid-font: .9rem;
-$small-font: .7rem;
+$small-font: .8rem;
 
 // Font Weights
 $bold: 800;
@@ -42,3 +42,6 @@ $clouds: #ecf0f1;
 $silver: #bdc3c7;
 $concrete: #95a5a6;
 $asbestos: #7f8c8d;
+
+// Shadows
+$default-shadow: 0 20px 30px 0 rgba(36,50,66,.14);

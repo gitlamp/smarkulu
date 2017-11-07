@@ -1,7 +1,15 @@
-.btn-sm {
-  padding: .4rem 1.5rem !important;
+.button {
+  padding: .45rem 1rem !important;
   border-radius: 1.5rem !important;
+  border: none !important;
+  font-family: $subtitle-font;
+  font-size: $mid-font !important;
+}
+.button-nm {
   color: #fff !important;
   background: $cyan !important;
-  border: none !important;
+}
+.button-sm {
+  color: #fff !important;
+  background: $emerald !important;
 }

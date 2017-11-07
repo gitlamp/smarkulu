@@ -7,13 +7,15 @@
   }
 }
 
-// @mixin font-face($name, $filename, $folder) {
-//   @font-face {
-//     font-family: $name;
-//     src: url('../../../#{$folder}/#{$filename}.eot');
-//     src: url('../../../#{$folder}/#{$filename}.eot?#iefix') format('embedded-opentype')
-//          url('../../../#{$folder}/#{$filename}.woff') format('woff')
-//          url('../../../#{$folder}/#{$filename}.woff2') format('woff2')
-//          url('../../../#{$folder}/#{$filename}.ttf') format('truetype')
-//   }
-// }
+@mixin font-face($name, $filename) {
+  @font-face {
+    font-family: $name;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/#{$filename}.eot');
+    src: url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/#{$filename}.woff') format('woff'),
+         url('../fonts/#{$filename}.woff2') format('woff2'),
+         url('../fonts/#{$filename}.ttf') format('truetype');
+  }
+}

@@ -35,9 +35,7 @@ const TemplateWrapper = (props) => {
           url={url}/>
 
         {/* Body component */}
-        <div className="container">
-          {children()}
-        </div>
+        {children()}
 
         {/* Footer component */}
         <Footer menu={footerMenu}/>
