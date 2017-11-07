@@ -32,7 +32,7 @@ const Index = (props) => {
           </div>
           <div className="proto">
             <div className="proto-content"></div>
-            <img src="./browser_frame.png"/>
+            <img src="/img/browser_frame.png"/>
           </div>
         </div>
       </section>

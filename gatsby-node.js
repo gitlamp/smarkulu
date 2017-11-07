@@ -50,6 +50,12 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       loader: 'null-loader'
     })
     config.merge({
+      module: {
+        loaders: {
+          test: /\.(eot|svg|ttf|woff|woff2)$/,
+          loader: 'file-loader?name=/fonts/[name].[ext]'
+        }
+      },
       resolve: {
         alias: {
           normalize: 'normalize.scss/normalize.scss',
