@@ -2,10 +2,15 @@
   background: #000;
   .footer-row {
     padding: 4rem 7rem 3rem;
+    text-align: left;
     color: #fff;
     font-family: $subtitle-font;
     .footer-list {
       padding: 0;
+      /*rtl:raw:
+      margin-right: 0;
+      margin-left: 1.45rem;
+      */
       margin-bottom: 2rem;
       .footer-list-item {
         padding-left: .5rem;

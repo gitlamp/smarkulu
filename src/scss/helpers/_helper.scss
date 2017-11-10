@@ -7,15 +7,15 @@
   }
 }
 
-@mixin font-face($name, $filename) {
+@mixin font-face($name, $filename, $style, $weight) {
   @font-face {
     font-family: $name;
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/#{$filename}.eot');
-    src: url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/#{$filename}.woff') format('woff'),
-         url('../fonts/#{$filename}.woff2') format('woff2'),
-         url('../fonts/#{$filename}.ttf') format('truetype');
+    font-style: $style;
+    font-weight: $weight;
+    src: url('#{$filename}.eot');
+    src: url('#{$filename}.eot?#iefix') format('embedded-opentype'),
+         url('#{$filename}.woff') format('woff'),
+         url('#{$filename}.woff2') format('woff2'),
+         url('#{$filename}.ttf') format('truetype');
   }
 }

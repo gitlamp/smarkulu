@@ -68,6 +68,8 @@ class SEO extends React.Component {
       openGraph.publisher = 'https://facebook.com/TaskuluHQ'
       twitter.site = '@taskulu'
       this.setState({
+        dir: 'ltr',
+        style: 'main.css',
         openGraph,
         twitter
       })
@@ -77,6 +79,8 @@ class SEO extends React.Component {
       openGraph.publisher = 'https://facebook.com/taskuluir'
       twitter.site = '@taskulu_ir'
       this.setState({
+        dir: 'rtl',
+        style: 'main-rtl.css',
         openGraph,
         twitter
       })
@@ -89,7 +93,7 @@ class SEO extends React.Component {
     return (
       <Helmet>
         {/* General tags */}
-          <html lang={this.state.lang}/>
+          <html lang={this.state.lang} dir={this.state.dir}/>
           <title>{this.state.title}</title>
           <meta name="description" content={this.state.description}/>
         {/* OpenGraph mata */}
@@ -124,6 +128,8 @@ class SEO extends React.Component {
           <meta name="twitter:app:name:googleplay" content={this.state.android.googleplay.name}/>
           <meta name="twitter:app:id:googleplay" content={this.state.android.googleplay.id}/>
           <meta name="twitter:app:url:googleplay" content={this.state.android.googleplay.url}/>
+          {/* Style */}
+          {/* <link rel="stylesheet" href={this.state.style}/> */}
       </Helmet>
     )
   }

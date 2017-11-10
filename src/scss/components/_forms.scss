@@ -1,16 +1,18 @@
+/*rtl:begin:ignore*/
 .goregister {
   position: relative;
   max-width: 20rem;
   margin: 0 auto;
   border-radius: 1.5rem;
-  background-color: $wet-asphalt;
   text-align: left;
+  background-color: $wet-asphalt;
   box-shadow: 0 8px 15px 0 rgba(36,50,66,.5);
   input {
-    padding: .9rem .5rem;
+    padding: .75rem .5rem;
     border: 0;
     margin: 0 .5rem;
     background: none;
+    text-align: left;
     width: 70%;
     color: #fff;
     font-size: $mid-font;
@@ -26,3 +28,4 @@
     transform: translateY(-50%);
   }
 }
+/*rtl:end:ignore*/

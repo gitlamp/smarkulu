@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import graphql from 'graphql'
 import { IntlProvider } from 'react-intl'
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
 import Modernizr from 'modernizr'
@@ -7,7 +8,9 @@ import 'intl'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import '../scss/main.scss'
+import style from '../scss/main.useable.scss'
+import rtlStyle from '../scss/main.rtl.useable.scss'
+import '../scss/bootstrap.scss'
 import 'normalize'
 
 const TemplateWrapper = (props) => {
@@ -21,6 +24,12 @@ const TemplateWrapper = (props) => {
     const menuLang = getLangs(langs, langKey, getUrlForLang(homeLink, url))
     const headerMenu = siteMetadata.menu[0].head
     const footerMenu = siteMetadata.menu[1].foot
+    // Use style proper with langKey
+    if (langKey == 'fa') {
+      rtlStyle.use()
+    } else {
+      style.use()
+    }
     return (
     <IntlProvider
         locale={langKey}

@@ -1,19 +1,36 @@
 const Webpack = require("webpack")
 const path = require("path")
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   switch (stage) {
     case 'develop':
     config.loader('modernizr', {
       test: /\.modernizrrc$/,
-      loader: 'modernizr-loader!json-loader'
+      loaders: ['modernizr-loader', 'json-loader']
     })
     config.merge({
       module: {
-        loaders: {
-          test: /\.(eot|svg|ttf|woff|woff2)$/,
-          loader: 'file-loader?name=/fonts/[name].[ext]'
-        }
+        loaders: [
+          {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,
+            loader: 'file-loader?name=./fonts/[name].[ext]'
+          },
+          {
+            test: /\.(sass|scss)$/,
+            exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
+            loaders: ['style-loader', 'css-loader', 'sass-loader']
+          },
+          {
+            test: /\.useable\.scss$/,
+            exclude: /\.rtl\.useable\.scss$/,
+            loaders: ['style-loader/useable', 'css-loader', 'sass-loader']
+          },
+          {
+            test: /\.rtl\.useable.scss$/,
+            loaders: ['style-loader/useable', 'rtlcss-loader', 'sass-loader']
+          }
+        ]
       },
       resolve: {
         alias: {
@@ -45,8 +62,12 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     break;
 
     case 'build-html':
-    config.loader('null', {
+    config.loader('modernizr', {
       test: /\.modernizrrc$/,
+      loader: 'null-loader'
+    })
+    config.loader('sass', {
+      test: /\.(sass|scss)$/,
       loader: 'null-loader'
     })
     config.merge({

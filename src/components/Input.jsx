@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl'
 class Input extends React.Component {
   render() {
     return (
-      <form action="" className="goregister">
+      <form action="" className="goregister" dir="ltr">
       <input type="email" required placeholder={this.props.placeholder}/>
       <FormattedMessage id="btn.register">
         {(txt) => (
@@ -18,7 +18,7 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
-  placeholder: PropTypes.string.required
+  placeholder: PropTypes.string.isRequired
 }
 
 export default Input

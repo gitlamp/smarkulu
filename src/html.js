@@ -23,7 +23,7 @@ class HTML extends React.Component {
     }
 
     return (
-      <html lang="en">
+      <html {...this.props.htmlAttributes}>
         <head>
           {/* Meta-data */}
           <meta charSet="utf-8" />
@@ -60,7 +60,7 @@ class HTML extends React.Component {
           {/* Styles */}
           {style}
         </head>
-        <body>
+        <body {...this.props.bodyAttributes}>
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}

@@ -21,12 +21,11 @@ const Index = (props) => {
         pagePath={langKey}
         title={node.header.title}
         generalDesc={node.header.desc}/>
-      <section className="masthead center">
+      <section className="masthead">
         <div className="container">
           <div className="row">
-            <div className="col content">
+            <div className="col content text-center">
             <h1 className="content-head">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, laboriosam!</h1>
-            <p className="content-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis adipisci provident est aspernatur architecto doloribus quas. Quo nobis molestias id exercitationem laborum accusamus explicabo odio rem? Voluptate at perspiciatis aliquam!</p>
             <Input placeholder="Enter your email address"/>
             </div>
           </div>
@@ -96,7 +95,7 @@ const Index = (props) => {
       <section className="center">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-8 content">
+            <div className="col-8 content text-center">
               <h2 className="content-head">Lorem ipsum dolor sit amet.</h2>
               <p className="content-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci illo odio saepe cupiditate consequatur velit! Aliquid aliquam quam non eius!</p>
               <Input placeholder="Enter your email address"/>
