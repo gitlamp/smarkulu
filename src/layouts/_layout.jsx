@@ -12,6 +12,7 @@ import style from '../scss/main.useable.scss'
 import rtlStyle from '../scss/main.rtl.useable.scss'
 import '../scss/bootstrap.scss'
 import 'normalize'
+import '../scss/font-awesome.scss'
 
 const TemplateWrapper = (props) => {
     const { children, data, location } = props
@@ -24,6 +25,7 @@ const TemplateWrapper = (props) => {
     const menuLang = getLangs(langs, langKey, getUrlForLang(homeLink, url))
     const headerMenu = siteMetadata.menu[0].head
     const footerMenu = siteMetadata.menu[1].foot
+    const social = siteMetadata.socials[Object.keys(siteMetadata.socials)[0]]
     // Use style proper with langKey
     if (langKey == 'fa') {
       rtlStyle.use()
@@ -47,7 +49,7 @@ const TemplateWrapper = (props) => {
         {children()}
 
         {/* Footer component */}
-        <Footer menu={footerMenu}/>
+        <Footer menu={footerMenu} social={social}/>
       </div>
     </IntlProvider>
     )

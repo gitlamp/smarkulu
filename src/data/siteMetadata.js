@@ -63,5 +63,61 @@ module.exports = {
       ]
     }
   ],
-  languages
+  languages,
+  socials: {
+    en: [
+      // Facebook
+      {
+        icon: 'fa fa-facebook-square',
+        link: 'https://www.facebook.com/TaskuluHQ'
+      },
+      // Twitter
+      {
+        icon: 'fa fa-twitter',
+        link: 'http://twitter.com/taskulu'
+      },
+      // Linkedin
+      {
+        icon: 'fa fa-linkedin-square',
+        link: 'linkedin'
+      },
+      // Telegram
+      {
+        icon: 'fa fa-telegram',
+        link: 'telegram'
+      },
+      // Instagram
+      {
+        icon: 'fa fa-instagram',
+        link: 'instagram'
+      }
+    ],
+    fa: [
+      // Facebook
+      {
+        icon: 'fa fa-facebook-square',
+        link: 'https://www.facebook.com/taskuluir'
+      },
+      // Twitter
+      {
+        icon: 'fa fa-twitter',
+        link: 'http://twitter.com/taskulu_ir'
+      },
+      // Linkedin
+      {
+        icon: 'fa fa-linkedin-square',
+        link: 'linkedin'
+      },
+      // Telegram
+      {
+        icon: 'fa fa-telegram',
+        link: 'telegram'
+      },
+      // Instagram
+      {
+        icon: 'fa fa-instagram',
+        link: 'instagram'
+      }
+    ]
+  }
 }

@@ -46,6 +46,12 @@ query LayoutEn {
         langs
         defaultLangKey
       }
+      socials {
+        en {
+          icon
+          link
+        }
+      }
     }
   }
 }

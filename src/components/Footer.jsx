@@ -43,17 +43,36 @@ class Footer extends React.Component {
       )
     })
   }
+  getSocialItems = (social) => {
+    return social.map(item => {
+      console.log(item)
+      return (
+        <a className="footer-social-icon" href={item.link} key={item.link}>
+          <i className={item.icon} aria-hidden="true"></i>
+        </a>
+      )
+    })
+  }
   render() {
     const langKey = this.props.intl.locale
     const menuItems = this.getMenuItems(this.props.menu, langKey)
-    return(
+    const socialItems = this.getSocialItems(this.props.social)
+    return (
       <div className="container-fluid footer">
         <div className="row footer-row">
           {menuItems}
-          <div className="w-100" style={{marginLeft: '1.45rem'}}>Follow Us On :</div>
+          <div className="w-100" style={{marginLeft: '1.45rem'}}>
+            <FormattedMessage id="social.follow"></FormattedMessage>
+            <br/>
+            {socialItems}
+          </div>
         </div>
         <div className="row footer-end">
-          <span>Terms & Privacy</span>
+          <FormattedMessage id="footer.terms">
+          {(txt) =>
+          <a href="#">{txt}</a>
+          }
+          </FormattedMessage>
           <span>Copyright	&copy; 2017 Taskulu</span>
         </div>
       </div>
@@ -63,6 +82,7 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   menu: PropTypes.array.isRequired,
+  social: PropTypes.object.isRequired
 }
 
 export default injectIntl(Footer)

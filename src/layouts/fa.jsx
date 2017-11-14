@@ -46,6 +46,12 @@ query LayoutFa {
         langs
         defaultLangKey
       }
+      socials {
+        fa {
+          icon
+          link
+        }
+      }
     }
   }
 }

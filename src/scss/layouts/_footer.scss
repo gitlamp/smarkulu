@@ -1,7 +1,7 @@
 .footer {
   background: #000;
   .footer-row {
-    padding: 4rem 7rem 3rem;
+    padding: 4rem 7rem 2rem;
     text-align: left;
     color: #fff;
     font-family: $subtitle-font;
@@ -29,6 +29,33 @@
         }
       }
     }
+    .footer-social-icon {
+      display: inline-block;
+      text-align: none;
+      color: #fff;
+      line-height: 1;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-right: .8rem;
+      cursor: pointer;
+      .fa-facebook-square:hover {
+        color: #3b5998;
+      }
+      .fa-twitter:hover {
+        color: #1da1f2;
+      }
+      .fa-linkedin-square:hover {
+        color: #0077b5;
+      }
+      .fa-telegram:hover {
+        color: #0088cc;
+      }
+      .fa-instagram:hover {
+        background: linear-gradient(224.65793970864146deg, #8043af, #8442aa 2.9%, #8740a9 2.9%, #8842a8 4.2%, #8d3fa7 5.9%, #8d41a4 6.7%, #9d3d9c 16.4%, #9f3c9a 16.4%, #a63b96 20.2%, #a73a97 20.2%, #a83b96 23%, #aa3a92 23%, #ac3990 25.3%, #b63a8b 31.2%, #b93a88 35%, #bb3986 35%, #bc3986 37.4%, #be3884 37.4%, #c03a83 39.7%, #c13c83 40.3%, #c4397f 41.2%, #c63b7a 44.3%, #ca3d75 46.9%, #cb3c75 47.5%, #ca3e74 49.4%, #cc3d74 49.4%, #ce3e75 50.3%, #cf3d74 50.3%, #d84466 59.1%, #d94367 59.1%, #ef6744 90.4%, #f26a43 95.1%, #f26c42 95.1%, #f3703f 97.8%, #f46f40 97.8%, #f57041 99.7%, #f47141 99.7%, #f47141);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
   }
   .footer-end {
     padding: 1rem 7rem;
@@ -36,6 +63,13 @@
     color: #3f3f3f;
     font-family: $subtitle-font;
     font-size: $mid-font;
+    a {
+      text-decoration: none;
+      color: #3f3f3f;
+      &:hover {
+        border-bottom: 2px solid #3f3f3f;
+      }
+    }
     *:nth-child(n+2) {
       margin-left: 2rem;
     }
