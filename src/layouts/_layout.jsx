@@ -37,7 +37,7 @@ const TemplateWrapper = (props) => {
         locale={langKey}
         messages={props.lang}>
       <div>
-      {/* Header component */}
+        {/* Header component */}
         <Header
           lang={langKey}
           isHome={isHome}

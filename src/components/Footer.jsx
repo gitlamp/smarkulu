@@ -45,7 +45,6 @@ class Footer extends React.Component {
   }
   getSocialItems = (social) => {
     return social.map(item => {
-      console.log(item)
       return (
         <a className="footer-social-icon" href={item.link} key={item.link}>
           <i className={item.icon} aria-hidden="true"></i>
@@ -60,11 +59,20 @@ class Footer extends React.Component {
     return (
       <div className="container-fluid footer">
         <div className="row footer-row">
+          {/* Render footer menu */}
           {menuItems}
+          {/* Render socials */}
           <div className="w-100" style={{marginLeft: '1.45rem'}}>
             <FormattedMessage id="social.follow"></FormattedMessage>
             <br/>
             {socialItems}
+            <br/>
+            <a className="footer-download-app" href="#">
+              <img src="/logos/download_google_play.png" alt=""/>
+            </a>
+            <a className="footer-download-app" href="#">
+              <img src="/logos/download_apple_store.png" alt=""/>
+            </a>
           </div>
         </div>
         <div className="row footer-end">
@@ -82,7 +90,7 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   menu: PropTypes.array.isRequired,
-  social: PropTypes.object.isRequired
+  social: PropTypes.array.isRequired
 }
 
 export default injectIntl(Footer)

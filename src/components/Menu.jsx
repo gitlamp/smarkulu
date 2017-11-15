@@ -37,14 +37,9 @@ class Menu extends React.Component {
     return(
       <nav className="col header-menu">
         <li className="header-menu-login">
-          {/* <FormattedMessage id="btn.register">
-            {(txt) =>
-              <a className="btn btn-sm" href={'https://taskulu.com/account/login?go=register;__lang=' + langKey}>{txt}</a>
-            }
-          </FormattedMessage> */}
           <FormattedMessage id="btn.login">
             {(txt) =>
-              <a className="btn button button-nm" href={'https://taskulu.com/account/login?__lang=' + langKey}>{txt}</a>
+              <a className="btn button button-nm" href={`${process.env.LOGIN_LINK}` + langKey}>{txt}</a>
             }
           </FormattedMessage>
         </li>

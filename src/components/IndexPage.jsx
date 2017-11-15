@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl'
 
 import SEO from './SEO'
 import Input from './Input'
+import Section from './Section'
 
 const Index = (props) => {
   const { data } = props
@@ -31,37 +32,26 @@ const Index = (props) => {
           </div>
           <div className="proto">
             <div className="proto-content"></div>
-            <img src="/img/browser_frame.png"/>
+            <img src="/img/browser_frame.png" alt="browser frame"/>
           </div>
         </div>
       </section>
-      <section style={{backgroundColor: '#f6f8f9'}}>
-        <div className="container">
-          <div className="row">
-            <div className="col-4 content">
-              <h2 className="content-head">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h2>
-              <p className="content-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ipsa nemo repudiandae aspernatur neque voluptatibus ut fugit vero fuga obcaecati possimus quod magnam tempore illum rerum, autem nihil repellendus numquam?</p>
-            </div>
-            <div className="col-8"></div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-8"></div>
-            <div className="col-4 content">
-              <h2 className="content-head">Lorem, ipsum dolor.</h2>
-              <p className="content-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vero inventore labore nisi cum itaque expedita nihil unde. Ratione enim ex est sed explicabo praesentium, aliquid maxime vitae libero nostrum reprehenderit nemo. Reiciendis, et autem.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Section
+        direction="ltr"
+        header="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+        body="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ipsa nemo repudiandae aspernatur neque voluptatibus ut fugit vero fuga obcaecati possimus quod magnam tempore illum rerum, autem nihil repellendus numquam?"
+        style={{backgroundColor: '#f6f8f9'}}/>
+      <Section
+        direction="rtl"
+        header="Lorem, ipsum dolor."
+        body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vero inventore labore nisi cum itaque expedita nihil unde. Ratione enim ex est sed explicabo praesentium, aliquid maxime vitae libero nostrum reprehenderit nemo. Reiciendis, et autem."/>
       <section style={{backgroundColor: '#2980b9'}}>
         <div className="container">
           <div className="row justify-content-center align-items-center testimonial">
             <div className="col-4">
-              <a className="testimonial-media"></a>
+              <a className="testimonial-media" href="#">
+                <i className="fa fa-play-circle" aria-hidden="true"></i>
+              </a>
             </div>
             <div className="col-4 testimonial-content">
               <h3 className="testimonial-content-head">Lorem ipsum dolor sit.</h3>
