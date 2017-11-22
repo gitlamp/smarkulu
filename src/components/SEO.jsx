@@ -69,7 +69,7 @@ class SEO extends React.Component {
       twitter.site = '@taskulu'
       this.setState({
         dir: 'ltr',
-        style: 'main.css',
+        style: '/main.css',
         openGraph,
         twitter
       })
@@ -80,7 +80,7 @@ class SEO extends React.Component {
       twitter.site = '@taskulu_ir'
       this.setState({
         dir: 'rtl',
-        style: 'main-rtl.css',
+        style: '/main-rtl.css',
         openGraph,
         twitter
       })
@@ -128,8 +128,8 @@ class SEO extends React.Component {
           <meta name="twitter:app:name:googleplay" content={this.state.android.googleplay.name}/>
           <meta name="twitter:app:id:googleplay" content={this.state.android.googleplay.id}/>
           <meta name="twitter:app:url:googleplay" content={this.state.android.googleplay.url}/>
-          {/* Style */}
-          {/* <link rel="stylesheet" href={this.state.style}/> */}
+          {/* Load external style link in production */}
+          {(process.env.NODE_ENV === `production`) ? <link rel="stylesheet" href={this.state.style}/> : null}
       </Helmet>
     )
   }

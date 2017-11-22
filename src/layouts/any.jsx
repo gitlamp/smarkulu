@@ -10,7 +10,7 @@ import 'intl/locale-data/jsonp/en'
 addLocaleData(en)
 
 export default (props) => (
-  <Layout {...props} lang={lang}/>
+  <Layout {...props} i18nMessages={lang}/>
 )
 
 /**
@@ -25,7 +25,7 @@ query LayoutAny {
       description
       sourceCodeLink
       menu {
-        head {
+        header {
           label
           slug
           items {
@@ -33,7 +33,7 @@ query LayoutAny {
             slug
           }
         }
-        foot {
+        footer {
           label
           slug
           items {

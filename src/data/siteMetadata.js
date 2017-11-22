@@ -7,7 +7,7 @@ module.exports = {
   sourceCodeLink: `https://git.taskulu.com/amirali/smarkulu.git`,
   menu: [
     {
-      head: [
+      header: [
         {label: 'features', slug: '/features'},
         {label: 'pricing', slug: '/pricing'},
         {
@@ -20,7 +20,7 @@ module.exports = {
       ]
     },
     {
-      foot: [
+      footer: [
         {
           label: 'col-label-1',
           slug: '',

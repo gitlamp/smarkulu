@@ -3,6 +3,10 @@ const path = require("path")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
+  const baseStyles = new ExtractTextPlugin('styles.css', { allChunks: true })
+  const main = new ExtractTextPlugin('main.css', { allChunks: true })
+  const rtlMain = new ExtractTextPlugin('main-rtl.css', { allChunks: true })
+
   switch (stage) {
     case 'develop':
     config.loader('modernizr', {
@@ -39,7 +43,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         }
       }
     })
-    config.plugin('webpack-define', Webpack.DefinePlugin, [{
+    config.plugin('jquery', Webpack.DefinePlugin, [{
       $: 'jquery',
       jquery: 'jquery',
       jQuery: 'jquery',
@@ -52,12 +56,31 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     break;
 
     case 'build-css':
+    config.loader('style', {
+      test: /\.(sass|scss)$/,
+      exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
+      loader: baseStyles.extract(['css-loader?minimize', 'sass-loader'])
+    })
+    config.loader('usable-style', {
+      test: /\.useable\.scss$/,
+      exclude: /\.rtl\.useable\.scss$/,
+      loader: main.extract(['css-loader?minimize', 'sass-loader'])
+    })
+    config.loader('rtl-style', {
+      test: /\.rtl\.useable.scss$/,
+      loader: rtlMain.extract(['rtlcss-loader?minimize', 'sass-loader'])
+    })
     config.merge({
       resolve: {
         alias: {
           normalize: 'normalize.scss/normalize.scss',
         }
-      }
+      },
+      plugins : [
+        baseStyles,
+        main,
+        rtlMain
+      ]
     })
     break;
 
@@ -66,7 +89,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       test: /\.modernizrrc$/,
       loader: 'null-loader'
     })
-    config.loader('sass', {
+    config.loader('style', {
       test: /\.(sass|scss)$/,
       loader: 'null-loader'
     })

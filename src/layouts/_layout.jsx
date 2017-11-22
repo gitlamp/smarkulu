@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import graphql from 'graphql'
 import { IntlProvider } from 'react-intl'
+import Helmet from 'react-helmet'
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
 import Modernizr from 'modernizr'
 import 'intl'
@@ -15,7 +15,7 @@ import 'normalize'
 import '../scss/font-awesome.scss'
 
 const TemplateWrapper = (props) => {
-    const { children, data, location } = props
+    const { children, data, location, i18nMessages } = props
     const siteMetadata = data.site.siteMetadata
     const { langs, defaultLangKey } = siteMetadata.languages
     const url = location.pathname
@@ -23,19 +23,21 @@ const TemplateWrapper = (props) => {
     const langKey = getCurrentLangKey(langs, defaultLangKey, url)
     const homeLink = `/${langKey}/`
     const menuLang = getLangs(langs, langKey, getUrlForLang(homeLink, url))
-    const headerMenu = siteMetadata.menu[0].head
-    const footerMenu = siteMetadata.menu[1].foot
+    const headerMenu = siteMetadata.menu[0].header
+    const footerMenu = siteMetadata.menu[1].footer
     const social = siteMetadata.socials[Object.keys(siteMetadata.socials)[0]]
-    // Use style proper with langKey
-    if (langKey == 'fa') {
-      rtlStyle.use()
-    } else {
-      style.use()
+    // Load webpack style-loader useable in development
+    if (process.env.NODE_ENV === `development`) {
+      if (langKey == 'fa') {
+        rtlStyle.use()
+      } else {
+        style.use()
+      }
     }
     return (
     <IntlProvider
         locale={langKey}
-        messages={props.lang}>
+        messages={i18nMessages}>
       <div>
         {/* Header component */}
         <Header
@@ -59,7 +61,7 @@ TemplateWrapper.propTypes = {
   children: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
-  lang: PropTypes.object.isRequired
+  i18nMessages: PropTypes.object.isRequired
 }
 
 export default TemplateWrapper

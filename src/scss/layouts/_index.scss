@@ -19,8 +19,9 @@ ul {
 section {
   padding: 3rem 0;
 }
-.center {
-  text-align: center;
+img.isgray {
+  filter: gray;
+  -webkit-filter: grayscale(1);
 }
 .content {
   margin-bottom: 2rem;
@@ -49,6 +50,21 @@ section {
     margin: 0 auto;
     max-width: 80%;
     box-shadow: $default-shadow;
+  }
+}
+.complogos {
+  .complogos-header {
+    font-family: $subtitle-font;
+    font-size: $large-font;
+    color: $wet-asphalt;
+    margin: 0;
+  }
+  .complogos-img {
+    text-align: center;
+    img {
+      margin: 0;
+      max-height: 6rem;
+    }
   }
 }
 /**
@@ -149,7 +165,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45rem georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }

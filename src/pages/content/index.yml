@@ -3,5 +3,5 @@ header:
   title: Taskulu
   desc: English descrpition
 body:
-  h1: Taskulu
-  desc: This is taskulu
+  h1:
+  desc:

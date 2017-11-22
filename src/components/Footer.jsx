@@ -62,17 +62,20 @@ class Footer extends React.Component {
           {/* Render footer menu */}
           {menuItems}
           {/* Render socials */}
-          <div className="w-100" style={{marginLeft: '1.45rem'}}>
-            <FormattedMessage id="social.follow"></FormattedMessage>
-            <br/>
-            {socialItems}
-            <br/>
-            <a className="footer-download-app" href="#">
-              <img src="/logos/download_google_play.png" alt=""/>
-            </a>
-            <a className="footer-download-app" href="#">
-              <img src="/logos/download_apple_store.png" alt=""/>
-            </a>
+          <div className="row w-100" style={{marginLeft: '1.45rem'}}>
+            <div className="col-md-6 col-xl-6">
+              <FormattedMessage id="social.follow"/>
+              <br/>
+              {socialItems}
+            </div>
+            <div className="col-md-6 col-xl-6 justify-content-center footer-download">
+              <a className="footer-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
+                <img src="/logos/download_google_play.png" alt=""/>
+              </a>
+              <a className="footer-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
+                <img src="/logos/download_apple_store.png" alt=""/>
+              </a>
+            </div>
           </div>
         </div>
         <div className="row footer-end">

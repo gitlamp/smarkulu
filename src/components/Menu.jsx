@@ -39,7 +39,7 @@ class Menu extends React.Component {
         <li className="header-menu-login">
           <FormattedMessage id="btn.login">
             {(txt) =>
-              <a className="btn button button-nm" href={`${process.env.LOGIN_LINK}` + langKey}>{txt}</a>
+              <a className="btn button button-normal" href={`${process.env.LOGIN_LINK}` + langKey}>{txt}</a>
             }
           </FormattedMessage>
         </li>

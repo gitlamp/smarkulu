@@ -56,12 +56,16 @@
         -webkit-text-fill-color: transparent;
       }
     }
-    .footer-download-app {
-      display: inline-block;
-      margin-top: 1rem;
-      margin-right: 1rem;
-      width: 8rem;
-      height: 0;
+    .footer-download {
+      display: inline-flex;
+      .footer-download-app {
+        display: inline-block;
+        margin-right: 1rem;
+        width: 8rem;
+        img {
+          margin-top: 1rem;
+        }
+      }
     }
   }
   .footer-end {
