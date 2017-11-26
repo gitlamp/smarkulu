@@ -69,7 +69,7 @@ class SEO extends React.Component {
       twitter.site = '@taskulu'
       this.setState({
         dir: 'ltr',
-        style: '/main.css',
+        style: '/styles/main.css',
         openGraph,
         twitter
       })
@@ -80,7 +80,7 @@ class SEO extends React.Component {
       twitter.site = '@taskulu_ir'
       this.setState({
         dir: 'rtl',
-        style: '/main-rtl.css',
+        style: '/styles/main-rtl.css',
         openGraph,
         twitter
       })

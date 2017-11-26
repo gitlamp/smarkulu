@@ -31,19 +31,21 @@ img.isgray {
   font-family: $title-font;
   font-size: $huge-font;
   margin-top: 0;
+  margin-bottom: 1rem;
   color: $wet-asphalt;
 }
 .content-body {
   font-family: $subtitle-font;
-  font-size: $mid-font;
+  font-size: $small-font;
   color: $asbestos;
+  margin-bottom: 3rem;
 }
 .masthead {
   min-height: 35rem;
   padding-top: 5rem;
   .content-head {
     font-family: $subtitle-font;
-    max-width: 40rem;
+    max-width: 80rem;
     margin: 0 auto 3rem auto;
   }
   .proto {
@@ -54,10 +56,11 @@ img.isgray {
 }
 .complogos {
   .complogos-header {
+    margin-bottom: 4rem;
     font-family: $subtitle-font;
     font-size: $large-font;
     color: $wet-asphalt;
-    margin: 0;
+    text-align: center;
   }
   .complogos-img {
     text-align: center;
@@ -165,7 +168,8 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45rem georgia, serif;
+  // font: 112.5%/1.45rem georgia, serif;
+  font-size: 62.5%;
   box-sizing: border-box;
   overflow-y: scroll;
 }

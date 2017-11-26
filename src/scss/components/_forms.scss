@@ -1,21 +1,22 @@
 /*rtl:begin:ignore*/
 .goregister {
   position: relative;
-  max-width: 20rem;
+  max-width: 35rem;
   margin: 0 auto;
-  border-radius: 1.5rem;
+  border-radius: 3rem;
   text-align: left;
   background-color: $wet-asphalt;
   box-shadow: 0 8px 15px 0 rgba(36,50,66,.5);
   input {
-    padding: .75rem .5rem;
+    padding: 1.4rem 2rem;
     border: 0;
-    margin: 0 .5rem;
     background: none;
+    /*rlt:ignore*/
     text-align: left;
     width: 70%;
     color: #fff;
-    font-size: $mid-font;
+    font-family: $subtitle-font;
+    font-size: $small-font;
     &:focus {
       border: none;
       outline: none;
@@ -23,7 +24,7 @@
   }
   .button {
     position: absolute;
-    right: .3rem;
+    right: .5rem;
     top: 50%;
     transform: translateY(-50%);
   }

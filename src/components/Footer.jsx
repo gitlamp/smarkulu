@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { injectIntl, FormattedMessage } from 'react-intl'
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 
 class Footer extends React.Component {
   getMenuItems = (menu, langKey) => {
@@ -62,13 +62,13 @@ class Footer extends React.Component {
           {/* Render footer menu */}
           {menuItems}
           {/* Render socials */}
-          <div className="row w-100" style={{marginLeft: '1.45rem'}}>
+          <div className="row w-100">
             <div className="col-md-6 col-xl-6">
               <FormattedMessage id="social.follow"/>
               <br/>
               {socialItems}
             </div>
-            <div className="col-md-6 col-xl-6 justify-content-center footer-download">
+            <div className="col-md-6 col-xl-6 footer-download">
               <a className="footer-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
                 <img src="/logos/download_google_play.png" alt=""/>
               </a>
@@ -93,7 +93,8 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   menu: PropTypes.array.isRequired,
-  social: PropTypes.array.isRequired
+  social: PropTypes.array.isRequired,
+  intl: intlShape.isRequired
 }
 
 export default injectIntl(Footer)

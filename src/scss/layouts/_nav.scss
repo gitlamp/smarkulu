@@ -9,12 +9,12 @@
   display: flex;
   flex-flow: row nowrap;
   font-family: $subtitle-font;
-  font-size: $mid-font;
+  font-size: $small-font;
   a {
     text-decoration: none;
     align-items: center;
     color: $wet-asphalt;
-    margin-left: 1rem;
+    margin-left: 2rem;
     padding: .2rem 0;
   }
   li {
@@ -23,9 +23,9 @@
     margin: 0;
   }
   .header-menu-login {
-    margin-top: -.4rem;
+    margin-top: -.8rem;
     .btn {
-      padding: .4rem 1.5rem !important;
+      padding: .8rem 2.5rem !important;
     }
   }
 }

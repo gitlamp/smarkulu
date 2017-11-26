@@ -1,31 +1,32 @@
 .footer {
   background: #000;
   .footer-row {
-    padding: 4rem 7rem 2rem;
+    padding: 5rem 15rem 3rem;
     text-align: left;
     color: #fff;
     font-family: $subtitle-font;
+    font-size: $small-font;
     .footer-list {
       padding: 0;
       /*rtl:raw:
       margin-right: 0;
       margin-left: 1.45rem;
       */
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
       .footer-list-item {
         padding-left: .5rem;
         a {
           text-decoration: none;
           color: #fff;
-          font-size: $mid-font;
+          font-size: $small-font;
           transition: $default-transition;
           &:hover {
             color: $cyan;
           }
         }
         &:first-child {
-          padding-left: 0;
-          font-size: 1.2rem;
+          font-family: $body-font;
+          font-size: $mid-font;
           color: $asbestos;
         }
       }
@@ -34,9 +35,9 @@
       display: inline-block;
       color: #fff;
       line-height: 1;
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      margin-right: .8rem;
+      font-size: 2.8rem;
+      margin-top: 1.2rem;
+      margin-right: 1rem;
       cursor: pointer;
       .fa-facebook-square:hover {
         color: #3b5998;
@@ -58,10 +59,11 @@
     }
     .footer-download {
       display: inline-flex;
+      justify-content: flex-end;
       .footer-download-app {
         display: inline-block;
         margin-right: 1rem;
-        width: 8rem;
+        width: 15rem;
         img {
           margin-top: 1rem;
         }
@@ -69,11 +71,11 @@
     }
   }
   .footer-end {
-    padding: 1rem 7rem;
+    padding: 1.5rem 7rem;
     background: $sun-flower;
     color: #3f3f3f;
     font-family: $subtitle-font;
-    font-size: $mid-font;
+    font-size: $small-font;
     a {
       text-decoration: none;
       color: #3f3f3f;

@@ -3,9 +3,9 @@ const path = require("path")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
-  const baseStyles = new ExtractTextPlugin('styles.css', { allChunks: true })
-  const main = new ExtractTextPlugin('main.css', { allChunks: true })
-  const rtlMain = new ExtractTextPlugin('main-rtl.css', { allChunks: true })
+  const baseStyles = new ExtractTextPlugin('styles/styles.css', { allChunks: true })
+  const main = new ExtractTextPlugin('styles/main.css', { allChunks: true })
+  const rtlMain = new ExtractTextPlugin('styles/main-rtl.css', { allChunks: true })
 
   switch (stage) {
     case 'develop':
