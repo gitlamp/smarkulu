@@ -85,10 +85,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     break;
 
     case 'build-html':
-    config.loader('modernizr', {
-      test: /\.modernizrrc$/,
-      loader: 'null-loader'
-    })
     config.loader('style', {
       test: /\.(sass|scss)$/,
       loader: 'null-loader'
@@ -102,14 +98,24 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       },
       resolve: {
         alias: {
-          normalize: 'normalize.scss/normalize.scss',
-          modernizr$: path.resolve(__dirname, '.modernizrrc')
+          normalize: 'normalize.scss/normalize.scss'
         }
       }
     })
     break;
 
     case 'build-javascript':
+    config.loader('style', {
+      test: /\.(sass|scss)$/,
+      loader: 'null-loader'
+    })
+    config.merge({
+      resolve: {
+        alias: {
+          normalize: 'normalize.scss/normalize.scss'
+        }
+      }
+    })
     break;
   }
   return config

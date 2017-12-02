@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { IntlProvider } from 'react-intl'
 import Helmet from 'react-helmet'
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
-import Modernizr from 'modernizr'
 import 'intl'
 
 import Header from '../components/Header'
