@@ -51,3 +51,9 @@ $default-shadow: 0 20px 30px 0 rgba(36,50,66,.14);
 // Transitions
 $default-transition: all .3s ease;
 $quick-transition: all .1s ease;
+
+//Media queries
+$mobile: '(max-width: 575px)';
+$tablet: '(min-width: 576px) and (max-width: 768px)';
+$desktop: '(min-width: 769px) and (max-width: 1024px)';
+$large-desktop: '(min-width: 1025px)';

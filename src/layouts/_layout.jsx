@@ -54,7 +54,7 @@ const TemplateWrapper = (props) => {
       </div>
     </IntlProvider>
     )
-  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func.isRequired,

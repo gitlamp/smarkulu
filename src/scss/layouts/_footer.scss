@@ -89,3 +89,31 @@
     }
   }
 }
+
+/**
+ * Responsive styles
+ */
+@media #{$desktop} {
+  .footer .footer-row {
+    padding: 5rem 8rem 3rem;
+  }
+}
+
+@media #{$tablet} {
+  .footer .footer-row {
+    display: none;
+  }
+  .footer .footer-end {
+    justify-content: center;
+  }
+}
+
+@media #{$mobile} {
+  .footer .footer-row {
+    display: none;
+  }
+  .footer .footer-end {
+    padding: 1.5rem 2rem;
+    justify-content: center;
+  }
+}
