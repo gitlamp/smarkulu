@@ -63,9 +63,10 @@
       .footer-download-app {
         display: inline-block;
         margin-right: 1rem;
-        width: 15rem;
+        height: 0;
         img {
-          margin-top: 1rem;
+          width: 15rem;
+          margin: 0;
         }
       }
     }
