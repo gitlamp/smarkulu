@@ -44,12 +44,12 @@
       display: block;
       width: 3rem;
       height: .4rem;
-      margin-bottom: .4rem;
+      margin: 0 auto .4rem auto;
       border-radius: 1rem;
       background-color: $wet-asphalt;
       transition: $default-transition;
       &:first-of-type, &:last-of-type {
-        width: 2rem;
+        width: 2.3rem;
       }
     }
     &:focus {
@@ -80,8 +80,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    padding-top: 4rem;
+    height: 100%;
+    padding-top: 5rem;
     z-index: 200;
     color: #fff;
     background-color: $cyan;
@@ -94,7 +94,7 @@
       margin-top: 1rem;
       a {
         font-family: $subtitle-font;
-        font-size: $huge-font;
+        font-size: $large-font;
         color: #fff;
       }
     }
@@ -105,14 +105,32 @@
     }
     .header-menu-mobile-list {
       margin-bottom: 2rem;
-      height: 40rem;
       text-align: left;
       overflow: hidden;
     }
     .header-menu-mobile-download-app {
-      width: 100%;
+      display: inline-block;
       img {
-        height: 6rem;
+        margin-bottom: .5rem;
+        height: 5rem;
+      }
+    }
+  }
+}
+
+/**
+ * Responsive styles
+ */
+@media #{$tablet} {
+  .header-menu {
+    .header-menu-mobile {
+      li a {
+        font-size: $huge-font;
+      }
+      .header-menu-mobile-download-app {
+        img {
+          height: 8rem;
+        }
       }
     }
   }

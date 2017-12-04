@@ -39,7 +39,11 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       resolve: {
         alias: {
           normalize: 'normalize.scss/normalize.scss',
-          modernizr$: path.resolve(__dirname, '.modernizrrc')
+          modernizr$: path.resolve(__dirname, '.modernizrrc'),
+          TweenLite: 'gsap',
+          CSSPlugin: 'gsap',
+          Draggable: path.resolve(__dirname, '/node_modules/gsap/src/uncompressed/utils/Draggable.js'),
+          ScrollToPlugin: path.resolve(__dirname, '/node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js')
         }
       }
     })
@@ -49,6 +53,9 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default']
+    }])
+    config.plugin('gsap', Webpack.DefinePlugin, [{
+      TweenMax: 'gsap'
     }])
     break;
 

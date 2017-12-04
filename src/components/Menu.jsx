@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { genLink } from './functions'
 import $ from 'jquery'
+import { TweenLite } from 'gsap';
 
 class Menu extends React.Component {
   constructor(props) {
@@ -12,11 +13,27 @@ class Menu extends React.Component {
       langKey: this.props.intl.locale
     }
   }
+  componentWillMount() {
+    if (typeof window !== `undefined`) {
+      // Set initial width
+      this.setState({
+        width: $(window).width()
+      })
+      // Change width if screen changed
+      $(window).resize(() => {
+        this.setState({
+          width: $(window).width()
+        })
+      })
+    }
+  }
   render() {
     return (
       <div className="col">
-        <MobileMenu langKey={this.state.langKey}/>
-        {/* <DesktopMenu menu={this.props.menu} langKey={this.state.langKey}/> */}
+        {(this.state.width <= 768)
+        ? <MobileMenu menu={this.props.menu.bottom} langKey={this.state.langKey}/>
+        : <DesktopMenu menu={this.props.menu.top} langKey={this.state.langKey}/>
+        }
       </div>
     )
   }
@@ -71,15 +88,44 @@ class MobileMenu extends React.Component {
     super()
     this.toggle = this.toggle.bind(this)
   }
+  getMenuItems = (menu, langKey) => {
+    const getMenuItems = (items => {
+      return items.map(item => {
+        const slug = (langKey == 'en') ? `${item.slug}` : `/${langKey}${item.slug}`
+        return (
+          <li key={item.label}>
+            <FormattedMessage id={item.label}>
+            {(label) =>
+              <Link to={slug}>{label}</Link>
+            }
+            </FormattedMessage>
+          </li>
+        )
+      })
+    })
+
+    return menu.map(list => {
+      const items = getMenuItems(list.items)
+      return (
+        <ul key={list.label}>
+          {items}
+        </ul>
+      )
+    })
+  }
+  componentWillMount() {
+    
+  }
   // Trigging mobile menu
   toggle() {
     let menu = $('.header-menu-mobile')
     let icon = $('.header-menu-mobile-icon')
-    $(icon).toggleClass('enabled')
     $('html, body').toggleClass('no-scroll')
+    $(icon).toggleClass('enabled')
     $(menu).fadeToggle()
   }
   render() {
+    const menuItems = this.getMenuItems(this.props.menu, this.props.langKey)
     return (
       <nav className="header-menu">
         <button className="header-menu-mobile-icon" onClick={this.toggle}>
@@ -96,23 +142,7 @@ class MobileMenu extends React.Component {
             </FormattedMessage>
           </div>
           <div className="header-menu-mobile-list">
-            <ul>
-              <li>
-                <a href="">Home</a>
-              </li>
-              <li>
-                <a href="">Features</a>
-              </li>
-              <li>
-                <a href="">About us</a>
-              </li>
-              <li>
-                <a href="">Contact us</a>
-              </li>
-              <li>
-                <a href="">Home</a>
-              </li>
-            </ul>
+          {menuItems}
           </div>
           <div className="row">
             <a className="header-menu-mobile-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
@@ -129,7 +159,7 @@ class MobileMenu extends React.Component {
 }
 
 Menu.propTypes = {
-  menu: PropTypes.array.isRequired,
+  menu: PropTypes.object.isRequired,
   intl: intlShape.isRequired
 }
 

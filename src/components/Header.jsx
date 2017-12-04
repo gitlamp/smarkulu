@@ -2,15 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { FormattedMessage } from 'react-intl'
-import $ from 'jquery'
 
 import Menu from './Menu'
 import { genLink } from './functions'
 
 class Header extends React.Component {
-  componentDidMount() {
-    console.log('done')
-  }
   render() {
     return (
       <div className="container-fluid header">

@@ -22,8 +22,10 @@ const TemplateWrapper = (props) => {
     const langKey = getCurrentLangKey(langs, defaultLangKey, url)
     const homeLink = `/${langKey}/`
     const menuLang = getLangs(langs, langKey, getUrlForLang(homeLink, url))
-    const headerMenu = siteMetadata.menu[0].header
-    const footerMenu = siteMetadata.menu[1].footer
+    const menu = {
+      top: siteMetadata.menu[0].header,
+      bottom: siteMetadata.menu[1].footer
+    }
     const social = siteMetadata.socials[Object.keys(siteMetadata.socials)[0]]
     // Load webpack style-loader useable in development
     if (process.env.NODE_ENV === `development`) {
@@ -43,14 +45,14 @@ const TemplateWrapper = (props) => {
           lang={langKey}
           isHome={isHome}
           homeLink={homeLink}
-          menu={headerMenu}
+          menu={menu}
           url={url}/>
 
         {/* Body component */}
         {children()}
 
         {/* Footer component */}
-        <Footer menu={footerMenu} social={social}/>
+        <Footer menu={menu.bottom} social={social}/>
       </div>
     </IntlProvider>
     )
