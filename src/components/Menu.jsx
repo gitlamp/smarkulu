@@ -2,9 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
-import { genLink } from './functions'
 import $ from 'jquery'
-import { TweenLite, Ease, Linear, Elastic } from 'gsap';
+import { TweenLite } from 'gsap'
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'imports?window.jQuery=jquery!owl.carousel'
+
+import { genLink } from './functions'
 
 class Menu extends React.Component {
   constructor(props) {
@@ -96,7 +99,7 @@ class MobileMenu extends React.Component {
           <li key={item.label} data-obj="item">
             <FormattedMessage id={item.label}>
             {(label) =>
-              <Link to={slug}>{label}</Link>
+              <Link to={slug} onClick={this.toggle}>{label}</Link>
             }
             </FormattedMessage>
           </li>
@@ -119,22 +122,29 @@ class MobileMenu extends React.Component {
     let icon = $('.header-menu-mobile-icon')
     let child = menu.find(`[data-obj='item']`)
     $('html, body').toggleClass('no-scroll')
-    $(icon).toggleClass('enabled')
+    icon.toggleClass('enabled')
     let isOpen = icon.hasClass('enabled')
-    $(child).hide()
-    $(menu).fadeToggle(() => {
+    child.hide()
+    menu.fadeToggle(() => {
       if (isOpen) {
         $.each(child, (i, v) => {
           setTimeout(() => {
             $(v).show()
-            TweenLite.from(v, .8, {opacity: 0, ease: Expo.easeOut, 'margin-left': '-100%'})
+            // Check layout's direction then animate
+            if (this.props.langKey !== 'fa') {
+              TweenLite.from(v, .8, {opacity: 0, ease: Expo.easeOut, 'margin-left': '-100%'})
+            } else {
+              TweenLite.from(v, .8, {opacity: 0, ease: Expo.easeOut, 'margin-right': '-100%'})
+            }
           }, 50 * i)
         })
       }
     })
   }
   render() {
-    const menuItems = this.getMenuItems(this.props.menu, this.props.langKey)
+    const tempMenu = this.props.menu.slice(0, 1)
+    const menuItems = this.getMenuItems(tempMenu, this.props.langKey)
+    console.log()
     return (
       <nav className="header-menu">
         <button className="header-menu-mobile-icon" onClick={this.toggle}>

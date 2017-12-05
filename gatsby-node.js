@@ -96,6 +96,10 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       test: /\.(sass|scss)$/,
       loader: 'null-loader'
     })
+    config.loader('owl.carousel', {
+      test: /owl\.carousel\.js/,
+      loader: 'null-loader'
+    })
     config.merge({
       module: {
         loaders: {
