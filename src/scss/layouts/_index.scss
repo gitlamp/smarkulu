@@ -12,6 +12,9 @@
 /**
  * Additional reset styles
  */
+body {
+  -webkit-overflow-scrolling: touch;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -72,7 +75,7 @@ img.isgray {
   }
 }
 .no-scroll {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 /**
  * Media queries

@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { genLink } from './functions'
 import $ from 'jquery'
-import { TweenLite } from 'gsap';
+import { TweenLite, Ease, Linear, Elastic } from 'gsap';
 
 class Menu extends React.Component {
   constructor(props) {
@@ -93,7 +93,7 @@ class MobileMenu extends React.Component {
       return items.map(item => {
         const slug = (langKey == 'en') ? `${item.slug}` : `/${langKey}${item.slug}`
         return (
-          <li key={item.label}>
+          <li key={item.label} data-obj="item">
             <FormattedMessage id={item.label}>
             {(label) =>
               <Link to={slug}>{label}</Link>
@@ -113,16 +113,25 @@ class MobileMenu extends React.Component {
       )
     })
   }
-  componentWillMount() {
-    
-  }
   // Trigging mobile menu
   toggle() {
     let menu = $('.header-menu-mobile')
     let icon = $('.header-menu-mobile-icon')
+    let child = menu.find(`[data-obj='item']`)
     $('html, body').toggleClass('no-scroll')
     $(icon).toggleClass('enabled')
-    $(menu).fadeToggle()
+    let isOpen = icon.hasClass('enabled')
+    $(child).hide()
+    $(menu).fadeToggle(() => {
+      if (isOpen) {
+        $.each(child, (i, v) => {
+          setTimeout(() => {
+            $(v).show()
+            TweenLite.from(v, .8, {opacity: 0, ease: Expo.easeOut, 'margin-left': '-100%'})
+          }, 50 * i)
+        })
+      }
+    })
   }
   render() {
     const menuItems = this.getMenuItems(this.props.menu, this.props.langKey)
@@ -137,14 +146,14 @@ class MobileMenu extends React.Component {
           <div className="row">
             <FormattedMessage id="btn.login.and.register">
               {(txt) =>
-                <a className="btn button button-white" href={`${process.env.LOGIN_LINK}` + this.props.langKey}>{txt}</a>
+                <a className="btn button button-white" href={`${process.env.LOGIN_LINK}` + this.props.langKey} data-obj="item">{txt}</a>
               }
             </FormattedMessage>
           </div>
           <div className="header-menu-mobile-list">
           {menuItems}
           </div>
-          <div className="row">
+          <div className="row" data-obj="item">
             <a className="header-menu-mobile-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
               <img src="/logos/download_apple_store.png" alt=""/>
             </a>

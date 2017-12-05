@@ -85,8 +85,8 @@
     z-index: 200;
     color: #fff;
     background-color: $cyan;
-    opacity: .9;
-    overflow: scroll;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
       display: none;
     }
