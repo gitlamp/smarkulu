@@ -8,13 +8,13 @@ module.exports = {
   menu: [
     {
       header: [
-        {label: 'features', slug: '/features'},
-        {label: 'pricing', slug: '/pricing'},
+        {label: 'header.menu.product', slug: '/product'},
+        {label: 'header.menu.pricing', slug: '/pricing'},
         {
-          label: 'industries',
+          label: 'header.menu.industries',
           slug: '/industries',
           items: [
-            {label: 'industries.marketing', slug: '/industries/marketing'}
+            {label: 'header.menu.marketing', slug: '/industries/marketing'}
           ]
         },
       ]
@@ -25,39 +25,41 @@ module.exports = {
           label: 'col-label-1',
           slug: '',
           items: [
-            {label: 'home', slug:'/'},
-            {label: 'features', slug:'/features'},
-            {label: 'industries', slug:'/industries'},
-            {label: 'pricing', slug:'/pricing'},
+            {label: 'footer.menu.home', slug:'/'},
+            {label: 'footer.menu.product', slug:'/product'},
+            {label: 'footer.menu.companies', slug:'/companies'},
+            {label: 'footer.menu.pricing', slug:'/pricing'},
+            {label: 'footer.menu.customer-success', slug:'/customer-success'},
+            {label: 'footer.menu.demo', slug:'/demo'},
           ]
         },
         {
           label: 'col-label-2',
           slug: '',
           items: [
-            {label: 'company', slug:'/'},
-            {label: 'jobs', slug:'/features'},
-            {label: 'press', slug:'/industries'},
+            {label: 'footer.menu.company', slug:'/company'},
+            {label: 'footer.menu.contact', slug:'/features'},
+            {label: 'footer.menu.press', slug:'/industries'},
+            {label: 'footer.menu.jobs', slug:'/jobs'},
+            {label: 'footer.menu.blog', slug:'/blog'},
           ]
         },
         {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'press', slug:'/'},
-            {label: 'jobs', slug:'/features'},
-            {label: 'company', slug:'/industries'},
-            {label: 'features', slug:'/pricing'},
+            {label: 'footer.menu.marketing', slug:'/industries/marketing'},
+            {label: 'footer.menu.commercial', slug:'/industries/commercial'},
+            {label: 'footer.menu.developers', slug:'/industries/software-development'},
+            {label: 'footer.menu.content-providers', slug:'/industries/content-providers'},
           ]
         },
         {
           label: 'col-label-4',
           slug: '',
           items: [
-            {label: 'home', slug:'/'},
-            {label: 'features', slug:'/features'},
-            {label: 'industries', slug:'/industries'},
-            {label: 'pricing', slug:'/pricing'},
+            {label: 'footer.menu.help', slug:'help.taskulu.com'},
+            {label: 'footer.menu.academy', slug:'academy.taskulu.com'},
           ]
         },
       ]

@@ -8,12 +8,14 @@ class Footer extends React.Component {
 
     const getSubItems = (items => {
       return items.map(item => {
-        const slug = (langKey == 'en') ? `${item.slug}` : `/${langKey}${item.slug}`
+        let slug = (langKey == 'en' || item.slug.includes('taskulu.com')) ? `${item.slug}` : `/${langKey}${item.slug}`
         return (
           <li className="footer-list-item" key={item.label}>
           <FormattedMessage id={item.label}>
           {(label) =>
-            <Link to={slug}>{label}</Link>
+            (!slug.includes('taskulu.com'))
+            ? <Link to={slug}>{label}</Link>
+            : <a href={ 'http://' + slug + ((langKey == 'en') ? '/' : '/fa')}>{label}</a>
           }
           </FormattedMessage>
           </li>
