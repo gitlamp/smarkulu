@@ -4,10 +4,11 @@ $subtitle-font: Nunito, IranSans, sans-serif;
 $body-font: Rajdhani, IranSans, sans-serif;
 
 // Font Sizes
-$huge-font: 4.5rem;
-$large-font: 3rem;
+$huge-font: 3.5rem #{'/*rtl:3rem*/'};
+$large-font: 3rem #{'/*rtl:2rem*/'};
 $mid-font: 2rem;
 $small-font: 1.6rem;
+
 
 // Font Weights
 $bold: 800;

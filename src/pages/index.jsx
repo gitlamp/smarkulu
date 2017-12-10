@@ -12,7 +12,10 @@ export const pageQuery = graphql `
 query IndexPage {
   allContentYaml(
     filter: {
-      header: { lang: { regex: "/(en)/" } }
+      header: {
+        lang: { regex: "/en/" }
+        slug: { regex: "/\/$/ig" }
+      }
     }
   ){
     edges {
@@ -20,10 +23,6 @@ query IndexPage {
         id
         header {
           title
-          desc
-        }
-        body {
-          h1
           desc
         }
       }

@@ -12,7 +12,10 @@ export const pageQuery = graphql `
   query IndexFaPage {
     allContentYaml(
       filter: {
-        header: { lang: { regex: "/(fa)/" } }
+        header: {
+          lang: { regex: "/fa/" }
+          slug: { regex: "/\/$/ig" }
+        }
       }
     ){
       edges {
@@ -20,10 +23,6 @@ export const pageQuery = graphql `
           id
           header {
             title
-            desc
-          }
-          body {
-            h1
             desc
           }
         }

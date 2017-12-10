@@ -31,7 +31,7 @@ img.isgray {
   font-family: $title-font;
   font-size: $huge-font;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: $wet-asphalt;
 }
 .content-body {
@@ -68,6 +68,24 @@ img.isgray {
       margin: 0;
       max-height: 6rem;
     }
+  }
+}
+.features {
+  padding: 3.2rem;
+  font-family: $subtitle-font;
+  font-size: $small-font;
+  text-align: left;
+  .features-icon {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+  }
+  .features-title {
+    font-size: $large-font;
+    color: $wet-asphalt;
+  }
+  .features-desc {
+    font-size: $body-font;
   }
 }
 /**

@@ -1,7 +1,8 @@
 header:
   lang: en
-  title: Taskulu
-  desc: English descrpition
+  slug: /
+  title: Task management for teams
+  desc: Flexible task management, realtime chat, time logs and deep integrations. Taskulu helps you get results and scale your team performance.
 body:
   h1:
   desc:
