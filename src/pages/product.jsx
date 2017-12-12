@@ -17,6 +17,16 @@ const Product = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
+          <section className="above">
+            <div className="container">
+              <div className="row">
+                <div className="col text-center content">
+                  <h2 className="content-head">Ut commodo minim culpa in labore amet sit sint dolore laborum voluptate Lorem.</h2>
+                  <p className="content-body">Dolor excepteur officia aliquip in Lorem eu est esse velit esse. Minim sint ea sint cupidatat laboris nisi ut magna cupidatat anim. Aliqua mollit nisi pariatur laboris qui consectetur sint irure commodo nisi sint exercitation incididunt. Nostrud consequat officia ullamco veniam magna eiusmod sint veniam id ea minim. Cillum et est ut officia cupidatat eiusmod adipisicing in irure esse eiusmod elit. Incididunt cupidatat consequat in duis.</p>
+                </div>
+              </div>
+            </div>
+          </section>
           <Section
             langKey={langKey}
             align="center"
@@ -53,7 +63,10 @@ const Product = (props) => {
                   <p className="features-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ducimus neque unde natus facilis voluptatibus repellat, soluta at et rem.</p>
                   <FormattedMessage id="link.learnmore">
                   {(txt) =>
-                    <Link to="#">Learn More</Link>
+                    <Link to="#" className="btn button button-white">
+                      {txt}
+                      <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </Link>
                   }
                   </FormattedMessage>
                 </div>
@@ -68,6 +81,9 @@ const Product = (props) => {
 
 export default Product
 
+/**
+ * Require data from en yaml
+ */
 export const productQuery = graphql `
 query ProductPage {
   allContentYaml(

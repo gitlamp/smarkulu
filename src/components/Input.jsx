@@ -6,7 +6,7 @@ class Input extends React.Component {
   render() {
     const placeholder = this.props.intl.formatMessage({id: 'email.placeholder'})
     return (
-      <form dir="ltr" action="" className="goregister">
+      <form action="" className="goregister">
       <input type="email" required placeholder={placeholder}/>
       <FormattedMessage id="btn.register">
         {(txt) => (

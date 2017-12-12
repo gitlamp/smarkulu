@@ -17,13 +17,16 @@ const Product = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <Section
-            langKey={langKey}
-            align="center"
-            colClass={{ center: 'col-12 col-sm-12 col-xl-8' }}
-            header={node.body.section1.header}
-            body={node.body.section1.body}
-            cta="btn.register"/>
+          <section className="above">
+            <div className="container">
+              <div className="row">
+                <div className="col text-center content">
+                  <h2 className="content-head">{node.body.section1.header}</h2>
+                  <p className="content-body">{node.body.section1.body}</p>
+                </div>
+              </div>
+            </div>
+          </section>
           <Section
             langKey={langKey}
             align="left"
@@ -55,7 +58,10 @@ const Product = (props) => {
                       <p className="features-desc">{item.desc}</p>
                       <FormattedMessage id="link.learnmore">
                       {(txt) =>
-                        <Link to="#">{txt}</Link>
+                        <Link to="#" className="btn button button-white">
+                          {txt}
+                          <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        </Link>
                       }
                       </FormattedMessage>
                     </div>
@@ -72,6 +78,9 @@ const Product = (props) => {
 
 export default Product
 
+/**
+ * Require data from fa yaml
+ */
 export const productFaQuery = graphql `
 query ProductFaPage {
   allContentYaml(

@@ -15,10 +15,10 @@ const Index = (props) => {
     {data.allContentYaml.edges.map(({node}) =>
       <div key={node.id}>
         <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-        <section className="masthead">
+        <section className="above above-full">
           <div className="container">
             <div className="row">
-              <div className="col content text-center">
+              <div className="col text-center content">
                 <h1 className="content-head">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, laboriosam!</h1>
                 <Input placeholder="Enter your email address" />
               </div>
