@@ -165,10 +165,10 @@ class MobileMenu extends React.Component {
           </div>
           <div className="row" data-obj="item">
             <a className="header-menu-mobile-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
-              <img src="/logos/download_apple_store.png" alt=""/>
+              <img src="/logos/download_apple_store.svg" alt=""/>
             </a>
             <a className="header-menu-mobile-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
-              <img src="/logos/download_google_play.png" alt=""/>
+              <img src="/logos/download_google_play.svg" alt=""/>
             </a>
           </div>
         </div>
