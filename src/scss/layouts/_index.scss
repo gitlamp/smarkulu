@@ -12,6 +12,9 @@
 /**
  * Additional reset styles
  */
+body {
+  -webkit-overflow-scrolling: touch;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -42,14 +45,15 @@ img.isgray {
 }
 .masthead {
   min-height: 35rem;
-  padding-top: 5rem;
+  padding-top: 15rem;
+  min-height: 100vh;
   .content-head {
     font-family: $subtitle-font;
     max-width: 80rem;
     margin: 0 auto 3rem auto;
   }
   .proto {
-    margin: 0 auto;
+    margin: 4rem auto 0 auto;
     max-width: 80%;
     box-shadow: $default-shadow;
   }
@@ -86,6 +90,27 @@ img.isgray {
   }
   .features-desc {
     font-size: $body-font;
+  }
+}
+.no-scroll {
+  overflow: hidden;
+}
+/**
+ * Media queries
+ */
+@media #{$tablet} {
+  .content-head {
+    font-size: $large-font;
+  }
+}
+
+@media #{$mobile} {
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  .content-head {
+    font-size: $large-font;
   }
 }
 /**

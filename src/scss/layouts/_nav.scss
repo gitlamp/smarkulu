@@ -1,5 +1,7 @@
 .header-menu {
   width: 100%;
+  padding-top: 1rem;
+  min-height: 4rem;
   /*rtl:ltr*/
   direction: rtl;
   display: -webkit-box;
@@ -10,22 +12,126 @@
   flex-flow: row nowrap;
   font-family: $subtitle-font;
   font-size: $small-font;
-  a {
-    text-decoration: none;
-    align-items: center;
-    color: $wet-asphalt;
-    margin-left: 2rem;
-    padding: .2rem 0;
-  }
   li {
     display: block;
     list-style: none;
     margin: 0;
+    a {
+      text-decoration: none;
+      align-items: center;
+      color: $wet-asphalt;
+      margin-left: 2rem;
+      padding: .2rem 0;
+    }
   }
   .header-menu-login {
     margin-top: -.8rem;
     .btn {
       padding: .8rem 2.5rem !important;
+    }
+  }
+  .header-menu-mobile-icon {
+    width: 3rem;
+    height: 4rem;
+    border: none;
+    margin-right: 1rem;
+    padding: 0;
+    line-height: 1;
+    font-size: 3rem;
+    background: transparent;
+    z-index: 300;
+    span {
+      display: block;
+      width: 3rem;
+      height: .4rem;
+      margin: 0 auto .4rem auto;
+      border-radius: 1rem;
+      background-color: $wet-asphalt;
+      transition: $default-transition;
+      &:first-of-type, &:last-of-type {
+        width: 2.3rem;
+      }
+    }
+    &:focus {
+      outline: 0;
+    }
+    &.enabled {
+      span {
+        background-color: #fff;
+        margin: 0;
+        &:first-of-type {
+          width: 3rem;
+          transform: rotate(-45deg);
+        }
+        &:nth-of-type(2) {
+          display: none;
+        }
+        &:last-of-type {
+          width: 3rem;
+          margin-top: -.4rem;
+          transform: rotate(45deg)
+        }
+      }
+    }
+  }
+  .header-menu-mobile {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 5rem;
+    z-index: 200;
+    color: #fff;
+    background-color: $cyan;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    li {
+      margin-top: 1rem;
+      a {
+        font-family: $subtitle-font;
+        font-size: $large-font;
+        color: #fff;
+      }
+    }
+    .row {
+      margin-left: 3rem;
+      margin-bottom: 2rem;
+      justify-content: flex-end;
+    }
+    .header-menu-mobile-list {
+      margin-bottom: 2rem;
+      text-align: left;
+      overflow: hidden;
+    }
+    .header-menu-mobile-download-app {
+      display: inline-block;
+      img {
+        margin-bottom: .5rem;
+        height: 4.5rem;
+      }
+    }
+  }
+}
+
+/**
+ * Responsive styles
+ */
+@media #{$tablet} {
+  .header-menu {
+    .header-menu-mobile {
+      li a {
+        font-size: $large-font;
+      }
+      .header-menu-mobile-download-app {
+        img {
+          height: 8rem;
+        }
+      }
     }
   }
 }

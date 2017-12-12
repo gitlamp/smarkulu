@@ -1,10 +1,15 @@
 .header-row {
-  padding: 2.8rem 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2rem 1rem;
   align-items: center;
+  z-index: 200;
+  background: #fff;
   .header-logo {
-    display: block;
     max-width: 18rem;
     max-height: 4rem;
     margin: 0;
+    z-index: 100;
   }
 }
