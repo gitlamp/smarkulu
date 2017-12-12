@@ -13,7 +13,10 @@ class Header extends React.Component {
         <div className="row header-row">
           {/* Logo */}
           <Link to={genLink(this.props.lang, '/')}>
-            <img className="col header-logo" src="/logos/logo-blue.svg" alt="blue logo"/>
+          {(this.props.lang !== 'fa')
+            ? <img className="col header-logo" src="/logos/logo-blue.svg" alt="blue logo"/>
+            : <img className="col header-logo" src="/logos/fa-logo-blue.svg" alt="blue logo"/>
+          }
           </Link>
           {/* Navigation */}
           <Menu menu={this.props.menu} url={this.props.url}/>
