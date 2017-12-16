@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
+import Helmet from 'react-helmet'
 
 import SEO from '../components/SEO'
 import Input from '../components/Input'
@@ -13,6 +14,11 @@ const IndexPage = (props) => {
   const { slug, langKey } = props.pathContext
   return (
   <div>
+    <Helmet>
+      <script src="https://fast.wistia.com/embed/medias/x3j06nrfqu.jsonp" async></script>
+      <script src="https://fast.wistia.com/embed/medias/4o2mxn9zbo.jsonp" async></script>
+      <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    </Helmet>
     {data.allContentYaml.edges.map(({node}) =>
       <div key={node.id}>
         <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
@@ -78,8 +84,20 @@ const IndexPage = (props) => {
                 </div>
               </div>
               <div className="col-12 col-sm-12 col-xl-8 row">
-                <a className="col compcards-card" href="#"></a>
-                <a className="col compcards-card" href="#"></a>
+                <div className="col compcards-card">
+                  <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
+                    <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
+                      <div className="wistia_embed wistia_async_x3j06nrfqu popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col compcards-card">
+                  <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
+                    <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
+                      <div className="wistia_embed wistia_async_4o2mxn9zbo popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
+                    </div>
+                  </div>
+                </div>
                 <div className="w-100"></div>
                 <a className="col compcards-card" href="#"></a>
                 <a className="col compcards-card" href="#"></a>

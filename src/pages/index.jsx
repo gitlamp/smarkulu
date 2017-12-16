@@ -47,14 +47,14 @@ const IndexPage = (props) => {
         <Section
           langKey={langKey}
           align="right"
-          colClass={{ left: 'col-12 col-sm-6 col-xl-8', right: 'col-12 col-sm-6 col-xl-4'}} 
+          colClass={{ left: 'col-12 col-sm-6 col-xl-8', right: 'col-12 col-sm-6 col-xl-4'}}
           header="Lorem, ipsum dolor."
           body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vero inventore labore nisi cum itaque expedita nihil unde. Ratione enim ex est sed explicabo praesentium, aliquid maxime vitae libero nostrum reprehenderit nemo. Reiciendis, et autem."/>
         <section style={{backgroundColor: '#2980b9'}}>
           <div className="container">
             <div className="row justify-content-center align-items-center testimonial">
-              <div className="col-12 col-sm-6 col-xl-4">
-                <a className="testimonial-media" href="#">
+              <div className="col-12 col-sm-6 col-xl-4 text-center">
+                <a className="testimonial-media" href="">
                   <i className="fa fa-play-circle" aria-hidden="true"></i>
                 </a>
               </div>
