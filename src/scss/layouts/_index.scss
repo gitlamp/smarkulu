@@ -1,12 +1,18 @@
 /**
  * Font faces
  */
+// IranSans
 @include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb', normal, normal);
 @include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_UltraLight', normal, 200);
 @include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Light', normal, 300);
 @include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Medium', normal, 500);
 @include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Bold', normal, bold);
 @include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Black', normal, 900);
+// IranYekan
+@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Light', normal, 300);
+@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Bold', normal, bold);
+@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Regular', normal, 900);
+// Fontawesome
 @include font-face(Fontawesome, '/fonts/FontAwesome/fontawesome-webfont', normal, normal);
 
 /**
@@ -104,6 +110,134 @@ img.isgray {
     }
     i {
       margin-left: 1rem;
+    }
+  }
+}
+.plan-wrapper {
+  .plan {
+    position: relative;
+    overflow: hidden;
+    min-height: 50rem;
+    box-shadow: 0 20px 30px 0 rgba(36,50,66,.2);
+    border-radius: .6rem;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+    font-family: $subtitle-font;
+    color: #fff;
+    text-align: center;
+    &.free {
+      background-color: $light-green;
+    }
+    &.professional {
+      background-color: $cyan;
+    }
+    &.business {
+      background-color: $carrot;
+    }
+    &.dedicated {
+      background-color: $dark-blue;
+    }
+    .button {
+      position: relative;
+      z-index: 1;
+    }
+    .plan-ribbon {
+      padding-left: 1rem;
+      font-size: $small-font;
+      text-align: left;
+      i {
+        margin-right: .5rem;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: -1rem;
+        left: -1%;
+        width: 102%;
+        height: 6rem;
+        transform: skewY(-4deg);
+        background: linear-gradient(90deg, rgba(255,255,255,0.1) -10%, rgba(255,255,255,0.4) 100%)
+      }
+    }
+    .plan-title {
+      margin-top: 1rem;
+      font-size: $large-font;
+    }
+    .plan-text {
+      margin: 3rem 0;
+      font-family: $body-font;
+      font-size: $small-font;
+    }
+    .plan-model {
+      display: block;
+      font-size: 2rem;
+      font-weight: $bold;
+    }
+    .plan-price {
+      position: relative;
+      font-size: 3rem;
+      height: 10rem;
+    }
+    .plan-list {
+      font-size: 1.4rem;
+      color: $wet-asphalt;
+      ul {
+        position: relative;
+        margin: 0 0 4rem;
+        z-index: 1;
+      }
+      li {
+        margin: 0;
+        min-height: 3rem;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        left: -1%;
+        bottom: -5rem;
+        max-height: 35rem;
+        width: 102%;
+        transform: skewY(-4deg);
+        background-image: linear-gradient(180deg, #F6F8F9, #FFF);
+      }
+    }
+  }
+}
+.faq {
+  padding: 3rem 0;
+  .content-head {
+    font-family: $subtitle-font;
+    font-size: $huge-font;
+  }
+  .faq-question-wrapper {
+    p {
+      margin-right: 5rem;
+      margin-bottom: 0;
+      color: $wet-asphalt;
+    }
+    .question-tab {
+      padding: 0 3rem;
+      font-family: $subtitle-font;
+      font-size: $mid-font;
+      border-top: 1px solid $silver;
+      border-left: 1px solid #f6f8f9;
+      border-right: 1px solid #f6f8f9;
+      .question-tab-inner {
+        padding: 2rem 0;
+        p {
+          cursor: pointer;
+        }
+      }
+    }
+    .question-body {
+      padding: 0 3rem;
+      font-family: $body-font;
+      font-size: $small-font;
+      .question-body-inner {
+        padding: 2rem 0;
+      }
     }
   }
 }
