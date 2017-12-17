@@ -21,8 +21,8 @@ const Product = (props) => {
             <div className="container">
               <div className="row">
                 <div className="col text-center content">
-                  <h2 className="content-head">{node.body.section1.header}</h2>
-                  <p className="content-body">{node.body.section1.body}</p>
+                  <h2 className="content-head">{node.body.hero.header}</h2>
+                  <p className="content-body">{node.body.hero.body}</p>
                 </div>
               </div>
             </div>
@@ -86,8 +86,8 @@ query ProductFaPage {
   allContentYaml(
     filter: {
       header: {
-        lang: { regex: "/fa/" }
-        slug: { regex: "/\/product$/" }
+        lang: { eq: "fa" }
+        slug: { eq: "/product" }
       }
     }
   ){
@@ -99,6 +99,9 @@ query ProductFaPage {
           desc
         }
         body {
+          hero {
+            header
+          }
           section1 {
             header
             body

@@ -116,8 +116,8 @@ query IndexPage {
   allContentYaml(
     filter: {
       header: {
-        lang: { regex: "/en/" }
-        slug: { regex: "/\/$/ig" }
+        lang: { eq: "en" }
+        slug: { eq: "/" }
       }
     }
   ){

@@ -89,8 +89,8 @@ query ProductPage {
   allContentYaml(
     filter: {
       header: {
-        lang: { regex: "/en/" },
-        slug: { regex: "/\/product$/" }
+        lang: { eq: "en" }
+        slug: { eq: "/product" }
       }
     }
   ){
