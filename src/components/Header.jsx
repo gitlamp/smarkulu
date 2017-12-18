@@ -12,10 +12,10 @@ class Header extends React.Component {
       <div className="container-fluid header">
         <div className="row header-row">
           {/* Logo */}
-          <Link to={genLink(this.props.lang, '/')}>
+          <Link className="col header-logo-wrapper" to={genLink(this.props.lang, '/')}>
           {(this.props.lang !== 'fa')
-            ? <img className="col header-logo" src="/logos/logo-blue.svg" alt="blue logo"/>
-            : <img className="col header-logo" src="/logos/fa-logo-blue.svg" alt="blue logo"/>
+            ? <img className="header-logo" src="/logos/logo-blue.svg" alt="blue logo"/>
+            : <img className="header-logo" src="/logos/fa-logo-blue.svg" alt="blue logo"/>
           }
           </Link>
           {/* Navigation */}

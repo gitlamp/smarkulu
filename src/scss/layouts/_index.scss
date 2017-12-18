@@ -25,6 +25,9 @@ ul {
   list-style: none;
   margin: 0;
 }
+input:invalid {
+  box-shadow: none;
+}
 section {
   padding: 3rem 0;
 }

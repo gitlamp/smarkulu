@@ -6,6 +6,9 @@
   align-items: center;
   z-index: 200;
   background: #fff;
+  .header-logo-wrapper {
+    text-align: left;
+  }
   .header-logo {
     max-width: 16rem;
     max-height: 4rem;
