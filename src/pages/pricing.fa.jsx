@@ -20,30 +20,26 @@ const Pricing = (props) => {
           <div className="container" style={{maxWidth: '1200px'}}>
             <div className="row">
               <div className="col text-center content">
-              <h1 className="content-head">Choose your pricing plan</h1>
-              <p className="content-body">Nulla occaecat mollit sint aliquip eu consequat consectetur non.</p>
+              <h1 className="content-head">{node.body.hero.header}</h1>
+              <p className="content-body">{node.body.hero.body}</p>
               </div>
             </div>
-            <div className="row align-items-end">
+            <div className="row align-items-start">
               <div className="col-12 col-sm-6 col-xl-3 plan-wrapper">
                 <div className="plan free">
-                  <h2 className="plan-title">Free</h2>
-                  <p className="plan-text">Magna cillum commodo eu reprehenderit consectetur irure ipsum.</p>
-                  <span className="plan-model">Forever</span>
-                  <div className="plan-price">10$</div>
+                  <div className="spacer34"></div>
+                  <h2 className="plan-title">{node.body.plan.free.header}</h2>
+                  <p className="plan-text">{node.body.plan.free.desc}<br/>{node.body.plan.free.span}</p>
+                  <div className="plan-price">{node.body.plan.free.price}</div>
                   <div className="plan-list">
-                    <ul>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                      <li>Lorem ipsum dolor sit amet.</li>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                    </ul>
                     <FormattedMessage id="btn.register">
                     {(txt) =>
                       <Link to="" className="btn button button-normal">{txt}</Link>
                     }
                     </FormattedMessage>
+                    <ul>
+                      {node.body.plan.free.features.map(item => <li key={item}>{item}</li> )}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -51,25 +47,19 @@ const Pricing = (props) => {
                 <div className="plan professional">
                   <div className="plan-ribbon">
                   <i className="fa fa-star" aria-hidden="true"></i>
-                  best
                   </div>
-                  <h2 className="plan-title">Free</h2>
-                  <p className="plan-text">Magna cillum commodo eu reprehenderit consectetur irure ipsum.</p>
-                  <span className="plan-model">Starting at</span>
-                  <div className="plan-price">10$</div>
+                  <h2 className="plan-title">{node.body.plan.professional.header}</h2>
+                  <p className="plan-text">{node.body.plan.professional.desc}<br/>{node.body.plan.professional.span}</p>
+                  <div className="plan-price">{node.body.plan.professional.price}</div>
                   <div className="plan-list">
-                    <ul>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                      <li>Lorem ipsum dolor sit amet.</li>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                    </ul>
                     <FormattedMessage id="btn.register">
                     {(txt) =>
                       <Link to="" className="btn button button-normal">{txt}</Link>
                     }
                     </FormattedMessage>
+                    <ul>
+                      {node.body.plan.professional.features.map(item => <li key={item}>{item}</li> )}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -77,47 +67,38 @@ const Pricing = (props) => {
                 <div className="plan business">
                   <div className="plan-ribbon">
                   <i className="fa fa-star" aria-hidden="true"></i><i className="fa fa-star" aria-hidden="true"></i>
-                  best
                   </div>
-                  <h2 className="plan-title">Free</h2>
-                  <p className="plan-text">Magna cillum commodo eu reprehenderit consectetur irure ipsum.</p>
-                  <span className="plan-model">Starting at</span>
-                  <div className="plan-price">10$</div>
+                  <h2 className="plan-title">{node.body.plan.business.header}</h2>
+                  <p className="plan-text">{node.body.plan.business.desc}<br/>{node.body.plan.business.span}</p>
+                  <div className="plan-price">{node.body.plan.business.price}</div>
                   <div className="plan-list">
-                    <ul>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                      <li>Lorem ipsum dolor sit amet.</li>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                    </ul>
                     <FormattedMessage id="btn.register">
                     {(txt) =>
                       <Link to="" className="btn button button-normal">{txt}</Link>
                     }
                     </FormattedMessage>
+                    <ul>
+                      {node.body.plan.business.features.map(item => <li key={item}>{item}</li> )}
+                    </ul>
                   </div>
                 </div>
               </div>
               <div className="col-12 col-sm-6 col-xl-3 plan-wrapper">
                 <div className="plan dedicated">
-                  <h2 className="plan-title">Free</h2>
-                  <p className="plan-text">Magna cillum commodo eu reprehenderit consectetur irure ipsum.</p>
-                  <span className="plan-model">Starting at</span>
-                  <div className="plan-price">10$</div>
+                  <div className="spacer34"></div>
+                  <h2 className="plan-title">{node.body.plan.dedicated.header}</h2>
+                  <p className="plan-text">{node.body.plan.dedicated.desc}</p>
+                  <div className="spacer34"></div>
+                  <div className="plan-price">{node.body.plan.dedicated.price}</div>
                   <div className="plan-list">
-                    <ul>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                      <li>Lorem ipsum dolor sit amet.</li>
-                      <li>Lorem ipsum dolor sit.</li>
-                      <li>Lorem, ipsum.</li>
-                    </ul>
                     <FormattedMessage id="btn.contact">
                     {(txt) =>
                       <Link to="" className="btn button button-normal">{txt}</Link>
                     }
                     </FormattedMessage>
+                    <ul>
+                      {node.body.plan.dedicated.features.map(item => <li key={item}>{item}</li> )}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -127,21 +108,75 @@ const Pricing = (props) => {
         <section style={{backgroundColor: '#f6f8f9'}}>
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-8 faq">
-                <h2 className="content-head">Frequently asked question</h2>
+              <div className="col-10 col-sm-10 col-xl-8 faq">
+                <h2 className="content-head">{node.body.faq.header}</h2>
                 <div className="faq-question-wrapper">
-                  <div className="question-tab">
-                    <div className="question-tab-inner">
-                      <p>Incididunt do excepteur irure deserunt incididunt esse aliqua irure aliqua laborum eiusmod officia irure proident.</p>
+                  <h3 className="question-type">{node.body.faq.services.header}</h3>
+                  {node.body.faq.services.items.map(item =>
+                    <div>
+                      <div className="question-tab">
+                      <div className="question-tab-inner">
+                        <p>{item.question}</p>
+                      </div>
+                      </div>
+                      <div className="question-body">
+                      <div className="question-body-inner">
+                        <p>{item.answer}</p>
+                      </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="question-body">
-                    <div className="question-body-inner">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ducimus ullam dolor nemo necessitatibus rem reprehenderit
-                        repudiandae quo! Nostrum, et. Perspiciatis aliquid dolorem nobis veniam accusantium? Aut, temporibus eligendi.
-                        Eos, illo laborum perspiciatis in repellat at totam sapiente distinctio repellendus.</p>
+                  )}
+                </div>
+                <div className="faq-question-wrapper">
+                  <h3 className="question-type">{node.body.faq.payments.header}</h3>
+                  {node.body.faq.payments.items.map(item =>
+                    <div>
+                      <div className="question-tab">
+                      <div className="question-tab-inner">
+                        <p>{item.question}</p>
+                      </div>
+                      </div>
+                      <div className="question-body">
+                      <div className="question-body-inner">
+                        <p>{item.answer}</p>
+                      </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
+                </div>
+                <div className="faq-question-wrapper">
+                  <h3 className="question-type">{node.body.faq.security.header}</h3>
+                  {node.body.faq.security.items.map(item =>
+                    <div>
+                      <div className="question-tab">
+                      <div className="question-tab-inner">
+                        <p>{item.question}</p>
+                      </div>
+                      </div>
+                      <div className="question-body">
+                      <div className="question-body-inner">
+                        <p>{item.answer}</p>
+                      </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="faq-question-wrapper">
+                  <h3 className="question-type">{node.body.faq.legality.header}</h3>
+                  {node.body.faq.legality.items.map(item =>
+                    <div>
+                      <div className="question-tab">
+                      <div className="question-tab-inner">
+                        <p>{item.question}</p>
+                      </div>
+                      </div>
+                      <div className="question-body">
+                      <div className="question-body-inner">
+                        <p>{item.answer}</p>
+                      </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -174,6 +209,72 @@ query PricingFaPage {
         header {
           title
           desc
+        }
+        body {
+          hero {
+            header
+            body
+          }
+          plan {
+            free {
+              header
+              desc
+              span
+              price
+              features
+            }
+            professional {
+              header
+              desc
+              span
+              price
+              features
+            }
+            business {
+              header
+              desc
+              span
+              price
+              features
+            }
+            dedicated {
+              header
+              desc
+              price
+              features
+            }
+          }
+          faq {
+            header
+            services {
+              header
+              items {
+                answer
+                question
+              }
+            }
+            payments {
+              header
+              items {
+                answer
+                question
+              }
+            }
+            security {
+              header
+              items {
+                answer
+                question
+              }
+            }
+            legality {
+              header
+              items {
+                answer
+                question
+              }
+            }
+          }
         }
       }
     }
