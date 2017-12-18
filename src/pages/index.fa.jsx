@@ -141,7 +141,7 @@ export const pageQuery = graphql `
             collaboration {
               header
             }
-            featureList {
+            features {
               header
               tasks
               teams
