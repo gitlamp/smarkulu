@@ -30,7 +30,7 @@ module.exports = {
             {label: 'footer.menu.companies', slug:'/companies'},
             {label: 'footer.menu.pricing', slug:'/pricing'},
             {label: 'footer.menu.customer-success', slug:'/customer-success'},
-            {label: 'footer.menu.demo', slug:'/demo'},
+            {label: 'footer.menu.demo', slug:'/enterprise'},
           ]
         },
         {
