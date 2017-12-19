@@ -88,7 +88,7 @@ const Pricing = (props) => {
                   <div className="spacer34"></div>
                   <h2 className="plan-title">{node.body.plan.dedicated.header}</h2>
                   <p className="plan-text">{node.body.plan.dedicated.desc}</p>
-                  <div className="spacer34"></div>
+                  <div className="spacer24"></div>
                   <div className="plan-price">{node.body.plan.dedicated.price}</div>
                   <div className="plan-list">
                     <FormattedMessage id="btn.contact">

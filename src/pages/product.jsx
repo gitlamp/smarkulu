@@ -12,7 +12,7 @@ const Product = (props) => {
   return (
     <div>
       {data.allContentYaml.edges.map(({node}) =>
-        <div key={node}>
+        <div key={node.id}>
           <SEO
             pagePath={langKey}
             title={node.header.title}
