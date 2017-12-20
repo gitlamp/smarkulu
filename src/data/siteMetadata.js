@@ -37,10 +37,10 @@ module.exports = {
           label: 'col-label-2',
           slug: '',
           items: [
-            {label: 'footer.menu.company', slug:'/company'},
-            {label: 'footer.menu.contact', slug:'/features'},
-            {label: 'footer.menu.press', slug:'/industries'},
-            {label: 'footer.menu.jobs', slug:'/jobs'},
+            {label: 'footer.menu.company', slug:'/about'},
+            {label: 'footer.menu.contact', slug:'/contact'},
+            {label: 'footer.menu.press', slug:'/press'},
+            {label: 'footer.menu.jobs', slug:'/careers'},
             {label: 'footer.menu.blog', slug:'/blog'},
           ]
         },
