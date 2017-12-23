@@ -19,7 +19,7 @@ const Enterprise = (props) => {
           <section className="double-divided">
             <div className="container-fluid ">
               <div className="row">
-                <div className="col double-divided-col">
+                <div className="col-12 col-sm-6 double-divided-col">
                   <h1 className="double-divided-col-header content-head">Lorem ipsum dolor sit amet consectetur.</h1>
                   <ul className="double-divided-col-body">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, vero.
@@ -29,7 +29,7 @@ const Enterprise = (props) => {
                     <li>Lorem, ipsum dolor.</li>
                   </ul>
                 </div>
-                <div className="col double-divided-col hasBackground"></div>
+                <div className="col-12 col-sm-6 double-divided-col hasBackground"></div>
               </div>
             </div>
           </section>

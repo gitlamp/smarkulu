@@ -62,14 +62,14 @@ const IndexPage = (props) => {
                 </div>
               </div>
               <div className="col-12 col-sm-12 col-xl-8 row">
-                <div className="col compcards-card">
+                <div className="col-12 col-sm-12 col-md compcards-card">
                   <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
                     <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
                       <div className="wistia_embed wistia_async_x3j06nrfqu popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
                     </div>
                   </div>
                 </div>
-                <div className="col compcards-card">
+                <div className="col-12 col-sm-12 col-md compcards-card">
                   <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
                     <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
                       <div className="wistia_embed wistia_async_4o2mxn9zbo popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>

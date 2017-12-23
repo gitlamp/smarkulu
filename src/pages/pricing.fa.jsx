@@ -25,7 +25,7 @@ const Pricing = (props) => {
               </div>
             </div>
             <div className="row align-items-start">
-              <div className="col-12 col-sm-6 col-xl-3 plan-wrapper">
+              <div className="col-12 col-sm-6 col-lg-3 plan-wrapper">
                 <div className="plan free">
                   <div className="spacer34"></div>
                   <h2 className="plan-title">{node.body.plan.free.header}</h2>
@@ -43,7 +43,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-sm-6 col-xl-3 plan-wrapper">
+              <div className="col-12 col-sm-6 col-lg-3 plan-wrapper">
                 <div className="plan professional">
                   <div className="plan-ribbon">
                   <i className="fa fa-star" aria-hidden="true"></i>
@@ -63,7 +63,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-sm-6 col-xl-3 plan-wrapper">
+              <div className="col-12 col-sm-6 col-lg-3 plan-wrapper">
                 <div className="plan business">
                   <div className="plan-ribbon">
                   <i className="fa fa-star" aria-hidden="true"></i><i className="fa fa-star" aria-hidden="true"></i>
@@ -83,7 +83,7 @@ const Pricing = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-sm-6 col-xl-3 plan-wrapper">
+              <div className="col-12 col-sm-6 col-lg-3 plan-wrapper">
                 <div className="plan dedicated">
                   <div className="spacer34"></div>
                   <h2 className="plan-title">{node.body.plan.dedicated.header}</h2>

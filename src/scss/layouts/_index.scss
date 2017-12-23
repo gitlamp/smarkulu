@@ -322,6 +322,14 @@ img.isgray {
   .content-head {
     font-size: $large-font;
   }
+  .double-divided {
+    .double-divided-col {
+      text-align: center;
+    }
+    .double-divided-col-body {
+      margin: 0 auto !important;
+    }
+  }
 }
 
 @media #{$mobile} {
@@ -331,6 +339,19 @@ img.isgray {
   }
   .content-head {
     font-size: $large-font;
+  }
+  .plan-wrapper {
+    .plan, .plan-list {
+      min-height: auto !important;
+    }
+  }
+  .double-divided {
+    .double-divided-col {
+      text-align: left;
+    }
+    .double-divided-col-body {
+      margin: 0 auto !important;
+    }
   }
 }
 /**
