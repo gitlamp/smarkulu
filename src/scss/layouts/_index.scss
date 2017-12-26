@@ -182,11 +182,16 @@ img.isgray {
     .plan-price {
       position: relative;
       font-size: 3rem;
-      height: 10rem;
+      min-height: 12rem;
+      span {
+        display: block;
+        margin: 0;
+        font-size: $small-font;
+      }
     }
     .plan-list {
       padding: 2rem 0;
-      min-height: 54rem;
+      min-height: 55rem;
       font-size: 1.4rem;
       color: $wet-asphalt;
       background-image: linear-gradient(180deg, #F6F8F9, #FFF);
@@ -208,7 +213,48 @@ img.isgray {
       }
     }
     @include spacer(34);
-    @include spacer(24);
+  }
+}
+.switch-box {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 4rem;
+  padding: .4rem;
+  border-radius: .6rem;
+  border: 2px solid $asbestos;
+  font-family: $subtitle-font;
+  font-size: $mid-font;
+  line-height: 2;
+  color: $asbestos;
+  input {
+    position: absolute;
+    opacity: 0;
+    &:checked + label {
+      color: $white;
+    }
+    &:checked + label + .tab {
+      transform: translateX(16rem);
+    }
+  }
+  label {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    min-width: 16rem;
+    min-height: 4rem;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .tab {
+    position: absolute;
+    top: .4rem;
+    left: .4rem;
+    border-radius: .4rem;
+    width: 16rem;
+    height: 4rem;
+    background-color: $asbestos;
+    transition: $default-transition;
   }
 }
 .faq {

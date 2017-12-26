@@ -7,9 +7,12 @@
   "btn.login.and.register": "ورود / عضویت",
   "btn.contact": "درخواست مشاوره",
   "link.learnmore": "بیشتر بدانید",
+  "label.annually": "سالانه",
+  "label.monthly": "ماهانه",
   "email.placeholder": "ایمیل خود را وارد کنید",
   "social.follow": "ما را دنبال کنید:",
   "footer.terms": "قوانین و حریم شخصی",
+  "pricing.mode": "هر کاربر در ماه",
 
   "header.menu.product": "امکانات",
   "header.menu.pricing": "قیمت‌ها",

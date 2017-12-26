@@ -37,7 +37,7 @@ const IndexPage = (props) => {
             </div>
           </div>
         </section>
-        <Logos src={[ 'MA11-Modern.png', 'MA13-Zibaloon.jpg', 'MA27-DMC.png', 'SD11-Fanap.png', 'SD25-Raycom.png']} isgray/>
+        <Logos src={[ 'MA11-Modern.png', 'MA13-Zibaloon.jpg', 'MA27-DMC.png', 'SD11-Fanap.png', 'SD25-Raycom.png']}/>
         <Section
           langKey={langKey}
           align="center"

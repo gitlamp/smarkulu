@@ -7,9 +7,12 @@
   "btn.login.and.register": "Login / Sign up",
   "btn.contact": "Contact us",
   "link.learnmore": "Learn More",
+  "label.annually": "Annually",
+  "label.monthly": "Monthly",
   "email.placeholder": "Enter your email address",
   "social.follow": "Follow Us On:",
   "footer.terms": "Terms & Privacy",
+  "pricing.mode": "per user",
 
   "header.menu.product": "Product",
   "header.menu.pricing": "Pricing",
