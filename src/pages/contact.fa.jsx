@@ -22,7 +22,7 @@ const Contact = (props) => {
                 <div className="col-12 col-sm-6 col-xl-4 double-divided-col hasBackground">
                   <ul className="double-divided-col-list">
                     {node.body.contact.map(item =>
-                      <li className="double-divided-col-item">
+                      <li className="double-divided-col-item" key={item.header}>
                         <h2 className="content-head">{item.header}</h2>
                         <p className="content-body">{item.body}</p>
                       </li>

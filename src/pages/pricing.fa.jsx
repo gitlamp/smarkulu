@@ -5,10 +5,40 @@ import { FormattedMessage } from 'react-intl'
 import $ from 'jquery'
 
 import SEO from '../components/SEO'
+import { toPersianDigits } from '../components/functions'
 
 class Pricing extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      currency: 'تومان',
+      professionalPrice: 9000,
+      businessPrice: 25000,
+      monthlyChecked: true,
+      annuallyChecked: false
+    }
+    this.switch = this.switch.bind(this)
+  }
+  componentDidMount() {
+    $('.question-tab').on('click', function() {
+      $(this).children().toggleClass('active')
+      $(this).next('.question-body').slideToggle()
+    })
+  }
+  switch(e) {
+    var target = e.target.id
+    if(target == 'monthly') {
+      this.setState({
+        professionalPrice: 9000,
+        businessPrice: 25000
+      })
+    }
+    if(target == 'annually') {
+      this.setState({
+        professionalPrice: 6000,
+        businessPrice: 20000
+      })
+    }
   }
   render() {
     const data = this.props.data
@@ -32,11 +62,11 @@ class Pricing extends React.Component {
               </div>
               <div className="row justify-content-center">
                 <div className="switch-box">
-                  <input type="radio" value="monthly" id="monthly" defaultChecked/>
+                  <input type="radio" name="tab" id="monthly" onClick={this.switch} defaultChecked/>
                     <FormattedMessage id="label.monthly">
                     {(txt) => <label htmlFor="monthly">{txt}</label>}
                     </FormattedMessage>
-                  <input type="radio" value="annually" id="annually"/>
+                  <input type="radio" name="tab" id="annually" onClick={this.switch}/>
                     <FormattedMessage id="label.annually">
                     {(txt) => <label htmlFor="annually">{txt}</label>}
                     </FormattedMessage>
@@ -72,7 +102,7 @@ class Pricing extends React.Component {
                     <h2 className="plan-title">{node.body.plan.professional.header}</h2>
                     <p className="plan-text">{node.body.plan.professional.desc}</p>
                     <div className="plan-price">
-                      {node.body.plan.professional.price}
+                      {toPersianDigits(this.state.professionalPrice) + ' ' + this.state.currency}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.professional.span}</span>
                     </div>
@@ -96,7 +126,7 @@ class Pricing extends React.Component {
                     <h2 className="plan-title">{node.body.plan.business.header}</h2>
                     <p className="plan-text">{node.body.plan.business.desc}</p>
                     <div className="plan-price">
-                      {node.body.plan.business.price}
+                      {toPersianDigits(this.state.businessPrice) + ' ' + this.state.currency}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.business.span}</span>
                     </div>

@@ -55,10 +55,14 @@ img.isgray {
 .above {
   padding-top: 15rem;
   min-height: 70vh;
+  .content {
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+  }
   .content-head {
     font-family: $title-font;
-    max-width: 80rem;
-    margin: 0 auto 3rem auto;
+    margin-bottom: 3rem;
   }
   .proto {
     margin: 4rem auto 0 auto;
@@ -83,6 +87,17 @@ img.isgray {
       margin: 0;
       max-height: 6rem;
     }
+  }
+}
+.text-switcher {
+  position: relative;
+  display: inline-flex;
+  vertical-align: top;
+  min-width: 4rem;
+  span {
+    position: absolute;
+    top: 0;
+    opacity: 0;
   }
 }
 .features {
@@ -293,6 +308,11 @@ img.isgray {
           font-size: 2.5rem;
           top: 1.6rem;
           right: 1.6rem;
+        }
+        &.active {
+          &:after {
+            content: '-';
+          }
         }
       }
     }
