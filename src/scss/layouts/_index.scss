@@ -131,6 +131,23 @@ img.isgray {
     }
   }
 }
+.features-card {
+  background: $peter-river;
+  min-height: 12rem;
+  border-radius: .4rem;
+  box-shadow: $default-shadow;
+  text-align: center;
+  padding: 0 2rem;
+  overflow: auto;
+  margin-bottom: 2rem;
+  .features-card-icon {
+    position: relative;
+    padding: 2rem 0;
+  }
+  .content-body {
+    color: $white;
+  }
+}
 .plan-wrapper {
   .plan {
     position: relative;

@@ -132,7 +132,29 @@ class IndexPage extends React.Component {
               align="right"
               colClass={{ left: 'col-12 col-sm-6 col-xl-8', right: 'col-12 col-sm-6 col-xl-4' }}
               header={node.body.collaboration.header}/>
-              {/* features list must be added */}
+              <section style={{ backgroundColor: '#2980b9' }}>
+                <div className="container">
+                  <div className="row">
+                    {node.body.indexFeatures.map(item => {
+                      return (
+                        <div className="col-12 col-md-6 col-lg-3" key={item.text}>
+                          <div className="features-card">
+                            <div className="features-card-icon"></div>
+                            <div className="content-body">{item.text}</div>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                  <div className="row justify-content-center">
+                    <FormattedMessage id="btn.seeMore">
+                      {(txt) =>
+                        <a href="" className="btn button button-submit">{txt}</a>
+                      }
+                    </FormattedMessage>
+                  </div>
+                </div>
+              </section>
             <Section
               langKey={langKey}
               align="center"
@@ -186,12 +208,9 @@ export const pageQuery = graphql `
             collaboration {
               header
             }
-            features {
-              header
-              tasks
-              teams
-              analytics
-              cta
+            indexFeatures {
+              icon
+              text
             }
             ending {
               header
