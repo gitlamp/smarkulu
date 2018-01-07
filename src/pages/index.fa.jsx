@@ -10,6 +10,8 @@ import { TweenLite } from 'gsap'
 import SEO from '../components/SEO'
 import Input from '../components/Input'
 import { Section, Logos } from '../components/Section'
+import { Grid, Row, Col} from 'react-flexbox-grid'
+import { Copy } from '../components/Elements'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -81,6 +83,15 @@ class IndexPage extends React.Component {
               </div>
             </section>
             <Logos src={[ 'MA11-Modern.png', 'MA13-Zibaloon.jpg', 'MA27-DMC.png', 'SD11-Fanap.png', 'SD25-Raycom.png']}/>
+            <Grid>
+              <Row>
+                <Col>
+                  <Copy copy={node.body.why.easy} element="h3" type="header" />
+                </Col>
+                <Col><div></div></Col>
+                <Col><div>{node.body.why.scalable}</div></Col>
+              </Row>
+            </Grid>           
             <Section
               langKey={langKey}
               align="center"
