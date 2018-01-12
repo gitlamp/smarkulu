@@ -13,10 +13,11 @@ class Copy extends React.Component {
     super()
   }
   render() {
-
+let align = this.props.align ? ({textAlign: this.props.align}) : null
     return React.createElement(this.props.element,
-                               {className: 'header'},
-                               this.props.copy)
+                               {className: "content-" + this.props.type,
+                               style: align},
+                               this.props.copy||this.props.children)
   }
 }
 
@@ -33,7 +34,7 @@ Copy.propTypes = {
   copy: PropTypes.string,
   type: PropTypes.oneOf(['header', 'subheader', 'description']),
   element: PropTypes.string,
-  custom: PropTypes.object
+  align: PropTypes.oneOf(['center', 'right', 'left'])
   /**
   * custom styles {background, color, font, size, margin, padding}
   */

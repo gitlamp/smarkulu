@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
+import { Row, Col } from 'react-flexbox-grid'
+
 
 class Section extends React.Component {
   constructor() {
@@ -61,34 +63,6 @@ class Section extends React.Component {
 }
 
 
-class Logos extends React.Component {
-  render() {
-    const img = this.props.src
-    // Base path for logo images
-    const basePath = '/logos/companies/'
-    let isgray = (this.props.isgray) ? ' isgray' : null
-    return (
-      <section style={this.props.style}>
-      <div className="container">
-        <div className="row justify-content-center complogos">
-          {(this.props.header) ? <h3 className="w-100 complogos-header">{this.props.header}</h3> : null}
-          <div className="col-10 col-sm-10 col-xl-10">
-            <div className="row justify-content-center">
-              {img.map((item, index) => {
-                return (
-                  <div key={index} className="col-3 col-sm-3 col-md-2 col-xl-2 align-self-center complogos-img">
-                    <img src={basePath + item} alt="logo" className={isgray}/>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-      </section>
-    )
-  }
-}
 
 Section.propTypes = {
   langKey: PropTypes.string.isRequired,
@@ -103,15 +77,9 @@ Section.propTypes = {
   style: PropTypes.object
 }
 
-Logos.propTypes = {
-  src: PropTypes.array.isRequired,
-  header: PropTypes.string,
-  isgray: PropTypes.bool,
-  style: PropTypes.object
-}
 
 Section.defaultProps = {
   ctaClass: 'button-submit'
 }
 
-export { Section, Logos }
+export { Section }

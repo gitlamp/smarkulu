@@ -39,17 +39,16 @@ img.isgray {
   margin-bottom: 2rem;
   text-align: left;
 }
-.content-head {
-  font-family: $title-font;
-  font-size: $huge-font;
+.content-head, .content-header {
+  @extend %header-typography;
   margin-top: 0;
   margin-bottom: 2rem;
-  color: $wet-asphalt;
 }
-.content-body {
-  font-family: $subtitle-font;
-  font-size: $small-font;
-  color: $asbestos;
+.content-subheader {
+  @extend %subheader-typography;
+}
+.content-body, .content-description {
+  @extend %description-typography;
   margin-bottom: 3rem;
 }
 .above {
@@ -74,6 +73,7 @@ img.isgray {
   min-height: 100vh;
 }
 .complogos {
+  margin: 0 auto;
   .complogos-header {
     margin-bottom: 4rem;
     font-family: $subtitle-font;
@@ -83,11 +83,15 @@ img.isgray {
   }
   .complogos-img {
     text-align: center;
+    padding: 0 5%;
     img {
       margin: 0;
       max-height: 6rem;
     }
   }
+}
+.column {
+  flex-direction: column;
 }
 .text-switcher {
   position: relative;

@@ -93,42 +93,42 @@ class SEO extends React.Component {
     return (
       <Helmet>
         {/* General tags */}
-          <html lang={this.state.lang} dir={this.state.dir}/>
-          <title>{this.state.title}</title>
-          <meta name="description" content={this.state.description}/>
+        <html lang={this.state.lang} dir={this.state.dir}/>
+        <title>{this.state.title}</title>
+        <meta name="description" content={this.state.description}/>
         {/* OpenGraph mata */}
-          <meta property="og:type" content={this.state.openGraph.type}/>
-          <meta property="og:title" content={this.state.openGraph.title}/>
-          <meta property="og:description" content={this.state.openGraph.description}/>
-          <meta property="og:image" content={this.state.openGraph.image}/>
-          <meta property="og:image:width" content={this.state.openGraph.imageWidth}/>
-          <meta property="og:image:height" content={this.state.openGraph.imageHeight}/>
-          <meta property="og:url" content={this.state.openGraph.url}/>
-          <meta property="og:site_name" content={this.state.openGraph.siteName}/>
-          <meta property="fb:app_id" content={this.state.openGraph.appId}/>
-          <meta property="article:publisher" content={this.state.openGraph.publisher}/>
-          <meta property="article:published_time" content={this.state.openGraph.publishedTime}/>
-          <meta property="article:modified_time" content={this.state.openGraph.modifiedTime}/>
-          <meta property="og:updated_time" content={this.state.openGraph.updatedTime}/>
+        <meta property="og:type" content={this.state.openGraph.type}/>
+        <meta property="og:title" content={this.state.openGraph.title}/>
+        <meta property="og:description" content={this.state.openGraph.description}/>
+        <meta property="og:image" content={this.state.openGraph.image}/>
+        <meta property="og:image:width" content={this.state.openGraph.imageWidth}/>
+        <meta property="og:image:height" content={this.state.openGraph.imageHeight}/>
+        <meta property="og:url" content={this.state.openGraph.url}/>
+        <meta property="og:site_name" content={this.state.openGraph.siteName}/>
+        <meta property="fb:app_id" content={this.state.openGraph.appId}/>
+        <meta property="article:publisher" content={this.state.openGraph.publisher}/>
+        <meta property="article:published_time" content={this.state.openGraph.publishedTime}/>
+        <meta property="article:modified_time" content={this.state.openGraph.modifiedTime}/>
+        <meta property="og:updated_time" content={this.state.openGraph.updatedTime}/>
         {/* Twitter card meta */}
-          <meta name="twitter:title" content={this.state.twitter.title}/>
-          <meta name="twitter:description" content={this.state.twitter.description}/>
-          <meta name="twitter:site" content={this.state.twitter.site}/>
-          <meta name="twitter:image" content={this.state.twitter.image}/>
-          <meta name="twitter:creator" content={this.state.twitter.creator}/>
-          <meta name="twitter:card" content={this.state.twitter.card}/>
-          {/* iOS app */}
-          <meta name="twitter:app:name:iphone" content={this.state.iOS.iphone.name}/>
-          <meta name="twitter:app:id:iphone" content={this.state.iOS.iphone.id}/>
-          <meta name="twitter:app:url:iphone" content={this.state.iOS.iphone.url}/>
-          <meta name="twitter:app:name:ipad" content={this.state.iOS.ipad.name}/>
-          <meta name="twitter:app:id:ipad" content={this.state.iOS.ipad.id}/>
-          <meta name="twitter:app:url:ipad" content={this.state.iOS.ipad.url}/>
-          {/* Android app */}
-          <meta name="twitter:app:name:googleplay" content={this.state.android.googleplay.name}/>
-          <meta name="twitter:app:id:googleplay" content={this.state.android.googleplay.id}/>
-          <meta name="twitter:app:url:googleplay" content={this.state.android.googleplay.url}/>
-          {/* Load external style link in production */}
+        <meta name="twitter:title" content={this.state.twitter.title}/>
+        <meta name="twitter:description" content={this.state.twitter.description}/>
+        <meta name="twitter:site" content={this.state.twitter.site}/>
+        <meta name="twitter:image" content={this.state.twitter.image}/>
+        <meta name="twitter:creator" content={this.state.twitter.creator}/>
+        <meta name="twitter:card" content={this.state.twitter.card}/>
+        {/* iOS app */}
+        <meta name="twitter:app:name:iphone" content={this.state.iOS.iphone.name}/>
+        <meta name="twitter:app:id:iphone" content={this.state.iOS.iphone.id}/>
+        <meta name="twitter:app:url:iphone" content={this.state.iOS.iphone.url}/>
+        <meta name="twitter:app:name:ipad" content={this.state.iOS.ipad.name}/>
+        <meta name="twitter:app:id:ipad" content={this.state.iOS.ipad.id}/>
+        <meta name="twitter:app:url:ipad" content={this.state.iOS.ipad.url}/>
+        {/* Android app */}
+        <meta name="twitter:app:name:googleplay" content={this.state.android.googleplay.name}/>
+        <meta name="twitter:app:id:googleplay" content={this.state.android.googleplay.id}/>
+        <meta name="twitter:app:url:googleplay" content={this.state.android.googleplay.url}/>
+        {/* Load external style link in production */}
           {(process.env.NODE_ENV === `production`) ? <link rel="stylesheet" href={this.state.style}/> : null}
       </Helmet>
     )

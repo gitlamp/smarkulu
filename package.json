@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Amirali <amirali@taskulu.com>",
   "dependencies": {
-
     "gatsby": "^1.9.139",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-google-analytics": "^1.0.14",
@@ -22,8 +21,7 @@
     "owl.carousel": "^2.2.0",
     "popper.js": "^1.13.0",
     "ptz-i18n": "^0.2.5",
-    "react-flexbox-grid": "^2.0.0",
-    "bootstrap": "^4.0.0-beta.2",
+    "react-flexbox-grid": "git+ssh://git@git.taskulu.com:sina/react-flexbox-grid.git",
     "react-intl": "^2.4.0"
   },
   "keywords": [

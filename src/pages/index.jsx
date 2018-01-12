@@ -7,9 +7,6 @@ import { FormattedMessage } from 'react-intl'
 import SEO from '../components/SEO'
 import Input from '../components/Input'
 import { Section, Logos } from '../components/Section'
-/* import Grid from '../components/Grid'*/
-import { Grid, Row, Col} from 'react-flexbox-grid'
-import { Copy } from '../components/Elements'
 
 const IndexPage = (props) => {
   const { data } = props
@@ -33,7 +30,6 @@ const IndexPage = (props) => {
               </div>
             </div>
           </section>
-          <Logos src={[ 'MA11-Modern.png', 'MA13-Zibaloon.jpg', 'MA27-DMC.png', 'SD11-Fanap.png', 'SD25-Raycom.png']} isgray/>
           <Section
             langKey={langKey}
             align="center"
@@ -53,10 +49,6 @@ const IndexPage = (props) => {
             colClass={{ left: 'col-12 col-sm-6 col-xl-8', right: 'col-12 col-sm-6 col-xl-4'}}
             header="Lorem, ipsum dolor."
             body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vero inventore labore nisi cum itaque expedita nihil unde. Ratione enim ex est sed explicabo praesentium, aliquid maxime vitae libero nostrum reprehenderit nemo. Reiciendis, et autem."/>
-          <Grid>
-            <Copy copy={node.body.why.easy} element="h3" type="header"/>
-            <div>{node.body.why.scalable}</div>
-          </Grid>
           <section style={{backgroundColor: '#2980b9'}}>
             <div className="container">
               <div className="row justify-content-center align-items-center testimonial">
@@ -120,42 +112,20 @@ export default IndexPage
  */
 export const pageQuery = graphql `
 query IndexPage {
-  allContentYaml(filter: {header: {lang: {eq: "en"}, slug: {eq: "/"}}}) {
+  allContentYaml(
+    filter: {
+      header: {
+        lang: { eq: "en" }
+        slug: { eq: "/" }
+      }
+    }
+  ){
     edges {
       node {
         id
         header {
           title
           desc
-        }
-        body {
-          hero {
-            header
-            body
-          }
-          why {
-            header
-            easy
-            scalable
-          }
-          customers {
-            header
-          }
-          collaboration {
-            header
-          }
-          features {
-            header
-            tasks
-            teams
-            analytics
-            cta
-          }
-          ending {
-            header
-            body
-            cta
-          }
         }
       }
     }

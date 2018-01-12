@@ -17,6 +17,24 @@ body:
     easy: "تسکولو را مطابق نیازتان بسازید و کارها و پروژه‌ها را پیش ببرید"
     header: "در سازمان‌های دولتی، شرکت‌های بازاریابی یا حتی تیم‌های بازی‌سازی"
     scalable: "چه ۱۰ نفر چه ۱۰۰۰ نفر، همه ارتباط‌های کاری خود را با تسکولو مدیریت کنید"
+  customerLogos:
+    header: ""
+    logos:
+      -
+        company: "Zibaloon"
+        alt: "زیبالون"
+      -
+        company: "Modern"
+        alt: "چاپ مدرن"
+      -
+        company: "DMC"
+        alt: "DMC"
+      -
+        company: "Fanap"
+        alt: "فناپ"
+      -
+        company: "Raycom"
+        alt: "رایکام"
   customers: 
     header: "ببینید تسکولو چطور به شرکت‌ها کمک می‌کند"
   collaboration: 

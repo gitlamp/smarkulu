@@ -9,7 +9,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import style from '../scss/main.useable.scss'
 import rtlStyle from '../scss/main.rtl.useable.scss'
-import '../scss/bootstrap.scss'
+
 import 'normalize'
 import '../scss/font-awesome.scss'
 
