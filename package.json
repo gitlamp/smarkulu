@@ -5,6 +5,7 @@
   "author": "Amirali <amirali@taskulu.com>",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
+    "eslint": "^4.15.0",
     "gatsby": "^1.9.139",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-google-analytics": "^1.0.15",
@@ -36,6 +37,7 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
   },
   "devDependencies": {
+    "eslint-plugin-react-app": "^1.0.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
