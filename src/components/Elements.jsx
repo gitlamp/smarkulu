@@ -9,11 +9,8 @@ import { FormattedMessage } from 'react-intl'
  */
 
 class Copy extends React.Component {
-  constructor() {
-    super()
-  }
   render() {
-let align = this.props.align ? ({textAlign: this.props.align}) : null
+    let align = this.props.align ? ({textAlign: this.props.align}) : null
     return React.createElement(this.props.element,
                                {className: "content-" + this.props.type,
                                style: align},
@@ -23,21 +20,24 @@ let align = this.props.align ? ({textAlign: this.props.align}) : null
 
 class Cta extends React.Component {}
 
-class Img extends React.Component {}
-
-
-
-
-
+class Img extends React.Component {
+  render() {
+    return(
+      <img src={this.props.src} alt={this.props.alt} />
+    )
+  }
+}
 
 Copy.propTypes = {
-  copy: PropTypes.string,
-  type: PropTypes.oneOf(['header', 'subheader', 'description']),
-  element: PropTypes.string,
+  copy: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['header', 'subheader', 'description']).isRequired,
+  element: PropTypes.string.isRequired,
   align: PropTypes.oneOf(['center', 'right', 'left'])
-  /**
-  * custom styles {background, color, font, size, margin, padding}
-  */
+}
+
+Img.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string
 }
 
 export default { Copy, Cta, Img }

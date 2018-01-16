@@ -11,7 +11,7 @@ import SEO from '../components/SEO'
 import Input from '../components/Input'
 import { Section } from '../components/Section'
 import { Grid, Row, Col} from 'react-flexbox-grid'
-import { Copy } from '../components/Elements'
+import { Copy, Img} from '../components/Elements'
 import { TwoColumn, Above, Logos } from '../components/Partials'
 class IndexPage extends React.Component {
   constructor(props) {
@@ -80,7 +80,7 @@ class IndexPage extends React.Component {
                 <Col xs={12}>
                   <div className="proto">
                     <div className="proto-content"></div>
-                    <img src="/img/browser_frame.png" alt="browser frame" />
+                    <Img src="/img/browser_frame.png" alt="browser frame" />
                   </div>
                 </Col>
               </Above>
@@ -92,53 +92,51 @@ class IndexPage extends React.Component {
                 <Col xs={12}>
                   <Copy align="center" element="h3" copy={node.body.why.header} type="header"/>
                 </Col>
-                <TwoColumn ratio={[6,6]}>
-                  <TwoColumn ratio={[4,8]} >
-                    <Copy copy={node.body.why.easy} type="subheader" element="h3" />
-                    <img src="img/placeholder.png" />
-                  </TwoColumn>
-                  <TwoColumn ratio={[8,4]} >
-                    <img src="img/placeholder.png" />
-                    <Copy first="xs" copy={node.body.why.scalable} type="subheader" element="h3" />
-                  </TwoColumn>
+
+                <TwoColumn ratio={[4,8]} >
+                  <Copy copy={node.body.why.easy} type="subheader" element="h3" />
+                  <Img src="img/placeholder.png" />
                 </TwoColumn>
+                <TwoColumn ratio={[8,4]} >
+                  <Img src="img/placeholder.png" />
+                  <Copy last="md" first="xs" copy={node.body.why.scalable} type="subheader" element="h3" />
+                </TwoColumn>
+
               </Row>
-              <section>
-                <div className="container">
-                  <div className="row align-items-center compcards">
-                    <div className="col-12 col-sm-12 col-xl-4 compcards-content">
-                      <div className="content align-items-right">
-                        <h2 className="content-head">{node.body.customers.header}</h2>
-                      </div>
-                    </div>
-                    <div className="col-12 col-sm-12 col-xl-8 row">
-                      <div className="col-12 col-sm-12 col-md compcards-card">
-                        <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
-                          <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
-                            <div className="wistia_embed wistia_async_x3j06nrfqu popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-12 col-sm-12 col-md compcards-card">
-                        <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
-                          <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
-                            <div className="wistia_embed wistia_async_4o2mxn9zbo popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="w-100"></div>
-                      <a className="col compcards-card" href="#"></a>
-                      <a className="col compcards-card" href="#"></a>
-                      <a className="col compcards-card" href="#"></a>
+              <Row tagName="section" center className="compcards">
+                <Col xs={12} md={4} className="compcards-content">
+                  <Copy align="right" element="h2" type="header" copy={node.body.customers.header} />
+                </Col>
+                <Col xs={12} md={3} className="compcards-card">
+                  <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
+                    <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
+                      <div className="wistia_embed wistia_async_x3j06nrfqu popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
                     </div>
                   </div>
-                </div>
-              </section>
-              <Section
-                              langKey={langKey}
-                              align="right"
-                              colClass={{ left: 'col-12 col-sm-6 col-xl-8', right: 'col-12 col-sm-6 col-xl-4' }}
-                              header={node.body.collaboration.header}/>
+                </Col>
+                <Col xs={12} md={3} className="compcards-card">
+                  <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
+                    <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
+                      <div className="wistia_embed wistia_async_4o2mxn9zbo popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+              <TwoColumn ratio={[4,8]}>
+                <Copy type="subheader" element="h2" copy={node.body.collaboration.header} />
+                <Img src="img/placeholder.png" alt="browser frame" />
+              </TwoColumn>
+              <Row tagName="section" style={{ backgroundColor: '#2980b9'}}>
+                {node.body.indexFeatures.map((item,i) => {
+                   return(
+                     <Col xs="12" md="3" key={"feature"+i}>
+                       <div className="features-card">
+                         <div className="features-card-icon"></div>
+                         <div className="content-body">{item.text}</div>
+                     </Col>
+                   )
+                })}
+              </Row>
               <section style={{ backgroundColor: '#2980b9' }}>
                 <div className="container">
                   <div className="row">
@@ -163,16 +161,16 @@ class IndexPage extends React.Component {
                 </div>
               </section>
               <Section
-                              langKey={langKey}
-                              align="center"
-                              colClass={{ center: 'col-12 col-sm-12 col-xl-8' }}
-                              header={node.body.ending.header}
-                              body={node.body.ending.body}
-                              cta={node.body.ending.cta}/>
-            </div>
+                        langKey={langKey}
+                        align="center"
+                        colClass={{ center: 'col-12 col-sm-12 col-xl-8' }}
+                        header={node.body.ending.header}
+                        body={node.body.ending.body}
+                        cta={node.body.ending.cta}/>
+                       </div>
           )}
         </Grid>
-      </div>
+            </div>
 
     )
   }
