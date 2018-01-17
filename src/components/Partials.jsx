@@ -20,8 +20,8 @@ class Above extends React.Component{
 
   render() {
     let rowProps = createProps('row', this.props)
-    return(
-      <Row className={this.classNames(this.props)} tagName="section" {...rowProps} />
+    return (
+      <Row className={this.classNames(this.props)} tagName="section" {...rowProps}/>
     )
   }
 }
@@ -42,35 +42,18 @@ class TwoColumn extends React.Component {
     let ratio = this.props.vertical ? [12,12] : this.props.ratio
     let index = 0
 
-    return(
+    return (
       <Row column={this.props.vertical?true:null}
            style={{width: this.props.width}} >
         {ratio.map((item, i) => {
            const allProps = createProps('col', this.props.children[i].props)
            console.log(allProps)
-           return(
-             <Col key={'key'+i} xs={12} md={ratio[i]}  {...allProps}>
-               {this.props.children[i]}
-             </Col>)
-        })
-        }
-      </Row>
-    )
-  }
-}
-class MultiBox extends React.Component {
-  render() {
-    const boxes = this.props.boxes,
-          size = this.props.size
-    return(
-      <Row tagName="section">
-        boxes.map((item, i) => {
-          return(
-          <Col className="multibox-card">
-            <div className="multibox-icon"></div>
-            <div className="multibox-body">{item.text}</div>
-          </Col>)
-        })
+            return (
+              <Col key={'key'+i} xs={12} md={ratio[i]}  {...allProps}>
+                {this.props.children[i]}
+              </Col>
+            )
+        })}
       </Row>
     )
   }

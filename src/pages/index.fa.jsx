@@ -87,12 +87,11 @@ class IndexPage extends React.Component {
               <Logos
                 src={node.body.customerLogos.logos}
                 style={{maxWidth: 1000+'px'}}
-                header={node.body.customerLogos.header} />
+                header={node.body.customerLogos.header}/>
               <Row tagName="section">
                 <Col xs={12}>
                   <Copy align="center" element="h3" copy={node.body.why.header} type="header"/>
                 </Col>
-
                 <TwoColumn ratio={[4,8]} >
                   <Copy copy={node.body.why.easy} type="subheader" element="h3" />
                   <Img src="img/placeholder.png" />
@@ -101,7 +100,6 @@ class IndexPage extends React.Component {
                   <Img src="img/placeholder.png" />
                   <Copy last="md" first="xs" copy={node.body.why.scalable} type="subheader" element="h3" />
                 </TwoColumn>
-
               </Row>
               <Row tagName="section" center className="compcards">
                 <Col xs={12} md={4} className="compcards-content">
@@ -128,11 +126,12 @@ class IndexPage extends React.Component {
               </TwoColumn>
               <Row tagName="section" style={{ backgroundColor: '#2980b9'}}>
                 {node.body.indexFeatures.map((item,i) => {
-                   return(
+                   return (
                      <Col xs="12" md="3" key={"feature"+i}>
-                       <div className="features-card">
+                      <div className="features-card">
                          <div className="features-card-icon"></div>
                          <div className="content-body">{item.text}</div>
+                      </div>
                      </Col>
                    )
                 })}
@@ -161,13 +160,13 @@ class IndexPage extends React.Component {
                 </div>
               </section>
               <Section
-                        langKey={langKey}
-                        align="center"
-                        colClass={{ center: 'col-12 col-sm-12 col-xl-8' }}
-                        header={node.body.ending.header}
-                        body={node.body.ending.body}
-                        cta={node.body.ending.cta}/>
-                       </div>
+                langKey={langKey}
+                align="center"
+                colClass={{ center: 'col-12 col-sm-12 col-xl-8' }}
+                header={node.body.ending.header}
+                body={node.body.ending.body}
+                cta={node.body.ending.cta}/>
+            </div>
           )}
         </Grid>
             </div>
