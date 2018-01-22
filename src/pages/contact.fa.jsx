@@ -1,6 +1,5 @@
 import React from 'react'
 import graphql from 'graphql'
-import Link from 'gatsby-link'
 
 import SEO from '../components/SEO'
 import { Section } from '../components/Section'

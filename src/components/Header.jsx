@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { FormattedMessage } from 'react-intl'
 
 import Menu from './Menu'
 import { genLink } from './functions'

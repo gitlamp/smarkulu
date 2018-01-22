@@ -1,7 +1,5 @@
 import React from 'react'
 import graphql from 'graphql'
-import Link from 'gatsby-link'
-import { FormattedMessage } from 'react-intl'
 
 import SEO from '../components/SEO'
 

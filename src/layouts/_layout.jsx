@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider } from 'react-intl'
-import Helmet from 'react-helmet'
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
 import 'intl'
 
