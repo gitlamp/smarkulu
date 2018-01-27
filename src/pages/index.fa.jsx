@@ -94,7 +94,7 @@ class IndexPage extends React.Component {
               align="right"
               colClass={{ left: 'col-12 col-sm-6 col-xl-8', right: 'col-12 col-sm-6 col-xl-4' }}
               header={node.body.why.scalable}/>
-            <section>
+            <section data-headstate="dark">
               <div className="container">
                 <div className="row align-items-center compcards">
                   <div className="col-12 col-sm-12 col-xl-4 compcards-content">
@@ -130,7 +130,7 @@ class IndexPage extends React.Component {
               align="right"
               colClass={{ left: 'col-12 col-sm-6 col-xl-8', right: 'col-12 col-sm-6 col-xl-4' }}
               header={node.body.collaboration.header}/>
-              <section style={{ backgroundColor: '#2980b9' }}>
+              <section style={{ backgroundColor: '#2980b9' }} data-headstate="dark">
                 <div className="container">
                   <div className="row">
                     {node.body.indexFeatures.map(item => {
