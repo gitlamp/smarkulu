@@ -81,7 +81,7 @@ const genLink = (lang, link) => {
   if (lang == 'en') {
     return link
   } else {
-    return lang + link
+    return '/' + lang + link
   }
 }
 

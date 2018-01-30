@@ -1,60 +1,86 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Row, Col, getColumnProps } from 'react-flexbox-grid'
-import logos from '../data/logos'
-import { createProps } from './functions.js'
+import { Row, Col, getRowProps } from 'react-flexbox-grid'
 
 class Above extends React.Component{
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
+    this.state = {
+      class: 'above'
+    }
   }
-
-  classNames(props) {
-    const classes = []
-
-    classes.push("above")
-    classes.push(props.className)
-    props.full ? classes.push("above-full") : null
-    return classes.join(" ")
+  componentWillMount() {
+    if (this.props.full) {
+      const full = 'above-full'
+      this.setState({
+        class: this.state.class + ' ' + full
+      })
+    }
   }
-
   render() {
-    let rowProps = createProps('row', this.props)
+    const rowProps = getRowProps(this.props)
     return (
-      <Row className={this.classNames(this.props)} tagName="section" {...rowProps}/>
+      <section className={this.state.class + ' ' + rowProps.className}>
+        {rowProps.children}
+      </section>
     )
   }
 }
 
-/* class TwoColumn extends React.Component {
- *   render() {
- *     return(
- *       <Row tagName="section" {...this.props}>
- *         {this.props.children}
- *       </Row>
- *     )
- *   }
- * }
- * */
-
 class TwoColumn extends React.Component {
+  componentWillMount() {
+    let ratio = this.props.ratio
+    // If both col are equal
+    if (this.props.equal) {
+      let ratio = [6,6]
+      this.setState({
+        xs: ratio,
+        sm: ratio,
+        md: ratio,
+        lg: ratio
+      })
+    } else {
+      // When is responsiveness is important
+      if (ratio && ratio.hasOwnProperty('xs' || 'sm' || 'md' || 'lg')) {
+        this.setState({
+          xs: ratio.xs,
+          sm: ratio.sm,
+          md: ratio.md,
+          lg: ratio.lg
+        })
+        // When cols are not equal
+      } else {
+        this.setState({
+          xs: ratio,
+          sm: ratio,
+          md: ratio,
+          lg: ratio
+        })
+      }
+    }
+  }
   render() {
-    let ratio = this.props.vertical ? [12,12] : this.props.ratio
-    let index = 0
+    const rowProps = getRowProps(this.props)
+    const children = rowProps.children
+    const renderChild = children.map((item, i) => {
+      return (
+        <Col xs={this.state.xs[i]}
+             sm={this.state.sm[i]}
+             md={this.state.md[i]}
+             lg={this.state.lg[i]}
+             key={i}>
+          {item}
+        </Col>
+      )
+    })
 
     return (
-      <Row column={this.props.vertical?true:null}
-           style={{width: this.props.width}} >
-        {ratio.map((item, i) => {
-           const allProps = createProps('col', this.props.children[i].props)
-           console.log(allProps)
-            return (
-              <Col key={'key'+i} xs={12} md={ratio[i]}  {...allProps}>
-                {this.props.children[i]}
-              </Col>
-            )
-        })}
-      </Row>
+      <div className={rowProps.className}>
+        {(children && children.length == 2)
+        ? renderChild
+        : console.error('Warning: `TwoColumn` has less or more than 2 child')
+        }
+      </div>
     )
   }
 }
@@ -91,11 +117,10 @@ Logos.propTypes = {
 }
 
 TwoColumn.propTypes = {
-  ratio: PropTypes.array,
-  width: PropTypes.string,
-  vertical: PropTypes.bool,
-  full: PropTypes.bool
+  ratio: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  equal: PropTypes.bool
 }
+
 Above.propTypes = {
   full: PropTypes.bool
 }

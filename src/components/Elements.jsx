@@ -1,38 +1,86 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl';
+
+import { genLink } from './functions'
 
 /**
-* Class to insert a Header and props for
-* inerting text, html tag and styles
+ * Class to insert a Header and props for
+ * inerting text, html tag and styles
  */
-
 class Copy extends React.Component {
   render() {
     let align = this.props.align ? ({textAlign: this.props.align}) : null
-    return React.createElement(this.props.element,
-                               {className: "content-" + this.props.type,
-                               style: align},
-                               this.props.copy||this.props.children)
+    return React.createElement(
+      // Type of html tag
+      this.props.element,
+      // All props defined on element
+    {
+      className: 'content-' + this.props.type + ' ' + this.props.className,
+      style: align
+    },
+      // Pass the children inside element
+      this.props.child || this.props.children
+    )
   }
 }
 
-class Cta extends React.Component {}
+class CTA extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      href: this.props.href
+    }
+  }
+  componentWillMount() {
+    if (this.props.href == 'login') {
+      this.setState({
+        href: `${process.env.LOGIN_LINK}` + this.props.langKey
+      })
+    }
+    if (this.props.href == 'internal') {
+      this.setState({
+        href: genLink(this.props.langKey, this.props.href)
+      })
+    }
+    if (this.props.href == 'external') {
+      this.setState({
+        href: this.props.href
+      })
+    }
+  }
+  render() {
+    return (
+      <FormattedMessage id={this.props.name}>
+        {(txt) =>
+          <a className={"btn button " + this.props.className} href={this.state.href}>{txt}</a>
+        }
+      </FormattedMessage>
+    )
+  }
+}
 
 class Img extends React.Component {
   render() {
     return(
-      <img src={this.props.src} alt={this.props.alt} />
+      <img src={this.props.src} alt={this.props.alt}/>
     )
   }
 }
 
 Copy.propTypes = {
-  copy: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['header', 'subheader', 'description']).isRequired,
+  child: PropTypes.string,
+  type: PropTypes.oneOf(['header', 'subheader', 'body']).isRequired,
   element: PropTypes.string.isRequired,
   align: PropTypes.oneOf(['center', 'right', 'left'])
+}
+
+CTA.propTypes = {
+  name: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  type: PropTypes.oneOf(['internal', 'external', 'login']).isRequired,
+  langKey: PropTypes.string.isRequired
 }
 
 Img.propTypes = {
@@ -40,4 +88,4 @@ Img.propTypes = {
   alt: PropTypes.string
 }
 
-export default { Copy, Cta, Img }
+export default { Copy, CTA, Img }
