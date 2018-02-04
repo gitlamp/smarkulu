@@ -10,14 +10,27 @@ import { genLink } from './functions'
  * inerting text, html tag and styles
  */
 class Copy extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      class: ''
+    }
+  }
+  componentWillMount() {
+    (this.props.className)
+    ? this.setState({
+      class: ' ' + this.props.className
+    })
+    : this.state.className
+  }
   render() {
-    let align = this.props.align ? ({textAlign: this.props.align}) : null
+    const align = this.props.align ? ({textAlign: this.props.align}) : null
     return React.createElement(
       // Type of html tag
       this.props.element,
       // All props defined on element
     {
-      className: 'content-' + this.props.type + ' ' + this.props.className,
+      className: 'content-' + this.props.type + this.state.class,
       style: align
     },
       // Pass the children inside element
