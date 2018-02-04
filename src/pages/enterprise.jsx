@@ -2,8 +2,10 @@ import React from 'react'
 import graphql from 'graphql'
 import Link from 'gatsby-link'
 import { FormattedMessage } from 'react-intl'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
+import { Copy } from '../components/Elements'
 
 const Enterprise = (props) => {
   const { data } = props
@@ -16,23 +18,21 @@ const Enterprise = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <section className="double-divided">
-            <div className="container-fluid ">
-              <div className="row">
-                <div className="col-12 col-sm-6 double-divided-col">
-                  <h1 className="double-divided-col-header content-head">Lorem ipsum dolor sit amet consectetur.</h1>
-                  <ul className="double-divided-col-body">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, vero.
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem, ipsum.</li>
-                    <li>Lorem, ipsum dolor.</li>
-                  </ul>
-                </div>
-                <div className="col-12 col-sm-6 double-divided-col hasBackground"></div>
-              </div>
-            </div>
-          </section>
+          <Grid fluid>
+            <Row className="double-divided">
+              <Col xs={12} sm={6} className="double-divided-col">
+                <Copy type="header" element="h1" className="double-divided-col-header" child="Lorem ipsum dolor sit amet consectetur."/>
+                <ul className="double-divided-col-body">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, vero.
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>Lorem ipsum dolor sit.</li>
+                  <li>Lorem, ipsum.</li>
+                  <li>Lorem, ipsum dolor.</li>
+                </ul>
+              </Col>
+              <Col xs={12} sm={6} className="double-divided-col hasBackground"></Col>
+            </Row>
+          </Grid>
         </div>
       )}
     </div>
