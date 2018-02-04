@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import graphql from 'graphql'
 import Link from 'gatsby-link'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
 import { Section } from '../components/Section'
+import { Copy, CTA } from '../components/Elements'
 
 const Contact = (props) => {
   const { data } = props
@@ -16,36 +18,33 @@ const Contact = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <section className="double-divided">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-12 col-sm-6 col-xl-4 double-divided-col hasBackground">
-                  <ul className="double-divided-col-list">
-                    {node.body.contact.map(item =>
-                      <li className="double-divided-col-item" key={item.header}>
-                        <h2 className="content-head">{item.header}</h2>
-                        <p className="content-body">{item.body}</p>
-                      </li>
-                    )}
-                  </ul>
+          <Grid fluid>
+            <Row tagName="section" className="double-divided">
+              <Col xs={12} sm={6} lg={4} className="double-divided-col hasBackground">
+                <ul className="double-divided-col-list">
+                  {node.body.contact.map((item, i) =>
+                    <li className="double-divided-col-item" key={i}>
+                      <Copy type="header" element="h2" child={item.header}/>
+                      <Copy type="body" element="p" child={item.body}/>
+                    </li>
+                  )}
+                </ul>
+              </Col>
+              <Col xs={12} sm={6} lg={8} className="double-divided-col">
+                <div className="centered">
+                  <Copy type="header" element="h3" child={node.body.support.header}/>
+                  <Copy type="body" element="p" child={node.body.support.body}/>
                 </div>
-                <div className="col-12 col-sm-6 col-xl-8 double-divided-col">
-                  <div className="centered">
-                    <h3 className="content-head">{node.body.support.header}</h3>
-                    <p className="content-body">{node.body.support.body}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <Section
-            style={{ paddingTop: '10rem' }}
-            langKey={langKey}
-            align="center"
-            colClass={{ center: 'col-12 col-sm-12 col-xl-8' }}
-            header={node.body.demo.header}
-            body={node.body.demo.body}
-            cta="btn.contact"/>
+              </Col>
+            </Row>
+            <Row tagName="section" center="xs">
+              <Col xs={12} lg={8}>
+                <Copy type="header" element="h2" child={node.body.demo.header}/>
+                <Copy type="body" element="p" child={node.body.demo.body}/>
+                <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+              </Col>
+            </Row>
+          </Grid>
         </div>
     )}
     </div>

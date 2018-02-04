@@ -350,10 +350,9 @@ img.isgray {
 }
 .double-divided {
   padding: 0;
-  .row {
-    min-height: 100vh;
-  }
+  min-height: 100vh;
   .double-divided-col {
+    position: relative;
     padding: 8rem 0;
     text-align: left;
     .double-divided-col-header, .double-divided-col-body, .double-divided-col-list {
