@@ -17,11 +17,20 @@ class Copy extends React.Component {
     }
   }
   componentWillMount() {
-    (this.props.className)
-    ? this.setState({
-      class: ' ' + this.props.className
-    })
-    : this.state.className
+    if (this.props.className) {
+      this.setState({
+        class: ' ' + this.props.className
+      })
+    }
+  }
+  componentWillReceiveProps(nextProps) {
+    const prevClass = this.props.className
+    const nextClass = nextProps.className
+    if (prevClass !== nextClass) {
+      this.setState({
+        class: ' ' + nextClass
+      })
+    }
   }
   render() {
     const align = this.props.align ? ({textAlign: this.props.align}) : null
@@ -47,17 +56,17 @@ class CTA extends React.Component {
     }
   }
   componentWillMount() {
-    if (this.props.href == 'login') {
+    if (this.props.type == 'login') {
       this.setState({
         href: `${process.env.LOGIN_LINK}` + this.props.langKey
       })
     }
-    if (this.props.href == 'internal') {
+    if (this.props.type == 'internal') {
       this.setState({
         href: genLink(this.props.langKey, this.props.href)
       })
     }
-    if (this.props.href == 'external') {
+    if (this.props.type == 'external') {
       this.setState({
         href: this.props.href
       })
