@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Row, Col, getRowProps } from 'react-flexbox-grid'
+import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid'
 
 class Above extends React.Component{
   constructor() {
@@ -28,9 +28,15 @@ class Above extends React.Component{
 }
 
 class TwoColumn extends React.Component {
+  constructor() {
+    super()
+    this.splitRatio = this.splitRatio.bind(this)
+  }
   componentWillMount() {
     let ratio = this.props.ratio
-    // If both col are equal
+    const breakPoints = ['xs', 'sm', 'md', 'lg']
+
+    // If both columns are equal
     if (this.props.equal) {
       let ratio = [6,6]
       this.setState({
@@ -40,35 +46,33 @@ class TwoColumn extends React.Component {
         lg: ratio
       })
     } else {
-      // When is responsiveness is important
-      if (ratio && ratio.hasOwnProperty('xs' || 'sm' || 'md' || 'lg')) {
-        this.setState({
-          xs: ratio.xs,
-          sm: ratio.sm,
-          md: ratio.md,
-          lg: ratio.lg
-        })
-        // When cols are not equal
-      } else {
-        this.setState({
-          xs: ratio,
-          sm: ratio,
-          md: ratio,
-          lg: ratio
-        })
+      // When the responsiveness is important
+      let state = {}
+
+      for (let i = 0; i < breakPoints.length; i++) {
+        let breakPoint = breakPoints[i]
+        if (ratio && ratio.hasOwnProperty(breakPoint)) {
+          state[breakPoint] = ratio[breakPoint]
+        }
       }
+
+      this.setState(state)
     }
+  }
+  splitRatio(ratios, childIndex) {
+    let obj = {}
+    Object.keys(ratios).map(item => {
+      obj[item] = ratios[item][childIndex]
+    })
+    return obj
   }
   render() {
     const rowProps = getRowProps(this.props)
     const children = rowProps.children
-    const renderChild = children.map((item, i) => {
+    const renderedChild = children.map((item, i) => {
+      const props = this.splitRatio(this.state, i)
       return (
-        <Col xs={this.state.xs[i]}
-             sm={this.state.sm[i]}
-             md={this.state.md[i]}
-             lg={this.state.lg[i]}
-             key={i}>
+        <Col key={i} {...props}>
           {item}
         </Col>
       )
@@ -77,7 +81,7 @@ class TwoColumn extends React.Component {
     return (
       <div className={rowProps.className}>
         {(children && children.length == 2)
-        ? renderChild
+        ? renderedChild
         : console.error('Warning: `TwoColumn` has less or more than 2 child')
         }
       </div>
@@ -117,7 +121,7 @@ Logos.propTypes = {
 }
 
 TwoColumn.propTypes = {
-  ratio: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  ratio: PropTypes.object,
   equal: PropTypes.bool
 }
 
