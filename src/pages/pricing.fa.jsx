@@ -179,12 +179,12 @@ class Pricing extends React.Component {
                       <div key={i}>
                         <div className="question-tab">
                           <div className="question-tab-inner">
-                            <Copy type="body" element="p" child={item.question}/>
+                            <Copy type="" element="p" child={item.question}/>
                           </div>
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="body" element="p" child={item.answer}/>
+                            <Copy type="" element="p" child={item.answer}/>
                           </div>
                         </div>
                       </div>
@@ -195,14 +195,14 @@ class Pricing extends React.Component {
                     {node.body.faq.payments.items.map(item =>
                       <div key={item.question}>
                         <div className="question-tab">
-                        <div className="question-tab-inner">
-                          <p>{item.question}</p>
-                        </div>
+                          <div className="question-tab-inner">
+                            <Copy type="" element="p" child={item.question}/>
+                          </div>
                         </div>
                         <div className="question-body">
-                        <div className="question-body-inner">
-                          <p>{item.answer}</p>
-                        </div>
+                          <div className="question-body-inner">
+                            <Copy type="" element="p" child={item.answer}/>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -212,14 +212,14 @@ class Pricing extends React.Component {
                     {node.body.faq.security.items.map(item =>
                       <div key={item.question}>
                         <div className="question-tab">
-                        <div className="question-tab-inner">
-                          <p>{item.question}</p>
-                        </div>
+                          <div className="question-tab-inner">
+                            <Copy type="" element="p" child={item.question}/>
+                          </div>
                         </div>
                         <div className="question-body">
-                        <div className="question-body-inner">
-                          <p>{item.answer}</p>
-                        </div>
+                          <div className="question-body-inner">
+                            <Copy type="" element="p" child={item.answer}/>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -229,14 +229,14 @@ class Pricing extends React.Component {
                     {node.body.faq.legality.items.map(item =>
                       <div key={item.question}>
                         <div className="question-tab">
-                        <div className="question-tab-inner">
-                          <p>{item.question}</p>
-                        </div>
+                          <div className="question-tab-inner">
+                            <Copy type="" element="p" child={item.question}/>
+                          </div>
                         </div>
                         <div className="question-body">
-                        <div className="question-body-inner">
-                          <p>{item.answer}</p>
-                        </div>
+                          <div className="question-body-inner">
+                            <Copy type="" element="p" child={item.answer}/>
+                          </div>
                         </div>
                       </div>
                     )}

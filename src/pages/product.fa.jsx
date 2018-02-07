@@ -67,7 +67,7 @@ const Product = (props) => {
               <Row>
                 {node.body.features.items.map((item, i) => {
                   return (
-                    <Col xs={12} sm={4} ls={4} className="features" key={i}>
+                    <Col xs={12} sm={4} lg={4} className="features" key={i}>
                       <span className="features-icon">
                         <i className={'fa ' + item.icon} aria-hidden="true"></i>
                       </span>
