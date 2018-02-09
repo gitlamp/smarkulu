@@ -5,7 +5,7 @@
   "author": "Amirali <amirali@taskulu.com>",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
-    "eslint": "^4.15.0",
+    "eslint": "^4.17.0",
     "gatsby": "^1.9.139",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-google-analytics": "^1.0.15",
