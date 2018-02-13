@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { TweenLite } from 'gsap'
+import { getRowProps } from 'react-flexbox-grid'
 
 import Menu from './Menu'
 import { genLink } from './functions'
@@ -30,7 +31,7 @@ class Header extends React.Component {
   }
   handleScroll() {
     if (typeof window !== `undefined`) {
-      const headWrap = this.headWrap.firstElementChild
+      const headWrap = this.headWrap
       const headNav = document.getElementsByClassName('header-menu')
       const logo = this.logo
       // Change state if scroll
@@ -56,21 +57,21 @@ class Header extends React.Component {
     }
   }
   render() {
+    const rowProps = getRowProps(this.props)
+
     return (
-      <div className="container-fluid header" onScroll={this.handleScroll} ref={node => this.headWrap = node}>
-        <div className="row header-row">
-          {/* Logo */}
-          <div className="col header-logo-wrapper">
-            <Link to={genLink(this.props.lang, '/')}>
-            {(this.props.lang !== 'fa')
-              ? <img className="header-logo" src="/logos/logo-blue.svg" alt="blue logo" ref={node => this.logo = node}/>
-              : <img className="header-logo" src="/logos/fa-logo-blue.svg" alt="blue logo" ref={node => this.logo = node}/>
-            }
-            </Link>
-          </div>
-          {/* Navigation */}
-          <Menu menu={this.props.menu} url={this.props.url}/>
+      <div className={ rowProps.className + ' header' } onScroll={this.handleScroll} ref={node => this.headWrap = node}>
+        {/* Logo */}
+        <div className="header-logo-wrapper">
+          <Link to={genLink(this.props.lang, '/')}>
+          {(this.props.lang !== 'fa')
+            ? <img className="header-logo" src="/logos/logo-blue.svg" alt="blue logo" ref={node => this.logo = node}/>
+            : <img className="header-logo" src="/logos/fa-logo-blue.svg" alt="blue logo" ref={node => this.logo = node}/>
+          }
+          </Link>
         </div>
+        {/* Navigation */}
+        <Menu menu={this.props.menu} url={this.props.url}/>
       </div>
     )
   }

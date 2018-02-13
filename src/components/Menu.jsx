@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
+import { Row, Col } from 'react-flexbox-grid'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
 import 'owl.carousel/dist/assets/owl.carousel.css'
@@ -32,12 +33,12 @@ class Menu extends React.Component {
   }
   render() {
     return (
-      <div className="col">
+      <Row>
         {(this.state.width <= 768)
         ? <MobileMenu menu={this.props.menu.bottom} langKey={this.state.langKey}/>
         : <DesktopMenu menu={this.props.menu.top} langKey={this.state.langKey}/>
         }
-      </div>
+      </Row>
     )
   }
 }
@@ -144,7 +145,6 @@ class MobileMenu extends React.Component {
   render() {
     const tempMenu = this.props.menu.slice(0, 1)
     const menuItems = this.getMenuItems(tempMenu, this.props.langKey)
-    console.log()
     return (
       <nav className="header-menu">
         <button className="header-menu-mobile-icon" onClick={this.toggle}>
@@ -153,24 +153,24 @@ class MobileMenu extends React.Component {
           <span></span>
         </button>
         <div className="header-menu-mobile">
-          <div className="row">
+          <Row>
             <FormattedMessage id="btn.login.and.register">
               {(txt) =>
                 <a className="btn button button-white" href={`${process.env.LOGIN_LINK}` + this.props.langKey} data-obj="item">{txt}</a>
               }
             </FormattedMessage>
-          </div>
+          </Row>
           <div className="header-menu-mobile-list">
           {menuItems}
           </div>
-          <div className="row" data-obj="item">
+          <Row data-obj="item">
             <a className="header-menu-mobile-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
               <img src="/logos/download_apple_store.svg" alt=""/>
             </a>
             <a className="header-menu-mobile-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
               <img src="/logos/download_google_play.svg" alt=""/>
             </a>
-          </div>
+          </Row>
         </div>
       </nav>
     )

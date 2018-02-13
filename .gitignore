@@ -8,3 +8,6 @@ public/
 .DS_Store
 *.log
 yarn.lock
+*.el
+*.desktop
+*.desktop.lock

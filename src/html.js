@@ -1,9 +1,11 @@
 import React from 'react'
 
-let stylesStr
+let stylesStr = []
 if (process.env.NODE_ENV === `production`) {
   try {
-    stylesStr = require(`!raw-loader!../public/styles/styles.css`)
+    const baseStyles = require(`!raw-loader!../public/styles/styles.css`)
+    const autoGenByGatsby = require(`!raw-loader!../public/styles.css`)
+    stylesStr.push(baseStyles, autoGenByGatsby)
   } catch (e) {
     console.log(e)
   }
@@ -15,7 +17,7 @@ class HTML extends React.Component {
     if (process.env.NODE_ENV === `production`) {
       style = (
         <style
-          id="gatsby-inlined-css"
+          id="inlined-css"
           key="gatsby-inlined-css"
           dangerouslySetInnerHTML={{ __html: stylesStr }}
         />

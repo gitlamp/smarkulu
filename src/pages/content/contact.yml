@@ -4,3 +4,15 @@ header:
   slug: /contact
   title: Contact us
   desc: Get in touch with us to get support or talk with our sales team.
+body:
+  contact:
+    -
+      header:
+      body:
+  support:
+    header:
+    body:
+  demo:
+    header:
+    body:
+...

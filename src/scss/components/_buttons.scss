@@ -4,6 +4,7 @@
   border: none !important;
   font-family: $subtitle-font !important;
   font-size: $small-font !important;
+  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .button-normal {
   color: #fff !important;

@@ -1,0 +1,27 @@
+%header-typography {
+  font-family: $title-font;
+  font-size: $huge-font;
+  color: $wet-asphalt;
+}
+
+%subheader-typography {
+  font-family: $title-font;
+  font-size: $mid-font;
+  color: $wet-asphalt;
+}
+
+%description-typography {
+  font-family: $subtitle-font;
+  font-size: $small-font;
+  color: $asbestos;
+}
+
+/**
+ * text-colors
+ */
+.typo-white {
+  color: $white;
+}
+.typo-black {
+  color: $wet-asphalt;
+}

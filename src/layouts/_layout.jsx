@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider } from 'react-intl'
+import { Grid } from 'react-flexbox-grid'
 import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
 import 'intl'
 
@@ -8,7 +9,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import style from '../scss/main.useable.scss'
 import rtlStyle from '../scss/main.rtl.useable.scss'
-import '../scss/bootstrap.scss'
+
 import 'normalize'
 import '../scss/font-awesome.scss'
 
@@ -38,7 +39,7 @@ const TemplateWrapper = (props) => {
     <IntlProvider
         locale={langKey}
         messages={i18nMessages}>
-      <div>
+      <Grid fluid>
         {/* Header component */}
         <Header
           lang={langKey}
@@ -52,7 +53,7 @@ const TemplateWrapper = (props) => {
 
         {/* Footer component */}
         <Footer menu={menu.bottom} social={social}/>
-      </div>
+      </Grid>
     </IntlProvider>
     )
 }

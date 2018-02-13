@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import graphql from 'graphql'
 import Link from 'gatsby-link'
 import { FormattedMessage } from 'react-intl'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
-import { Section } from '../components/Section'
+import { Copy, Img } from '../components/Elements'
+import { TwoColumn, Above } from '../components/Partials'
 
 const Product = (props) => {
   const { data } = props
@@ -17,45 +19,60 @@ const Product = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <section className="above">
-            <div className="container">
-              <div className="row">
-                <div className="col text-center content">
-                  <h2 className="content-head">{node.body.hero.header}</h2>
-                  <p className="content-body">{node.body.hero.body}</p>
+          <Above center="xs">
+            <Grid>
+              <Row>
+                <Col xs className="content">
+                  <Copy type="header" element="h2" child={node.body.hero.header}/>
+                  <Copy type="subheader" element="p" child={node.body.hero.body}/>
+                </Col>
+              </Row>
+            </Grid>
+          </Above>
+          <Row tagName="section" center="xs">
+            <Grid>
+              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
+                <div>
+                  <Copy type="header" element="h2" child={node.body.section1.header}/>
+                  <Copy type="body" element="p" child={node.body.section1.body}/>
                 </div>
-              </div>
-            </div>
-          </section>
-          <Section
-            langKey={langKey}
-            align="left"
-            colClass={{ left: 'col-12 col-sm-4 col-xl-4', right: 'col-12 col-sm-8 col-xl-8' }}
-            header={node.body.section1.header}
-            body={node.body.section1.body}/>
-          <Section
-            langKey={langKey}
-            align="right"
-            colClass={{ left: 'col-12 col-sm-8 col-xl-8', right: 'col-12 col-sm-4 col-xl-4' }}
-            header={node.body.section2.header}
-            body={node.body.section2.body}/>
-          <Section
-            langKey={langKey}
-            align="left"
-            colClass={{ left: 'col-12 col-sm-4 col-xl-4', right: 'col-12 col-sm-8 col-xl-8' }}
-            header={node.body.section3.header}
-            body={node.body.section3.body}/>
-          <section style={{backgroundColor: '#f6f8f9'}}>
-            <div className="container">
-              <div className="row">
-                {node.body.features.items.map(item => {
+                <Img src="#" alt="No IMG"/>
+              </TwoColumn>
+            </Grid>
+          </Row>
+          <Row tagName="section" center="xs">
+            <Grid>
+              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }}>
+                <Img src="#" alt="No IMG"/>
+                <div>
+                  <Copy type="header" element="h2" child={node.body.section2.header}/>
+                  <Copy type="body" element="p" child={node.body.section2.body}/>
+                </div>
+              </TwoColumn>
+            </Grid>
+          </Row>
+          <Row tagName="section" center="xs">
+            <Grid>
+              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
+                <div>
+                  <Copy type="header" element="h2" child={node.body.section3.header}/>
+                  <Copy type="body" element="p" child={node.body.section3.body}/>
+                </div>
+                <Img src="#" alt="No IMG"/>
+              </TwoColumn>
+            </Grid>
+          </Row>
+          <Row tagName="section" style={{backgroundColor: '#f6f8f9'}} center="xs">
+            <Grid>
+              <Row>
+                {node.body.features.items.map((item, i) => {
                   return (
-                    <div className="col-12 col-sm-4 col-xl-4 features" key={item.title}>
+                    <Col xs={12} sm={4} lg={4} className="features" key={i}>
                       <span className="features-icon">
                         <i className={'fa ' + item.icon} aria-hidden="true"></i>
                       </span>
-                      <h3 className="features-title">{item.title}</h3>
-                      <p className="features-desc">{item.desc}</p>
+                      <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
+                      <Copy type="body" element="p" className="features-desc" child={item.desc}/>
                       <FormattedMessage id="link.learnmore">
                       {(txt) =>
                         <Link to="#" className="btn button button-white">
@@ -64,12 +81,12 @@ const Product = (props) => {
                         </Link>
                       }
                       </FormattedMessage>
-                    </div>
+                    </Col>
                   )
                 })}
-              </div>
-            </div>
-          </section>
+              </Row>
+            </Grid>
+          </Row>
         </div>
       )}
     </div>

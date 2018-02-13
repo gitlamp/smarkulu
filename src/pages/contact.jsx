@@ -1,8 +1,9 @@
 import React from 'react'
 import graphql from 'graphql'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
-import { Section } from '../components/Section'
+import { Copy, CTA } from '../components/Elements'
 
 const Contact = (props) => {
   const { data } = props
@@ -15,37 +16,29 @@ const Contact = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <section className="double-divided">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-12 col-sm-6 col-xl-4 double-divided-col hasBackground">
-                  <ul className="double-divided-col-list">
-                    <li className="double-divided-col-item">
-                      <h2 className="content-head">Lorem, ipsum.</h2>
-                      <p className="content-body">Lorem ipsum dolor sit amet consectetur.</p>
-                    </li>
-                    <li className="double-divided-col-item">
-                      <h2 className="content-head">Lorem, ipsum dolor.</h2>
-                      <p className="content-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, accusantium.</p>
-                    </li>
-                  </ul>
+            <Row tagName="section" className="double-divided">
+              <Col xs={12} sm={6} lg={4} className="double-divided-col hasBackground">
+                <ul className="double-divided-col-list">
+                  <li className="double-divided-col-item">
+                    <Copy type="header" element="h3" child="Lorem ipsum dolor sit amet."/>
+                    <Copy type="body" element="p" child="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, quod?"/>
+                  </li>
+                </ul>
+              </Col>
+              <Col xs={12} sm={6} lg={8} className="double-divided-col">
+                <div className="centered">
+                  <Copy type="header" element="h3" child="Lorem ipsum dolor sit amet."/>
+                  <Copy type="body" element="p" child="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, quod?"/>
                 </div>
-                <div className="col-12 col-sm-6 col-xl-8 double-divided-col">
-                  <div className="centered">
-                    <h3 className="content-head">Lorem ipsum dolor sit amet.</h3>
-                    <p className="content-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aperiam magni voluptatum nostrum molestias? Vel voluptatibus debitis vitae nam architecto.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <Section
-            style={{ paddingTop: '10rem' }}
-            langKey={langKey}
-            align="center"
-            colClass={{ center: 'col-12 col-sm-12 col-xl-8' }}
-            header="Lorem ipsum dolor sit amet consectetur"
-            body="Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, quibusdam."/>
+              </Col>
+            </Row>
+            <Row tagName="section" center="xs">
+              <Col xs={12} lg={8}>
+                <Copy type="header" element="h2" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, cupiditate."/>
+                <Copy type="body" element="p" child="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum sapiente iure quaerat, architecto ex at sunt sit distinctio optio et!"/>
+                <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+              </Col>
+            </Row>
         </div>
     )}
     </div>
@@ -73,6 +66,20 @@ query ContactPage {
         header {
           title
           desc
+        }
+        body {
+          contact {
+            header
+            body
+          }
+          support {
+            header
+            body
+          }
+          demo {
+            header
+            body
+          }
         }
       }
     }
