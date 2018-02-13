@@ -19,7 +19,7 @@ const Product = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <Above>
+          <Above center="xs">
             <Grid>
               <Row>
                 <Col xs className="content">
@@ -29,7 +29,7 @@ const Product = (props) => {
               </Row>
             </Grid>
           </Above>
-          <Row tagName="section">
+          <Row tagName="section" center="xs">
             <Grid>
               <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
@@ -40,7 +40,7 @@ const Product = (props) => {
               </TwoColumn>
             </Grid>
           </Row>
-          <Row tagName="section">
+          <Row tagName="section" center="xs">
             <Grid>
               <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }}>
                 <Img src="#" alt="No IMG"/>
@@ -51,7 +51,7 @@ const Product = (props) => {
               </TwoColumn>
             </Grid>
           </Row>
-          <Row tagName="section">
+          <Row tagName="section" center="xs">
             <Grid>
               <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
@@ -62,7 +62,7 @@ const Product = (props) => {
               </TwoColumn>
             </Grid>
           </Row>
-          <Row tagName="section" style={{backgroundColor: '#f6f8f9'}}>
+          <Row tagName="section" style={{backgroundColor: '#f6f8f9'}} center="xs">
             <Grid>
               <Row>
                 <Col xs={12} sm={4} lg={4} className="features">

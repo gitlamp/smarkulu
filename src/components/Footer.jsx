@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import { Row, Col, getColumnProps } from 'react-flexbox-grid'
+import { Row, Col } from 'react-flexbox-grid'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 
 class Footer extends React.Component {

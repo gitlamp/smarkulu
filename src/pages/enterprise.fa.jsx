@@ -18,7 +18,6 @@ const Enterprise = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <Grid fluid>
             <Row className="double-divided">
               <Col xs={12} sm={6} className="double-divided-col">
                 <Copy type="header" element="h1" className="double-divided-col-header" child={node.body.header}/>
@@ -31,7 +30,6 @@ const Enterprise = (props) => {
               </Col>
               <Col xs={12} sm={6} className="double-divided-col hasBackground"></Col>
             </Row>
-          </Grid>
         </div>
       )}
     </div>

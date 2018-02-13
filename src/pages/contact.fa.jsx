@@ -18,7 +18,6 @@ const Contact = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-          <Grid fluid>
             <Row tagName="section" className="double-divided">
               <Col xs={12} sm={6} lg={4} className="double-divided-col hasBackground">
                 <ul className="double-divided-col-list">
@@ -44,7 +43,6 @@ const Contact = (props) => {
                 <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
               </Col>
             </Row>
-          </Grid>
         </div>
     )}
     </div>

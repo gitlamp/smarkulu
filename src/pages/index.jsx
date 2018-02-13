@@ -50,7 +50,7 @@ const IndexPage = (props) => {
               </TwoColumn>
             </Grid>
           </Row>
-          <Row tagName="section" style={{ backgroundColor: '#f6f8f9' }}>
+          <Row tagName="section" style={{ backgroundColor: '#f6f8f9' }} center="xs">
             <Grid>
               <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
@@ -61,7 +61,7 @@ const IndexPage = (props) => {
               </TwoColumn>
             </Grid>
           </Row>
-          <Row tagName="section" style={{backgroundColor: '#2980b9'}}>
+          <Row tagName="section" style={{backgroundColor: '#2980b9'}} center="xs">
             <Grid>
               <Row className="testimonial" center="xs">
                 <Col lg={4} md={6} xs={12}>
@@ -78,7 +78,7 @@ const IndexPage = (props) => {
               </Row>
             </Grid>
           </Row>
-          <Row tagName="section">
+          <Row tagName="section" center="xs">
             <Grid>
               <Row className="compcards" center="xs">
                 <Col xs={12} lg={4} sm={12} className="compcards-content">
@@ -93,7 +93,7 @@ const IndexPage = (props) => {
               </Row>
             </Grid>
           </Row>
-          <Row tagName="section">
+          <Row tagName="section" center="xs">
             <Grid>
               <Row center="xs">
                 <Col xs={12} lg={8}>

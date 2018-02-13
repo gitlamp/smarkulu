@@ -86,7 +86,7 @@ class IndexPage extends React.Component {
                 src={node.body.customerLogos.logos}
                 style={{maxWidth: 1000+'px'}}
                 header={node.body.customerLogos.header}/> */}
-              <Row tagName="section">
+              <Row tagName="section" center="xs">
                 <Grid>
                   <Row center="xs">
                     <Col xs={12} sm={12} md={8} lg={8}>
@@ -103,7 +103,7 @@ class IndexPage extends React.Component {
                   </TwoColumn>
                 </Grid>
               </Row>
-              <Row tagName="section">
+              <Row tagName="section" center="xs">
                 <Grid>
                   <Row className="compcards" center="xs">
                     <Col xs={12} lg={4} sm={12} className="compcards-content">
@@ -130,7 +130,7 @@ class IndexPage extends React.Component {
                   </Row>
                 </Grid>
               </Row>
-              <Row tagName="section">
+              <Row tagName="section" center="xs">
                 <Grid>
                   <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[8,4], lg:[8,4] }}>
                     <Img src="#" alt="No IMG"/>
@@ -138,12 +138,15 @@ class IndexPage extends React.Component {
                   </TwoColumn>
                 </Grid>
               </Row>
-              <Row tagName="section" style={{ backgroundColor: '#2980b9' }}>
+              <Row tagName="section" style={{ backgroundColor: '#2980b9' }} center="xs">
                 <Grid>
-                  <Row>
-                    {node.body.indexFeatures.map(item => {
+                  <Row center="xs">
+                    <Col xs={10}>
+                      <Copy type="header" element="h3" className="typo-white" child={node.body.indexFeatures.header}/>
+                    </Col>
+                    {node.body.indexFeatures.items.map(item => {
                       return (
-                        <Col xs={12} md={6} lg={3} key={item.text}>
+                        <Col xs={12} md lg={4} key={item.text}>
                           <div className="features-card">
                             <div className="features-card-icon"></div>
                             <div className="content-body">{item.text}</div>
@@ -161,16 +164,14 @@ class IndexPage extends React.Component {
                   </Row>
                 </Grid>
               </Row>
-              <Row tagName="section">
-                <Grid>
-                  <Row center="xs">
-                    <Col xs={12} lg={8}>
-                      <Copy type="header" element="h2" child={node.body.ending.header}/>
-                      <Copy type="body" element="p" child={node.body.ending.body}/>
-                      <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
-                    </Col>
-                  </Row>
-                </Grid>
+              <Row tagName="section" center="xs">
+                <Row center="xs">
+                  <Col xs={12} lg={8}>
+                    <Copy type="header" element="h2" child={node.body.ending.header}/>
+                    <Copy type="body" element="p" child={node.body.ending.body}/>
+                    <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+                  </Col>
+                </Row>
               </Row>
           </div>
         )}
@@ -226,8 +227,11 @@ export const pageQuery = graphql `
               header
             }
             indexFeatures {
-              icon
-              text
+              header
+              items {
+                icon
+                text
+              }
             }
             ending {
               header

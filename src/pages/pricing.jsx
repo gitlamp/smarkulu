@@ -54,9 +54,9 @@ class Pricing extends React.Component {
               pagePath={langKey}
               title={node.header.title}
               generalDesc={node.header.desc}/>
-          <Above>
+          <Above center="xs">
             <Grid>
-              <Row center="xs">
+              <Row>
                 <Col xs>
                 <Copy type="header" element="h1" child="Choose your pricing plan"/>
                 <Copy type="body" element="p" child="Nulla occaecat mollit sint aliquip eu consequat consectetur non."/>
@@ -192,7 +192,7 @@ class Pricing extends React.Component {
               </Row>
             </Grid>
           </Above>
-          <Row tagName="section" style={{backgroundColor: '#f6f8f9'}}>
+          <Row tagName="section" style={{backgroundColor: '#f6f8f9'}} center="xs">
             <Grid>
               <Row center="xs">
                 <Col xs={10} sm={10} lg={8} className="faq">
