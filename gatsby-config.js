@@ -42,6 +42,16 @@ module.exports = {
         langKeyDefault: 'en',
         useLangKeyLayout: true
       }
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'rajdhani',
+          'nunito',
+          'archivo black'
+        ]
+      }
     }
   ]
 }
