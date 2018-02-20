@@ -25,6 +25,7 @@ class Pricing extends React.Component {
   componentDidMount() {
     $('.question-tab').on('click', function() {
       $(this).children().toggleClass('active')
+      $(this).parent().toggleClass('parent-white')
       $(this).next('.question-body').slideToggle()
     })
   }
