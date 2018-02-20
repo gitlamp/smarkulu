@@ -1,10 +1,11 @@
 .button {
-  padding: .7rem 2rem !important;
-  border-radius: 3rem !important;
-  border: none !important;
-  font-family: $subtitle-font !important;
-  font-size: $small-font !important;
+  padding: .7rem 2rem;
+  border-radius: 3rem;
+  border: none;
+  font-family: $subtitle-font;
+  font-size: $small-font;
   transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
 }
 .button-normal {
   color: #fff !important;
@@ -14,8 +15,20 @@
   color: #fff !important;
   background: $emerald !important;
 }
-
 .button-white {
   color: $cyan;
   background: #fff;
+}
+.button-dark {
+  color: #fff;
+  background: $wet-asphalt;
+}
+.button-dark-border {
+  color: $wet-asphalt;
+  border: 3px solid $wet-asphalt;
+  background: #fff;
+  &:hover {
+    color: #fff;
+    background: $wet-asphalt;
+  }
 }

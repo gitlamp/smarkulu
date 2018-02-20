@@ -78,11 +78,12 @@ class IndexPage extends React.Component {
                   </div>
                 </Grid>
               </Above>
-
-              {/* <Logos
+              <Logos
                 src={node.body.customerLogos.logos}
-                style={{maxWidth: 1000+'px'}}
-                header={node.body.customerLogos.header}/> */}
+                header={node.body.customerLogos.header}
+                md={2}
+                xs={4}
+                middle="xs"/>
               <Row tagName="section" center="xs">
                 <Grid>
                   <Row center="xs">
@@ -162,13 +163,15 @@ class IndexPage extends React.Component {
                 </Grid>
               </Row>
               <Row tagName="section" center="xs">
-                <Row center="xs">
-                  <Col xs={12} lg={8}>
-                    <Copy type="header" element="h2" child={node.body.ending.header}/>
-                    <Copy type="body" element="p" child={node.body.ending.body}/>
-                    <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
-                  </Col>
-                </Row>
+                <Grid>
+                  <Row center="xs">
+                    <Col xs={12} lg={8}>
+                      <Copy type="header" element="h2" child={node.body.ending.header}/>
+                      <Copy type="body" element="p" child={node.body.ending.body}/>
+                      <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+                    </Col>
+                  </Row>
+                </Grid>
               </Row>
           </div>
         )}

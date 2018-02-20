@@ -21,20 +21,38 @@ body:
     header: ""
     logos:
       -
-        company: "Zibaloon"
-        alt: "زیبالون"
+        company: "HozehHonari"
+        alt: "حوزه هنری"
       -
-        company: "Modern"
-        alt: "چاپ مدرن"
-      -
-        company: "DMC"
-        alt: "DMC"
+        company: "MashhadMunicipality"
+        alt: "شهرداری مشهد"
       -
         company: "Fanap"
         alt: "فناپ"
       -
-        company: "Raycom"
-        alt: "رایکام"
+        company: "Asiatech"
+        alt: "آسیا تک"
+      -
+        company: "DigiKala"
+        alt: "دیجی کالا"
+      -
+        company: "TejaratKimia"
+        alt: "کیمیا تجارت"
+      -
+        company: "Saravapars"
+        alt: "سرآوا"
+      -
+        company: "Modern"
+        alt: "چاپ مدرن"
+      -
+        company: "Mediana"
+        alt: "مدیانا"
+      -
+        company: "Fuchs"
+        alt: "فوکس"
+      -
+        company: "SarmaAfarin"
+        alt: "سرما آفرین"
   customers: 
     header: "ببینید تسکولو چطور به شرکت‌ها کمک می‌کند"
   collaboration: 
