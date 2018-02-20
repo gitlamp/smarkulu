@@ -12,6 +12,7 @@ import rtlStyle from '../scss/main.rtl.useable.scss'
 
 import 'normalize'
 import '../scss/font-awesome.scss'
+import '../scss/taskulu-icon.css'
 
 const TemplateWrapper = (props) => {
     const { children, data, location, i18nMessages } = props
