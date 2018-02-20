@@ -69,7 +69,7 @@ const Product = (props) => {
                   return (
                     <Col xs={12} sm={4} lg={4} className="features" key={i}>
                       <span className="features-icon">
-                        <i className={'fa ' + item.icon} aria-hidden="true"></i>
+                        <span className={`taskulu-icon ${item.icon}`}></span>
                       </span>
                       <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
                       <Copy type="body" element="p" className="features-desc" child={item.desc}/>
