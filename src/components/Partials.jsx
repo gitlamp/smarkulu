@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Row, Col, getRowProps } from 'react-flexbox-grid'
+import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid'
+import { FormattedMessage } from 'react-intl';
+import $ from 'jquery'
 
+import Copy from './Elements'
+import logoList from '../data/logos'
 class Above extends React.Component{
   constructor() {
     super()
@@ -90,24 +94,50 @@ class TwoColumn extends React.Component {
 }
 
 class Logos extends React.Component {
+  constructor() {
+    super()
+    this.expand = this.expand.bind(this)
+  }
+  expand() {
+    const row = this.logoWrap
+    const more = this.more
+    $(row).addClass('hidden')
+    $(more).hide()
+  }
   render() {
-    const img = this.props.src
-
     // Base path for logo images
     const basePath = '/logos/companies/'
-    let isgray = (this.props.isgray) ? ' isgray' : null
+
+    const img = this.props.src
+    const rowProps = getRowProps(this.props)
+    const colProps = getColumnProps(this.props)
+
     return (
-      <Row tagName="section" column style={this.props.style} className="complogos">
-        {(this.props.header) ? (<Col xs={12} className="complogos-header">{this.props.header}</Col>) : null}
-        <Row center="xs">
+      <Row tagName="section" className="complogos" center="xs">
+        {
+          (this.props.header) ?
+          (
+          <Col xs = {12} className = "complogos-header">
+            <Copy type="header" element="h3" child={this.props.header}/>
+          </Col>
+          ) : null
+        }
+        <Col xs={10}>
+          <div className={rowProps.className} ref={node => this.logoWrap = node}>
           {img.map((item, index) => {
              return (
-               <Col key={index}  className="complogos-img">
-                 <img src={basePath + logos[item.company]} alt={item.alt} className={isgray}/>
-               </Col>
+               <div key={index}  className={`${colProps.className} complogos-img`}>
+                 <img src={basePath + logoList[item.company]} alt={item.alt}/>
+               </div>
              )
           })}
-        </Row>
+          </div>
+          <FormattedMessage id="label.more">
+            {(txt) =>
+              <a className="complogos-more content-body" onClick={this.expand} ref={node => this.more = node}>{txt}</a>
+            }
+            </FormattedMessage>
+        </Col>
       </Row>
     )
   }
@@ -115,9 +145,7 @@ class Logos extends React.Component {
 
 Logos.propTypes = {
   src: PropTypes.array.isRequired,
-  header: PropTypes.string,
-  isgray: PropTypes.bool,
-  style: PropTypes.object
+  header: PropTypes.string
 }
 
 TwoColumn.propTypes = {
