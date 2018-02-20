@@ -91,12 +91,12 @@ class IndexPage extends React.Component {
                       <Copy align="center" element="h3" child={node.body.why.header} type="header"/>
                     </Col>
                   </Row>
-                  <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }}>
+                  <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }} middle="xs">
                     <Copy child={node.body.why.easy} type="subheader" element="h3"/>
-                    <Img src="#" alt="No IMG"/>
+                    <Img src="/img/make-own-project.svg" height="5rem" alt="No IMG"/>
                   </TwoColumn>
-                  <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }}>
-                    <Img src="#" alt="No IMG"/>
+                  <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }} middle="xs">
+                    <Img src="/img/collaboration.svg" alt="No IMG"/>
                     <Copy last="md" first="xs" child={node.body.why.scalable} type="subheader" element="h3"/>
                   </TwoColumn>
                 </Grid>
@@ -142,12 +142,14 @@ class IndexPage extends React.Component {
                     <Col xs={10}>
                       <Copy type="header" element="h3" className="typo-white" child={node.body.indexFeatures.header}/>
                     </Col>
-                    {node.body.indexFeatures.items.map(item => {
+                    {node.body.indexFeatures.items.map((item, i) => {
                       return (
-                        <Col xs={12} md lg={4} key={item.text}>
+                        <Col xs={12} md lg={4} key={i}>
                           <div className="features-card">
-                            <div className="features-card-icon"></div>
-                            <div className="content-body">{item.text}</div>
+                            <div className="features-card-icon">
+                              <span className={`taskulu-icon ${item.icon}`}></span>
+                            </div>
+                            <div className="features-card-txt content-body">{item.text}</div>
                           </div>
                         </Col>
                       )

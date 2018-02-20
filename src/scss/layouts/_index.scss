@@ -182,8 +182,24 @@ section {
   .features-card-icon {
     position: relative;
     padding: 2rem 0;
+    font-size: 8rem;
+    line-height: 0;
+    color: #fff;
   }
-  .content-body {
+  .features-card-txt {
+    position: relative;
+    padding-top: 2rem;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      height: .2rem;
+      background: $white;
+    }
     color: $white;
   }
 }
@@ -346,6 +362,9 @@ section {
       font-family: $subtitle-font;
       font-size: $large-font;
       color: $wet-asphalt;
+    }
+    .parent-white {
+      background: $white;
     }
     .question-tab {
       position: relative;
