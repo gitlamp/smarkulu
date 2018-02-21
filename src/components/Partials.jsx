@@ -83,7 +83,7 @@ class TwoColumn extends React.Component {
     })
 
     return (
-      <div className={rowProps.className} {...rowProps}>
+      <div className={rowProps.className}>
         {(children && children.length == 2)
         ? renderedChild
         : console.error('Warning: `TwoColumn` has less or more than 2 child')
