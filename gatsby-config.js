@@ -18,8 +18,17 @@ module.exports = {
         path: `${__dirname}/src/data`
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'img',
+        path: `${__dirname}/static/img`
+      }
+    },
     'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
