@@ -4,7 +4,7 @@ import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid'
 import { FormattedMessage } from 'react-intl';
 import $ from 'jquery'
 
-import Copy from './Elements'
+import { Copy } from './Elements'
 import logoList from '../data/logos'
 class Above extends React.Component{
   constructor() {
@@ -98,11 +98,19 @@ class Logos extends React.Component {
     super()
     this.expand = this.expand.bind(this)
   }
+  componentDidMount() {
+    if (this.props.showMore) {
+      const $row = $(this.logoWrap)
+      $row.css('max-height', '22rem')
+      $row.addClass('active')
+    }
+  }
   expand() {
-    const row = this.logoWrap
-    const more = this.more
-    $(row).addClass('hidden')
-    $(more).hide()
+    const $row = $(this.logoWrap)
+    const $more = $(this.more)
+    $row.css('max-height', '100%')
+    $row.removeClass('active')
+    $more.addClass('hidden')
   }
   render() {
     // Base path for logo images
@@ -111,6 +119,11 @@ class Logos extends React.Component {
     const img = this.props.src
     const rowProps = getRowProps(this.props)
     const colProps = getColumnProps(this.props)
+    const showMore =  <FormattedMessage id="label.more">
+                        {(txt) =>
+                          <a className="complogos-more content-body" onClick={this.expand} ref={node => this.more = node}>{txt}</a>
+                        }
+                      </FormattedMessage>
 
     return (
       <Row tagName="section" className="complogos" center="xs">
@@ -132,11 +145,7 @@ class Logos extends React.Component {
              )
           })}
           </div>
-          <FormattedMessage id="label.more">
-            {(txt) =>
-              <a className="complogos-more content-body" onClick={this.expand} ref={node => this.more = node}>{txt}</a>
-            }
-            </FormattedMessage>
+          {(this.props.showMore) ? showMore : null}
         </Col>
       </Row>
     )

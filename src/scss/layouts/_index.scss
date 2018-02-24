@@ -72,10 +72,12 @@ section {
   position: relative;
   margin: 0 auto 5rem;
   .row {
+    max-height: 100%;
     position: relative;
-    height: 22rem;
+    transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
     overflow-y: hidden;
-    &:after {
+    &.active:after {
       content: '';
       position: absolute;
       width: 100%;
@@ -84,12 +86,6 @@ section {
       background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
       background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
       background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-    }
-    &.hidden {
-      height: auto;
-      &:after {
-        display: none;
-      }
     }
   }
   .complogos-header {
@@ -115,13 +111,15 @@ section {
     color: $wet-asphalt;
     &:after {
       position: absolute;
-      /*rtl:ignore*/
-      left: -.5rem;
+      right: -.5rem;
       top: 50%;
       transform: translateY(-50%);
       font-family: Fontawesome;
       font-size: 1.5rem;
       content: '\f078';
+    }
+    &.hidden {
+      opacity: 0;
     }
   }
 }
@@ -364,6 +362,7 @@ section {
       color: $wet-asphalt;
     }
     .parent-white {
+      transition: $default-transition;
       background: $white;
     }
     .question-tab {

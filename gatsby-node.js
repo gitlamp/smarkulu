@@ -39,6 +39,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       resolve: {
         alias: {
           normalize: 'normalize.scss/normalize.scss',
+          owlcarousel: 'react-owl-carousel2/lib',
           modernizr$: path.resolve(__dirname, '.modernizrrc'),
           TweenLite: 'gsap',
           CSSPlugin: 'gsap',
@@ -81,6 +82,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       resolve: {
         alias: {
           normalize: 'normalize.scss/normalize.scss',
+          owlcarousel: 'react-owl-carousel2/lib'
         }
       },
       plugins : [
@@ -109,7 +111,8 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       },
       resolve: {
         alias: {
-          normalize: 'normalize.scss/normalize.scss'
+          normalize: 'normalize.scss/normalize.scss',
+          owlcarousel: 'react-owl-carousel2/lib'
         }
       }
     })
@@ -123,7 +126,8 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.merge({
       resolve: {
         alias: {
-          normalize: 'normalize.scss/normalize.scss'
+          normalize: 'normalize.scss/normalize.scss',
+          owlcarousel: 'react-owl-carousel2/lib'
         }
       }
     })
