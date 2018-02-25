@@ -93,7 +93,7 @@ class Img extends React.Component {
 
 Copy.propTypes = {
   child: PropTypes.string,
-  type: PropTypes.oneOf(['header', 'subheader', 'body']).isRequired,
+  type: PropTypes.string.isRequired,
   element: PropTypes.string.isRequired,
   align: PropTypes.oneOf(['center', 'right', 'left'])
 }
