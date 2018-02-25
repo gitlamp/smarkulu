@@ -39,10 +39,13 @@
   "footer.menu.content-providers": "Content Management",
   "footer.menu.help": "Help",
   "footer.menu.academy": "Academy",
+  "footer.menu.security": "Security",
+  "footer.menu.analytics": "Analytics",
+  "footer.menu.time.management": "Time Management",
 
   "col-label-1": "Taskulu",
   "col-label-2": "About",
-  "col-label-3": "Team Solutions",
+  "col-label-3": "Product",
   "col-label-4": "Resources",
 
   "count.users.numeric": "60,000",

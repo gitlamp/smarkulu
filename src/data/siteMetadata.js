@@ -48,10 +48,9 @@ module.exports = {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'footer.menu.marketing', slug:'/industries/marketing'},
-            {label: 'footer.menu.commercial', slug:'/industries/commercial'},
-            {label: 'footer.menu.developers', slug:'/industries/software-development'},
-            {label: 'footer.menu.content-providers', slug:'/industries/content-providers'},
+            {label: 'footer.menu.security', slug:'/security'},
+            {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
+            {label: 'footer.menu.time.management', slug:'/time-management'},
           ]
         },
         {
