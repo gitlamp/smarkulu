@@ -70,54 +70,54 @@ module.exports = {
     en: [
       // Facebook
       {
-        icon: 'fa fa-facebook-square',
+        icon: 'fa fa-facebook-square facebook-highlight',
         link: 'https://www.facebook.com/TaskuluHQ'
       },
       // Twitter
       {
-        icon: 'fa fa-twitter',
+        icon: 'fa fa-twitter twitter-highlight',
         link: 'http://twitter.com/taskulu'
       },
       // Linkedin
       {
-        icon: 'fa fa-linkedin-square',
+        icon: 'fa fa-linkedin-square linkedin-highlight',
         link: 'linkedin'
       },
       // Telegram
       {
-        icon: 'fa fa-telegram',
+        icon: 'fa fa-telegram telegram-highlight',
         link: 'telegram'
       },
       // Instagram
       {
-        icon: 'fa fa-instagram',
+        icon: 'fa fa-instagram instagram-highlight',
         link: 'instagram'
       }
     ],
     fa: [
       // Facebook
       {
-        icon: 'fa fa-facebook-square',
+        icon: 'fa fa-facebook-square facebook-highlight',
         link: 'https://www.facebook.com/taskuluir'
       },
       // Twitter
       {
-        icon: 'fa fa-twitter',
+        icon: 'fa fa-twitter twitter-highlight',
         link: 'http://twitter.com/taskulu_ir'
       },
       // Linkedin
       {
-        icon: 'fa fa-linkedin-square',
+        icon: 'fa fa-linkedin-square linkedin-highlight',
         link: 'linkedin'
       },
       // Telegram
       {
-        icon: 'fa fa-telegram',
+        icon: 'fa fa-telegram telegram-highlight',
         link: 'telegram'
       },
       // Instagram
       {
-        icon: 'fa fa-instagram',
+        icon: 'fa fa-instagram instagram-highlight',
         link: 'instagram'
       }
     ]
