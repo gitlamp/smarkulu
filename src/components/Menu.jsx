@@ -5,8 +5,6 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { Row, Col } from 'react-flexbox-grid'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
-import 'owl.carousel/dist/assets/owl.carousel.css'
-import 'imports?window.jQuery=jquery!owl.carousel'
 
 import { genLink } from './functions'
 
