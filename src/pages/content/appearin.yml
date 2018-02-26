@@ -1,0 +1,17 @@
+---
+header:
+  lang: en
+  slug: /product/appearin
+  title: "Appearin Integration"
+  desc: "Appear.in provides 1-click video conferences inside your browser without requiring pin codes or additional software."
+body:
+  hero:
+    header: "Integrate Taskulu with Appear.in"
+  desc: |
+    'Appear.in provides 1-click video conferences inside your browser without requiring pin codes or additional software.<br/>With this integration:<br/>
+    <ul>
+    <li>You can start a video conference with your team members from a chat room,</li>
+    <li>Each video conference is limited to 8 people.</li>
+    </ul>'
+  tags: ['Communication', 'Video Conference']
+...

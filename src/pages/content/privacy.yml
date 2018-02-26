@@ -1,0 +1,41 @@
+---
+header:
+  desc: "Learn about our commitment to privacy protection at Taskulu."
+  lang: en
+  slug: /privacy
+  title: "Privacy Policy"
+body:
+  hero:
+    header: "Taskulu Privacy Policy"
+  preamble: "The privacy of your data is very important to us. We’ll only ever access your account with your permission to help you with a problem or fix a software bug. We’ll never open any uploaded files unless you specificly ask us to."
+  identity:
+    title: "Identity and access"
+    body: "When you sign up for Taskulu, we ask for your email address. If you sign up using Google or Github, we’ll also get your name from the respective service. It’s just so we can personalize your new account and that we can send you invoices, updates and other essential information. We’ll never sell your personal info to other third parties and we won’t use your name or company in a marketing statement without your permission either.
+
+When you write to Taskulu with a question or to ask for help, we’ll keep that correspondence and the email address for future reference.
+
+When you visit our marketing pages, we track that for statistical purposes (like testing new designs and optimizing conversion rates). We also keep any information you volunteer, like surveys, for as long as it makes sense.
+
+The only times we’ll ever share your info:"
+    items:
+      - "To provide products or services you’ve asked for – with your permission."
+      - "To investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the physical safety of any person, or as otherwise required by law."
+      - "If Taskulu is acquired by or merged with another company we’ll notify you well before any info about you is transferred and becomes subject to a different privacy policy."
+  lawEnforcement:
+    title: "Law enforcement"
+    body: "Taskulu won’t hand your data over to law enforcement unless a court order says we have to. We flat out reject requests from local or international law enforcement when they seek data without a court order, and unless we’re legally prevented from it, we’ll always inform you when such requests are made."
+  encryption:
+    title: "Encryption"
+    body: "All data is encrypted via SSL/TLS when sent from our servers to your browser. The database backups are also encrypted. Data is not encrypted while it lives in our database, but we go to great lengths to secure your data."
+  deletedData:
+    title: "Deleted data"
+    body: "When you cancel your account, we’ll ensure that none of your data (i.e. everything in the projects you’ve created) is saved on our servers after 30 days. Please note that if you’ve been added to another project and created tasks on the other project, deleting your account won’t delete those tasks as they are considered part of a project that’s owned by someone else."
+  cookie:
+    title: "Cookie usage"
+    body: "Cookies are unique identifiers that we transfer to your device to enable our systems to recognize your device and to provide features such as identifying and remembering you when you login, not asking for Two Factor Authentication on the same device for up to a month and keeping track some in-app preferences such as your personal list positions. Accepting our cookies are essential for using the Taskulu application. If you block or reject our cookies you won’t be able to log in and therefore won’t be able to use any of the features provided by the Taskulu application."
+  changes:
+    title: "Changes and questions"
+    body: "It’s not often, but Taskulu may update this privacy policy from time to time. We’ll always notify you about significant changes in our privacy policy by emailing you or placing a prominent notice on the site. You can access, edit or delete your personal info at any time by contacting support@taskulu.com.
+
+Got any questions about the privacy policy? Please feel free to get in touch with us at support@taskulu.com and we’ll be more than happy to answer them."
+...

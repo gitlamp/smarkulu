@@ -28,21 +28,21 @@
     text-align: right;
     .testimonial-content-head {
       font-family: $title-font;
-      font-size: $large-font;
+      font-size: $head2;
       color: #fff;
     }
     .testimonial-content-subhead {
       display: block;
       margin-bottom: 1rem;
       font-family: $subtitle-font;
-      font-size: $small-font;
+      font-size: $head4;
       color: #fff;
     }
     .testimonial-content-quote {
       text-align: left;
       color: $asbestos;
       font-family: $body-font;
-      font-size: $small-font;
+      font-size: $body;
       font-style: italic;
       color: #fff;
     }
@@ -52,19 +52,13 @@
 /**
  * Responsive styles
  */
-@media #{$desktop} {
+@media #{$lgview} {
   .testimonial .testimonial-media {
     margin: 0 auto;
   }
 }
 
-@media #{$tablet} {
-  .testimonial .testimonial-media {
-    margin: 0 auto;
-  }
-}
-
-@media #{$mobile} {
+@media #{$xsonly} {
   .testimonial .testimonial-media {
     margin: 0 auto 5rem;
   }

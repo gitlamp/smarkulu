@@ -1,0 +1,21 @@
+---
+header:
+  lang: en
+  slug: /product/github
+  title: "Github Integration"
+  desc: "With The Github Commits integration you can see the activity of your development team."
+body:
+  hero:
+    header: "Connect Github repositories with Taskulu projects"
+  desc: |
+    'Github lets you manage and collaborate with your team on your source code.<br/>With The Github Commits integration you can see the activity of your development team:<br/>
+    <ul>
+    <li>Post your Git commit messages as comments on related tasks,</li>
+    <li>Change the status of task while committing your code changes.</li>
+    </ul>'
+  getStarted:
+    title: 'Get Started'
+    desc: |
+      'Learn how to setup and use the integration <a href="https://help.taskulu.com/solution/setting-github-commits-integration">here</a>.'
+  tags: ['Developer Tools']
+...

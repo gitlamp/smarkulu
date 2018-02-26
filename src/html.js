@@ -35,6 +35,12 @@ class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          {/* Fonts
+          <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet"/>  */}
+          {/* Header Components */}
+
           {this.props.headComponents}
           {/* Styles */}
           {style}

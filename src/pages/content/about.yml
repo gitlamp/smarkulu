@@ -1,0 +1,105 @@
+---
+header:
+  lang: en
+  slug: /about
+  title: "About Us"
+  desc: "ما می‌خواهیم به تیم‌های سراسر دنیا کمک کنیم با همکاری آسان‌تر به بهره‌وری بیشتر برسند. با تیم ما بیشتر آشنا شوید."
+body:
+  header: "Coolest Developers Of All Times"
+  team:
+    -
+      name: "Farhad Hedayatfard "
+      desc: "Founder & CEO"
+      twitter: "https://twitter.com/farhad_hf"
+      linkedin: "https://ir.linkedin.com/in/fhedayatifard"
+      front: "src/something"
+      back: "src/something"
+    -
+      name: "Kazem Keshavarz"
+      desc: "Founder & CTO"
+      twitter: "https://twitter.com/_otik"
+      linkedin: "https://ir.linkedin.com/in/keykakito"
+      front:
+      back:
+    -
+      name: "Homayoun Hedayatfard"
+      desc: "Product Engineer"
+      twitter: "https://twitter.com/hmn_hf"
+      linkedin: "https://ir.linkedin.com/in/hmnhf"
+      front:
+      back:
+    -
+      name: "Azadeh Nourbakhsh"
+      desc: "Customer Success Manager"
+      twitter: "https://twitter.com/azazadeh"
+      linkedin: "https://ir.linkedin.com/in/azadehnourbakhsh"
+      front:
+      back:
+
+    -
+      name: "Sina Sabbagh"
+      desc: "Marketing Manager"
+      twitter: "https://twitter.com/sinasabbagh"
+      linkedin: "https://ir.linkedin.com/in/sina-sabbagh-b566b896"
+      front:
+      back:
+    -
+      name: "Roozbeh Mirzaee"
+      desc: "Business Development"
+      linkedin: "https://www.linkedin.com/in/roozbeh-mirzaee-97810812a"
+      front:
+      back:
+    -
+      name: "Amirhosein Aghdasi"
+      desc: "Business Development"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "Ali Fazaeli"
+      desc: "Product Manager"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "Amirali Sariaslani"
+      desc: "Marketing Expert"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "Negar Goljan"
+      desc: "Sales Expert"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "Mehrdad Asadi"
+      desc: "Customer Success Expert"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "Mehrdad Mohammadi"
+      desc: "Customer Success Expert"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "Bilbo"
+      desc: "Meh!"
+  mission:
+    header: "Who are we and What are we doing?"
+    body: "We think that collaboration is the ultimate solution for building high performance teams.
+
+Our goal is to help teams all over the world collaborate easier and increase their performance and efficiency.
+
+We really like building great products. We love the web and the internet, and luckily for us, the internet is one of the best platforms for building collaborations tools."
+
+...

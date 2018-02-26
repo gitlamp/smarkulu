@@ -1,11 +1,6 @@
 {
   "title": "تسکولو",
   "header.title": "صفحه اصلی",
-  "btn.seeMore": "بیشتر بدانید",
-  "btn.register": "شروع رایگان",
-  "btn.login": "ورود",
-  "btn.login.and.register": "ورود / عضویت",
-  "btn.contact": "درخواست مشاوره",
   "link.learnmore": "بیشتر بدانید",
   "label.annually": "سالانه",
   "label.monthly": "ماهانه",
@@ -13,6 +8,14 @@
   "social.follow": "ما را دنبال کنید:",
   "footer.terms": "قوانین و حریم شخصی",
   "pricing.mode": "هر کاربر در ماه",
+
+  "btn.seeMore": "بیشتر بدانید",
+  "btn.register": "شروع رایگان",
+  "btn.login": "ورود",
+  "btn.login.and.register": "ورود / عضویت",
+  "btn.contact": "تماس با ما",
+  "btn.start": "شروع رایگان",
+  "btn.demo": "درخواست دمو",
 
   "header.menu.product": "امکانات",
   "header.menu.pricing": "قیمت‌ها",
@@ -40,5 +43,9 @@
   "col-label-1": "تسکولو",
   "col-label-2": "درباره ما",
   "col-label-3": "راهکارهای تیمی",
-  "col-label-4": "منابع"
+  "col-label-4": "منابع",
+
+  "count.users.numeric": "۶۰,۰۰۰",
+  "count.users.alphanumeric": "۶۰ هزار",
+  "count.users.alpha": "شصت هزار"
 }

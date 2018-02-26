@@ -1,0 +1,60 @@
+---
+header:
+  lang: en
+  slug: /product/security
+  title: "End-to-end Encryption"
+  desc: "We take the security of our users very seriously. Learn more about end-to-end encryption and other measures implemented in Taskulu."
+body:
+  hero:
+    header: "Encrypted team collaboration and chat"
+    cta: "btn.start"
+  safe:
+    header: "Your data is safe with us"
+    body: "At Taskulu, we take latest security measures and highest standards to protect your data from unauthorized access. You go on creating and getting things done, while we make sure your data won’t fall into the wrong hands. Take a look at our technology stack below for more info."
+    img: "/img/taskulu-safe.png"
+    alt: "your data is safe with us"
+  endToEnd:
+    header: "End-to-end encryption"
+    subheader: "Currently only available on Private Cloud edition"
+    body:
+      "We implemented AES/RSA algorithm to encrypt all your projects’ data and files, so that only project members can decrypt them on their device. This adds an extra layer of security, so we have zero knowledge of data stored on our servers. And it doesn’t end here!
+<br/>
+      The same powerful encryption is applied to our mobile apps as well, so no loophole left unwarranted for hackers and snoopers. No matter from where and on what device, your work is always protected."
+    img: "/img/end-to-end-encryption.png"
+    alt: "cutting edge end-to-end encryption"
+  ssl:
+    header: "256-bit SSL"
+    body: "This is kind of 2012! But just so you know, all your connections to our servers are on strong SSL encryption. Enough said!"
+    img: "/img/256-bit-ssl.png"
+    alt: "256-bit SSL"
+  twoFactor:
+    header: "Two factor authentication"
+    body: "To verify you’re the one who logs in into your account, we provide you with two options for two-factor authentication. You can use google authenticator or our SMS authentication service to confirm your identity before logging in. This way hackers won’t get through to your dashboard, in case of a password breach, and you’ll be notified in such cases about unauthorized logins."
+    img: "/img/two-factor-authentication.png"
+    alt: "two factor authnetication"
+  selfHosted:
+    header: "Self-hosted version"
+    body: "Does your company have strict privacy policies using cloud app? We got you covered. We are offering a self-hosted version for enterprises such as yours, so you can install Taskulu on your own premise or your trusted cloud hosting. Moreover, our technical team is ready to do the installation and maintenance tasks for you."
+    img: "/img/self-hosted.png"
+    alt: "self-hosted version trello alternative"
+  audits:
+    header: "Hosted on secure servers"
+    body: |
+     Our public cloud clients don’t have to worry either. Taskulu is hosted on servers which complies with highest possible security standards. Here’s a quick list of standards our cloud provides:<br/>
+     <ul>
+     <li>ISO 27001:2013 for information security management,</li>
+     <li>ISO 27017:2015 for security controls applicable to the provisioning and use of cloud services,</li>
+     <li>ISO 27018:2014 for implementing measures to protect Personally Identifiable Information,</li>
+     <li>Cloud Security Alliance’s Security, Trust, and Assurance Registry (STAR),</li>
+     <li>PCI compliance,</li>
+     <li>CJIS Standards,</li>
+     <li>EU Model Clauses, and</li>
+     <li>EU/US Privacy Shield Framework.</li>
+     </ul>
+    img: "/img/constant-audits.png"
+    alt: "secure servers with highest possible standards"
+  demoCTA:
+    header: "Still Not Sure How Taskulu Can Boost Your Business?"
+    subheader: "Let’s talk and find out!"
+    cta: "btn.demo"
+...

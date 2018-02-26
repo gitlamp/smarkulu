@@ -1,0 +1,107 @@
+---
+header:
+  lang: fa
+  slug: /about
+  title: "درباره ما"
+  desc: "ما می‌خواهیم به تیم‌های سراسر دنیا کمک کنیم با همکاری آسان‌تر به بهره‌وری بیشتر برسند. با تیم ما بیشتر آشنا شوید."
+body:
+  header: "باحال‌ترین تیم نرم‌افزاری دنیا"
+  team:
+    -
+      name: "فرهاد هدایتی‌فرد"
+      desc: "بنیانگذار و مدیرعامل"
+      twitter: "https://twitter.com/farhad_hf"
+      linkedin: "https://ir.linkedin.com/in/fhedayatifard"
+      front: "src/something"
+      back: "src/something"
+    -
+      name: "کاظم کشاورز"
+      desc: "بنیانگذار و مدیر فنی"
+      twitter: "https://twitter.com/_otik"
+      linkedin: "https://ir.linkedin.com/in/keykakito"
+      front:
+      back:
+    -
+      name: "همایون هدایتی‌فر"
+      desc: "مهندس محصول"
+      twitter: "https://twitter.com/hmn_hf"
+      linkedin: "https://ir.linkedin.com/in/hmnhf"
+      front:
+      back:
+    -
+      name: "آزاده نوربخش"
+      desc: "مدیر موفقیت مشتریان"
+      twitter: "https://twitter.com/azazadeh"
+      linkedin: "https://ir.linkedin.com/in/azadehnourbakhsh"
+      front:
+      back:
+
+    -
+      name: "سینا صباغ"
+      desc: "مدیر مارکتینگ"
+      twitter: "https://twitter.com/sinasabbagh"
+      linkedin: "https://ir.linkedin.com/in/sina-sabbagh-b566b896"
+      front:
+      back:
+    -
+      name: "روزبه میرزایی"
+      desc: "توسعه کسب و کار"
+      linkedin: "https://www.linkedin.com/in/roozbeh-mirzaee-97810812a"
+      front:
+      back:
+    -
+      name: "امیرحسین اقدسی"
+      desc: "توسعه کسب و کار"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "علی فضائلی"
+      desc: "مدیر محصول"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "امیرعلی ساری‌اصلانی"
+      desc: "کارشناس مارکتینگ"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "نگار گلجان"
+      desc: "کارشناس فروش"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "مهرداد اسدی"
+      desc: "کارشناس موفقیت مشتری"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "مهرداد محمدی"
+      desc: "کارشناس موفقیت مشتری"
+      twitter:
+      linkedin:
+      front:
+      back:
+    -
+      name: "بیلبو"
+      desc: "مِه!"
+  mission:
+    header: "ما که هستیم و چه می‌خواهیم؟"
+    body: "ما اعتقاد داریم که راهکار واقعی ایجاد تیم‌هایی با عملکرد بالا، همکاری تیمی است.
+
+ما می‌خواهیم به تیم‌های سراسر دنیا کمک کنیم تا با همکاری آسان، به بهترین عملکرد و بیشترین بهره‌وری برسند. اما به خوبی می‌دانیم، یک ابزار قدرتمند به تنهایی کافی نیست و خیال‌های خوب فقط وقتی عملی می‌شوند که فرهنگ کاری هم متحول شود.
+برای همین ما همیشه دو هدف را دنبال کرده‌ایم:
+- توسعه یک نرم‌افزار حرفه‌ای که همه با آن بتوانند کار کنند،
+- پژوهش و آگاهی‌بخشی در مورد بهترین تجربه‌های مدیریت و بهره‌وری در سطح جهان
+
+"
+...

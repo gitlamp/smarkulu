@@ -1,0 +1,22 @@
+---
+header:
+  lang: en
+  slug: /product/dropbox
+  title: "Google Drive Integration"
+  desc: "With Dropbox you can store files online, access them anywhere and keep your files synchronized between all your devices."
+body:
+  hero:
+    header: "Integrate Taskulu with Dropbox"
+  desc: |
+    'With Dropbox you can store files online, access them anywhere and keep your files synchronized between all your devices.<br/>With Taskulu Dropbox integration you can:<br/>
+    <ul>
+    <li>Attach files from Dropbox to your tasks,</li>
+    <li>Automatically upload files you attach to your tasks to Dropbox and share them with your team,</li>
+    <li>Get notifications on related tasks when a file attached to them gets updated on Dropbox,</li>
+    <li>Manually upload files to the tasks’ folder in Dropbox to attach them to the task in Taskulu.</li>
+    </ul>'
+  note:
+    header: 'note'
+    desc: 'Attaching files from Dropbox to your tasks is available in Taskulu by default and does not require enabling this integration.'
+  tags: ['2-way Synchronization', 'File Management']
+...

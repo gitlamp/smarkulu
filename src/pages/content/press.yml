@@ -1,0 +1,48 @@
+---
+header:
+  desc: "News, company info, and media resources about Taskulu."
+  lang: en
+  slug: /press
+  title: "Press"
+body:
+  hero:
+    header: "Press"
+    body: "News, company info, and media resources."
+  history:
+    header: "Our history"
+    body: |
+      <ul>
+      <li>In autumn of 2013, as our team at ShayaWeb was growing and we started facing problems with existing project management solutions, we started working on a simple project planning tool for managing our client projects. The project was named TaskStat.</li>
+      <li>Right before our private launch in summer 2014, The name was changed to Taskulu. It’s a combination of “Task” and “Kulu” – a word borrowed from the Zulu language meaning great and grand. Taskulu means a great task.</li>
+      <li>In autumn 2014 the public version of Taskulu was launched.</li>
+      <li>At the same time we decided to close our web development company – ShayaWeb – and focus on Taskulu</li>
+      <li>In winter 2014 Taskulu goes international, introducing localizations for Spanish and Persian speaking users and launches its first Android application.</li>
+      <li>In autumn 2015 Taskulu wins the 3rd place in Startup Istanbul Challenge.</li>
+      <li>In winter 2015 Taskulu launched a redesigned native Android application.</li>
+      </ul>
+  logos:
+    header: "Taskulu logo"
+    desc: "The blue logo works best on light backgrounds; the white one is designed for dark backgrounds."
+    enBlue: "Blue logo"
+    enWhite: "White logo"
+  icons:
+    header: "Taskulu icons"
+    desc: "The blue icon works best on light backgrounds; the white one is designed for dark backgrounds."
+    iconBlue: "Blue icon"
+    iconWhite: "White icon"
+  news:
+    header: "Press coverage"
+    items:
+      -
+        title: "Could Iran Be A Software Growth Market?"
+        source: "forbes"
+        link: http://www.forbes.com/sites/adrianbridgwater/2015/11/09/could-iran-be-a-software-growth-market/
+      -
+        title: "Startup Istanbul 2015: Meet the winners"
+        source: "Etohum"
+        link: http://www.etohum.com/blog/startup-istanbul-2015-meet-the-winners/
+      -
+        title: "Rollenbasiertem Projektmanagement"
+        source: "T3n magazine"
+        link: http://t3n.de/news/projektmanagement-taskulu-trello-alternative-581805/
+...

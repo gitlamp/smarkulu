@@ -3,8 +3,10 @@
   border-radius: 3rem;
   border: none;
   font-family: $subtitle-font;
-  font-size: $small-font;
+  font-size: $head4;
   transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-left: 1rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 .button-normal {
@@ -31,4 +33,11 @@
     color: #fff;
     background: $wet-asphalt;
   }
+}
+.block-cta .button {
+  padding: 1.3rem 2.6rem;
+  font-weight: 900;
+  font-size: 1.8rem;
+  background-color: $newred;
+  color: #fff;
 }

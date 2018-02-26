@@ -1,0 +1,33 @@
+---
+header:
+  lang: en
+  slug: /product/integrations
+  title: "Integrations"
+  desc: "Taskulu has deep integrations with many of the tools that you already love and use."
+body:
+  hero:
+    header: "Make your apps connected"
+    subheader: "With deep, 2-way integrations, you can connect Taskulu to all your apps and get more productive"
+  integrations:
+    -
+      header: "Google Drive"
+      desc: "Online document collaboration and file storage"
+    -
+      header: "Dropbox"
+      desc: "Online document and file storage"
+    -
+      header: "Google Calendar"
+      desc: "A shared calendar for your project deadlines"
+    -
+      header: "Github Commits"
+      desc: "See your coding activity on related tasks and post Github commit messages as comments"
+    -
+      header: "Gitlab Commits"
+      desc: "See your coding activity on related tasks and post Gitlab commit messages as comments"
+    -
+      header: "Appear.in"
+      desc: "Start video conferences from chat rooms"
+    -
+      header: "Email Reply"
+      desc: "Reply to comments and messages by replying to the notification email"
+...

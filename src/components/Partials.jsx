@@ -15,9 +15,16 @@ class Above extends React.Component{
   }
   componentWillMount() {
     if (this.props.full) {
-      const full = 'above-full'
       this.setState({
-        class: this.state.class + ' ' + full
+        class: this.state.class + ' full'
+      })
+    } else if (this.props.compact) {
+      this.setState({
+        class: this.state.class + ' compact'
+      })
+    } else {
+      this.setState({
+        class: this.state.class + ' normal'
       })
     }
   }

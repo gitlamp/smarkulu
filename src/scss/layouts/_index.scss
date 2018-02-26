@@ -1,21 +1,4 @@
 /**
- * Font faces
- */
-// IranSans
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb', normal, normal);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_UltraLight', normal, 200);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Light', normal, 300);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Medium', normal, 500);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Bold', normal, bold);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Black', normal, 900);
-// IranYekan
-@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Light', normal, 300);
-@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Bold', normal, bold);
-@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Regular', normal, 900);
-// Fontawesome
-@include font-face(Fontawesome, '/fonts/FontAwesome/fontawesome-webfont', normal, normal);
-
-/**
  * Additional reset styles
  */
 body {
@@ -31,25 +14,31 @@ input:invalid {
 section {
   padding: 3rem 0;
 }
-.content {
-  margin-bottom: 2rem;
-  text-align: left;
+img.isgray {
+  filter: gray;
+  -webkit-filter: grayscale(1);
 }
-.content-head, .content-header {
-  @extend %header-typography;
+.content-head {
+  @extend %head1;
   margin-top: 0;
   margin-bottom: 2rem;
 }
-.content-subheader {
-  @extend %subheader-typography;
-}
-.content-body, .content-description {
-  @extend %description-typography;
-  margin-bottom: 3rem;
-}
+/**
+ * Smarkulu Classes
+ */
 .above {
-  padding-top: 15rem;
-  min-height: 70vh;
+  &.normal {
+    padding-top: 15rem;
+    min-height: 70vh;
+  }
+  &.full {
+    padding-top: 15rem;
+    min-height: 100vh;
+  }
+  &.compact {
+    padding-top: 10rem;
+    min-height: 30vh;
+  }
   .content {
     max-width: 80rem;
     margin: 0 auto;
@@ -65,8 +54,75 @@ section {
     box-shadow: $default-shadow;
   }
 }
-.above-full {
-  min-height: 100vh;
+
+.content {
+  margin-bottom: 2rem;
+  text-align: left;
+  &-header {
+    @extend %head1;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  //for now this one is for CTAs
+  &-announce-white {
+    @extend %head3;
+    padding-bottom: 2rem;
+    color: $clouds;
+  }
+  &-subheader {
+    @extend %head2;
+    padding-top: 2rem;
+  }
+  //body is used in Section.jsx (obsolete)
+  &-title {
+    @extend %head3;
+    margin-bottom: 3rem;
+  }
+  &-sub {
+    @extend %head4;
+  }
+  // content plain is used in terms page
+  &-plain {
+    @extend %body;
+    text-align: left;
+    line-height: 1.4;
+    & li {
+      list-style: decimal #{"/*rtl:persian*/"};
+      padding-left: 10px;
+      padding-bottom: 5px;
+    }
+  }
+  &-content {
+    @extend %body;
+  }
+  &-description {
+    @extend %body;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+}
+
+.block {
+  &-cta {
+    background-color: $newgreen;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  &-tour {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+  div &-tour:last-child {
+    padding-bottom: 8rem;
+  }
+  &-announce {
+    background-color: $newblue;
+    color: #fff;
+    padding: 2rem 3rem;
+    & .content-subheader {
+      color: $silver;
+    }
+  }
 }
 .complogos {
   position: relative;
@@ -91,7 +147,7 @@ section {
   .complogos-header {
     margin-bottom: 4rem;
     font-family: $subtitle-font;
-    font-size: $large-font;
+    font-size: $head2;
     color: $wet-asphalt;
     text-align: center;
   }
@@ -140,7 +196,7 @@ section {
 .features {
   padding: 3.2rem;
   font-family: $subtitle-font;
-  font-size: $small-font;
+  font-size: $head3;
   text-align: left;
   .features-icon {
     display: block;
@@ -149,11 +205,11 @@ section {
   }
   .features-title {
     margin-bottom: 1.5rem;
-    font-size: $mid-font;
+    font-size: $head3;
     color: $wet-asphalt;
   }
   .features-desc {
-    font-family: $body-font;
+    font-family: $body;
     font-size: 1.4rem;
     font-weight: $thin;
   }
@@ -232,7 +288,7 @@ section {
       padding-top: 1rem;
       padding-right: 1rem;
       padding-left: 1rem;
-      font-size: $small-font;
+      font-size: $body;
       text-align: left;
       i {
         margin-right: .5rem;
@@ -251,17 +307,17 @@ section {
     .plan-title {
       margin-top: 1rem;
       padding: 0 1rem;
-      font-size: $large-font;
+      font-size: $head2;
     }
     .plan-text {
       margin: 3rem 0;
       padding: 0 1rem;
       font-family: $body-font;
-      font-size: $small-font;
+      font-size: $body;
     }
     .plan-model {
       display: block;
-      font-size: $mid-font;
+      font-size: $head3;
       font-weight: $bold;
     }
     .plan-price {
@@ -271,7 +327,7 @@ section {
       span {
         display: block;
         margin: 0;
-        font-size: $small-font;
+        font-size: $body;
       }
     }
     .plan-list {
@@ -308,7 +364,7 @@ section {
   border-radius: .6rem;
   border: 2px solid $asbestos;
   font-family: $subtitle-font;
-  font-size: $mid-font;
+  font-size: $head3;
   line-height: 2;
   color: $asbestos;
   input {
@@ -347,7 +403,7 @@ section {
   text-align: left;
   .content-head {
     font-family: $subtitle-font;
-    font-size: $huge-font;
+    font-size: $head1;
   }
   .faq-question-wrapper {
     color: $wet-asphalt;
@@ -358,7 +414,7 @@ section {
     .question-type {
       margin: 3rem 0;
       font-family: $subtitle-font;
-      font-size: $large-font;
+      font-size: $head2;
       color: $wet-asphalt;
     }
     .parent-white {
@@ -369,7 +425,7 @@ section {
       position: relative;
       padding: 0 3rem;
       font-family: $subtitle-font;
-      font-size: $mid-font;
+      font-size: $head4;
       border-top: 1px solid $silver;
       border-left: 1px solid #f6f8f9;
       border-right: 1px solid #f6f8f9;
@@ -394,7 +450,7 @@ section {
       display: none;
       padding: 0 3rem;
       font-family: $body-font;
-      font-size: $small-font;
+      font-size: $body;
       .question-body-inner {
         padding: 2rem 0;
       }
@@ -419,10 +475,10 @@ section {
     .double-divided-col-body {
       margin-left: 6rem;
       font-family: $subtitle-font;
-      font-size: $mid-font;
+      font-size: $head4;
       li {
         margin-left: 3rem;
-        font-size: $small-font;
+        font-size: $body;
         list-style: disc;
         &:first-of-type {
           margin-top: 1rem;
@@ -457,10 +513,7 @@ section {
 /**
  * Media queries
  */
-@media #{$tablet} {
-  .content-head {
-    font-size: $large-font;
-  }
+@media #{$smonly} {
   .double-divided {
     .double-divided-col {
       text-align: center;
@@ -471,13 +524,10 @@ section {
   }
 }
 
-@media #{$mobile} {
+@media #{$xsonly} {
   .container {
     padding-right: 2rem;
     padding-left: 2rem;
-  }
-  .content-head {
-    font-size: $large-font;
   }
   .plan-wrapper {
     .plan, .plan-list {
@@ -591,8 +641,6 @@ textarea {
   font: inherit;
 }
 html {
-  // font: 112.5%/1.45rem georgia, serif;
-  font-size: 62.5%;
   box-sizing: border-box;
   overflow-y: scroll;
 }

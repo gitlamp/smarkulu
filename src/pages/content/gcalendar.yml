@@ -1,0 +1,18 @@
+---
+header:
+  lang: en
+  slug: /product/gcalendar
+  title: "Google Calendar Integration"
+  desc: "With Google Calendar you can create shared calendars with your team, create events and manage deadlines."
+body:
+  hero:
+    header: "Integrate Taskulu with Google Calendar"
+  desc: |
+    With Google Calendar you can create shared calendars with your team, create events and manage deadlines.<br/>Taskulu Google Calendar integration:<br/>
+    <ul>
+    <li>Creates a calendar for your project in Google Calendar,</li>
+    <li>Creates events for the deadline of tasks that are assigned to you on Google Calendar,</li>
+    <li>Updates the task deadline when you update the event on Google Calendar.</li>
+    </ul>
+  tags: ['2-way Synchronization', 'Productivity']
+...

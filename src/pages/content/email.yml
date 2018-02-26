@@ -1,0 +1,17 @@
+---
+header:
+  lang: en
+  slug: /product/email
+  title: "Email Integration"
+  desc: "Reply to comments and messages by replying to a special email address without leaving your inbox."
+body:
+  hero:
+    header: "Taskulu Email integration"
+  desc: |
+    This integration gives you a special email address on each notification you receive so that you can reply to those notification right out of your inbox.<br/>Examples include:<br/>
+    <ul>
+    <li>Replying to comment notification emails will post your reply as a comment on the task,</li>
+    <li>Replying to chat notifications posts your reply as a chat message in the related chat room.</li>
+    </ul>
+  tags: ['Communication', 'Productivity']
+...

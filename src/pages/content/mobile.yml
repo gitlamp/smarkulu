@@ -1,0 +1,20 @@
+---
+header:
+  lang: en
+  slug: /product/mobile-app
+  title: "Mobile Apps"
+  desc: "Native mobile apps and download links. Taskulu goes anywhere you go."
+body:
+  hero:
+    header: "Taskulu Mobile Apps"
+    cta: "btn.start"
+  body:
+    header: "Take your tasks everywhere!"
+    desc: 'On Android and iOs, your data on Taskulu is with you anywhere you go. This make it easy to be on track with your team immediately. With our <a href="/product/security/">end-to-end encryption</a> capability, you can trust your data won’t be in the wrong hands. Also, you can use the same apps to connect to your <a href="/on-premise/">self-hosted Taskulu</a> servers.'
+    iTunes: https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8
+    play: https://play.google.com/store/apps/details?id=com.taskulu.app&hl=en
+  demoCTA:
+    header: "Still Not Sure How Taskulu Can Boost Your Business?"
+    subheader: "Let’s talk and find out!"
+    cta: "btn.demo"
+...

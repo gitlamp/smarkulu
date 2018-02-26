@@ -1,0 +1,40 @@
+---
+header:
+  lang: en
+  slug: /product/performance-analytics
+  title: "Taskulu Analytics"
+  desc: "Taskulu Analytics is a new approach to create data-driven performance and productivity reports for enterprises. Click for more information."
+body:
+  hero:
+    header: "Introducing Taskulu Analytics"
+    body: "Taskulu Analytics is a data-driven reporting tool for enterprises to track employees and teams performance and productivity. Understand what's going on below the surface through quantitative reports. Detect issues and bottlenecks before they turn into sources of critical delays, and increase the productivity of your team or organization with a data-driven approach."
+    img: /img/analytics-hero.png
+    alt: "Taskulu Analytics overview"
+  upgradeCTA:
+    body: "To use Taskulu Analytics, you need to upgrade to Business or Dedicated plan."
+    cta: "btn.seeMore"
+  analyticsFeatures:
+    timeToResolve:
+      header: "Time To Resolve Report"
+      body: "Find out the average, minimum and maximum time spent on tasks. Get instights on your best performing employees, identify the pratices they implement, and share their valuable expertise with other employees."
+      img: "/img/taskulu-en-time-to-resolve-by-member.png"
+      alt: "Taskulu Analytics reporting the time to resolve filtered by members"
+    deadlines:
+      header: "Deadlines Report"
+      body: "Investigate how your team fares at finishing the job on time. Follow the number of overdue tasks to on time ones, and identify and obviate causes of delay, before they turn into critical bottlenecks."
+      img: /img/taskulu-en-deadline-by-project.png
+      alt: "Taskulu Analytics reporting deadlines filtered by project"
+    progress:
+      header: "Progress Report"
+      body: "Find out the progress of your projects, based on finished and remained tasks. Estimate project's completion time with great percision, using the progress curve."
+      img: /img/taskulu-en-progress-by-project.png
+      alt: "Taskulu Analytics reporting progress filtered by project"
+    filters:
+      header: "Filter all reports by project, members and type of work"
+      body: "Want to find out who performs better on a certain type of work? Or on what types of work you have the most delay? Filter all reports in Taskulu analytics by project, member and tags to get a detailed view of your organization's performance."
+      img: /img/taskulu-en-analytics-filter.png
+      alt: "Taskulu Analytics filters for projects, members, tags"
+  demoCTA:
+    body: "Need more information about Taskulu Analytics? we're happy to schedule a demo."
+    cta: "btn.demo"
+...

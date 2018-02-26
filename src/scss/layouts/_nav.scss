@@ -11,7 +11,7 @@
   display: flex;
   flex-flow: row nowrap;
   font-family: $subtitle-font;
-  font-size: $small-font;
+  font-size: $body;
   li {
     display: block;
     list-style: none;
@@ -93,7 +93,7 @@
       margin-top: 1rem;
       a {
         font-family: $subtitle-font;
-        font-size: $large-font;
+        font-size: $head2;
         color: #fff;
       }
     }
@@ -120,11 +120,11 @@
 /**
  * Responsive styles
  */
-@media #{$tablet} {
+@media #{$smonly} {
   .header-menu {
     .header-menu-mobile {
       li a {
-        font-size: $large-font;
+        font-size: $head2;
       }
       .header-menu-mobile-download-app {
         img {

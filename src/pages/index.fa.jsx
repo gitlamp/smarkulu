@@ -60,121 +60,129 @@ class IndexPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-              <Above full center="xs">
-                <Grid>
-                  <Row>
-                    <Col xs>
-                      <Copy type="subheader" element="h1" child={node.body.hero.header}/>
-                      <Copy type="header" element="h2">
-                        {node.body.hero.body}
-                        <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
-                      </Copy>
-                      <Input placeholder="Enter your email address"/>
-                    </Col>
-                  </Row>
-                  <div className="proto">
-                    <div className="proto-content"></div>
-                    <Img src="/img/browser_frame.png" alt="browser frame"/>
-                  </div>
-                </Grid>
-              </Above>
-              <Logos
-                src={node.body.customerLogos.logos}
-                header={node.body.customerLogos.header}
-                md={2}
-                xs={4}
-                middle="xs"/>
-              <Row tagName="section" center="xs">
-                <Grid>
-                  <Row center="xs">
-                    <Col xs={12} sm={12} md={8} lg={8}>
-                      <Copy align="center" element="h3" child={node.body.why.header} type="header"/>
-                    </Col>
-                  </Row>
-                  <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }} middle="xs">
-                    <Copy child={node.body.why.easy} type="subheader" element="h3"/>
-                    <Img src="/img/make-own-project.svg" height="5rem" alt="No IMG"/>
-                  </TwoColumn>
-                  <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }} middle="xs">
-                    <Img src="/img/collaboration.svg" alt="No IMG"/>
-                    <Copy last="md" first="xs" child={node.body.why.scalable} type="subheader" element="h3"/>
-                  </TwoColumn>
-                </Grid>
-              </Row>
-              <Row tagName="section" center="xs">
-                <Grid>
-                  <Row className="compcards" center="xs">
-                    <Col xs={12} lg={4} sm={12} className="compcards-content">
-                      <Copy align="right" element="h2" type="header" child={node.body.customers.header}/>
-                    </Col>
-                    <Col xs={12} lg={8} sm={12}>
-                      <Row>
-                        <Col xs={12} sm={12} md className="compcards-card">
-                          <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
-                            <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
-                              <div className="wistia_embed wistia_async_x3j06nrfqu popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
-                            </div>
+            <Above full center="xs">
+              <Grid>
+                <Row>
+                  <Col xs>
+                    <Copy type="subheader" element="h1" child={node.body.hero.header}/>
+                    <Copy type="header" element="h2">
+                      {node.body.hero.body}
+                      <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
+                    </Copy>
+                    <Input placeholder="Enter your email address"/>
+                  </Col>
+                </Row>
+                <div className="proto">
+                  <div className="proto-content"></div>
+                  <Img src="/img/browser_frame.png" alt="browser frame"/>
+                </div>
+              </Grid>
+            </Above>
+            <Logos
+              src={node.body.customerLogos.logos}
+              header={node.body.customerLogos.header}
+              md={2}
+              xs={4}
+              middle="xs"/>
+            <Row tagName="section" center="xs">
+              <Grid>
+                <Row center="xs">
+                  <Col xs={12} sm={12} md={8} lg={8}>
+                    <Copy align="center" element="h3" child={node.body.why.header} type="header"/>
+                  </Col>
+                </Row>
+                <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }} middle="xs">
+                  <Copy child={node.body.why.easy} type="subheader" element="h3"/>
+                  <Img src="/img/make-own-project.svg" height="5rem" alt="No IMG"/>
+                </TwoColumn>
+                <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }} middle="xs">
+                  <Img src="/img/collaboration.svg" alt="No IMG"/>
+                  <Copy last="md" first="xs" child={node.body.why.scalable} type="subheader" element="h3"/>
+                </TwoColumn>
+              </Grid>
+            </Row>
+            <Row tagName="section" center="xs">
+              <Grid>
+                <Row className="compcards" center="xs">
+                  <Col xs={12} lg={4} sm={12} className="compcards-content">
+                    <Copy align="right" element="h2" type="header" child={node.body.customers.header}/>
+                  </Col>
+                  <Col xs={12} lg={8} sm={12}>
+                    <Row>
+                      <Col xs={12} sm={12} md className="compcards-card">
+                        <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
+                          <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
+                            <div className="wistia_embed wistia_async_x3j06nrfqu popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
                           </div>
-                        </Col>
-                        <Col xs={12} sm={12} md className="compcards-card">
-                          <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
-                            <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
-                              <div className="wistia_embed wistia_async_4o2mxn9zbo popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
-                            </div>
+                        </div>
+                      </Col>
+                      <Col xs={12} sm={12} md className="compcards-card">
+                        <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
+                          <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
+                            <div className="wistia_embed wistia_async_4o2mxn9zbo popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
                           </div>
-                        </Col>
-                      </Row>
-                    </Col>
-                  </Row>
-                </Grid>
+                        </div>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </Grid>
+            </Row>
+            <Row tagName="section" center="xs">
+              <Grid>
+                <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[8,4], lg:[8,4] }}>
+                  <Img src="#" alt="No IMG"/>
+                  <Copy type="subheader" element="h2" child={node.body.collaboration.header}/>
+                </TwoColumn>
+              </Grid>
+            </Row>
+            <Row tagName="section" style={{ backgroundColor: '#2980b9' }} center="xs">
+              <Grid>
+                <Row center="xs">
+                  <Col xs={10}>
+                    <Copy type="header" element="h3" className="typo-white" child={node.body.indexFeatures.header}/>
+                  </Col>
+                  {node.body.indexFeatures.items.map((item, i) => {
+                     return (
+                       <Col xs={12} md lg={4} key={i}>
+                         <div className="features-card">
+                           <div className="features-card-icon">
+                             <span className={`taskulu-icon ${item.icon}`}></span>
+                           </div>
+                           <div className="features-card-txt content-body">{item.text}
+                           </div>
+                         </div>
+                       </Col>
+                     )})}
+
+                </Row>
+                <Row center="xs">
+                  <FormattedMessage id="btn.seeMore">
+                    {(txt) =>
+                      <a href="" className="btn button button-submit">{txt}</a>
+                    }
+                  </FormattedMessage>
+                </Row>
+              </Grid>
+            </Row>
+            <Row tagName="section" center="xs">
+              <Row center="xs">
+                <Col xs={12} lg={8}>
+                  <Copy type="header" element="h2">
+                    <span>
+                      {/* {[0,1,2].map((item) => {
+                          <FormattedMessage id={node.body.demoCTA.headerParts[0]} />
+                          })} */}
+                      <FormattedMessage id={node.body.demoCTA.headerParts[0]} /> &nbsp;
+           <FormattedMessage id={node.body.demoCTA.headerParts[1]} /> &nbsp;
+           {node.body.demoCTA.headerParts[2]}
+                    </span>
+                  </Copy>
+                  <Copy type="body" element="p" child={node.body.demoCTA.body}/>
+                  <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+                </Col>
               </Row>
-              <Row tagName="section" center="xs">
-                <Grid>
-                  <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[8,4], lg:[8,4] }}>
-                    <Img src="#" alt="No IMG"/>
-                    <Copy type="subheader" element="h2" child={node.body.collaboration.header}/>
-                  </TwoColumn>
-                </Grid>
-              </Row>
-              <Row tagName="section" style={{ backgroundColor: '#2980b9' }} center="xs">
-                <Grid>
-                  <Row center="xs">
-                    <Col xs={10}>
-                      <Copy type="header" element="h3" className="typo-white" child={node.body.indexFeatures.header}/>
-                    </Col>
-                    {node.body.indexFeatures.items.map((item, i) => {
-                      return (
-                        <Col xs={12} md lg={4} key={i}>
-                          <div className="features-card">
-                            <div className="features-card-icon">
-                              <span className={`taskulu-icon ${item.icon}`}></span>
-                            </div>
-                            <div className="features-card-txt content-body">{item.text}</div>
-                          </div>
-                        </Col>
-                      )
-                    })}
-                  </Row>
-                  <Row center="xs">
-                    <FormattedMessage id="btn.seeMore">
-                      {(txt) =>
-                        <a href="" className="btn button button-submit">{txt}</a>
-                      }
-                    </FormattedMessage>
-                  </Row>
-                </Grid>
-              </Row>
-              <Row tagName="section" center="xs">
-                <Grid>
-                  <Row center="xs">
-                    <Col xs={12} lg={8}>
-                      <Copy type="header" element="h2" child={node.body.ending.header}/>
-                      <Copy type="body" element="p" child={node.body.ending.body}/>
-                      <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
-                    </Col>
-                  </Row>
-                </Grid>
-              </Row>
+            </Row>
           </div>
         )}
       </div>
@@ -235,8 +243,9 @@ export const pageQuery = graphql `
                 text
               }
             }
-            ending {
+            demoCTA {
               header
+              headerParts
               body
               cta
             }

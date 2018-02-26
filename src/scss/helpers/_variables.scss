@@ -1,18 +1,30 @@
 // Font Types
-$title-font: 'Archivo Black', IranSans, sans-serif;
-$subtitle-font: Nunito, IranYekan, sans-serif;
-$body-font: Rajdhani, IranSans, sans-serif;
+$title-font: 'Open Sans', IranSans, sans-serif;
+$subtitle-font: Lato, IranYekan, sans-serif;
+$body-font: Lato, IranYekan, sans-serif;
 
 // Font Sizes
-$huge-font: 3.5rem #{"/*rtl:3rem*/"};
-$large-font: 3rem #{"/*rtl:2rem*/"};
-$mid-font: 2rem;
-$small-font: 1.6rem;
+//$huge-font
+$head1: 3.6rem #{"/*rtl:3.6rem*/"};
+//$large-font
+$head2: 2.4rem #{"/*rtl:2.4rem*/"};
+$head3: 2rem;
+//$mid-font
+$head4: 1.8rem;
+//$small-font:
+$body: 1.6rem;
+$sub: 1.4rem;
 
 // Font Weights
 $bold: 800;
 $regular: 400;
 $thin: 200;
+
+//New Branding
+$newblue: #5a7fc0;
+$newgreen: #46bea9;
+$newyellow: #f5cc56;
+$newred: #ee6062;
 
 // Taskulu Colors
 $cyan: #04a9f4;
@@ -53,8 +65,19 @@ $bold-shadow: 0 20px 30px 0 rgba(36,50,66,.28);
 $default-transition: all .3s ease;
 $quick-transition: all .1s ease;
 
-//Media queries
-$mobile: '(max-width: 575px)';
-$tablet: '(min-width: 576px) and (max-width: 768px)';
-$desktop: '(min-width: 769px) and (max-width: 1024px)';
-$large-desktop: '(min-width: 1025px)';
+//Media queries for single segments
+//extra small devices (used to be $mobile)
+$xsonly: '(max-width: 575px)';
+//small devices and landscape mobile ($tablet)
+$smonly: '(min-width: 576px) and (max-width: 767px)';
+//tablets
+$mdonly: '(min-width: 768px) and (max-width: 991px)';
+//desktops (used to be $desktop and max-width was 1024px)
+$lgonly: '(min-width: 992px) and (max-width: 1199px)';
+//large desktops ($large-desktop)
+$xlonly: '(min-width: 1200px)';
+
+//Media queries for max sizes
+$smview: '(max-width: 767px)';
+$mdview: '(max-width: 991px)';
+$lgview: '(max-width: 1199px)';

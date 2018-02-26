@@ -1,0 +1,44 @@
+---
+header:
+  lang: en
+  slug: /product/file-previews
+  title: "File Previews in Taskulu"
+  desc: "Taskulu comes with native file preview for 700+ format, right inside your browser. Review a list of all formats here."
+body:
+  hero:
+    header: "Preview 700+ file formats from the comfort of your browser"
+    cta: "btn.start"
+  intro:
+    header: 'Working with lots of different files?<br/>We’ve got you covered!'
+    body: 'You don’t have to download your shared files to view them anymore. By adding support for a wide variety of file formats, Taskulu lets you preview shared files in your project without leaving the browser. Whether you work at a creative agency working with Adobe creative suite files, a gamedev company with lots of 3D assets or a small team working with good old documents and spreadsheets, preview your colleagues’ work and discuss issues and improvements from the comfort of Taskulu.'
+    selectedFormats:
+      -
+        title: 'PDF'
+      -
+        title: 'AI'
+      -
+        title: 'PSD'
+      -
+        title: 'HTML'
+      -
+        title: 'XLSX'
+      -
+        title: 'JPG'
+      -
+        title: 'SASS'
+      -
+        title: 'FBX'
+      -
+        title: 'DOCX'
+      -
+        title: '3DS'
+      -
+        title: 'ODT'
+      -
+        title: 'ZIP'
+    demoCTA:
+      header: "Still Not Sure How Taskulu Can Boost Your Business?"
+      subheader: "Let’s talk and find out!"
+      cta: "btn.demo"
+
+...

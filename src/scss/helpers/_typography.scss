@@ -1,21 +1,38 @@
-%header-typography {
+//%header-typography {
+%head1 {
   font-family: $title-font;
-  font-size: $huge-font;
+  font-size: $head1;
   color: $wet-asphalt;
+  font-weight: 400;
 }
 
-%subheader-typography {
+//%subheader-typography {
+%head2 {
   font-family: $title-font;
-  font-size: $mid-font;
+  font-size: $head2;
   color: $wet-asphalt;
+  font-weight: 600;
 }
 
-%description-typography {
+//%description-typography {
+%head3 {
   font-family: $subtitle-font;
-  font-size: $small-font;
+  font-size: $head3;
   color: $asbestos;
+  font-weight: 700;
 }
 
+%head4 {
+  font-family: $subtitle-font;
+  font-size: $head4;
+}
+
+//%content {
+%body {
+  font-family: $body-font;
+  font-size: $body;
+  font-weight: 400
+}
 /**
  * text-colors
  */
@@ -24,4 +41,20 @@
 }
 .typo-black {
   color: $wet-asphalt;
+}
+
+//Base font-size
+
+html {
+  font-size: 62.5%;
+}
+@media #{$mdview} {
+  html {
+    font-size: 50%;
+  }
+}
+@media #{$smview} {
+  html {
+    font-size: 43.75%;
+  }
 }

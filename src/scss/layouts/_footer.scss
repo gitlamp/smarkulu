@@ -8,7 +8,7 @@
     text-align: left;
     color: #fff;
     font-family: $subtitle-font;
-    font-size: $small-font;
+    font-size: $body;
     .footer-list {
       flex: 1 1 auto;
       padding: 0;
@@ -22,7 +22,7 @@
         a {
           text-decoration: none;
           color: #fff;
-          font-size: $small-font;
+          font-size: $body;
           transition: $default-transition;
           &:hover {
             color: $cyan;
@@ -30,7 +30,7 @@
         }
         &:first-child {
           font-family: $body-font;
-          font-size: $mid-font;
+          font-size: $head3;
           color: $asbestos;
         }
       }
@@ -80,7 +80,7 @@
     background: $sun-flower;
     color: #3f3f3f;
     font-family: $subtitle-font;
-    font-size: $small-font;
+    font-size: $body;
     a {
       text-decoration: none;
       color: #3f3f3f;
@@ -97,13 +97,13 @@
 /**
  * Responsive styles
  */
-@media #{$desktop} {
+@media #{$lgonly} {
   .footer .footer-row {
     padding: 5rem 8rem 3rem;
   }
 }
 
-@media #{$tablet} {
+@media #{$smonly} {
   .footer .footer-row {
     display: none;
   }
@@ -112,7 +112,7 @@
   }
 }
 
-@media #{$mobile} {
+@media #{$xsonly} {
   .footer .footer-row {
     display: none;
   }
