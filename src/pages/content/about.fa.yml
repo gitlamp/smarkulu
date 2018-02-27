@@ -9,91 +9,92 @@ body:
   team:
     -
       name: "فرهاد هدایتی‌فرد"
-      desc: "بنیانگذار و مدیرعامل"
+      jobTitle: "بنیانگذار و مدیرعامل"
       twitter: "https://twitter.com/farhad_hf"
       linkedin: "https://ir.linkedin.com/in/fhedayatifard"
-      front: "src/something"
-      back: "src/something"
+      front: "farhad-front"
+      back: "farhad-back"
     -
       name: "کاظم کشاورز"
-      desc: "بنیانگذار و مدیر فنی"
+      jobTitle: "بنیانگذار و مدیر فنی"
       twitter: "https://twitter.com/_otik"
       linkedin: "https://ir.linkedin.com/in/keykakito"
-      front:
-      back:
+      front: "kazem-front"
+      back: "kazem-back"
     -
       name: "همایون هدایتی‌فر"
-      desc: "مهندس محصول"
+      jobTitle: "مهندس محصول"
       twitter: "https://twitter.com/hmn_hf"
       linkedin: "https://ir.linkedin.com/in/hmnhf"
-      front:
-      back:
+      front: "homayoun-front"
+      back: "homayoun-back"
     -
       name: "آزاده نوربخش"
-      desc: "مدیر موفقیت مشتریان"
+      jobTitle: "مدیر موفقیت مشتریان"
       twitter: "https://twitter.com/azazadeh"
       linkedin: "https://ir.linkedin.com/in/azadehnourbakhsh"
-      front:
-      back:
-
+      front: "azadeh-front"
+      back: "azadeh-back"
     -
       name: "سینا صباغ"
-      desc: "مدیر مارکتینگ"
+      jobTitle: "مدیر مارکتینگ"
       twitter: "https://twitter.com/sinasabbagh"
       linkedin: "https://ir.linkedin.com/in/sina-sabbagh-b566b896"
-      front:
-      back:
+      front: "sina-front"
+      back: "sina-back"
     -
       name: "روزبه میرزایی"
-      desc: "توسعه کسب و کار"
+      jobTitle: "توسعه کسب و کار"
       linkedin: "https://www.linkedin.com/in/roozbeh-mirzaee-97810812a"
-      front:
-      back:
+      front: "roozbeh-front"
+      back: "roozbeh-back"
     -
       name: "امیرحسین اقدسی"
-      desc: "توسعه کسب و کار"
+      jobTitle: "توسعه کسب و کار"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "amirhossein-front"
+      back: "amirhossein-back"
     -
       name: "علی فضائلی"
-      desc: "مدیر محصول"
+      jobTitle: "مدیر محصول"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "ali-front"
+      back: "ali-back"
     -
       name: "امیرعلی ساری‌اصلانی"
-      desc: "کارشناس مارکتینگ"
+      jobTitle: "کارشناس مارکتینگ"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "amirali-front"
+      back: "amirali-back"
     -
       name: "نگار گلجان"
-      desc: "کارشناس فروش"
+      jobTitle: "کارشناس فروش"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "negar-front"
+      back: "negar-back"
     -
       name: "مهرداد اسدی"
-      desc: "کارشناس موفقیت مشتری"
+      jobTitle: "کارشناس موفقیت مشتری"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "mehrdad-front"
+      back: "mehrdad-back"
     -
       name: "مهرداد محمدی"
-      desc: "کارشناس موفقیت مشتری"
+      jobTitle: "کارشناس موفقیت مشتری"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "mehrdad-front"
+      back: "mehrdad-back"
     -
       name: "بیلبو"
-      desc: "مِه!"
+      jobTitle: "مِه!"
+      front: "bilbo-front"
+      back: "bilbo-back"
   mission:
     header: "ما که هستیم و چه می‌خواهیم؟"
     body: "ما اعتقاد داریم که راهکار واقعی ایجاد تیم‌هایی با عملکرد بالا، همکاری تیمی است.

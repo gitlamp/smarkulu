@@ -543,6 +543,34 @@ img.isgray {
     }
   }
 }
+.team {
+  margin-bottom: 3rem;
+  .team-card {
+    padding: 2.5rem 1rem;
+    height: 100%;
+    border-radius: .6rem;
+    background-color: #fff;
+    box-shadow: 0 5px 20px 0 rgba(36,50,66,.14);
+  }
+  .team-image {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto;
+    border-radius: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .team-name {
+    color: $wet-asphalt;
+  }
+  .team-job-title {
+    color: $concrete;
+  }
+  .team-social-icon {
+    font-size: 2rem;
+    padding: 0 .5rem;
+  }
+}
 /**
  * gatsby-starter-default styles
  */

@@ -9,91 +9,92 @@ body:
   team:
     -
       name: "Farhad Hedayatfard "
-      desc: "Founder & CEO"
+      jobTitle: "Founder & CEO"
       twitter: "https://twitter.com/farhad_hf"
       linkedin: "https://ir.linkedin.com/in/fhedayatifard"
-      front: "src/something"
-      back: "src/something"
+      front: "farhad-front"
+      back: "farhad-back"
     -
       name: "Kazem Keshavarz"
-      desc: "Founder & CTO"
+      jobTitle: "Founder & CTO"
       twitter: "https://twitter.com/_otik"
       linkedin: "https://ir.linkedin.com/in/keykakito"
-      front:
-      back:
+      front: "kazem-front"
+      back: "kazem-back"
     -
       name: "Homayoun Hedayatfard"
-      desc: "Product Engineer"
+      jobTitle: "Product Engineer"
       twitter: "https://twitter.com/hmn_hf"
       linkedin: "https://ir.linkedin.com/in/hmnhf"
-      front:
-      back:
+      front: "homayoun-front"
+      back: "homayoun-back"
     -
       name: "Azadeh Nourbakhsh"
-      desc: "Customer Success Manager"
+      jobTitle: "Customer Success Manager"
       twitter: "https://twitter.com/azazadeh"
       linkedin: "https://ir.linkedin.com/in/azadehnourbakhsh"
-      front:
-      back:
-
+      front: "azadeh-front"
+      back: "azadeh-back"
     -
       name: "Sina Sabbagh"
-      desc: "Marketing Manager"
+      jobTitle: "Marketing Manager"
       twitter: "https://twitter.com/sinasabbagh"
       linkedin: "https://ir.linkedin.com/in/sina-sabbagh-b566b896"
-      front:
-      back:
+      front: "sina-front"
+      back: "sina-back"
     -
       name: "Roozbeh Mirzaee"
-      desc: "Business Development"
+      jobTitle: "Business Development"
       linkedin: "https://www.linkedin.com/in/roozbeh-mirzaee-97810812a"
-      front:
-      back:
+      front: "roozbeh-front"
+      back: "roozbeh-back"
     -
-      name: "Amirhosein Aghdasi"
-      desc: "Business Development"
+      name: "Amirhossein Aghdasi"
+      jobTitle: "Business Development"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "amirhossein-front"
+      back: "amirhossein-back"
     -
       name: "Ali Fazaeli"
-      desc: "Product Manager"
+      jobTitle: "Product Manager"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "ali-front"
+      back: "ali-back"
     -
       name: "Amirali Sariaslani"
-      desc: "Marketing Expert"
+      jobTitle: "Marketing Expert"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "amirali-front"
+      back: "amirali-back"
     -
       name: "Negar Goljan"
-      desc: "Sales Expert"
+      jobTitle: "Sales Expert"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "negar-front"
+      back: "negar-back"
     -
       name: "Mehrdad Asadi"
-      desc: "Customer Success Expert"
+      jobTitle: "Customer Success Expert"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "mehrdad-front"
+      back: "mehrdad-back"
     -
       name: "Mehrdad Mohammadi"
-      desc: "Customer Success Expert"
+      jobTitle: "Customer Success Expert"
       twitter:
       linkedin:
-      front:
-      back:
+      front: "mehrdad-front"
+      back: "mehrdad-back"
     -
       name: "Bilbo"
-      desc: "Meh!"
+      jobTitle: "Meh!"
+      front: "bilbo-front"
+      back: "bilbo-back"
   mission:
     header: "Who are we and What are we doing?"
     body: "We think that collaboration is the ultimate solution for building high performance teams.
@@ -101,5 +102,4 @@ body:
 Our goal is to help teams all over the world collaborate easier and increase their performance and efficiency.
 
 We really like building great products. We love the web and the internet, and luckily for us, the internet is one of the best platforms for building collaborations tools."
-
 ...
