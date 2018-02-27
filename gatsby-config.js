@@ -3,7 +3,7 @@ const siteMetadata = require('./src/data/siteMetadata')
 module.exports = {
   siteMetadata,
   plugins: [
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -30,7 +30,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
         id: 'UA-108848426-1'
       }
@@ -60,24 +60,6 @@ module.exports = {
           'nunito',
           'archivo black'
         ]
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-favicon',
-      options: {
-        logo: './static/favicon.png',
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: true,
-          favicons: true,
-          firefox: true,
-          twitter: true,
-          yandex: true,
-          windows: true
-        }
       }
     }
   ]
