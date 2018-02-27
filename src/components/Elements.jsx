@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl';
 
@@ -38,12 +37,13 @@ class Copy extends React.Component {
       // Type of html tag
       this.props.element,
       // All props defined on element
-    {
-      className: 'content-' + this.props.type + this.state.class,
-      style: align
-    },
+      {
+        className: 'content-' + this.props.type + this.state.class,
+        style: align,
+        dangerouslySetInnerHTML: {__html: this.props.child }
+      }
       // Pass the children inside element
-      this.props.child || this.props.children
+
     )
   }
 }

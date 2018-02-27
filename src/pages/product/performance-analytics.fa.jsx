@@ -45,8 +45,7 @@ class AnalyticsPage extends React.Component {
             <TwoColumn ratio={{xs: [10,10], sm:[4,6]}} center="xs" className="block-tour">
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.analyticsFeatures.timeToResolve.header} />
-                <Copy element="p" type="description" align="right"><div dangerouslySetInnerHTML={{__html: node.body.analyticsFeatures.timeToResolve.body }} />
-                </Copy>
+                <Copy element="p" type="description" align="right" child={node.body.analyticsFeatures.timeToResolve.body} />
               </div>
               <Img src={node.body.analyticsFeatures.timeToResolve.img} alt={node.body.analyticsFeatures.timeToResolve.alt} width="80%" />
             </TwoColumn>
@@ -54,15 +53,13 @@ class AnalyticsPage extends React.Component {
               <Img src={node.body.analyticsFeatures.deadlines.img} alt={node.body.analyticsFeatures.deadlines.alt} width="80%" />
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.analyticsFeatures.deadlines.header} />
-                <Copy element="p" type="description" align="right"><div dangerouslySetInnerHTML={{__html: node.body.analyticsFeatures.deadlines.body }} />
-                </Copy>
+                <Copy element="p" type="description" align="right" child={node.body.analyticsFeatures.deadlines.body} />
               </div>
             </TwoColumn>
             <TwoColumn ratio={{xs: [10,10], sm:[4,6]}} center="xs" className="block-tour">
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.analyticsFeatures.progress.header} />
-                <Copy element="p" type="description" align="right"><div dangerouslySetInnerHTML={{__html: node.body.analyticsFeatures.progress.body }} />
-                </Copy>
+                <Copy element="p" type="description" align="right" child= {node.body.analyticsFeatures.progress.body } />
               </div>
               <Img src={node.body.analyticsFeatures.progress.img} alt={node.body.analyticsFeatures.progress.alt} width="80%" />
             </TwoColumn>
@@ -70,15 +67,12 @@ class AnalyticsPage extends React.Component {
               <Img src={node.body.analyticsFeatures.filters.img} alt={node.body.analyticsFeatures.filters.alt} />
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.analyticsFeatures.filters.header} />
-                <Copy element="p" type="description" align="right"><div dangerouslySetInnerHTML={{__html: node.body.analyticsFeatures.filters.body }} />
-                </Copy>
+                <Copy element="p" type="description" align="right" child={node.body.analyticsFeatures.filters.body } />
               </div>
             </TwoColumn>
             <Row column center="xs" className="block-cta">
               <Col>
-                <Copy type="announce-white" element="h3">
-                  <div dangerouslySetInnerHTML={{__html: node.body.demoCTA.body}} />
-                </Copy>
+                <Copy type="announce-white" element="h3" child={node.body.demoCTA.body} />
               </Col>
               <Col>
                 <CTA type="login" name="btn.start" className="button-white" langKey={langKey} />&nbsp;

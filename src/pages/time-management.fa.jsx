@@ -37,8 +37,7 @@ class TimeManagementPage extends React.Component {
             <TwoColumn ratio={{xs: [12,12], sm:[5,5]}} center="xs">
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.intro1.header} />
-                <Copy element="p" type="description" align="right"><div dangerouslySetInnerHTML={{__html: node.body.intro1.body }} />
-                </Copy>
+                <Copy element="p" type="description" align="right" child={ node.body.intro1.body } />
               </div>
               <Img src={node.body.intro1.img} alt={node.body.intro1.alt} width="80%" />
             </TwoColumn>
@@ -46,8 +45,7 @@ class TimeManagementPage extends React.Component {
               <Img src={node.body.intro2.img} alt={node.body.intro2.alt} width="80%" />
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.intro2.header} />
-                <Copy element="p" type="description" align="right"><div dangerouslySetInnerHTML={{__html: node.body.intro2.body }} />
-                </Copy>
+                <Copy element="p" type="description" align="right" child={ node.body.intro2.body } />
               </div>
             </TwoColumn>
             <Row className="block-announce" center="xs">
@@ -62,9 +60,7 @@ class TimeManagementPage extends React.Component {
                             background: "no-repeat 100% url("+item.img+")"}}>
                   </div>
                   <Copy type="title" element="h3" child={item.title} />
-                  <Copy type="description" element="p" >
-                    <div dangerouslySetInnerHTML={{__html: item.desc}}></div>
-                  </Copy>
+                  <Copy type="description" element="p" child={item.desc} />
                 </Col>
               )}
             </Row>

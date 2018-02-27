@@ -31,9 +31,7 @@ class TermsPage extends React.Component {
             </Above>
             <Row tagName="section" center="xs">
               <Col xs={6}>
-                <Copy type="plain" element="div">
-                  <div dangerouslySetInnerHTML = {{__html: node.body.preamble}} />
-                </Copy>
+                <Copy type="plain" element="div" child={node.body.preamble} />
               </Col>
               <Col xs={8}>
                 <Copy type="subheader" element="h3" child={node.body.account.title}/>
@@ -86,9 +84,7 @@ class TermsPage extends React.Component {
                 </ul>
               </Col>
               <Col xs={6}>
-                <Copy type="plain" element="div">
-                  <div dangerouslySetInnerHTML = {{__html: node.body.ending}} />
-                </Copy>
+                <Copy type="plain" element="div" child={node.body.ending} />
               </Col>
             </Row>
           </div>

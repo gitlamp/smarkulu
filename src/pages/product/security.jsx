@@ -43,9 +43,7 @@ class SecurityPage extends React.Component {
               <div>
                 <Copy element="h2" type="title"  align="left" child={node.body.endToEnd.header} />
                 <Copy element="h5" type="sub"  align="left" child={node.body.endToEnd.subheader} />
-                <Copy element="p" type="description" align="left">
-                  <div dangerouslySetInnerHTML={{__html: node.body.endToEnd.body}} />
-                </Copy>
+                <Copy element="p" type="description" align="left" child={node.body.endToEnd.body} />
               </div>
             </TwoColumn>
             <TwoColumn ratio={{xs: [10,10], sm:[4,6]}} center="xs" className="block-tour">
@@ -73,9 +71,7 @@ class SecurityPage extends React.Component {
               <Img src={node.body.audits.img} alt={node.body.audits.alt} />
               <div>
                 <Copy element="h2" type="title" child={node.body.audits.header}  align="left" />
-                <Copy element="p" type="description" align="left">
-                  <div dangerouslySetInnerHTML={{__html: node.body.audits.body}} />
-                </Copy>
+                <Copy element="p" type="description" align="left" child={node.body.audits.body} />
               </div>
             </TwoColumn>
             <Row column center="xs" className="block-cta">
