@@ -1,0 +1,341 @@
+---
+header:
+  lang: en
+  slug: /our-users
+  title: "Our members"
+  desc: "From any industry, from any specialty, see which Iranian and foreign companies have become more productive with Taskulu."
+body:
+  hero:
+    header: "From every industry and every specialty, everyone can do their tasks with Taskulu."
+  industries:
+    marketing:
+      header: "Marketing and Advertising"
+      items:
+        -
+          company: "Modern"
+          alt: ""
+        -
+          company: "StudioPlus"
+          alt: ""
+        -
+          company: "Zibaloon"
+          alt: ""
+        -
+          company: "ToranjStudio"
+          alt: ""
+        -
+          company: "DMC"
+          alt: ""
+        -
+          company: "OmidRasaneh"
+          alt: ""
+        -
+          company: "Daart"
+          alt: ""
+        -
+          company: "Omnicom"
+          alt: ""
+        -
+          company: "TalashAdvertising"
+          alt: ""
+        -
+          company: "TRN"
+          alt: ""
+        -
+          company: "StudioGarousian"
+          alt: ""
+        -
+          company: "KianGraphic"
+          alt: ""
+        -
+          company: "Respinatech"
+          alt: ""
+    ecommerce:
+      header: "Ecommerce - Online Services"
+      items:
+        -
+          company: "NutriImport"
+          alt: ""
+        -
+          company: "Lichtraum"
+          alt: ""
+        -
+          company: "Porline"
+          alt: ""
+        -
+          company: "Honari"
+          alt: ""
+        -
+          company: "MeMarket"
+          alt: ""
+        -
+          company: "Tourland"
+          alt: ""
+        -
+          company: "Ceceba"
+          alt: ""
+        -
+          company: "Lahzenegar"
+          alt: ""
+        -
+          company: "Hoorsms"
+          alt: ""
+        -
+          company: "SanteLabo"
+          alt: ""
+        -
+          company: "Saremiz"
+          alt: ""
+        -
+          company: "DigiKala"
+          alt: ""
+    education:
+      header: "Education - Research"
+      items:
+        -
+          company: "RouzbehSchool"
+          alt: ""
+        -
+          company: "Avangard"
+          alt: ""
+        -
+          company: "INTA"
+          alt: ""
+        -
+          company: "Monta"
+          alt: ""
+        -
+          company: "AdabHighSchool"
+          alt: ""
+        -
+          company: "HozehKhorasan"
+          alt: ""
+        -
+          company: "AllamehHelli"
+          alt: ""
+        -
+          company: "Mersaad"
+          alt: ""
+        -
+          company: "AvayeBaran"
+          alt: ""
+        -
+          company: "Transparency4Iran"
+          alt: ""
+        -
+          company: "TMU"
+          alt: ""
+    manufacturing:
+      header: "Manufacturing - Consumer Goods"
+      items:
+        -
+          company: "NilsunKish"
+          alt: ""
+        -
+          company: "SarmaAfarin"
+          alt: ""
+        -
+          company: "BehsazTablo"
+          alt: ""
+        -
+          company: "Fuchs"
+          alt: ""
+        -
+          company: "BamIndustry"
+          alt: ""
+        -
+          company: "TejaratKimia"
+          alt: ""
+        -
+          company: "BetaParseh"
+          alt: ""
+        -
+          company: "AlpiSystem"
+          alt: ""
+        -
+          company: "Nakhostin"
+          alt: ""
+        -
+          company: "Elneo"
+          alt: ""
+        -
+          company: "Solico"
+          alt: ""
+    vas:
+      header: "Content Creation - VAS"
+      items:
+        -
+          company: "Faranesh"
+          alt: ""
+        -
+          company: "KiviMag"
+          alt: ""
+        -
+          company: "Namava"
+          alt: ""
+        -
+          company: "Artatel"
+          alt: ""
+        -
+          company: "Anarestan"
+          alt: ""
+        -
+          company: "AEK"
+          alt: ""
+        -
+          company: "Mediana"
+          alt: ""
+        -
+          company: "Khamenei"
+          alt: ""
+        -
+          company: "AkhbarRasmi"
+          alt: ""
+    media:
+      header: "Media - Entertainment"
+      items:
+        -
+          company: "Roccat"
+          alt: ""
+        -
+          company: "BehindTheStones"
+          alt: ""
+        -
+          company: "Hoorakhsh"
+          alt: ""
+        -
+          company: "WhiteDesigners"
+          alt: ""
+        -
+          company: "PictureClass"
+          alt: ""
+        -
+          company: "Avagames"
+          alt: ""
+    professionalService:
+      header: "Professional Services"
+      items:
+        -
+          company: "Avatech"
+          alt: ""
+        -
+          company: "Souban"
+          alt: ""
+        -
+          company: "iBazaryabi"
+          alt: ""
+        -
+          company: "Nesha"
+          alt: ""
+        -
+          company: "Moravia"
+          alt: ""
+    financialService:
+      header: "Financial Services"
+      items:
+        -
+          company: "SoS"
+          alt: ""
+        -
+          company: "Saravapars"
+          alt: ""
+        -
+          company: "AyandehBank"
+          alt: ""
+        -
+          company: "SinaInsurance"
+          alt: ""
+    architecture:
+      header: "Architecture - Design"
+      items:
+        -
+          company: "Khansalar"
+          alt: ""
+        -
+          company: "Akajour"
+          alt: ""
+        -
+          company: "StudioAbbasi"
+          alt: ""
+    IT:
+      header: "Information Technology - Software Development"
+      items:
+        -
+          company: "Fanap"
+          alt: ""
+        -
+          company: "Mega"
+          alt: ""
+        -
+          company: "EZWeb"
+          alt: ""
+        -
+          company: "Tebfa"
+          alt: ""
+        -
+          company: "Raycom"
+          alt: ""
+        -
+          company: "PartoBita"
+          alt: ""
+        -
+          company: "RPN"
+          alt: ""
+        -
+          company: "Bistun"
+          alt: ""
+        -
+          company: "Inova"
+          alt: ""
+        -
+          company: "Stilgrenze"
+          alt: ""
+        -
+          company: "VistaAsa"
+          alt: ""
+        -
+          company: "Khatam"
+          alt: ""
+        -
+          company: "Tajan"
+          alt: ""
+        -
+          company: "HesabKetab"
+          alt: ""
+    communication:
+      header: "Communication"
+      items:
+        -
+          company: "Atinet"
+          alt: ""
+        -
+          company: "LivarFars"
+          alt: ""
+        -
+          company: "Asiatech"
+          alt: ""
+    government:
+      header: "Government - Public Services"
+      items:
+        -
+          company: "HozehHonari"
+          alt: ""
+        -
+          company: "MashhadMunicipality"
+          alt: ""
+        -
+          company: "PMO"
+          alt: ""
+    nonProfit:
+      header: "Non-profit Organizations"
+      items:
+        -
+          company: "Region18Mosque"
+          alt: ""
+        -
+          company: "Yarigaran"
+          alt: ""
+        -
+          company: "Pooyesh"
+          alt: ""
+...

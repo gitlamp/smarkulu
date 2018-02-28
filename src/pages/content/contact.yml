@@ -2,17 +2,23 @@
 header:
   lang: en
   slug: /contact
-  title: Contact us
-  desc: Get in touch with us to get support or talk with our sales team.
+  title: "Contact Us"
+  desc: "View contact details and Taskulu's work hours on this page."
 body:
   contact:
     -
-      header:
-      body:
+      header: "Our address"
+      body: ""
+    -
+      header: "Phone Number"
+      body: ""
+    -
+      header: "Work Hours"
+      body: ""
   support:
-    header:
-    body:
+    header: "Ask us anything, or share your feedback."
+    body: "We like to help you online."
   demo:
-    header:
-    body:
+    header: "Need Consultation?"
+    body: "Our sales consultants are ready to answer your questions about Taskulu and help you choose the right plan."
 ...

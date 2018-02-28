@@ -2,60 +2,136 @@
 header:
   lang: en
   slug: /pricing
-  title: Pricing
-  desc: Start using Taskulu for free and learn more about Taskulu pricing plans for Business and Dedicated plans.
+  title: "Plans"
+  desc: "Read more about Taskulu pricing plans"
 body:
   hero:
-    header:
-    body:
+    header: "Taskulu Pricing Plans for every need"
+    body: "For teams with 10 members, or a company with hundreds"
   plan:
     free:
-      header:
-      desc:
-      span:
-      price:
+      header: "Basic"
+      desc: "For small teams and startups "
+      span: "For 10 members at most"
+      price: "Free"
       features:
+        - "Upload per file: 10MB"
+        - "Task Management"
+        - "Timelogs"
+        - "Online Chat"
     professional:
-      header:
-      desc:
-      span:
-      price:
+      header: "Professional"
+      desc: "For small companies with maximum of 2 projects"
+      span: "For 1 project"
+      price: "$9 per member"
       features:
+        - "Upload per file: 500MB"
+        - "Task Management"
+        - "Timelogs"
+        - "Online Chat"
+        - "Teams and Access Control"
+        - "Weekly Project Reports"
+        - "Priority Online Support"
     business:
-      header:
-      desc:
-      span:
-      price:
+      header: "Business"
+      desc: "For companies and medium-sized organizations"
+      span: "For all projects in organization"
+      price: "$25 per member"
       features:
+        - "Upload per file: 1GB"
+        - "Analytics"
+        - "Task Management"
+        - "Timelogs"
+        - "Online Chat"
+        - "Teams and Access Control"
+        - "Weekly Project Reports"
+        - "Priority Online Support"
+        - "Analytic Reports"
     dedicated:
-      header:
-      desc:
-      price:
+      header: "Dedicated"
+      desc: "For companies that want to use taskulu on self-hosted servers"
+      price: "Customize your needs"
       features:
+        - "Upload per file: 2GB"
+        - "Analytics"
+        - "Task Management"
+        - "Timelogs"
+        - "Online Chat"
+        - "Teams and Access Control"
+        - "Weekly Project Reports"
+        - "Priority Online Support"
+        - "Onboarding and Training"
+        - "Branded Analytic Reports"
+        - "SAML-based Single Sign-On (SSO)"
+        - "Data Migration"
+        - "Support"
+        - "Dedicated Success Manager"
   faq:
-    header:
+    header: "Frequently asked questions"
     services:
-      header: "Frequently asked question"
+      header: "Product"
       items:
         -
-          question:
-          answer:
+          question: "How do I get started?"
+          answer: "It’s very simple! Just register for an account, create a project and invite your team. Someone from our team will reach out to you to get you started and help with any questions."
+        -
+          question: "Do I need to install any softwares on my computer to use Taskulu?"
+          answer: "Not at all! Taskulu is an online tool, and you can use it with any browser. You can also install and use Taskulu mobile app on android and iOS."
+        -
+          question: "Where can I find a demo of Taskulu?"
+          answer: "The best way of learning more about Taskulu is using it with your team and get access to all features for a month – for free! Just register an account, create a project and invite your team to get started.
+          We can also arrange a product demo for you if you need to learn more about Taskulu before registration. We’ll walk you through the basics and help you get started."
     payments:
-      header:
+      header: "Billing"
       items:
         -
-          question:
-          answer:
+          question: "Does everyone in my team have to pay?"
+          answer: "No! Only the project owners (members who are creating projects) pay – You don’t have to pay if you’re being added to an existing project."
+        -
+          question: "What types of payments do you accept?"
+          answer: "You can use your credit card to pay for any plan. If you sign up for an Annual subscription and plan to spend at least $5K, we can invoice you annually. Contact us to start the process."
+        -
+          question: "How do I cancel a paying project?"
+          answer: "Just open the project settings and change the project type from Premium to Free."
+        -
+          question: "Do you offer education and non-profit discounts?"
+          answer: "Yes, we offer free and discounted plans to students, teachers, schools, and non-profit organizations. Please contact us and we’ll get you started."
+        -
+          question: "Members of my project or organization are more than 10 now, do i have to pay for the additional members only?"
+          answer: "You need to pay for the entire project or organization, not just for additional members. When an organization or project is upgraded to business and  professional plans, more features are added to them, and all project members can use them. Payment must also be made for all members."
+        -
+          question: "What is the difference between monthly and annual payments and why is the monthly payment more expensive?"
+          answer: "You must pay a monthly fee if you select our monthly payment plan, but when you choose to pay annually, we will give you a discount as a thank you. For example, if you make a monthly payment, you have to pay a monthly amount of 9 dollars per person, which is 108 dollars per year. But if you pay annually, you have to pay 72 dollars per person, a little over 30% savings."
+        -
+          question: "Can I add new members after making a payment?"
+          answer: "Yes, you can. The amount you pay for new members will be calculated according to how many days are remaining till the end of your plan and a new invoice will be issued to you. For example, if the plan you bought was monthly and only 10 days left by the end of the month for your new member, you should only pay for the remaining 10 days."
+        -
+          question: "Can I remove the member after payment and add a new member instead?"
+          answer: "Yes, you can delete members and add another member to the project or organization instead. No need to pay extra for replacement."
+        -
+          question: "If I decide to delete a member after payment, will it be added to my account credit?"
+          answer: "No, if you remove a member after the payment, the cost you paid for that member will not be added to your account automatically. I you want to delete a member, you can contact Taskulu support team and we add Taskulu credit to your account for your deleted member."
+        -
+          question: "Can I upgrade a personal project to business plan, or an organization and it's projects to professional plan?"
+          answer: "No, business plan is for organizations, and professional plan is for personal projects. If you decided to upgrade a project you created in an organization to professional plan, you must first change it into a personal project.To get more information about Taskulu's plans, we recommend you to read this help page."
     security:
-      header:
+      header: "Security & Privacy"
       items:
         -
-          question:
-          answer:
+          question: "Where is Taskulu hosted?"
+          answer: "Our servers are located in Softlayer Frankfurt datacenter in Germany (Zenium Frankfurt One). We have multiple servers ready for high availability so if one of the servers goes down, the service doesn’t get interrupted. We also have storage servers in London, Singapore and Dallas where we keep encrypted daily backups. This ensures that we won’t lose the backups in case of natural disasters.
+          Softlayer has a whole department dedicated to compliance and works with independent auditors and third-party organizations to meet the industry’s most stringent guidelines. You can learn more about Softlayer’s compliance and security measures on their website: http://www.softlayer.com/compliance"
+        -
+          question: "What's your approach to privacy?"
+          answer: "Everything you post on Taskulu is your data and only available to the people who have been added to your project. We’re simply the keepers of your data; Each project owns its own data and the project owners can define access controls within their projects to specify which data each project member has access to. You can learn more about our privacy policy here."
     legality:
-      header:
+      header: "Legal"
       items:
         -
-          question:
-          answer:
+          question: "Where can I find your Terms of Service?"
+          answer: "You can find our ToS here."
+        -
+          question: "Can you modify parts of your Terms of Service to meet our internal legal guidelines?"
+          answer: "We’ve done our best to follow industry standards while writing Our Terms of Service (ToS) to make sure that it meets the requirements of most companies. The ToS is being used by thousands of individuals and companies of all sizes around the world. Therefore, we do not provide modified versions of the ToS on Free and Premium accounts.
+          But we understand that our ToS don’t meet the needs of all companies. If that’s the case with your company, please checkout Taskulu Enterprise where we allow modifications to the ToS, custom NDAs and more."
 ...

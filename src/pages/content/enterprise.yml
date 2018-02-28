@@ -2,5 +2,17 @@
 header:
   lang: en
   slug: /enterprise
-  title: Demo Request
-  desc: Empty
+  title: "Sales Consultation"
+  desc: "Talk to our sales consultants and get acquainted with Taskulu's dedicated solution for organizations and big companies."
+body:
+  header: "Taskulu for Organizations"
+  list:
+    header: "Sales consultants are ready to:"
+    items:
+      - "Listen to your organization's specific working conditions and needs"
+      - "Teach you how Taskulu works"
+      - "Offer you the best suggestions to increase team productivity, based on the experience of our successful members in your industry and business area"
+      - "Help you choose the best solutions according to your needs"
+      - "Answer your questions about the Taskulu"
+      - "Plan for a long-lastig friendship with you"
+...

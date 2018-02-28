@@ -23,28 +23,37 @@ body:
   logos:
     header: "لوگو‌های تسکولو"
     desc: "لوگوی آبی روی پس‌زمینه‌های روشن و لوگوی سفید روی پس‌زمینه‌های تیره استفاده میشه."
-    enBlue: "لوگوی انگلیسی آبی"
-    enWhite: "لوگوی انگلیسی سفید"
-    faBlue: "لوگوی فارسی آبی"
-    faWhite: "لوگوی فارسی سفید"
+    enBlue: "/logos/logo-blue.svg"
+    enBlueSrc: "/files/logo-blue.zip"
+    enWhite: "/logos/logo-white.svg"
+    enWhiteSrc: "/files/logo-white.zip"
+    faBlue: "/logos/fa-logo-blue.svg"
+    faBlueSrc: "/files/fa-logo-blue.zip"
+    faWhite: "/logos/fa-logo-white.svg"
+    faWhiteSrc: "/files/fa-logo-white.zip"
   icons:
     header: "آیکون‌های تسکولو"
     desc: "آیکون آبی روی پس‌زمینه‌های روشن و آیکون سفید روی پس‌زمینه‌های تیره استفاده میشه."
-    iconBlue: "آیکون آبی"
-    iconWhite: "آیکون سفید"
+    iconBlue: "/logos/icon-blue.svg"
+    iconBlueSrc: "/files/icon-blue.zip"
+    iconWhite: "/logos/icon-white.svg"
+    iconWhiteSrc: "/files/icon-white.zip"
   news:
     header: "تسکولو در رسانه‌ها"
     items:
       -
         title: "Could Iran Be A Software Growth Market?"
         source: "forbes"
+        img: "/img/press-forbes.png"
         link: http://www.forbes.com/sites/adrianbridgwater/2015/11/09/could-iran-be-a-software-growth-market/
       -
         title: "Startup Istanbul 2015: Meet the winners"
         source: "Etohum"
+        img: "/img/press-startup-istanbul.jpg"
         link: http://www.etohum.com/blog/startup-istanbul-2015-meet-the-winners/
       -
         title: "Rollenbasiertem Projektmanagement"
         source: "T3n magazine"
+        img: "/img/press-t3n.jpg"
         link: http://t3n.de/news/projektmanagement-taskulu-trello-alternative-581805/
 ...

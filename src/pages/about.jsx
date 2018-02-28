@@ -18,7 +18,7 @@ class AboutPage extends React.Component {
       <div>
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
-            <SEO pagePAth={langKey} title={node.header.title} generalDesc={node.header.desc} />
+            <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
             <Above center="xs">
               <Col xs={10}>
                 <Copy type="header" element="h1" child={node.body.header} />
@@ -93,7 +93,7 @@ class PersonsImg extends React.Component {
 export default AboutPage
 
 /**
- * Require data from fa yaml
+ * Require data from en yaml
  */
 export const pageQuery = graphql `
 query AboutPage {
