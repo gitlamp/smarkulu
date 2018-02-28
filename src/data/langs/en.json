@@ -16,6 +16,7 @@
   "btn.contact": "Contact us",
   "btn.start": "Start Free",
   "btn.demo": "Request a Demo",
+  "btn.product": "View Features",
 
   "header.menu.product": "Product",
   "header.menu.pricing": "Pricing",
@@ -49,7 +50,7 @@
   "col-label-4": "Resources",
 
   "count.users.numeric": "60,000",
-  "count.users.alphanumeric": "60 thousands",
-  "count.users.alpha": "sixty thousands"
+  "count.users.alphanumeric": "60 thousand",
+  "count.users.alpha": "sixty thousand"
 
 }

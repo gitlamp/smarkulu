@@ -3,7 +3,97 @@ header:
   lang: en
   slug: /
   title: Task management for teams
-  desc: Flexible task management, realtime chat, time logs and deep integrations. Taskulu helps you get results and scale your team performance.
+  desc: A flexible, simple and safe solution for team and task management. Taskulu`s professional features help you make team collaboration more effective.
 body:
+  hero:
+    header: "Teamwork solution for everyone"
+    body1: "Manage your "
+    items:
+      - "Tasks"
+      - "Projects"
+      - "Teams"
+      - "Organizations"
+
   why:
-    easy: "Build Taskulu according to your needs and work on tasks and projects"
+    header: |
+      In organizations, marketing agencies,
+      <br/>or even game development companies
+    eazy:
+      title: "Build Taskulu according to your needs and stand one step ahead."
+      img: /img/make-own-project.png
+    scalable:
+      title: "Whether 10 or 1000, get result together"
+      img: /img/collaboration.svg
+  customerLogos:
+    header: |
+      In organizations, marketing agencies,
+      <br/>or even game development companies
+    logos:
+      -
+        company: "HozehHonari"
+        alt: "حوزه هنری"
+      -
+        company: "MashhadMunicipality"
+        alt: "شهرداری مشهد"
+      -
+        company: "Fanap"
+        alt: "فناپ"
+      -
+        company: "Asiatech"
+        alt: "آسیا تک"
+      -
+        company: "DigiKala"
+        alt: "دیجی کالا"
+      -
+        company: "TejaratKimia"
+        alt: "کیمیا تجارت"
+      -
+        company: "Saravapars"
+        alt: "سرآوا"
+      -
+        company: "Modern"
+        alt: "چاپ مدرن"
+      -
+        company: "Mediana"
+        alt: "مدیانا"
+      -
+        company: "Fuchs"
+        alt: "فوکس"
+      -
+        company: "SarmaAfarin"
+        alt: "سرما آفرین"
+  customers:
+    header: "See how Taskulu helps other companies"
+    img: /img/saeed.png
+    src: https://www.aparat.com/v/YkwI9
+  collaboration:
+    header: "See all the information in one place, Stay updated with the latest activities, build effective communication with your team and get results together."
+  indexFeatures:
+    header: "Everything you need for more productivity"
+    items:
+      -
+        icon: /img/create-project.svg
+        text: "Define/Create your projects and tasks"
+      -
+        icon: /img/invite-teams.svg
+        text: "Invite your co-workers and assign tasks to them"
+      -
+        icon: /img/analytic-reports.svg
+        text: "Make decisions easier with understandable reports."
+  demoCTA:
+    body: |
+      نسخه‌های حرفه‌ای و سازمانی تسکولو به تیم‌ها و سازمان‌هایی در سرتاسر دنیا کمک کرده‌است تا بهترین نتیجه را بگیرند. می‌خواهید بدانید چطور؟
+      <br/></br/>
+      برای اطلاعات بیشتر با کارشناسان فروش ما مشورت کنید.
+
+    cta: btn.register
+    header: count.users.alphanumeric
+    headerParts:
+        -
+          "We helped over"
+        -
+          count.users.alphanumeric
+        -
+          "users all around the world"
+
+...

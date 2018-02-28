@@ -1,135 +1,211 @@
 import React from 'react'
 import graphql from 'graphql'
+import { FormattedMessage } from 'react-intl'
 import { Grid, Row, Col } from 'react-flexbox-grid'
+import Helmet from 'react-helmet'
+import $ from 'jquery'
+import { TweenLite } from 'gsap'
 
 import SEO from '../components/SEO'
 import Input from '../components/Input'
 import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above } from '../components/Partials'
+import { TwoColumn, Above, Logos } from '../components/Partials'
 
-const IndexPage = (props) => {
-  const { data } = props
-  const { slug, langKey } = props.pathContext
-  return (
-    <div>
-      {data.allContentYaml.edges.map(({node}) =>
-        <div key={node.id}>
-          <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-          <Above full center="xs">
-            <Grid>
-              <Row>
-                <Col className="content" xs>
-                  <h1 className="content-head">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, laboriosam!</h1>
-                  <Input placeholder="Enter your email address" />
-                </Col>
-              </Row>
-              <div className="proto">
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  componentDidMount() {
+    const $item = $('.text-switcher').find('span')
+    let oldItem = 0
+    let currentItem = -1
+    const flip = function() {
+      let oldItem = currentItem
+
+      if(currentItem < $item.length -1) {
+        currentItem++
+      } else {
+        currentItem = 0
+      }
+
+      TweenLite.to($item.eq(oldItem), .4, {
+        top: -20,
+        alpha: 0,
+        rotationX: 90
+      })
+      TweenLite.fromTo($item.eq(currentItem), .4, {
+        top: 20,
+        alpha: 0,
+        rotationX: -90
+      }, {
+        top: 0,
+        alpha: 1,
+        rotationX: 0
+      })
+      TweenLite.delayedCall(3, flip)
+    }
+    flip()
+  }
+  render() {
+    const data = this.props.data
+    const langKey = this.props.pathContext.langKey
+    const slug = this.props.pathContext.slug
+    return (
+      <div>
+        {data.allContentYaml.edges.map(({node}) =>
+          <div key={node.id}>
+            <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
+            <Above full center="xs" column style={{alignItems: 'center'}}>
+              <Col xs>
+                <h2 className="home-hero">
+                  {node.body.hero.body1}
+                  <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
+                  <span>{node.body.hero.body2}</span>
+                </h2>
+                <Input placeholder="Enter your email address"/>
+              </Col>
+              <Col xs className="proto">
                 <div className="proto-content"></div>
-                <img src="/img/browser_frame.png" alt="browser frame" />
-              </div>
-            </Grid>
-          </Above>
-          <Row tagName="section" center="xs">
-            <Grid>
-              <Row center="xs">
-                <Col xs={12} sm={12} md={8} lg={8}>
-                  <Copy align="center" element="h3" child="Lorem ipsum, dolor sit amet consectetur adipisicing elit." type="header"/>
-                </Col>
-              </Row>
-              <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }}>
-                <Copy child="Lorem ipsum, dolor sit amet consectetur adipisicing elit." type="subheader" element="h3"/>
-                <Img src="#" alt="No IMG"/>
-              </TwoColumn>
-              <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[8,4], lg:[8,4] }}>
-                <Img src="#" alt="No IMG"/>
-                <Copy child="Lorem ipsum, dolor sit amet consectetur adipisicing elit." type="subheader" element="h3"/>
-              </TwoColumn>
-            </Grid>
-          </Row>
-          <Row tagName="section" style={{ backgroundColor: '#f6f8f9' }} center="xs">
-            <Grid>
-              <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }}>
-                <div>
-                  <Copy child="Lorem ipsum, dolor sit amet consectetur adipisicing elit." type="header" element="h2"/>
-                  <Copy child="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae ipsa nemo repudiandae aspernatur neque voluptatibus ut fugit vero fuga obcaecati possimus quod magnam tempore illum rerum, autem nihil repellendus numquam?" type="body" element="p"/>
-                </div>
-                <Img src="#" alt="No IMG"/>
-              </TwoColumn>
-            </Grid>
-          </Row>
-          <Row tagName="section" style={{backgroundColor: '#2980b9'}} center="xs">
-            <Grid>
-              <Row className="testimonial" center="xs">
-                <Col lg={4} md={6} xs={12}>
-                  <a className="testimonial-media" href="">
-                    <i className="fa fa-play-circle" aria-hidden="true"></i>
-                  </a>
-                </Col>
-                <Col className="testimonial-content" lg={4} md={6} xs={12}>
-                  <h3 className="testimonial-content-head">Lorem ipsum dolor sit.</h3>
-                  <span className="testimonial-content-subhead">Lorem ipsum dolor sit amet.</span>
-                  <p className="testimonial-content-quote">" Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro blanditiis quia perspiciatis iusto iste doloribus
-                    voluptatem et impedit consequuntur optio! "</p>
-                </Col>
-              </Row>
-            </Grid>
-          </Row>
-          <Row tagName="section" center="xs">
-            <Grid>
-              <Row className="compcards" center="xs">
-                <Col xs={12} lg={4} sm={12} className="compcards-content">
-                  <Copy align="left" element="h3" type="subheader" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam consectetur obcaecati tempora, aut assumenda quasi nemo voluptates error modi."/>
-                </Col>
-                <Col xs={12} lg={8} sm={12}>
-                  <Row>
-                    <Col xs={12} sm={12} className="compcards-card">
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Grid>
-          </Row>
-          <Row tagName="section" center="xs">
-            <Grid>
-              <Row center="xs">
-                <Col xs={12} lg={8}>
-                  <Copy type="header" element="h2" child="Lorem ipsum dolor sit amet."/>
-                  <Copy type="body" element="p" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci illo odio saepe cupiditate consequatur velit Aliquid aliquam quam non eius!"/>
-                  <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
-                </Col>
-              </Row>
-            </Grid>
-          </Row>
-        </div>
-      )}
-    </div>
-  )
+                <Img src="/img/home-hero.png" alt="browser frame"/>
+              </Col>
+            </Above>
+            <Logos
+              src={node.body.customerLogos.logos}
+              header={node.body.customerLogos.header}
+              md={2}
+              xs={4}
+              middle="xs"/>
+            <Row tagName="section" center="xs">
+              <Col xs={8} style={{backgroundImage: "url('/img/make-own-project.svg')"}} className="homewhy">
+                <Copy child={node.body.why.eazy.title} type="whyheader" element="h3" align="left" />
+              </Col>
+              <Col xs={8} style={{backgroundImage: "url('/img/collaboration.svg')"}} className="homewhy">
+                <Copy style={{float: "left"}} align="left" child={node.body.why.scalable.title} type="whyheader" element="h3"/>
+              </Col>
+            </Row>
+            {langKey==='fa' ?
+              <a href={node.body.customers.src} style={{textDecoration: "none"}}>
+                <Row style={{backgroundImage: "url('/img/saeed.png')"}} className="video-background" ragName="section" end="xs">
+                  <i className="fa fa-play-circle"></i>
+                  <Col xs={3} xsOffset={8}>
+                    <Copy type="video-copy" element="h3" align="left" child={node.body.customers.header} />
+                  </Col>
+                </Row>
+              </a>:null}
+            <Row tagName="section" className="block-tour" center="xs">
+              <Col xs={10}>
+                <Copy type="header" element="h3" className="title" child={node.body.indexFeatures.header}/>
+              </Col>
+              {node.body.indexFeatures.items.map((item, i) => {
+                 return (
+                   <Col xs={10} md lg={3} key={i}>
+                     <div className="features-card">
+                       <div className="features-card-icon">
+                         <Img src={item.icon} width="40%" />
+                       </div>
+                       <div className="features-card-txt content-title">
+                         {item.text}
+                       </div>
+                     </div>
+                   </Col>
+                 )})}
+              <Col xs={10}>
+                <CTA type="internal" href="/product" langKey={langKey} className="button-submit" name="btn.product" />
+              </Col>
+            </Row>
+            <Row column style={{alignItems: "center"}} tagName="section" center="xs" className="block-cta">
+              <Col xs={10} lg={6}>
+                <h2 className="content-subheader">
+                  {/* {[0,1,2].map((item) => {
+                      <FormattedMessage id={node.body.demoCTA.headerParts[0]} />
+                      })} */}
+                  <FormattedMessage id={node.body.demoCTA.headerParts[0]} /> &nbsp;
+           <FormattedMessage id={node.body.demoCTA.headerParts[1]} /> &nbsp;
+           {node.body.demoCTA.headerParts[2]}
+                </h2>
+              </Col>
+              <Col xs={10} lg={6}>
+                <Copy type="announce-white" element="p" child={node.body.demoCTA.body}/>
+                <CTA className="button-white" name="btn.demo" href="/enterprise" type="internal" langKey={langKey}/>
+              </Col>
+            </Row>
+          </div>
+        )}
+      </div>
+    )
+  }
 }
 
 export default IndexPage
 
 /**
- * Require data from en yaml
+ * Require data from fa yaml
  */
 export const pageQuery = graphql `
-query IndexPage {
-  allContentYaml(
-    filter: {
-      header: {
-        lang: { eq: "en" }
-        slug: { eq: "/" }
+  query IndexEnPage {
+    allContentYaml(
+      filter: {
+        header: {
+          lang: { eq: "en" }
+          slug: { eq: "/" }
+        }
       }
-    }
-  ){
-    edges {
-      node {
-        id
-        header {
-          title
-          desc
+    ){
+      edges {
+        node {
+          id
+          header {
+            title
+            desc
+          }
+          body {
+            hero {
+              header
+              body1
+              items
+            }
+            why {
+              header
+              eazy {
+                title
+                img
+              }
+              scalable {
+                title
+                img
+              }
+            }
+            customerLogos {
+              header
+              logos {
+                company
+                alt
+              }
+            }
+            customers {
+              header
+              img
+              src
+            }
+            collaboration {
+              header
+            }
+            indexFeatures {
+              header
+              items {
+                icon
+                text
+              }
+            }
+            demoCTA {
+              header
+              headerParts
+              body
+              cta
+            }
+          }
         }
       }
     }
   }
-}
 `

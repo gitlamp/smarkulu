@@ -21,10 +21,10 @@ const Product = (props) => {
             generalDesc={node.header.desc}/>
           <Above center="xs">
             <Grid>
-              <Row>
-                <Col xs className="content">
-                  <Copy type="header" element="h2" child={node.body.hero.header}/>
-                  <Copy type="subheader" element="p" child={node.body.hero.body}/>
+              <Row center="xs">
+                <Col xs={4}>
+                  <Copy type="header" element="h1" child={node.body.hero.header} align="right" />
+                  <Copy type="title" element="p" child={node.body.hero.desc} align="right" />
                 </Col>
               </Row>
             </Grid>
@@ -33,8 +33,8 @@ const Product = (props) => {
             <Grid>
               <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
-                  <Copy type="header" element="h2" child={node.body.section1.header}/>
-                  <Copy type="body" element="p" child={node.body.section1.body}/>
+                  <Copy type="title" align="right" element="h2" child={node.body.section1.header}/>
+                  <Copy type="description" align="right" element="p" child={node.body.section1.body}/>
                 </div>
                 <Img src="#" alt="No IMG"/>
               </TwoColumn>
@@ -45,8 +45,8 @@ const Product = (props) => {
               <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }}>
                 <Img src="#" alt="No IMG"/>
                 <div>
-                  <Copy type="header" element="h2" child={node.body.section2.header}/>
-                  <Copy type="body" element="p" child={node.body.section2.body}/>
+                  <Copy type="title" align="right" element="h2" child={node.body.section2.header}/>
+                  <Copy type="description" align="right" element="p" child={node.body.section2.body}/>
                 </div>
               </TwoColumn>
             </Grid>
@@ -55,8 +55,8 @@ const Product = (props) => {
             <Grid>
               <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
-                  <Copy type="header" element="h2" child={node.body.section3.header}/>
-                  <Copy type="body" element="p" child={node.body.section3.body}/>
+                  <Copy type="title" align="right" element="h2" child={node.body.section3.header}/>
+                  <Copy type="description" align="right" element="p" child={node.body.section3.body}/>
                 </div>
                 <Img src="#" alt="No IMG"/>
               </TwoColumn>
@@ -66,23 +66,23 @@ const Product = (props) => {
             <Grid>
               <Row>
                 {node.body.features.items.map((item, i) => {
-                  return (
-                    <Col xs={12} sm={4} lg={4} className="features" key={i}>
-                      <span className="features-icon">
-                        <span className={`taskulu-icon ${item.icon}`}></span>
-                      </span>
-                      <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
-                      <Copy type="body" element="p" className="features-desc" child={item.desc}/>
-                      <FormattedMessage id="link.learnmore">
-                      {(txt) =>
-                        <Link to="#" className="btn button button-white">
-                          {txt}
-                          <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
-                        </Link>
-                      }
-                      </FormattedMessage>
-                    </Col>
-                  )
+                   return (
+                     <Col xs={12} sm={4} lg={4} className="features" key={i}>
+                       <span className="features-icon">
+                         <span className={`taskulu-icon ${item.icon}`}></span>
+                       </span>
+                       <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
+                       <Copy type="body" element="p" className="features-desc" child={item.desc}/>
+                       <FormattedMessage id="link.learnmore">
+                         {(txt) =>
+                           <Link to="#" className="btn button button-white">
+                             {txt}
+                             <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
+                           </Link>
+                         }
+                       </FormattedMessage>
+                     </Col>
+                   )
                 })}
               </Row>
             </Grid>
@@ -118,6 +118,7 @@ query ProductFaPage {
         body {
           hero {
             header
+            desc
           }
           section1 {
             header

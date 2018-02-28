@@ -138,7 +138,7 @@ class Logos extends React.Component {
           (this.props.header) ?
           (
           <Col xs = {12} className = "complogos-header">
-            <Copy type="header" element="h3" child={this.props.header}/>
+            <Copy type="logo-header" element="h3" child={this.props.header}/>
           </Col>
           ) : null
         }

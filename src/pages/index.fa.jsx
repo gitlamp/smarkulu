@@ -52,11 +52,6 @@ class IndexPage extends React.Component {
     const slug = this.props.pathContext.slug
     return (
       <div>
-        <Helmet>
-          <script src="https://fast.wistia.com/embed/medias/x3j06nrfqu.jsonp" async></script>
-          <script src="https://fast.wistia.com/embed/medias/4o2mxn9zbo.jsonp" async></script>
-          <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-        </Helmet>
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
@@ -64,17 +59,16 @@ class IndexPage extends React.Component {
               <Grid>
                 <Row>
                   <Col xs>
-                    <Copy type="subheader" element="h1" child={node.body.hero.header}/>
-                    <Copy type="header" element="h2">
+                    <h2 className="home-hero">
                       {node.body.hero.body}
                       <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
-                    </Copy>
+                    </h2>
                     <Input placeholder="Enter your email address"/>
                   </Col>
                 </Row>
                 <div className="proto">
                   <div className="proto-content"></div>
-                  <Img src="/img/browser_frame.png" alt="browser frame"/>
+                  <Img src="/img/home-hero.png" alt="browser frame"/>
                 </div>
               </Grid>
             </Above>
@@ -85,108 +79,63 @@ class IndexPage extends React.Component {
               xs={4}
               middle="xs"/>
             <Row tagName="section" center="xs">
-              <Grid>
-                <Row center="xs">
-                  <Col xs={12} sm={12} md={8} lg={8}>
-                    <Copy align="center" element="h3" child={node.body.why.header} type="header"/>
+              <Col xs={8} style={{backgroundImage: "url('/img/make-own-project.svg')"}} className="homewhy">
+                <Copy child={node.body.why.eazy.title} type="whyheader" element="h3" align="right" />
+              </Col>
+              <Col xs={8} style={{backgroundImage: "url('/img/collaboration.svg')"}} className="homewhy">
+                <Copy style={{float: "left"}} align="right" child={node.body.why.scalable.title} type="whyheader" element="h3"/>
+              </Col>
+            </Row>
+            {langKey==='fa' ?
+              <a href={node.body.customers.src} style={{textDecoration: "none"}}>
+                <Row style={{backgroundImage: "url('/img/saeed.png')"}} className="video-background" ragName="section" end="xs">
+                  <i className="fa fa-play-circle"></i>
+                  <Col xs={3} xsOffset={8}>
+                    <Copy type="video-copy" element="h3" align="right" child={node.body.customers.header} />
                   </Col>
                 </Row>
-                <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[4,8], lg:[4,8] }} middle="xs">
-                  <Copy child={node.body.why.easy} type="subheader" element="h3"/>
-                  <Img src="/img/make-own-project.svg" height="5rem" alt="No IMG"/>
-                </TwoColumn>
-                <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }} middle="xs">
-                  <Img src="/img/collaboration.svg" alt="No IMG"/>
-                  <Copy last="md" first="xs" child={node.body.why.scalable} type="subheader" element="h3"/>
-                </TwoColumn>
-              </Grid>
+              </a>:null}
+            <Row tagName="section" className="block-tour" center="xs">
+              <Col xs={10}>
+                <Copy type="header" element="h3" className="title" child={node.body.indexFeatures.header}/>
+              </Col>
+              {node.body.indexFeatures.items.map((item, i) => {
+                 return (
+                   <Col xs={10} md lg={3} key={i}>
+                     <div className="features-card">
+                       <div className="features-card-icon">
+                         <Img src={item.icon} width="40%" />
+                       </div>
+                       <div className="features-card-txt content-title">
+                         {item.text}
+                       </div>
+                     </div>
+                   </Col>
+                 )})}
+              <Col xs={10}>
+                <CTA type="internal" href="/product" langKey={langKey} className="button-submit" name="btn.product" />
+              </Col>
             </Row>
-            <Row tagName="section" center="xs">
-              <Grid>
-                <Row className="compcards" center="xs">
-                  <Col xs={12} lg={4} sm={12} className="compcards-content">
-                    <Copy align="right" element="h2" type="header" child={node.body.customers.header}/>
-                  </Col>
-                  <Col xs={12} lg={8} sm={12}>
-                    <Row>
-                      <Col xs={12} sm={12} md className="compcards-card">
-                        <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
-                          <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
-                            <div className="wistia_embed wistia_async_x3j06nrfqu popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
-                          </div>
-                        </div>
-                      </Col>
-                      <Col xs={12} sm={12} md className="compcards-card">
-                        <div className="wistia_responsive_padding" style={{padding:'56.25% 0 0 0',position:'relative'}}>
-                          <div className="wistia_responsive_wrapper" style={{height:'100%',left:'0',position:'absolute',top:'0',width:'100%'}}>
-                            <div className="wistia_embed wistia_async_4o2mxn9zbo popover=true seo=false popoverAnimateThumbnail=true" style={{height:'100%',width:'100%'}}>&nbsp;</div>
-                          </div>
-                        </div>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </Grid>
-            </Row>
-            <Row tagName="section" center="xs">
-              <Grid>
-                <TwoColumn ratio={{ xs:[12, 12], sm:[6,6], md:[8,4], lg:[8,4] }}>
-                  <Img src="#" alt="No IMG"/>
-                  <Copy type="subheader" element="h2" child={node.body.collaboration.header}/>
-                </TwoColumn>
-              </Grid>
-            </Row>
-            <Row tagName="section" style={{ backgroundColor: '#2980b9' }} center="xs">
-              <Grid>
-                <Row center="xs">
-                  <Col xs={10}>
-                    <Copy type="header" element="h3" className="typo-white" child={node.body.indexFeatures.header}/>
-                  </Col>
-                  {node.body.indexFeatures.items.map((item, i) => {
-                     return (
-                       <Col xs={12} md lg={4} key={i}>
-                         <div className="features-card">
-                           <div className="features-card-icon">
-                             <span className={`taskulu-icon ${item.icon}`}></span>
-                           </div>
-                           <div className="features-card-txt content-body">{item.text}
-                           </div>
-                         </div>
-                       </Col>
-                     )})}
-
-                </Row>
-                <Row center="xs">
-                  <FormattedMessage id="btn.seeMore">
-                    {(txt) =>
-                      <a href="" className="btn button button-submit">{txt}</a>
-                    }
-                  </FormattedMessage>
-                </Row>
-              </Grid>
-            </Row>
-            <Row tagName="section" center="xs">
-              <Row center="xs">
-                <Col xs={12} lg={8}>
-                  <Copy type="header" element="h2">
-                    <span>
-                      {/* {[0,1,2].map((item) => {
-                          <FormattedMessage id={node.body.demoCTA.headerParts[0]} />
-                          })} */}
-                      <FormattedMessage id={node.body.demoCTA.headerParts[0]} /> &nbsp;
-           <FormattedMessage id={node.body.demoCTA.headerParts[1]} /> &nbsp;
-           {node.body.demoCTA.headerParts[2]}
-                    </span>
-                  </Copy>
-                  <Copy type="body" element="p" child={node.body.demoCTA.body}/>
-                  <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
-                </Col>
-              </Row>
+            <Row column style={{alignItems: "center"}} tagName="section" center="xs" className="block-cta">
+              <Col xs={10} lg={6}>
+                <h2 className="content-subheader">
+                  {/* {[0,1,2].map((item) => {
+                      <FormattedMessage id={node.body.demoCTA.headerParts[0]} />
+                      })} */}
+                  <FormattedMessage id={node.body.demoCTA.headerParts[0]} /> &nbsp;
+         <FormattedMessage id={node.body.demoCTA.headerParts[1]} /> &nbsp;
+         {node.body.demoCTA.headerParts[2]}
+                </h2>
+              </Col>
+              <Col xs={10} lg={6}>
+                <Copy type="announce-white" element="p" child={node.body.demoCTA.body}/>
+                <CTA className="button-white" name="btn.demo" href="/enterprise" type="internal" langKey={langKey}/>
+              </Col>
             </Row>
           </div>
-        )}
+         )}
       </div>
-    )
+)
   }
 }
 
@@ -220,8 +169,14 @@ export const pageQuery = graphql `
             }
             why {
               header
-              easy
-              scalable
+              eazy {
+                title
+                img
+              }
+              scalable {
+                title
+                img
+              }
             }
             customerLogos {
               header
@@ -232,6 +187,8 @@ export const pageQuery = graphql `
             }
             customers {
               header
+              img
+              src
             }
             collaboration {
               header
