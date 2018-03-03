@@ -59,8 +59,8 @@ class Pricing extends React.Component {
             <Grid>
               <Row>
                 <Col xs>
-                <Copy type="header" element="h1" child="Choose your pricing plan"/>
-                <Copy type="body" element="p" child="Nulla occaecat mollit sint aliquip eu consequat consectetur non."/>
+                <Copy type="header" element="h1" child={node.body.hero.header}/>
+                <Copy type="body" element="p" child={node.body.hero.body}/>
                 </Col>
               </Row>
               <Row center="xs">
@@ -79,55 +79,45 @@ class Pricing extends React.Component {
               <Row>
                 <Col xs={12} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan free">
-                    <div className="spacer34"></div>
-                    <Copy element="h2" className="plan-title" child="Free"/>
-                    <Copy element="p" className="plan-text" child="Magna cillum commodo eu reprehenderit consectetur irure ipsum."/>
-                    <span className="plan-model">Forever</span>
+                    <div className="spacer30"></div>
+                    <Copy element="h2" className="plan-title" child={node.body.plan.free.header}/>
+                    <Copy element="p" className="plan-text" child={node.body.plan.free.desc}/>
                     <div className="plan-price">
                       {node.body.plan.free.price}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.free.span}</span>
                     </div>
                     <div className="plan-list">
-                      <ul>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
-                      </ul>
                       <FormattedMessage id="btn.register">
                       {(txt) =>
                         <Link to="" className="btn button button-normal">{txt}</Link>
                       }
                       </FormattedMessage>
+                      <ul>
+                        {node.body.plan.free.features.map(item => <li key={item}>{item}</li>)}
+                      </ul>
                     </div>
                   </div>
                 </Col>
                 <Col xs={12} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan professional">
-                    <div className="spacer34"></div>
-                    <Copy element="h2" className="plan-title" child="Professional"/>
-                    <Copy element="p" className="plan-text" child="Magna cillum commodo eu reprehenderit consectetur irure ipsum."/>
-                    <span className="plan-model">Starting at</span>
+                    <div className="spacer30"></div>
+                    <Copy element="h2" className="plan-title" child={node.body.plan.professional.header}/>
+                    <Copy element="p" className="plan-text" child={node.body.plan.professional.desc}/>
                     <div className="plan-price">
                       {this.state.professionalPrice + ' ' + this.state.currency}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.professional.span}</span>
                     </div>
                     <div className="plan-list">
-                      <ul>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
-                      </ul>
                       <FormattedMessage id="btn.register">
                       {(txt) =>
                         <Link to="" className="btn button button-normal">{txt}</Link>
                       }
                       </FormattedMessage>
+                      <ul>
+                        {node.body.plan.professional.features.map(item => <li key={item}>{item}</li>)}
+                      </ul>
                     </div>
                   </div>
                 </Col>
@@ -137,35 +127,30 @@ class Pricing extends React.Component {
                     <i className="fa fa-star" aria-hidden="true"></i><i className="fa fa-star" aria-hidden="true"></i>
                     best
                     </div>
-                    <Copy element="h2" className="plan-title" child="Business"/>
-                    <Copy element="p" className="plan-text" child="Magna cillum commodo eu reprehenderit consectetur irure ipsum."/>
-                    <span className="plan-model">Starting at</span>
+                    <Copy element="h2" className="plan-title" child={node.body.plan.business.header}/>
+                    <Copy element="p" className="plan-text" child={node.body.plan.business.desc}/>
                     <div className="plan-price">
                       {this.state.businessPrice + ' ' + this.state.currency}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.business.span}</span>
                     </div>
                     <div className="plan-list">
-                      <ul>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
-                      </ul>
                       <FormattedMessage id="btn.register">
                       {(txt) =>
                         <Link to="" className="btn button button-normal">{txt}</Link>
                       }
                       </FormattedMessage>
+                      <ul>
+                        {node.body.plan.business.features.map(item => <li key={item}>{item}</li> )}
+                      </ul>
                     </div>
                   </div>
                 </Col>
                 <Col xs={12} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan dedicated">
-                    <div className="spacer34"></div>
-                    <Copy element="h2" className="plan-title" child="Dedicated"/>
-                    <Copy element="p" className="plan-text" child="Magna cillum commodo eu reprehenderit consectetur irure ipsum."/>
+                    <div className="spacer30"></div>
+                    <Copy element="h2" className="plan-title" child={node.body.plan.dedicated.header}/>
+                    <Copy element="p" className="plan-text" child={node.body.plan.dedicated.desc}/>
                     <div className="plan-price">
                       {node.body.plan.dedicated.price}
                     </div>
@@ -176,17 +161,8 @@ class Pricing extends React.Component {
                         }
                       </FormattedMessage>
                       <ul>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem, ipsum.</li>
+                        {node.body.plan.dedicated.features.map(item => <li key={item}>{item}</li> )}
                       </ul>
-                      <FormattedMessage id="btn.contact">
-                      {(txt) =>
-                        <Link to="" className="btn button button-normal">{txt}</Link>
-                      }
-                      </FormattedMessage>
                     </div>
                   </div>
                 </Col>
@@ -199,19 +175,72 @@ class Pricing extends React.Component {
                 <Col xs={10} sm={10} lg={8} className="faq">
                   <Copy type="header" element="h2" child={node.body.faq.header}/>
                   <div className="faq-question-wrapper">
-                    <Copy type="subheader" element="h3" className="question-type" child="Question Type"/>
-                    <div>
-                      <div className="question-tab">
-                        <div className="question-tab-inner">
-                          <Copy type="body" element="p" child="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis, obcaecati."/>
+                    <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.services.header}/>
+                    {node.body.faq.services.items.map((item, i) =>
+                      <div key={i}>
+                        <div className="question-tab">
+                          <div className="question-tab-inner">
+                            <Copy type="" element="p" child={item.question}/>
+                          </div>
+                        </div>
+                        <div className="question-body">
+                          <div className="question-body-inner">
+                            <Copy type="" element="p" child={item.answer}/>
+                          </div>
                         </div>
                       </div>
-                      <div className="question-body">
-                        <div className="question-body-inner">
-                          <Copy type="type" element="p" child="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus veniam voluptas, quidem illum dignissimos temporibus asperiores."/>
+                    )}
+                  </div>
+                  <div className="faq-question-wrapper">
+                  <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.payments.header}/>
+                    {node.body.faq.payments.items.map(item =>
+                      <div key={item.question}>
+                        <div className="question-tab">
+                          <div className="question-tab-inner">
+                            <Copy type="" element="p" child={item.question}/>
+                          </div>
+                        </div>
+                        <div className="question-body">
+                          <div className="question-body-inner">
+                            <Copy type="" element="p" child={item.answer}/>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    )}
+                  </div>
+                  <div className="faq-question-wrapper">
+                    <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.security.header}/>
+                    {node.body.faq.security.items.map(item =>
+                      <div key={item.question}>
+                        <div className="question-tab">
+                          <div className="question-tab-inner">
+                            <Copy type="" element="p" child={item.question}/>
+                          </div>
+                        </div>
+                        <div className="question-body">
+                          <div className="question-body-inner">
+                            <Copy type="" element="p" child={item.answer}/>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="faq-question-wrapper">
+                    <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.legality.header}/>
+                    {node.body.faq.legality.items.map(item =>
+                      <div key={item.question}>
+                        <div className="question-tab">
+                          <div className="question-tab-inner">
+                            <Copy type="" element="p" child={item.question}/>
+                          </div>
+                        </div>
+                        <div className="question-body">
+                          <div className="question-body-inner">
+                            <Copy type="" element="p" child={item.answer}/>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </Col>
               </Row>

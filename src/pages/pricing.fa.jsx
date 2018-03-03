@@ -80,7 +80,7 @@ class Pricing extends React.Component {
               <Row>
                 <Col xs={12} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan free">
-                    <div className="spacer34"></div>
+                    <div className="spacer30"></div>
                     <Copy element="h2" className="plan-title" child={node.body.plan.free.header}/>
                     <Copy element="p" className="plan-text" child={node.body.plan.free.desc}/>
                     <div className="plan-price">
@@ -102,7 +102,7 @@ class Pricing extends React.Component {
                 </Col>
                 <Col xs={12} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan professional">
-                  <div className="spacer34"></div>
+                  <div className="spacer30"></div>
                     <Copy element="h2" className="plan-title" child={node.body.plan.professional.header}/>
                     <Copy element="p" className="plan-text" child={node.body.plan.professional.desc}/>
                     <div className="plan-price">
@@ -148,7 +148,7 @@ class Pricing extends React.Component {
                 </Col>
                 <Col xs={12} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan dedicated">
-                    <div className="spacer34"></div>
+                    <div className="spacer30"></div>
                     <Copy element="h2" className="plan-title" child={node.body.plan.dedicated.header}/>
                     <Copy element="p" className="plan-text" child={node.body.plan.dedicated.desc}/>
                     <div className="plan-price">
