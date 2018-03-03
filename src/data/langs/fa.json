@@ -20,16 +20,16 @@
 
   "header.menu.product": "امکانات",
   "header.menu.pricing": "قیمت‌ها",
-  "header.menu.industries": "صنایع",
+  "header.menu.industries": "کاربران ما",
   "header.menu.marketing": "تبلیغات",
 
   "footer.menu.home": "خانه",
   "footer.menu.product": "امکانات",
-  "footer.menu.companies": "مشتریان ما",
+  "footer.menu.companies": "صنایع",
   "footer.menu.pricing": "قیمت‌ها",
   "footer.menu.customer-success": "موفقیت مشتری",
   "footer.menu.demo": "درخواست مشاوره",
-  "footer.menu.company": "شرکت",
+  "footer.menu.company": "درباره ما",
   "footer.menu.contact": "تماس با ما",
   "footer.menu.press": "اخبار",
   "footer.menu.jobs": "همکاری",
@@ -46,7 +46,7 @@
 
   "col-label-1": "تسکولو",
   "col-label-2": "درباره ما",
-  "col-label-3": "محصول",
+  "col-label-3": "امکانات",
   "col-label-4": "منابع",
 
   "count.users.numeric": "۶۰,۰۰۰",

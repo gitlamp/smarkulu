@@ -20,16 +20,16 @@
 
   "header.menu.product": "Product",
   "header.menu.pricing": "Pricing",
-  "header.menu.industries": "Industries",
+  "header.menu.industries": "Our Users",
   "header.menu.marketing": "Marketing",
 
   "footer.menu.home": "Home",
   "footer.menu.product": "Product",
-  "footer.menu.companies": "Companies",
+  "footer.menu.companies": "Industries",
   "footer.menu.pricing": "Pricing",
   "footer.menu.customer-success": "Customer Success",
   "footer.menu.demo": "Request a Demo",
-  "footer.menu.company": "Company",
+  "footer.menu.company": "Who are we?",
   "footer.menu.contact": "Contact",
   "footer.menu.press": "Press",
   "footer.menu.jobs": "Jobs",
@@ -46,7 +46,7 @@
 
   "col-label-1": "Taskulu",
   "col-label-2": "About",
-  "col-label-3": "Product",
+  "col-label-3": "Features",
   "col-label-4": "Resources",
 
   "count.users.numeric": "60,000",

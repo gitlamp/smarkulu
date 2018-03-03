@@ -12,7 +12,7 @@ module.exports = {
         {label: 'header.menu.pricing', slug: '/pricing'},
         {
           label: 'header.menu.industries',
-          slug: '/industries',
+          slug: '/our-users',
           items: [
             {label: 'header.menu.marketing', slug: '/industries/marketing'}
           ]
@@ -27,7 +27,7 @@ module.exports = {
           items: [
             {label: 'footer.menu.home', slug:'/'},
             {label: 'footer.menu.product', slug:'/product'},
-            {label: 'footer.menu.companies', slug:'/companies'},
+            {label: 'footer.menu.companies', slug:'/our-users'},
             {label: 'footer.menu.pricing', slug:'/pricing'},
             {label: 'footer.menu.customer-success', slug:'/customer-success'},
             {label: 'footer.menu.demo', slug:'/enterprise'},
@@ -50,7 +50,7 @@ module.exports = {
           items: [
             {label: 'footer.menu.security', slug:'/security'},
             {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
-            {label: 'footer.menu.time.management', slug:'/time-management'},
+            {label: 'footer.menu.time.management', slug:'/fa/time-management'},
           ]
         },
         {
