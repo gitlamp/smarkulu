@@ -1,0 +1,59 @@
+.mauticform_wrapper {
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+  font-family: $subtitle-font;
+}
+.mauticform-error, .mauticform-message {
+  margin-bottom: 10px;
+}
+.double-divided .hasBackground {
+  & .mauticform-error, & .mauticform-errormsg {
+    color: $newred;
+  }
+  & .mauticform-message, & .mauticform-button {
+    color: $newgreen;
+  }
+  & .mauticform-input, & .mauticform-selectbox, & .mauticform-textarea {
+    color: #fff;
+  }
+}
+.mauticform-errormsg {
+    display: block;
+    color: $newred;
+    margin-top: 2px;
+}
+.mauticform-row {
+    display: block;
+    margin-bottom: 20px;
+}
+.mauticform-button-wrapper {
+  text-align: center;
+}
+.mauticform-button {
+  color: $newgreen;
+  font-size: 2.4rem;
+  border-radius: 3rem;
+  border: none;
+  padding: 0.7rem 2rem;
+}
+.mauticform-selectbox, .mauticform-input, .mauticform-textarea {
+  width: 100%;
+  padding: 0.5em 0.5em;
+  border-bottom: 1px solid #CCC;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  background: transparent;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1.4rem;
+  }
+.form-banner {
+  font-size: 2rem;
+  font-family: $title-font;
+  background: $newgreen;
+  line-height: 3;
+  text-align: center;
+  font-weight: 700;
+}
