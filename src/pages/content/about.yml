@@ -97,9 +97,8 @@ body:
       back: "bilbo-back"
   mission:
     header: "Who are we and What are we doing?"
-    body: "We think that collaboration is the ultimate solution for building high performance teams.
-
-Our goal is to help teams all over the world collaborate easier and increase their performance and efficiency.
-
-We really like building great products. We love the web and the internet, and luckily for us, the internet is one of the best platforms for building collaborations tools."
+    body: |
+      We think that collaboration is the ultimate solution for building high performance teams.<br/><br/>
+      Our goal is to help teams all over the world collaborate easier and increase their performance and efficiency.<br/><br/>
+      We really like building great products. We love the web and the internet, and luckily for us, the internet is one of the best platforms for building collaborations tools.
 ...

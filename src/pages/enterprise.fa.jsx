@@ -17,23 +17,28 @@ const Enterprise = (props) => {
             title={node.header.title}
             generalDesc={node.header.desc}/>
           <Row className="double-divided">
-            <Col xs={12} sm={6} className="double-divided-col">
-              <Copy type="header" element="h1" className="double-divided-col-header" child={node.body.header}/>
-              <ul className="double-divided-col-body">
-                {node.body.list.header}
-                {node.body.list.items.map((item, i) =>
-                  <li key={i}>{item}</li>
-                )}
-              </ul>
+            <Col xs={12} sm={6} className="double-divided-col noBackground">
+              <div className="double-divided-col-header">
+                <Copy type="sub" element="h3" child={node.body.subheader}/>
+                <Copy type="header" element="h1" child={node.body.header}/>
+              </div>
+                <ul className="double-divided-col-body">
+                  {node.body.list.header}
+                  {node.body.list.items.map((item, i) =>
+                    <li key={i}>{item}</li>
+                  )}
+                </ul>
             </Col>
             <Col xs={12} sm={6} className="double-divided-col hasBackground">
-              <div className="form-banner">{node.body.form.banner}</div>
-              <script type="text/javascript" src="//m.taskulu.com/form/generate.js?id=2"></script>
+              <div className="form-wrapper">
+                <div className="form-banner">{node.body.form.banner}</div>
+                <script type="text/javascript" src="//m.taskulu.com/form/generate.js?id=11"></script>
+              </div>
             </Col>
           </Row>
-        </div>
+              </div>
       )}
-    </div>
+        </div>
   )
 }
 
@@ -61,6 +66,7 @@ query EnterpriseFaPage {
         }
         body {
           header
+          subheader
           list {
             header
             items

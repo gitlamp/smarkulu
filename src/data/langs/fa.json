@@ -44,6 +44,9 @@
   "footer.menu.analytics": "تحلیل‌گر",
   "footer.menu.time.management": "مدیریت زمان",
 
+  "form.ebook.banner": "برای دریافت کتابچه، لطفا فرم زیر را پر کنید.",
+  "form.ebook.required": "(پر کردن تمام اطلاعات ضروری است)",
+  "form.ebook.privacy": "محرمانگی شما برای ما مهم است و اطلاعات شما را در اختیار شخص سوم قرار نخواهیم داد.",
   "col-label-1": "تسکولو",
   "col-label-2": "درباره ما",
   "col-label-3": "امکانات",

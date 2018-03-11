@@ -46,9 +46,9 @@ class AboutPage extends React.Component {
               </Col>
             </Row>
             <Row tagName="section" center="xs">
-              <Col xs={10}>
+              <Col xs={6}>
                 <Copy type="header" element="h2" child={node.body.mission.header} />
-                <Copy type="content" element="p" child={node.body.mission.body} />
+                <Copy type="content" align="left" element="p" child={node.body.mission.body} />
               </Col>
             </Row>
           </div>
