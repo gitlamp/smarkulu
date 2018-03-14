@@ -19,23 +19,25 @@ const Contact = (props) => {
             <Row tagName="section" className="double-divided">
               <Col xs={12} sm={6} lg={4} className="double-divided-col hasBackground">
                 <ul className="double-divided-col-list">
-                  <li className="double-divided-col-item">
-                    <Copy type="header" element="h3" child="Lorem ipsum dolor sit amet."/>
-                    <Copy type="body" element="p" child="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, quod?"/>
-                  </li>
+                  {node.body.contact.map((item, i) =>
+                    <li className="double-divided-col-item" key={i}>
+                      <Copy type="title" element="h2" child={item.header}/>
+                      <Copy type="sub" element="p" child={item.body}/>
+                    </li>
+                  )}
                 </ul>
               </Col>
               <Col xs={12} sm={6} lg={8} className="double-divided-col">
                 <div className="centered">
-                  <Copy type="header" element="h3" child="Lorem ipsum dolor sit amet."/>
-                  <Copy type="body" element="p" child="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, quod?"/>
+                  <Copy type="header" element="h3" child={node.body.support.header}/>
+                  <Copy type="content" element="p" child={node.body.support.body}/>
                 </div>
               </Col>
             </Row>
             <Row tagName="section" center="xs">
               <Col xs={12} lg={8}>
-                <Copy type="header" element="h2" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, cupiditate."/>
-                <Copy type="body" element="p" child="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum sapiente iure quaerat, architecto ex at sunt sit distinctio optio et!"/>
+                <Copy type="header" element="h2" child={node.body.demo.header}/>
+                <Copy type="content" element="p" child={node.body.demo.body}/>
                 <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
               </Col>
             </Row>

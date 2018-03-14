@@ -6,7 +6,8 @@
   "label.monthly": "Monthly",
   "email.placeholder": "Enter your email address",
   "social.follow": "Follow Us On:",
-  "footer.terms": "Terms & Privacy",
+  "footer.terms": "Terms",
+  "footer.privacy": "Privacy",
   "pricing.mode": "per user",
 
   "btn.seeMore": "Learn More",
@@ -32,7 +33,6 @@
   "footer.menu.company": "Who are we?",
   "footer.menu.contact": "Contact",
   "footer.menu.press": "Press",
-  "footer.menu.jobs": "Jobs",
   "footer.menu.blog": "Blog",
   "footer.menu.marketing": "Marketing",
   "footer.menu.commercial": "Commercial",

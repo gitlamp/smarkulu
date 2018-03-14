@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import graphql from 'graphql'
 import Link from 'gatsby-link'
 import { FormattedMessage } from 'react-intl'
@@ -21,29 +21,29 @@ const Product = (props) => {
             generalDesc={node.header.desc}/>
           <Above center="xs">
             <Grid>
-              <Row center="xs">
-                <Col xs={4}>
-                  <Copy type="header" element="h1" child={node.body.hero.header} align="right" />
-                  <Copy type="title" element="p" child={node.body.hero.desc} align="right" />
+              <Row start="sm" center="xs">
+                <Col xs={10} sm={12}>
+                  <Copy type="header" element="h1" child={node.body.hero.header}/>
+                  <Copy type="title" element="p" child={node.body.hero.desc}/>
                 </Col>
               </Row>
             </Grid>
           </Above>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
                   <Copy type="title" align="right" element="h2" child={node.body.section1.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section1.body}/>
                 </div>
-                <Img src="#" alt="No IMG"/>
+                <Img src="/img/product-flexible.png" alt="No IMG"/>
               </TwoColumn>
             </Grid>
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }}>
-                <Img src="#" alt="No IMG"/>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[8,4], lg:[8,4] }}>
+                <Img src="/img/product-easy.png" alt="No IMG"/>
                 <div>
                   <Copy type="title" align="right" element="h2" child={node.body.section2.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section2.body}/>
@@ -53,12 +53,12 @@ const Product = (props) => {
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
                   <Copy type="title" align="right" element="h2" child={node.body.section3.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section3.body}/>
                 </div>
-                <Img src="#" alt="No IMG"/>
+                <Img src="/img/product-performance.png" alt="No IMG"/>
               </TwoColumn>
             </Grid>
           </Row>
@@ -66,22 +66,30 @@ const Product = (props) => {
             <Grid>
               <Row>
                 {node.body.features.items.map((item, i) => {
-                   return (
-                     <Col xs={12} sm={4} lg={4} className="features" key={i}>
-                       <span className="features-icon">
-                         <span className={`taskulu-icon ${item.icon}`}></span>
-                       </span>
-                       <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
-                       <Copy type="body" element="p" className="features-desc" child={item.desc}/>
-                       <FormattedMessage id="link.learnmore">
-                         {(txt) =>
-                           <Link to="#" className="btn button button-white">
-                             {txt}
-                             <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
-                           </Link>
-                         }
-                       </FormattedMessage>
-                     </Col>
+                  // Check if there's learn more link
+                  let button
+                  if(item.link.length !== 0) {
+                    button =  <FormattedMessage id="link.learnmore">
+                                {(txt) =>
+                                  <Link to={item.link} className="button button-white">
+                                    {txt}
+                                    <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
+                                  </Link>
+                                }
+                              </FormattedMessage>
+                  }
+
+                  return (
+                    <Col xs={6} sm={4} lg={4} className="features" key={i}>
+                      <div className="features-head">
+                        <span className="features-icon">
+                          <span className={`taskulu-icon ${item.icon}`}></span>
+                        </span>
+                        <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
+                      </div>
+                      <Copy type="content" element="p" className="features-desc" child={item.desc}/>
+                      {button}
+                    </Col>
                    )
                 })}
               </Row>
@@ -138,6 +146,7 @@ query ProductFaPage {
               title
               desc
               icon
+              link
             }
           }
         }

@@ -2,9 +2,9 @@
   position: relative;
   max-width: 35rem;
   margin: 0 auto;
-  border-radius: 3rem;
+  border-radius: 6px;
   text-align: left;
-  background-color: $wet-asphalt;
+  background-color: trasnparent;
   box-shadow: 0 8px 15px 0 rgba(36,50,66,.5);
   input {
     padding: 1.2rem 2rem;
@@ -12,6 +12,7 @@
     background: none;
     text-align: left;
     width: 70%;
+    min-height: 4.6rem;
     color: #fff;
     font-family: $subtitle-font;
     font-size: $body;

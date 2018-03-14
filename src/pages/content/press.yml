@@ -11,14 +11,14 @@ body:
   history:
     header: "Our history"
     body: |
-      <ul>
-      <li class="content-body">In autumn of 2013, as our team at ShayaWeb was growing and we started facing problems with existing project management solutions, we started working on a simple project planning tool for managing our client projects. The project was named TaskStat.</li>
-      <li class="content-body">Right before our private launch in summer 2014, The name was changed to Taskulu. It’s a combination of “Task” and “Kulu” – a word borrowed from the Zulu language meaning great and grand. Taskulu means a great task.</li>
-      <li class="content-body">In autumn 2014 the public version of Taskulu was launched.</li>
-      <li class="content-body">At the same time we decided to close our web development company – ShayaWeb – and focus on Taskulu</li>
-      <li class="content-body">In winter 2014 Taskulu goes international, introducing localizations for Spanish and Persian speaking users and launches its first Android application.</li>
-      <li class="content-body">In autumn 2015 Taskulu wins the 3rd place in Startup Istanbul Challenge.</li>
-      <li class="content-body">In winter 2015 Taskulu launched a redesigned native Android application.</li>
+      <ul class="content-plain">
+      <li class="content-content bullet">In autumn of 2013, as our team at ShayaWeb was growing and we started facing problems with existing project management solutions, we started working on a simple project planning tool for managing our client projects. The project was named TaskStat.</li>
+      <li class="content-content bullet">Right before our private launch in summer 2014, The name was changed to Taskulu. It’s a combination of “Task” and “Kulu” – a word borrowed from the Zulu language meaning great and grand. Taskulu means a great task.</li>
+      <li class="content-content bullet">In autumn 2014 the public version of Taskulu was launched.</li>
+      <li class="content-content bullet">At the same time we decided to close our web development company – ShayaWeb – and focus on Taskulu</li>
+      <li class="content-content bullet">In winter 2014 Taskulu goes international, introducing localizations for Spanish and Persian speaking users and launches its first Android application.</li>
+      <li class="content-content bullet">In autumn 2015 Taskulu wins the 3rd place in Startup Istanbul Challenge.</li>
+      <li class="content-content bullet">In winter 2015 Taskulu launched a redesigned native Android application.</li>
       </ul>
   logos:
     header: "Taskulu logo"

@@ -17,7 +17,7 @@ const Press = (props) => {
           <Above center="xs">
             <Col xs={12}>
               <Copy type="header" element="h1" child={node.body.hero.header}/>
-              <Copy type="body" element="p" child={node.body.hero.body}/>
+              <Copy type="content" element="p" child={node.body.hero.body}/>
             </Col>
           </Above>
           <Row tagName="section" center="xs">
@@ -27,96 +27,88 @@ const Press = (props) => {
             </Col>
           </Row>
           <Row tagName="section" center="xs">
-            <Grid>
-              <Col xs={11}>
-                <Row start="xs">
-                  <Col xs={11}>
-                    <Copy type="title" element="h3" child={node.body.logos.header}/>
-                    <Copy type="sub" element="p" child={node.body.logos.desc}/>
-                    <TwoColumn equal center="xs">
-                      <div className="download-box">
-                        <a href={node.body.logos.faWhiteSrc} className="download-box-overlay">
-                          <span>
-                            <i className="fa fa-download" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <img src={node.body.logos.faWhite} alt=""/>
-                      </div>
-                      <div className="download-box">
-                        <a href={node.body.logos.faBlueSrc} className="download-box-overlay">
-                          <span>
-                            <i className="fa fa-download" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <img src={node.body.logos.faBlue} alt=""/>
-                      </div>
-                    </TwoColumn>
-                    <TwoColumn equal center="xs">
-                      <div className="download-box">
-                        <a href={node.body.logos.enWhiteSrc} className="download-box-overlay">
-                          <span>
-                            <i className="fa fa-download" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <img src={node.body.logos.enWhite} alt=""/>
-                      </div>
-                      <div className="download-box">
-                        <a href={node.body.logos.enBlueSrc} className="download-box-overlay">
-                          <span>
-                            <i className="fa fa-download" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <img src={node.body.logos.enBlue} alt=""/>
-                      </div>
-                    </TwoColumn>
-                  </Col>
-                  <Col xs={11}>
-                    <Copy type="title" element="h3" child={node.body.icons.header}/>
-                    <Copy type="sub" element="p" child={node.body.icons.desc}/>
-                    <TwoColumn equal center="xs">
-                      <div className="download-box">
-                        <a href={node.body.icons.iconWhiteSrc} className="download-box-overlay">
-                          <span>
-                            <i className="fa fa-download" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <img src={node.body.icons.iconWhite} alt=""/>
-                      </div>
-                      <div className="download-box">
-                        <a href={node.body.icons.iconBlueSrc} className="download-box-overlay">
-                          <span>
-                            <i className="fa fa-download" aria-hidden="true"></i>
-                          </span>
-                        </a>
-                        <img src={node.body.icons.iconBlue} alt=""/>
-                      </div>
-                    </TwoColumn>
-                  </Col>
-                </Row>
-              </Col>
-            </Grid>
+            <Col xs={10}>
+              <Copy type="title" element="h3" child={node.body.logos.header} align="right"/>
+              <Copy type="sub" element="p" child={node.body.logos.desc} align="right"/>
+              <TwoColumn ratio={{ xs:[12,12], md:[6,6], sm:[4,4] }} center="xs">
+                <div className="download-box">
+                  <a href={node.body.logos.faWhiteSrc} className="download-box-overlay">
+                    <span>
+                      <i className="fa fa-download" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <img src={node.body.logos.faWhite} alt=""/>
+                </div>
+                <div className="download-box">
+                  <a href={node.body.logos.faBlueSrc} className="download-box-overlay">
+                    <span>
+                      <i className="fa fa-download" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <img src={node.body.logos.faBlue} alt=""/>
+                </div>
+              </TwoColumn>
+              <TwoColumn ratio={{ xs:[12,12], md:[6,6], sm:[4,4] }} center="xs">
+                <div className="download-box">
+                  <a href={node.body.logos.enWhiteSrc} className="download-box-overlay">
+                    <span>
+                      <i className="fa fa-download" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <img src={node.body.logos.enWhite} alt=""/>
+                </div>
+                <div className="download-box">
+                  <a href={node.body.logos.enBlueSrc} className="download-box-overlay">
+                    <span>
+                      <i className="fa fa-download" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <img src={node.body.logos.enBlue} alt=""/>
+                </div>
+              </TwoColumn>
+            </Col>
+            <Col xs={10}>
+              <Copy type="title" element="h3" child={node.body.icons.header} align="right"/>
+              <Copy type="sub" element="p" child={node.body.icons.desc} align="right"/>
+              <TwoColumn ratio={{ xs:[12,12], md:[6,6], sm:[4,4] }} center="xs">
+                <div className="download-box">
+                  <a href={node.body.icons.iconWhiteSrc} className="download-box-overlay">
+                    <span>
+                      <i className="fa fa-download" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <img src={node.body.icons.iconWhite} alt=""/>
+                </div>
+                <div className="download-box">
+                  <a href={node.body.icons.iconBlueSrc} className="download-box-overlay">
+                    <span>
+                      <i className="fa fa-download" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <img src={node.body.icons.iconBlue} alt=""/>
+                </div>
+              </TwoColumn>
+            </Col>
           </Row>
           <Row tagName="section" center="xs" className="press-coverage">
-            <Grid>
-              <Col xs={10}>
-                <Copy type="header" element="h2" child={node.body.news.header}/>
-                <Row start="xs">
-                  {node.body.news.items.map((item, i) => {
-                    return (
-                      <Col xs={3} key={i}>
-                        <a href={item.link} className="press-card">
-                          <div className="press-image">
-                            <img src={item.img} alt={item.link}/>
-                          </div>
-                          <Copy type="title" element="h4" child={item.title} className="press-title"/>
-                          <Copy type="sub" element="p" child={`- ${item.source}`} className="press-src"/>
-                        </a>
-                      </Col>
-                    )
-                  })}
-                </Row>
-              </Col>
-            </Grid>
+            <Col xs={10}>
+              <Copy type="header" element="h2" child={node.body.news.header} align="right"/>
+              <Row start="xs">
+                {node.body.news.items.map((item, i) => {
+                  return (
+                    <Col xs={12} sm={4} lg={3} key={i}>
+                      <a href={item.link} className="press-card">
+                        <div className="press-image">
+                          <img src={item.img} alt={item.link}/>
+                        </div>
+                        <Copy type="title" element="h4" child={item.title} className="press-title"/>
+                        <Copy type="sub" element="p" child={`- ${item.source}`} className="press-src"/>
+                      </a>
+                    </Col>
+                  )
+                })}
+              </Row>
+            </Col>
           </Row>
         </div>
       )}

@@ -7,14 +7,21 @@ header:
 body:
   contact:
     -
+      header: "Let's talk!"
+      body: "We’d love to talk and help you in anyway we can, we prefer providing support through email, but please don’t hesitate to call us at +44 20 3239 3043 if it’s urgent or related to sales and business partnerships."
+    -
+      header: "We love tickets"
+      body: |
+        Yep, we said it, you heard it. We literally love tickets. Just send an email to <a href="mailto:support@taskulu.com">support@taskulu.com</a> or visit our <a href="https://help.taskulu.com">help desk</a> to create a ticket and we’ll get back to you – usually within minutes!
+    -
+      header: "Come visit us"
+      body: "Our doors are open and we’d would love to talk with you over a cup of coffee! Do let us know in advance if you have a cat allergy so we can make sure that you won’t visit our office cat, Bilbo!"
+    -
       header: "Our address"
-      body: ""
+      body: "Avenida da Liberdale 110, Lisbon, Portugal"
     -
       header: "Phone Number"
-      body: ""
-    -
-      header: "Work Hours"
-      body: ""
+      body: "+351 21 340 4500"
   support:
     header: "Ask us anything, or share your feedback."
     body: "We like to help you online."

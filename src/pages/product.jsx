@@ -21,20 +21,20 @@ const Product = (props) => {
             generalDesc={node.header.desc}/>
           <Above center="xs">
             <Grid>
-              <Row>
-                <Col xs className="content">
-                  <Copy type="header" element="h2" child="Ut commodo minim culpa in labore amet sit sint dolore laborum voluptate Lorem."/>
-                  <Copy type="subheader" element="p" child="Dolor excepteur officia aliquip in Lorem eu est esse velit esse. Minim sint ea sint cupidatat laboris nisi ut magna cupidatat anim. Aliqua mollit nisi pariatur laboris qui consectetur sint irure commodo nisi sint exercitation incididunt."/>
+              <Row start="sm" center="xs">
+                <Col xs={10} sm={12}>
+                  <Copy type="header" element="h2" child={node.body.hero.header}/>
+                  <Copy type="subheader" element="p" child={node.body.hero.desc}/>
                 </Col>
               </Row>
             </Grid>
           </Above>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
-                  <Copy type="header" element="h2" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, porro?"/>
-                  <Copy type="body" element="p" child="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ea aut velit dolorem odio animi fugit eius itaque alias facilis."/>
+                  <Copy type="header" element="h2" child={node.body.section1.header}/>
+                  <Copy type="content" element="p" child={node.body.section1.body}/>
                 </div>
                 <Img src="#" alt="No IMG"/>
               </TwoColumn>
@@ -42,21 +42,21 @@ const Product = (props) => {
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[8,4], lg:[8,4] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[8,4], lg:[8,4] }}>
                 <Img src="#" alt="No IMG"/>
                 <div>
-                  <Copy type="header" element="h2" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, porro?"/>
-                  <Copy type="body" element="p" child="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ea aut velit dolorem odio animi fugit eius itaque alias facilis."/>
+                  <Copy type="header" element="h2" child={node.body.section2.header}/>
+                  <Copy type="content" element="p" child={node.body.section2.body}/>
                 </div>
               </TwoColumn>
             </Grid>
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[12,12], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
-                  <Copy type="header" element="h2" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, porro?"/>
-                  <Copy type="body" element="p" child="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, ea aut velit dolorem odio animi fugit eius itaque alias facilis."/>
+                  <Copy type="header" element="h2" child={node.body.section3.header}/>
+                  <Copy type="content" element="p" child={node.body.section3.body}/>
                 </div>
                 <Img src="#" alt="No IMG"/>
               </TwoColumn>
@@ -65,21 +65,33 @@ const Product = (props) => {
           <Row tagName="section" style={{backgroundColor: '#f6f8f9'}} center="xs">
             <Grid>
               <Row>
-                <Col xs={12} sm={4} lg={4} className="features">
-                  <span className="features-icon">
-                    <i className="fa fa-id-badge" aria-hidden="true"></i>
-                  </span>
-                  <Copy type="subheader" element="h3" className="features-title" child="Title"/>
-                  <Copy type="body" element="p" className="features-desc" child="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores culpa soluta in dicta repudiandae quos numquam reprehenderit vero tempore sed."/>
-                  <FormattedMessage id="link.learnmore">
-                  {(txt) =>
-                    <Link to="#" className="btn button button-white">
-                      {txt}
-                      <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    </Link>
+                {node.body.features.items.map((item, i) => {
+                  // Check if there's learn more link
+                  let button
+                  if(item.link.length !== 0) {
+                    button =  <FormattedMessage id="link.learnmore">
+                                {(txt) =>
+                                  <Link to={item.link} className="button button-white">
+                                    {txt}
+                                    <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                  </Link>
+                                }
+                              </FormattedMessage>
                   }
-                  </FormattedMessage>
-                </Col>
+
+                  return (
+                    <Col xs={6} sm={4} lg={4} className="features" key={i}>
+                      <div className="features-head">
+                        <span className="features-icon">
+                          <span className={`taskulu-icon ${item.icon}`}></span>
+                        </span>
+                        <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
+                      </div>
+                      <Copy type="content" element="p" className="features-desc" child={item.desc}/>
+                      {button}
+                    </Col>
+                  )
+                })}
               </Row>
             </Grid>
           </Row>
@@ -110,6 +122,33 @@ query ProductPage {
         header {
           title
           desc
+        }
+        body {
+          hero {
+            header
+            desc
+          }
+          section1 {
+            header
+            body
+          }
+          section2 {
+            header
+            body
+          }
+          section3 {
+            header
+            body
+          }
+          features {
+            header
+            items {
+              title
+              desc
+              icon
+              link
+            }
+          }
         }
       }
     }

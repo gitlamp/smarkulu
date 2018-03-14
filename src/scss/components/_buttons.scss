@@ -1,13 +1,26 @@
 .button {
+  position: relative;
+  display: inline-block;
   padding: .7rem 2rem;
-  border-radius: 3rem;
+  border-radius: 6px;
   border: none;
   font-family: $subtitle-font;
-  font-size: $head4;
-  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  font-size: $body;
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-decoration: none;
   cursor: pointer;
+  @include crossPropMaker(user-select, none, true);
+  &--besides {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+  }
 }
 .button-normal {
   color: #fff !important;
@@ -15,7 +28,7 @@
 }
 .button-submit {
   color: #fff !important;
-  background: $emerald !important;
+  background: $newyellow !important;
 }
 .button-white {
   color: $cyan;

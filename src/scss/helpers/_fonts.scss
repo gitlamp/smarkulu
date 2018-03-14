@@ -14,11 +14,3 @@
 @include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Regular', normal, 400);
 // Fontawesome
 @include font-face(Fontawesome, '/fonts/FontAwesome/fontawesome-webfont', normal, normal);
-// Lato
-@include font-face(Lato, "https://fonts.googleapis.com/css?family=Lato:300", normal, 300);
-@include font-face(Lato, "https://fonts.googleapis.com/css?family=Lato:400", normal, 400);
-// Open Sans
-@include font-face(OpenSans, "https://fonts.googleapis.com/css?family=Open+Sans:300", normal, 300);
-@include font-face(OpenSans, "https://fonts.googleapis.com/css?family=Open+Sans:i300", italic, 300);
-@include font-face(OpenSans, "https://fonts.googleapis.com/css?family=Open+Sans:400", normal, 400);
-@include font-face(OpenSans, "https://fonts.googleapis.com/css?family=Open+Sans:600", normal, 600);

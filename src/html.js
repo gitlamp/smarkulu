@@ -35,13 +35,10 @@ class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          {/* Fonts
-          <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet"/>
-          <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"/>
-          <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet"/>  */}
-          {/* Header Components */}
 
+          {/* Header Components */}
           {this.props.headComponents}
+
           {/* Favicons */}
           <link rel="apple-touch-icon" href="/favicons.ico/apple-icon.png"/>
           <link rel="apple-touch-icon" sizes="57x57" href="/favicons.ico/apple-icon-57x57.png"/>
@@ -67,6 +64,7 @@ class HTML extends React.Component {
           <meta name="msapplication-TileColor" content="#ffffff"/>
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
           <meta name="theme-color" content="#ffffff"/>
+
           {/* Styles */}
           {style}
         </head>

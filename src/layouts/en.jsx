@@ -34,11 +34,13 @@ query LayoutEn {
           }
         }
         footer {
-          label
-          slug
-          items {
+          en {
             label
             slug
+            items {
+              label
+              slug
+            }
           }
         }
       }

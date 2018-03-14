@@ -18,13 +18,12 @@ const Enterprise = (props) => {
             generalDesc={node.header.desc}/>
             <Row className="double-divided">
               <Col xs={12} sm={6} className="double-divided-col">
-                <Copy type="header" element="h1" className="double-divided-col-header" child="Lorem ipsum dolor sit amet consectetur."/>
+                <Copy type="header" element="h1" className="double-divided-col-header" child={node.body.header}/>
                 <ul className="double-divided-col-body">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, vero.
-                  <li>Lorem ipsum dolor sit amet.</li>
-                  <li>Lorem ipsum dolor sit.</li>
-                  <li>Lorem, ipsum.</li>
-                  <li>Lorem, ipsum dolor.</li>
+                  {node.body.list.header}
+                  {node.body.list.items.map((item, i) =>
+                    <li key={i}>{item}</li>
+                  )}
                 </ul>
               </Col>
               <Col xs={12} sm={6} className="double-divided-col hasBackground"></Col>
@@ -56,6 +55,13 @@ query EnterprisePage {
         header {
           title
           desc
+        }
+        body {
+          header
+          list {
+            header
+            items
+          }
         }
       }
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider } from 'react-intl'
 import { Grid } from 'react-flexbox-grid'
-import { getLangs, getUrlForLang, getCurrentLangKey, isHomePage } from 'ptz-i18n'
+import { getCurrentLangKey } from 'ptz-i18n'
 import 'intl'
 
 import Header from '../components/Header'
@@ -19,13 +19,10 @@ const TemplateWrapper = (props) => {
     const siteMetadata = data.site.siteMetadata
     const { langs, defaultLangKey } = siteMetadata.languages
     const url = location.pathname
-    const isHome = isHomePage(url)
     const langKey = getCurrentLangKey(langs, defaultLangKey, url)
-    const homeLink = `/${langKey}/`
-    const menuLang = getLangs(langs, langKey, getUrlForLang(homeLink, url))
     const menu = {
-      top: siteMetadata.menu[0].header,
-      bottom: siteMetadata.menu[1].footer
+      top: siteMetadata.menu.header,
+      bottom: siteMetadata.menu.footer[Object.keys(siteMetadata.menu.footer)[0]]
     }
     const social = siteMetadata.socials[Object.keys(siteMetadata.socials)[0]]
     // Load webpack style-loader useable in development
@@ -44,8 +41,6 @@ const TemplateWrapper = (props) => {
         {/* Header component */}
         <Header
           lang={langKey}
-          isHome={isHome}
-          homeLink={homeLink}
           menu={menu}
           url={url}/>
 

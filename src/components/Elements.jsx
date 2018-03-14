@@ -9,25 +9,16 @@ import { genLink } from './functions'
  * inerting text, html tag and styles
  */
 class Copy extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      class: ''
+      type: 'content-' + this.props.type + ' '
     }
   }
   componentWillMount() {
     if (this.props.className) {
       this.setState({
         class: ' ' + this.props.className
-      })
-    }
-  }
-  componentWillReceiveProps(nextProps) {
-    const prevClass = this.props.className
-    const nextClass = nextProps.className
-    if (prevClass !== nextClass) {
-      this.setState({
-        class: ' ' + nextClass
       })
     }
   }
@@ -38,7 +29,7 @@ class Copy extends React.Component {
       this.props.element,
       // All props defined on element
       {
-        className: 'content-' + this.props.type + this.state.class,
+        className: this.state.type + this.props.className,
         style: align,
         dangerouslySetInnerHTML: {__html: this.props.child }
       }
@@ -76,7 +67,7 @@ class CTA extends React.Component {
     return (
       <FormattedMessage id={this.props.name}>
         {(txt) =>
-          <a className={"btn button " + this.props.className} href={this.state.href}>{txt}</a>
+          <a className={"button " + this.props.className} href={this.state.href}>{txt}</a>
         }
       </FormattedMessage>
     )

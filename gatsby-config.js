@@ -56,9 +56,8 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'rajdhani',
-          'nunito',
-          'archivo black'
+          'Lato',
+          'Open Sans'
         ]
       }
     }

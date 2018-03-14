@@ -9,7 +9,7 @@ class Input extends React.Component {
       <input type="email" required placeholder={placeholder}/>
       <FormattedMessage id="btn.register">
         {(txt) => (
-          <button className="btn button button-submit">{txt}</button>
+          <button className="button button-submit">{txt}</button>
         )}
       </FormattedMessage>
       </form>

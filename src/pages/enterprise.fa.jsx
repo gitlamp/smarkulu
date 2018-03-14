@@ -40,7 +40,7 @@ const Enterprise = (props) => {
 export default Enterprise
 
 /**
- * Require data from en yaml
+ * Require data from fa yaml
  */
 export const enterpriseFaQuery = graphql `
 query EnterpriseFaPage {

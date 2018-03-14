@@ -60,7 +60,7 @@ class Pricing extends React.Component {
               <Row>
                 <Col xs>
                 <Copy type="header" element="h1" child={node.body.hero.header}/>
-                <Copy type="body" element="p" child={node.body.hero.body}/>
+                <Copy type="content" element="p" child={node.body.hero.body}/>
                 </Col>
               </Row>
               <Row center="xs">
@@ -76,90 +76,89 @@ class Pricing extends React.Component {
                   <span className="tab"></span>
                 </div>
               </Row>
-              <Row>
-                <Col xs={12} sm={6} lg={3} className="plan-wrapper">
+              <Row center="xs">
+                <Col xs={10} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan free">
                     <div className="spacer30"></div>
-                    <Copy element="h2" className="plan-title" child={node.body.plan.free.header}/>
-                    <Copy element="p" className="plan-text" child={node.body.plan.free.desc}/>
+                    <h2 className="plan-title">{node.body.plan.free.header}</h2>
+                    <p className="plan-text">{node.body.plan.free.desc}</p>
                     <div className="plan-price">
                       {node.body.plan.free.price}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.free.span}</span>
                     </div>
-                    <div className="plan-list">
                       <FormattedMessage id="btn.register">
                       {(txt) =>
-                        <Link to="" className="btn button button-normal">{txt}</Link>
+                        <Link to="" className="button button-white">{txt}</Link>
                       }
                       </FormattedMessage>
+                    <div className="plan-list">
                       <ul>
                         {node.body.plan.free.features.map(item => <li key={item}>{item}</li>)}
                       </ul>
                     </div>
                   </div>
                 </Col>
-                <Col xs={12} sm={6} lg={3} className="plan-wrapper">
+                <Col xs={10} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan professional">
                     <div className="spacer30"></div>
-                    <Copy element="h2" className="plan-title" child={node.body.plan.professional.header}/>
-                    <Copy element="p" className="plan-text" child={node.body.plan.professional.desc}/>
+                    <h2 className="plan-title">{node.body.plan.professional.header}</h2>
+                    <p className="plan-text">{node.body.plan.professional.desc}</p>
                     <div className="plan-price">
-                      {this.state.professionalPrice + ' ' + this.state.currency}
+                      {`${this.state.currency}${this.state.professionalPrice}`}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.professional.span}</span>
                     </div>
-                    <div className="plan-list">
                       <FormattedMessage id="btn.register">
                       {(txt) =>
-                        <Link to="" className="btn button button-normal">{txt}</Link>
+                        <Link to="" className="button button-white">{txt}</Link>
                       }
                       </FormattedMessage>
+                    <div className="plan-list">
                       <ul>
                         {node.body.plan.professional.features.map(item => <li key={item}>{item}</li>)}
                       </ul>
                     </div>
                   </div>
                 </Col>
-                <Col xs={12} sm={6} lg={3} className="plan-wrapper">
+                <Col xs={10} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan business">
                     <div className="plan-ribbon">
-                    <i className="fa fa-star" aria-hidden="true"></i><i className="fa fa-star" aria-hidden="true"></i>
-                    best
+                      <i className="fa fa-star-o" aria-hidden="true"></i>
                     </div>
-                    <Copy element="h2" className="plan-title" child={node.body.plan.business.header}/>
-                    <Copy element="p" className="plan-text" child={node.body.plan.business.desc}/>
+                    <h2 className="plan-title">{node.body.plan.business.header}</h2>
+                    <p className="plan-text">{node.body.plan.business.desc}</p>
                     <div className="plan-price">
-                      {this.state.businessPrice + ' ' + this.state.currency}
+                    {`${this.state.currency}${this.state.businessPrice}`}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.business.span}</span>
                     </div>
-                    <div className="plan-list">
                       <FormattedMessage id="btn.register">
                       {(txt) =>
-                        <Link to="" className="btn button button-normal">{txt}</Link>
+                        <Link to="" className="button button-white">{txt}</Link>
                       }
                       </FormattedMessage>
+                    <div className="plan-list">
                       <ul>
                         {node.body.plan.business.features.map(item => <li key={item}>{item}</li> )}
                       </ul>
                     </div>
                   </div>
                 </Col>
-                <Col xs={12} sm={6} lg={3} className="plan-wrapper">
+                <Col xs={10} sm={6} lg={3} className="plan-wrapper">
                   <div className="plan dedicated">
                     <div className="spacer30"></div>
-                    <Copy element="h2" className="plan-title" child={node.body.plan.dedicated.header}/>
-                    <Copy element="p" className="plan-text" child={node.body.plan.dedicated.desc}/>
+                    <h2 className="plan-title">{node.body.plan.dedicated.header}</h2>
+                    <p className="plan-text">{node.body.plan.dedicated.desc}</p>
                     <div className="plan-price">
                       {node.body.plan.dedicated.price}
                     </div>
-                    <div className="plan-list">
                       <FormattedMessage id="btn.contact">
                         {(txt) =>
-                          <Link to="" className="btn button button-normal">{txt}</Link>
+                          <Link to="" className="button button-white">{txt}</Link>
                         }
                       </FormattedMessage>
+                    <div className="plan-list">
                       <ul>
                         {node.body.plan.dedicated.features.map(item => <li key={item}>{item}</li> )}
                       </ul>
@@ -180,12 +179,12 @@ class Pricing extends React.Component {
                       <div key={i}>
                         <div className="question-tab">
                           <div className="question-tab-inner">
-                            <Copy type="" element="p" child={item.question}/>
+                            <Copy type="title" element="p" child={item.question}/>
                           </div>
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer}/>
                           </div>
                         </div>
                       </div>
@@ -197,12 +196,12 @@ class Pricing extends React.Component {
                       <div key={item.question}>
                         <div className="question-tab">
                           <div className="question-tab-inner">
-                            <Copy type="" element="p" child={item.question}/>
+                            <Copy type="title" element="p" child={item.question}/>
                           </div>
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer}/>
                           </div>
                         </div>
                       </div>
@@ -214,12 +213,12 @@ class Pricing extends React.Component {
                       <div key={item.question}>
                         <div className="question-tab">
                           <div className="question-tab-inner">
-                            <Copy type="" element="p" child={item.question}/>
+                            <Copy type="title" element="p" child={item.question}/>
                           </div>
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer}/>
                           </div>
                         </div>
                       </div>
@@ -231,12 +230,12 @@ class Pricing extends React.Component {
                       <div key={item.question}>
                         <div className="question-tab">
                           <div className="question-tab-inner">
-                            <Copy type="" element="p" child={item.question}/>
+                            <Copy type="title" element="p" child={item.question}/>
                           </div>
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer}/>
                           </div>
                         </div>
                       </div>

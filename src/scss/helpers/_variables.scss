@@ -20,12 +20,19 @@ $bold: 800;
 $regular: 400;
 $thin: 200;
 
-//New Branding
-$newblue: #5a7fc0;
+// New Branding
+$newcyan: #40aedf;
+$newblue: #4e72b6;
 $bluetransparent: rgba(90,127,192,0.7);
-$newgreen: #46bea9;
-$newyellow: #f5cc56;
-$newred: #ee6062;
+$newgreen: #30c0a6;
+$newyellow: #fbc963;
+$newred: #ee5668;
+
+// New Branding Gradients
+$g-blue-green: linear-gradient(45deg, rgba(78,114,182,1) 0%, rgba(48,192,166,1) 100%);
+$g-red-yellow: linear-gradient(45deg, rgba(238, 86, 104,1) 0%, rgba(251, 201, 99,1) 100%);
+$g-yellow-green: linear-gradient(45deg, rgba(251, 201, 99,1) 0%, rgba(48,192,166,1) 100%);
+$g-blue-red: linear-gradient(45deg, rgba(78,114,182,1) 0%, rgba(238, 86, 104,1)100%);
 
 // Taskulu Colors
 $cyan: #04a9f4;
@@ -68,17 +75,17 @@ $quick-transition: all .1s ease;
 
 //Media queries for single segments
 //extra small devices (used to be $mobile)
-$xsonly: '(max-width: 575px)';
+$xsonly: '(max-width: 576px)';
 //small devices and landscape mobile ($tablet)
-$smonly: '(min-width: 576px) and (max-width: 767px)';
+$smonly: '(min-width: 577px) and (max-width: 768px)';
 //tablets
-$mdonly: '(min-width: 768px) and (max-width: 991px)';
+$mdonly: '(min-width: 769px) and (max-width: 992px)';
 //desktops (used to be $desktop and max-width was 1024px)
-$lgonly: '(min-width: 992px) and (max-width: 1199px)';
+$lgonly: '(min-width: 993px) and (max-width: 1200px)';
 //large desktops ($large-desktop)
-$xlonly: '(min-width: 1200px)';
+$xlonly: '(min-width: 1201px)';
 
 //Media queries for max sizes
-$smview: '(max-width: 767px)';
-$mdview: '(max-width: 991px)';
-$lgview: '(max-width: 1199px)';
+$smview: '(max-width: 768px)';
+$mdview: '(max-width: 992px)';
+$lgview: '(max-width: 1200px)';

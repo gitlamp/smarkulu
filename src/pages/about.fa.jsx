@@ -28,10 +28,10 @@ class AboutPage extends React.Component {
               <Col xs={10}>
                 <Row center="xs">
                   {node.body.team.map((item,i) => {
-                    const twitter = <a href={item.twitter} className="team-social-icon"><i className="fa fa-twitter twitter-highlight" aria-hidden="true"></i></a>
-                    const linkedin = <a href={item.linkedin} className="team-social-icon"><i className="fa fa-linkedin-square linkedin-highlight"></i></a>
+                    const twitter = <a href={item.twitter} className="team-social-icon"><i className="fa fa-twitter twitter-filled" aria-hidden="true"></i></a>
+                    const linkedin = <a href={item.linkedin} className="team-social-icon"><i className="fa fa-linkedin-square linkedin-filled"></i></a>
                     return (
-                      <Col xs={12} sm={3} key={i} className="team">
+                      <Col xs={9} sm={4} lg={3} key={i} className="team">
                         <div className="team-card">
                           <PersonsImg front={item.front} back={item.back}/>
                           <Copy type="title" element="h3" child={item.name} className="team-name"/>

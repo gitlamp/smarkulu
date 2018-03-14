@@ -39,6 +39,22 @@ img.isgray {
     padding-top: 10rem;
     min-height: 30vh;
   }
+  &.home {
+    background: $g-blue-green;
+    padding-top: 15rem;
+    min-height: 120vh;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/img/home-curve.png') no-repeat left bottom/100%;
+    }
+
+  }
   .content {
     max-width: 80rem;
     margin: 0 auto;
@@ -53,6 +69,8 @@ img.isgray {
     max-width: 80%;
     box-shadow: $default-shadow;
   }
+}
+.home-above {
 }
 
 .home-hero {
@@ -105,11 +123,6 @@ img.isgray {
     color: #fff;
     text-decoration: none;
   }
-  &-logo-header {
-    font-size: 2.6rem;
-    font-weight: 700;
-    font-family: IranSans;
-  }
   &-header {
     @extend %head1;
     margin-top: 0;
@@ -147,9 +160,14 @@ img.isgray {
     text-align: left;
     line-height: 1.4;
     & li {
-      list-style: decimal #{"/*rtl:persian*/"};
       padding-left: 10px;
       padding-bottom: 5px;
+    }
+    .numbered {
+      list-style: decimal #{"/*rtl:persian*/"};
+    }
+    .bullet {
+      list-style: disc
     }
   }
   &-content {
@@ -187,6 +205,7 @@ img.isgray {
 .complogos {
   position: relative;
   margin: 0 auto 5rem;
+  width: 100%;
   .row {
     max-height: 100%;
     position: relative;
@@ -207,7 +226,7 @@ img.isgray {
   .complogos-header {
     margin-bottom: 4rem;
     font-family: $subtitle-font;
-    font-size: $head2;
+    font-size: 2.6rem;
     color: $wet-asphalt;
     text-align: center;
   }
@@ -244,15 +263,24 @@ img.isgray {
   font-family: $subtitle-font;
   font-size: $head3;
   text-align: left;
-  .features-icon {
-    display: block;
-    margin-bottom: 1rem;
-    font-size: 3.5rem;
-  }
-  .features-title {
+  .features-head {
+    display: flex;
     margin-bottom: 1.5rem;
-    font-size: $head3;
-    color: $wet-asphalt;
+    align-items: top;
+    .features-icon {
+      flex: 1 1 auto;
+      width: 10%;
+      margin-right: 1.5rem;
+      font-size: 3.5rem;
+    }
+    .features-title {
+      flex: 1 1 auto;
+      width: 90%;
+      padding: 0;
+      margin: 0;
+      font-size: $head4;
+      color: $wet-asphalt;
+    }
   }
   .features-desc {
     font-family: $body;
@@ -273,7 +301,7 @@ img.isgray {
 .features-card {
   min-height: 12rem;
   height: 30rem;
-  border-radius: .4rem;
+  border-radius: 6px;
   box-shadow: $default-shadow;
   text-align: center;
   padding: 0 2rem;
@@ -307,41 +335,45 @@ img.isgray {
     position: relative;
     overflow: hidden;
     min-height: 84rem;
-    box-shadow: $default-shadow;
-    border-radius: .6rem;
+    box-shadow: 0 0 20px 0 rgba(36,50,66,.14);
+    border-radius: 6px;
     margin-bottom: 2rem;
     font-family: $subtitle-font;
     color: #fff;
     text-align: center;
     transition: $default-transition;
     &:hover {
-      transform: translateY(-1.5rem);
-      box-shadow: $bold-shadow;
+      box-shadow: 0 0 30px 0 rgba(36,50,66,.5);
     }
     &.free {
-      background-color: $light-green;
+      background-color: $newcyan;
     }
     &.professional {
-      background-color: $cyan;
+      background-color: $newgreen;
     }
     &.business {
-      background-color: $carrot;
+      background: linear-gradient(160deg, rgba(251,201,99,1) 0%, rgba(238,86,104,1) 15%, rgba(238,86,104,1) 100%);;
     }
     &.dedicated {
-      background-color: $dark-blue;
+      background-color: $newblue;
     }
     .button {
       position: relative;
       z-index: 1;
+      margin-bottom: 2rem;
     }
     .plan-ribbon {
-      padding-top: 1rem;
+      padding-top: 3rem;
       padding-right: 1rem;
       padding-left: 1rem;
       font-size: $body;
       text-align: left;
       i {
+        position: absolute;
+        top: -25px;
+        left: -15px;
         margin-right: .5rem;
+        font-size: 10rem;
       }
       &:before {
         content: '';
@@ -350,8 +382,6 @@ img.isgray {
         left: -1%;
         width: 102%;
         height: 6rem;
-        transform: skewY(-4deg);
-        background: linear-gradient(90deg, rgba(255,255,255,0.1) -10%, rgba(255,255,255,0.4) 100%)
       }
     }
     .plan-title {
@@ -412,7 +442,7 @@ img.isgray {
   display: inline-block;
   margin-bottom: 4rem;
   padding: .4rem;
-  border-radius: .6rem;
+  border-radius: 6px;
   border: 2px solid $asbestos;
   font-family: $subtitle-font;
   font-size: $head3;
@@ -452,10 +482,6 @@ img.isgray {
 .faq {
   padding: 3rem 0;
   text-align: left;
-  .content-head {
-    font-family: $subtitle-font;
-    font-size: $head1;
-  }
   .faq-question-wrapper {
     color: $wet-asphalt;
     p {
@@ -464,8 +490,6 @@ img.isgray {
     }
     .question-type {
       margin: 3rem 0;
-      font-family: $subtitle-font;
-      font-size: $head2;
       color: $wet-asphalt;
     }
     .parent-white {
@@ -475,8 +499,6 @@ img.isgray {
     .question-tab {
       position: relative;
       padding: 0 3rem;
-      font-family: $subtitle-font;
-      font-size: $head4;
       border-top: 1px solid $silver;
       border-left: 1px solid #f6f8f9;
       border-right: 1px solid #f6f8f9;
@@ -500,10 +522,12 @@ img.isgray {
     .question-body {
       display: none;
       padding: 0 3rem;
-      font-family: $body-font;
-      font-size: $body;
       .question-body-inner {
         padding: 2rem 0;
+        a {
+          text-decoration: none;
+          color: $cyan;
+        }
       }
     }
   }
@@ -566,7 +590,7 @@ img.isgray {
   .team-card {
     padding: 2.5rem 1rem;
     height: 100%;
-    border-radius: .6rem;
+    border-radius: 6px;
     background-color: #fff;
     box-shadow: 0 5px 20px 0 rgba(36,50,66,.14);
   }
@@ -628,7 +652,7 @@ img.isgray {
       color: $newgreen;
       margin: .5rem;
       padding: .5rem 1rem;
-      border-radius: .6rem;
+      border-radius: 6px;
       transition: $default-transition;
     }
   }
@@ -640,7 +664,7 @@ img.isgray {
   width: 30rem;
   min-height: 4rem;
   background: $silver;
-  border-radius: .6rem;
+  border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
   img {
@@ -681,19 +705,24 @@ img.isgray {
 }
 .press-coverage {
   margin-bottom: 3rem;
+  [class^="col-"] {
+    margin-bottom: 4rem;
+  }
   .press-card {
     display: flex;
     flex-wrap: wrap;
     text-decoration: none;
     padding: 2rem 1rem;
     height: 100%;
-    border-radius: .6rem;
+    border-radius: 6px;
     background: $white;
     box-shadow: 0 5px 20px 0 rgba(36,50,66,.14);
   }
   .press-image {
-    // flex: 1 1 auto;
     width: 100%;
+    img {
+      min-height: 160px;
+    }
   }
   .press-title {
     color: $asbestos;
@@ -702,7 +731,6 @@ img.isgray {
     color: $wet-asphalt;
   }
   .press-title, .press-src {
-    // flex: 1 1 auto;
     width: 100%;
     margin: 0 1rem 1rem;
   }
@@ -723,8 +751,8 @@ img.isgray {
 
 @media #{$xsonly} {
   .container {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-left: 32px;
+    padding-right: 32px;
   }
   .home-hero {
     max-width: 100vw;
@@ -734,6 +762,7 @@ img.isgray {
     display: flex;
   }
   .plan-wrapper {
+    margin-bottom: 2rem;
     .plan, .plan-list {
       min-height: auto !important;
     }
@@ -745,6 +774,12 @@ img.isgray {
     .double-divided-col-body {
       margin: 0 auto !important;
     }
+  }
+}
+
+@media #{$smview} {
+  .above.normal {
+    min-height: 40vh;
   }
 }
 /**

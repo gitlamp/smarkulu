@@ -4,3 +4,195 @@ header:
   slug: /product
   title: Product
   desc: Get a tour of Taskulu features and see how it can help you become more productive.
+body: 
+  hero: 
+    header: 
+    desc: 
+  section1: 
+    body: 
+    header: 
+  section2: 
+    body: 
+    header: 
+  section3: 
+    body: 
+    header: 
+  features: 
+    header: 
+    items: 
+      - 
+        desc: 
+        icon: icon-tasks
+        title: 
+        link: "#"
+      - 
+        desc: 
+        icon: icon-project
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-org
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-sheets
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-lists
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-sections
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-label
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-color
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-upload
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-preview
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-add-member
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-assign-task
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-task-comments
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-deadline
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-copy-tasks
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-share-task
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-checklist
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-archive-tasks
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-search
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-trello
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-email-reminder
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-end2end
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-mobile-auth
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-custom-cal
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-mobile-app
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-chat
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-make-task
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-timelog
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-reports
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-weekly-reports
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-team-access
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-support
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-success
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-admin-panel
+        title: 
+        link: ""
+      - 
+        desc: 
+        icon: icon-analytics
+        title: 
+        link: ""
+...

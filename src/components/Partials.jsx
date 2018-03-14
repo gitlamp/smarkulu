@@ -4,7 +4,6 @@ import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid'
 import { FormattedMessage } from 'react-intl';
 import $ from 'jquery'
 
-import { Copy } from './Elements'
 import logoList from '../data/logos'
 class Above extends React.Component{
   constructor() {
@@ -21,6 +20,10 @@ class Above extends React.Component{
     } else if (this.props.compact) {
       this.setState({
         class: this.state.class + ' compact'
+      })
+    } else if (this.props.home) {
+      this.setState({
+        class: this.state.class + ' home'
       })
     } else {
       this.setState({
@@ -133,12 +136,12 @@ class Logos extends React.Component {
                       </FormattedMessage>
 
     return (
-      <Row tagName="section" className="complogos" center="xs">
+      <Row tagName="section" className={"complogos " + this.props.className} center="xs">
         {
           (this.props.header) ?
           (
-          <Col xs = {12} className = "complogos-header">
-            <Copy type="logo-header" element="h3" child={this.props.header}/>
+          <Col xs={12} className="complogos-header">
+            <h4 dangerouslySetInnerHTML={{ __html: this.props.header }}/>
           </Col>
           ) : null
         }

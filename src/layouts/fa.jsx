@@ -34,11 +34,13 @@ query LayoutFa {
           }
         }
         footer {
-          label
-          slug
-          items {
+          fa {
             label
             slug
+            items {
+              label
+              slug
+            }
           }
         }
       }

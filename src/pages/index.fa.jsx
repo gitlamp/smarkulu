@@ -55,21 +55,21 @@ class IndexPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-            <Above full center="xs">
+            <Above home center="xs">
               <Grid>
                 <Row>
-                  <Col xs>
+                  <Col xs={6}>
                     <h2 className="home-hero">
                       {node.body.hero.body}
                       <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
                     </h2>
                     <Input placeholder="Enter your email address"/>
                   </Col>
+                  <Col xs={6} className="proto">
+                    <div className="proto-content"></div>
+                    <Img src="/img/home-hero.png" alt="browser frame"/>
+                  </Col>
                 </Row>
-                <div className="proto">
-                  <div className="proto-content"></div>
-                  <Img src="/img/home-hero.png" alt="browser frame"/>
-                </div>
               </Grid>
             </Above>
             <Logos
@@ -77,7 +77,7 @@ class IndexPage extends React.Component {
               header={node.body.customerLogos.header}
               md={2}
               xs={4}
-              middle="xs"/>
+              middle="xs" />
             <Row tagName="section" center="xs">
               <Col xs={8} style={{backgroundImage: "url('/img/make-own-project.svg')"}} className="homewhy">
                 <Copy child={node.body.why.eazy.title} type="whyheader" element="h3" align="right" />
@@ -87,14 +87,14 @@ class IndexPage extends React.Component {
               </Col>
             </Row>
             {langKey==='fa' ?
-              <a href={node.body.customers.src} style={{textDecoration: "none"}}>
-                <Row style={{backgroundImage: "url('/img/saeed.png')"}} className="video-background" ragName="section" end="xs">
-                  <i className="fa fa-play-circle"></i>
-                  <Col xs={3} xsOffset={8}>
-                    <Copy type="video-copy" element="h3" align="right" child={node.body.customers.header} />
-                  </Col>
-                </Row>
-              </a>:null}
+             <a href={node.body.customers.src} style={{textDecoration: "none"}}>
+               <Row style={{backgroundImage: "url('/img/saeed.png')"}} className="video-background" ragName="section" end="xs">
+                 <i className="fa fa-play-circle"></i>
+                 <Col xs={3} xsOffset={8}>
+                   <Copy type="video-copy" element="h3" align="right" child={node.body.customers.header} />
+                 </Col>
+               </Row>
+             </a>:null}
             <Row tagName="section" className="block-tour" center="xs">
               <Col xs={10}>
                 <Copy type="header" element="h3" className="title" child={node.body.indexFeatures.header}/>
@@ -123,8 +123,8 @@ class IndexPage extends React.Component {
                       <FormattedMessage id={node.body.demoCTA.headerParts[0]} />
                       })} */}
                   <FormattedMessage id={node.body.demoCTA.headerParts[0]} /> &nbsp;
-         <FormattedMessage id={node.body.demoCTA.headerParts[1]} /> &nbsp;
-         {node.body.demoCTA.headerParts[2]}
+           <FormattedMessage id={node.body.demoCTA.headerParts[1]} /> &nbsp;
+           {node.body.demoCTA.headerParts[2]}
                 </h2>
               </Col>
               <Col xs={10} lg={6}>
@@ -133,9 +133,9 @@ class IndexPage extends React.Component {
               </Col>
             </Row>
           </div>
-         )}
+        )}
       </div>
-)
+    )
   }
 }
 

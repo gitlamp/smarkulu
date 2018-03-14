@@ -30,15 +30,15 @@ class TermsPage extends React.Component {
               </Col>
             </Above>
             <Row tagName="section" center="xs">
-              <Col xs={6}>
+              <Col xs={10} sm={6}>
                 <Copy type="plain" element="div" child={node.body.preamble} />
               </Col>
-              <Col xs={8}>
+              <Col xs={10}>
                 <Copy type="subheader" element="h3" child={node.body.account.title}/>
                 <ul className="content-plain">
                   {node.body.account.items.map(item => {
                      return (
-                       <li>{item}</li>
+                       <li className="numbered">{item}</li>
                      )
                   })}
                 </ul>
@@ -46,7 +46,7 @@ class TermsPage extends React.Component {
                 <ul className="content-plain">
                   {node.body.payment.items.map(item => {
                      return (
-                       <li>{item}</li>
+                       <li className="numbered">{item}</li>
                      )
                   })}
                 </ul>
@@ -54,7 +54,7 @@ class TermsPage extends React.Component {
                 <ul className="content-plain">
                   {node.body.cancellation.items.map(item => {
                      return (
-                       <li>{item}</li>
+                       <li className="numbered">{item}</li>
                      )
                   })}
                 </ul>
@@ -62,7 +62,7 @@ class TermsPage extends React.Component {
                 <ul className="content-plain">
                   {node.body.serviceChange.items.map(item => {
                      return (
-                       <li>{item}</li>
+                       <li className="numbered">{item}</li>
                      )
                   })}
                 </ul>
@@ -70,7 +70,7 @@ class TermsPage extends React.Component {
                 <ul className="content-plain">
                   {node.body.payment.items.map(item => {
                      return (
-                       <li>{item}</li>
+                       <li className="numbered">{item}</li>
                      )
                   })}
                 </ul>
@@ -78,12 +78,12 @@ class TermsPage extends React.Component {
                 <ul className="content-plain">
                   {node.body.general.items.map(item => {
                      return (
-                       <li dangerouslySetInnerHTML ={{__html: item}} />
+                       <li className="numbered" dangerouslySetInnerHTML ={{__html: item}} />
                      )
                   })}
                 </ul>
               </Col>
-              <Col xs={6}>
+              <Col xs={10} sm={6}>
                 <Copy type="plain" element="div" child={node.body.ending} />
               </Col>
             </Row>

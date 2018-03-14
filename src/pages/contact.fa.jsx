@@ -21,8 +21,8 @@ const Contact = (props) => {
                 <ul className="double-divided-col-list">
                   {node.body.contact.map((item, i) =>
                     <li className="double-divided-col-item" key={i}>
-                      <Copy type="header" element="h2" child={item.header}/>
-                      <Copy type="body" element="p" child={item.body}/>
+                      <Copy type="title" element="h2" child={item.header}/>
+                      <Copy type="sub" element="p" child={item.body}/>
                     </li>
                   )}
                 </ul>
@@ -30,14 +30,14 @@ const Contact = (props) => {
               <Col xs={12} sm={6} lg={8} className="double-divided-col">
                 <div className="centered">
                   <Copy type="header" element="h3" child={node.body.support.header}/>
-                  <Copy type="body" element="p" child={node.body.support.body}/>
+                  <Copy type="content" element="p" child={node.body.support.body}/>
                 </div>
               </Col>
             </Row>
             <Row tagName="section" center="xs">
               <Col xs={12} lg={8}>
                 <Copy type="header" element="h2" child={node.body.demo.header}/>
-                <Copy type="body" element="p" child={node.body.demo.body}/>
+                <Copy type="content" element="p" child={node.body.demo.body}/>
                 <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
               </Col>
             </Row>
@@ -50,7 +50,7 @@ const Contact = (props) => {
 export default Contact
 
 /**
- * Require data from en yaml
+ * Require data from fa yaml
  */
 export const contactFaQuery = graphql `
 query ContactFaPage {

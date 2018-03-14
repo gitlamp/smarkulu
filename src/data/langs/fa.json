@@ -6,7 +6,8 @@
   "label.monthly": "ماهانه",
   "email.placeholder": "ایمیل خود را وارد کنید",
   "social.follow": "ما را دنبال کنید:",
-  "footer.terms": "قوانین و حریم شخصی",
+  "footer.terms": "قوانین",
+  "footer.privacy": "حریم شخصی",
   "pricing.mode": "هر کاربر در ماه",
 
   "btn.seeMore": "بیشتر بدانید",
@@ -32,7 +33,6 @@
   "footer.menu.company": "درباره ما",
   "footer.menu.contact": "تماس با ما",
   "footer.menu.press": "اخبار",
-  "footer.menu.jobs": "همکاری",
   "footer.menu.blog": "بلاگ",
   "footer.menu.marketing": "تبلیغات",
   "footer.menu.commercial": "بازرگانی",

@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
-import { Row, Col } from 'react-flexbox-grid'
+import { Row, Col, getRowProps } from 'react-flexbox-grid'
 import $ from 'jquery'
-import { TweenLite } from 'gsap'
-
-import { genLink } from './functions'
+import { TweenLite, Cubic, Power0 } from 'gsap'
 
 class Menu extends React.Component {
   constructor(props) {
@@ -31,18 +29,18 @@ class Menu extends React.Component {
   }
   render() {
     return (
-      <Row>
+      <Col xs>
         {(this.state.width <= 768)
         ? <MobileMenu menu={this.props.menu.bottom} langKey={this.state.langKey}/>
         : <DesktopMenu menu={this.props.menu.top} langKey={this.state.langKey}/>
         }
-      </Row>
+      </Col>
     )
   }
 }
 
 class DesktopMenu extends React.Component {
-  getMenuItems = (menu, langKey) => {
+  getMenuItems (menu, langKey) {
     return menu.map(item => {
       const slug = (langKey == 'en') ? `${item.slug}` : `/${langKey}${item.slug}`
 
@@ -57,7 +55,7 @@ class DesktopMenu extends React.Component {
 
       // Render all menu items
       return (
-        <li key={item.label}>
+        <li key={item.label} className="header-menu-item">
           <FormattedMessage id={item.label}>
           {(label) =>
             <Link to={slug}>{label}</Link>
@@ -72,10 +70,10 @@ class DesktopMenu extends React.Component {
     const menuItems = this.getMenuItems(this.props.menu, this.props.langKey)
     return(
       <nav className="header-menu">
-        <li className="header-menu-login">
+        <li className="header-menu-item header-menu-login">
           <FormattedMessage id="btn.login">
             {(txt) =>
-              <a className="btn button button-normal" href={`${process.env.LOGIN_LINK}` + this.props.langKey}>{txt}</a>
+              <a className="button button-normal" href={`${process.env.LOGIN_LINK}` + this.props.langKey}>{txt}</a>
             }
           </FormattedMessage>
         </li>
@@ -90,7 +88,7 @@ class MobileMenu extends React.Component {
     super()
     this.toggle = this.toggle.bind(this)
   }
-  getMenuItems = (menu, langKey) => {
+  getMenuItems (menu, langKey) {
     const getMenuItems = (items => {
       return items.map(item => {
         const slug = (langKey == 'en') ? `${item.slug}` : `/${langKey}${item.slug}`
@@ -109,7 +107,7 @@ class MobileMenu extends React.Component {
     return menu.map(list => {
       const items = getMenuItems(list.items)
       return (
-        <ul key={list.label}>
+        <ul key={list.label} className="header-menu-mobile-list">
           {items}
         </ul>
       )
@@ -131,9 +129,9 @@ class MobileMenu extends React.Component {
             $(v).show()
             // Check layout's direction then animate
             if (this.props.langKey !== 'fa') {
-              TweenLite.from(v, .8, {opacity: 0, ease: Expo.easeOut, 'margin-left': '-100%'})
+              TweenLite.from(v, .5, {opacity: 0, ease: Cubic.ease})
             } else {
-              TweenLite.from(v, .8, {opacity: 0, ease: Expo.easeOut, 'margin-right': '-100%'})
+              TweenLite.from(v, .5, {opacity: 0, ease: Cubic.ease})
             }
           }, 50 * i)
         })
@@ -141,35 +139,38 @@ class MobileMenu extends React.Component {
     })
   }
   render() {
+    const rowProps = getRowProps(this.props)
     const tempMenu = this.props.menu.slice(0, 1)
     const menuItems = this.getMenuItems(tempMenu, this.props.langKey)
     return (
-      <nav className="header-menu">
+      <nav className={`header-menu ${rowProps.className}`}>
         <button className="header-menu-mobile-icon" onClick={this.toggle}>
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <div className="header-menu-mobile">
-          <Row>
-            <FormattedMessage id="btn.login.and.register">
-              {(txt) =>
-                <a className="btn button button-white" href={`${process.env.LOGIN_LINK}` + this.props.langKey} data-obj="item">{txt}</a>
-              }
-            </FormattedMessage>
+        <Col className="header-menu-mobile" xs>
+          <Row center="xs">
+            <div className="header-menu-mobile-block" data-obj="item">
+              <FormattedMessage id="btn.login.and.register">
+                {(txt) =>
+                  <a data-obj="item" className="button button-white" href={`${process.env.LOGIN_LINK}` + this.props.langKey} data-obj="item">{txt}</a>
+                }
+              </FormattedMessage>
+            </div>
+            <div className="header-menu-mobile-block">
+              {menuItems}
+            </div>
+            <div data-obj="item" className="header-menu-mobile-block">
+              <a className="header-menu-mobile-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
+                <img src="/logos/download_apple_store.svg" alt=""/>
+              </a>
+              <a className="header-menu-mobile-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
+                <img src="/logos/download_google_play.svg" alt=""/>
+              </a>
+            </div>
           </Row>
-          <div className="header-menu-mobile-list">
-          {menuItems}
-          </div>
-          <Row data-obj="item">
-            <a className="header-menu-mobile-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
-              <img src="/logos/download_apple_store.svg" alt=""/>
-            </a>
-            <a className="header-menu-mobile-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
-              <img src="/logos/download_google_play.svg" alt=""/>
-            </a>
-          </Row>
-        </div>
+        </Col>
       </nav>
     )
   }

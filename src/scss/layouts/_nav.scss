@@ -1,6 +1,6 @@
 .header-menu {
   width: 100%;
-  padding-top: 1rem;
+  margin: 0;
   min-height: 4rem;
   /*rtl:ltr*/
   direction: rtl;
@@ -12,21 +12,22 @@
   flex-flow: row nowrap;
   font-family: $subtitle-font;
   font-size: $body;
+  a {
+    text-decoration: none;
+  }
   li {
-    display: block;
     list-style: none;
+  }
+  .header-menu-item {
+    display: flex;
     margin: 0;
+    align-items: center;
     a {
-      text-decoration: none;
+      position: relative;
+      display: inline-block;
       align-items: center;
       color: $wet-asphalt;
       margin-left: 2rem;
-      padding: .2rem 0;
-    }
-  }
-  .header-menu-login {
-    .btn {
-      padding: .8rem 2.5rem !important;
     }
   }
   .header-menu-mobile-icon {
@@ -80,7 +81,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding-top: 5rem;
     z-index: 200;
     color: #fff;
     background-color: $cyan;
@@ -89,26 +89,36 @@
     &::-webkit-scrollbar {
       display: none;
     }
-    li {
-      margin-top: 1rem;
-      a {
-        font-family: $subtitle-font;
-        font-size: $head2;
-        color: #fff;
-      }
-    }
     .row {
-      margin-left: 3rem;
-      margin-bottom: 2rem;
-      justify-content: flex-end;
+      margin: 0;
+      padding-top: 10rem;
+    }
+    .button {
+      font-size: $head2 !important;
+    }
+    .header-menu-mobile-block {
+      position: relative;
+      width: 100%;
+      padding: 2rem 0;
     }
     .header-menu-mobile-list {
-      margin-bottom: 2rem;
-      text-align: left;
+      margin: 0;
       overflow: hidden;
+      li {
+        margin-top: 1rem;
+        a {
+          font-family: $title-font;
+          font-size: $head1;
+          color: #fff;
+        }
+      }
     }
     .header-menu-mobile-download-app {
       display: inline-block;
+      margin-left: 1rem;
+      &:last-child {
+        margin-left: 0;
+      }
       img {
         margin-bottom: .5rem;
         height: 4.5rem;

@@ -75,8 +75,8 @@ class AnalyticsPage extends React.Component {
                 <Copy type="announce-white" element="h3" child={ node.body.demoCTA.body} />
               </Col>
               <Col>
-                <CTA type="login" name="btn.start" className="button-white" langKey={langKey} />&nbsp;
-           <CTA type="internal" href="/enterprise" name={node.body.demoCTA.cta} className="button-white" langKey={langKey} />
+                <CTA type="login" name="btn.start" className="button-white button--besides" langKey={langKey} />&nbsp;
+                <CTA type="internal" href="/enterprise" name={node.body.demoCTA.cta} className="button-white button--besides" langKey={langKey} />
               </Col>
             </Row>
           </div>)}

@@ -1,6 +1,7 @@
+
 import React from 'react'
 import graphql from 'graphql'
-import { Row, Col, Grid } from 'react-flexbox-grid'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
@@ -17,7 +18,7 @@ const Press = (props) => {
           <Above center="xs">
             <Col xs={12}>
               <Copy type="header" element="h1" child={node.body.hero.header}/>
-              <Copy type="body" element="p" child={node.body.hero.body}/>
+              <Copy type="content" element="p" child={node.body.hero.body}/>
             </Col>
           </Above>
           <Row tagName="section" center="xs">
@@ -27,13 +28,10 @@ const Press = (props) => {
             </Col>
           </Row>
           <Row tagName="section" center="xs">
-            <Grid>
-              <Col xs={11}>
-                <Row start="xs">
-                  <Col xs={11}>
-                    <Copy type="title" element="h3" child={node.body.logos.header}/>
-                    <Copy type="sub" element="p" child={node.body.logos.desc}/>
-                    <TwoColumn equal center="xs">
+            <Col xs={10}>
+              <Copy type="title" element="h3" child={node.body.logos.header} align="left"/>
+              <Copy type="sub" element="p" child={node.body.logos.desc} align="left"/>
+              <TwoColumn ratio={{ xs:[12,12], md:[6,6], sm:[4,4] }} center="xs">
                       <div className="download-box">
                         <a href={node.body.logos.enWhiteSrc} className="download-box-overlay">
                           <span>
@@ -51,11 +49,9 @@ const Press = (props) => {
                         <img src={node.body.logos.enBlue} alt=""/>
                       </div>
                     </TwoColumn>
-                  </Col>
-                  <Col xs={11}>
-                    <Copy type="title" element="h3" child={node.body.icons.header}/>
-                    <Copy type="sub" element="p" child={node.body.icons.desc}/>
-                    <TwoColumn equal center="xs">
+              <Copy type="title" element="h3" child={node.body.icons.header} align="left"/>
+              <Copy type="sub" element="p" child={node.body.icons.desc} align="left"/>
+              <TwoColumn ratio={{ xs:[12,12], md:[6,6], sm:[4,4] }} center="xs">
                       <div className="download-box">
                         <a href={node.body.icons.iconWhiteSrc} className="download-box-overlay">
                           <span>
@@ -75,17 +71,13 @@ const Press = (props) => {
                     </TwoColumn>
                   </Col>
                 </Row>
-              </Col>
-            </Grid>
-          </Row>
           <Row tagName="section" center="xs" className="press-coverage">
-            <Grid>
               <Col xs={10}>
-                <Copy type="header" element="h2" child={node.body.news.header}/>
+                <Copy type="header" element="h2" child={node.body.news.header} align="left"/>
                 <Row start="xs">
                   {node.body.news.items.map((item, i) => {
                     return (
-                      <Col xs={3} key={i}>
+                    <Col xs={12} sm={4} lg={3} key={i}>
                         <a href={item.link} className="press-card">
                           <div className="press-image">
                             <img src={item.img} alt={item.link}/>
@@ -98,7 +90,6 @@ const Press = (props) => {
                   })}
                 </Row>
               </Col>
-            </Grid>
           </Row>
         </div>
       )}

@@ -1,6 +1,7 @@
 const Webpack = require("webpack")
 const path = require("path")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var languages = require('./src/data/languages')
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   const baseStyles = new ExtractTextPlugin('styles/styles.css', { allChunks: true })
@@ -134,4 +135,35 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     break;
   }
   return config
+}
+
+exports.createPages = ({ boundActionCreators }) => {
+
+  const { createRedirect } = boundActionCreators
+  const langs = languages.langs
+  let redirectBatch = []
+
+  langs.forEach((lang) => {
+    if (lang == 'en') {
+      lang = ''
+    } else {
+      lang = '/fa'
+    }
+    redirectBatch.push(
+      {f: `${lang}/industries`, t: `${lang}/our-users`},
+      {f: `${lang}/product/%D8%AA%D8%AD%D9%84%DB%8C%D9%84%DA%AF%D8%B1-%D8%B9%D9%85%D9%84%DA%A9%D8%B1%D8%AF`, t: `${lang}/product/performance-analytics`},
+      {f: `${lang}/%d8%aa%d8%a7%db%8c%d9%85-%d8%b4%db%8c%d8%aa`, t: `${lang}/timesheet`},
+      {f: `${lang}/%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d8%b2%d9%85%d8%a7%d9%86`, t: `${lang}/time-management`},
+      {f: `/time-management`, t: `/fa/time-management`},
+      {f: `${lang}/security`, t: `${lang}/product/security`}
+    )
+  })
+
+  redirectBatch.forEach(({ f, t }) => {
+    createRedirect({
+      fromPath: f,
+      redirectInBrowser: true,
+      toPath: t
+    })
+  })
 }

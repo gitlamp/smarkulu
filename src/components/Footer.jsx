@@ -4,8 +4,10 @@ import Link from 'gatsby-link'
 import { Row, Col } from 'react-flexbox-grid'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 
+import { genLink } from '../components/functions'
+
 class Footer extends React.Component {
-  getMenuItems = (menu, langKey) => {
+  getMenuItems (menu, langKey) {
 
     const getSubItems = (items => {
       return items.map(item => {
@@ -46,7 +48,7 @@ class Footer extends React.Component {
       )
     })
   }
-  getSocialItems = (social) => {
+  getSocialItems (social) {
     return social.map((item, i) => {
       return (
         <a className="footer-social-icon" href={item.link} key={i}>
@@ -87,7 +89,12 @@ class Footer extends React.Component {
           <Row center="xs" start="lg">
             <FormattedMessage id="footer.terms">
             {(txt) =>
-            <a href="#">{txt}</a>
+            <a href={genLink(langKey, '/terms')}>{txt}</a>
+            }
+            </FormattedMessage>
+            <FormattedMessage id="footer.privacy">
+            {(txt) =>
+            <a href={genLink(langKey, '/privacy')}>{txt}</a>
             }
             </FormattedMessage>
             <span>Copyright	&copy; 2017 Taskulu</span>
