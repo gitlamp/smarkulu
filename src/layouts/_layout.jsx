@@ -5,7 +5,7 @@ import { Grid } from 'react-flexbox-grid'
 import { getCurrentLangKey } from 'ptz-i18n'
 import 'intl'
 
-import Header from '../components/Header'
+import { ConnectedHeader as Header } from '../components/Header'
 import Footer from '../components/Footer'
 import style from '../scss/main.useable.scss'
 import rtlStyle from '../scss/main.rtl.useable.scss'

@@ -3,101 +3,153 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { TweenLite } from 'gsap'
 import { Col, getRowProps } from 'react-flexbox-grid'
+import { connect } from 'react-redux'
 
 import Menu from './Menu'
 import { genLink } from './functions'
 
-class Header extends React.Component {
+class HeaderWrapper extends React.Component {
   constructor() {
     super()
-    if (typeof window !== `undefined`) {
-      var scrollPos = window.scrollY
-    }
-    // Set initial scroll state and screen height
     this.state = {
-      currentScrollPos: scrollPos,
+      mobileScreen: false
     }
-    this.handleScroll = this.handleScroll.bind(this)
+    this.setWidth = this.setWidth.bind(this)
+  }
+  componentWillMount() {
+    // Check if the header should be hidden
+    hiddenOnPaths.forEach((path) => {
+      if (this.props.url == path) {
+        this.props.hideHeader()
+      }
+    })
+    // Check screen width and set state
+    this.setWidth()
   }
   componentDidMount() {
-    if (typeof window !== `undefined`) {
-      window.addEventListener('scroll', this.handleScroll)
-    }
+    window.addEventListener('resize', this.setWidth)
   }
   componentWillUnmount() {
-    if (typeof window !== `undefined`) {
-      window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.setWidth)
+  }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.url !== nextProps.url) {
+      let targetPath
+
+      hiddenOnPaths.forEach((path) => {
+        if (nextProps.url == path) {
+          targetPath = true
+        }
+      })
+
+      if (targetPath) {
+        this.props.hideHeader()
+      } else {
+        this.props.showHeader()
+      }
     }
   }
-  handleScroll() {
-    if (typeof window !== `undefined`) {
-      const headWrap = this.headWrap
-      const headNav = document.getElementsByClassName('header-menu-item')
-      const buttons = headWrap.querySelector('a.button')
-      const logo = this.logo
-      // Change state if scroll
-      window.onscroll = () => {
+  setWidth() {
+    if (typeof window !== 'undefined') {
+      const width = window.screen.width
+      if (width <= 768) {
         this.setState({
-          currentScrollPos: window.scrollY
+          mobileScreen: true
         })
-
-        const currentScrollPos = this.state.currentScrollPos
-
-        if (currentScrollPos !== 0) {
-          TweenLite.to(headWrap, .3, {
-            css: {
-              paddingTop: '1rem',
-              paddingBottom: '1rem',
-              background: '#fff',
-              opacity: '.9',
-              boxShadow: '0 5px 20px 0 rgba(36,50,66,.1)'
-            }
-          })
-          TweenLite.to([headNav, buttons], .2, {
-            fontSize: '1.4rem'
-          })
-          TweenLite.to(logo, .1, {
-            maxWidth: '13rem',
-            immediateRender: true,
-            lazy: true
-          })
-        }
-        if (currentScrollPos == 0) {
-          TweenLite.to(headWrap, .2, {
-            css: {
-              paddingTop: '2rem',
-              paddingBottom: '2rem'
-            }
-          })
-          TweenLite.to([headNav, buttons], .2, {
-            fontSize: '1.6rem'
-          })
-          TweenLite.to(logo, .1, {
-            maxWidth: '15rem',
-            immediateRender: true,
-            lazy: true
-          })
-          TweenLite.to(headWrap, .1, {
-            background: 'none',
-            boxShadow: 'none'
-          })
-          }
+      } else {
+        this.setState({
+          mobileScreen: false
+        })
       }
     }
   }
   render() {
-    const rowProps = getRowProps(this.props)
-
     return (
-      <div className={ rowProps.className + ' header' } onScroll={this.handleScroll} ref={node => this.headWrap = node}>
+      <div>
+        <FixedHeader mobileScreen={this.state.mobileScreen} {...this.props}/>
+        {(this.props.visibility && !this.state.mobileScreen) ? <Header {...this.props}/> : null}
+      </div>
+    )
+  }
+}
+
+const Header = (props) => {
+  const rowProps = getRowProps(props)
+
+  return (
+    <div className={rowProps.className + ' header header-' + props.type}>
+      {/* Logo */}
+      <Col className="header-logo-wrapper" xs>
+        <Logo lang={props.lang} color={props.type}/>
+      </Col>
+      {/* Navigation */}
+      <Menu menu={props.menu} url={props.url}/>
+    </div>
+  )
+}
+
+class FixedHeader extends React.Component {
+  constructor() {
+    super()
+    if (typeof window !== 'undefined') {
+      var scrollPos = window.scrollY
+    }
+    // Set initial scroll state
+    this.state = {
+      currentScrollPos: scrollPos
+    }
+    this.checkScrollPos = this.checkScrollPos.bind(this)
+  }
+  componentDidMount() {
+    if (!this.props.mobileScreen) {
+      window.addEventListener('scroll', this.checkScrollPos)
+    } else {
+      TweenLite.to(this.fixedHeader, .2, {top: '0'})
+    }
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.checkScrollPos)
+  }
+  checkScrollPos() {
+    if (typeof window !== 'undefined') {
+      // Identify scroll position
+      this.setState({
+        currentScrollPos: window.scrollY
+      })
+    }
+
+    const currentScrollPos = this.state.currentScrollPos
+    if (currentScrollPos <= 900) {
+      TweenLite.to(this.fixedHeader, 1, {top: '-200'})
+    } else {
+      TweenLite.to(this.fixedHeader, .2, {top: '0'})
+    }
+  }
+  componentWillReceiveProps(nextProps) {
+    // Set scroll position if route changed
+    if (this.props.url !== nextProps.url) {
+      this.setState({
+        currentScrollPos: window.scrollY
+      })
+    }
+    // if screen size changed then fix header and remove checkScrollPos
+    if (nextProps.mobileScreen) {
+      TweenLite.to(this.fixedHeader, .2, {top: '0'})
+      window.removeEventListener('scroll', this.checkScrollPos)
+    }
+    // if screen size changed to desktop size then do checkScrollPos
+    else {
+      this.checkScrollPos()
+      window.addEventListener('scroll', this.checkScrollPos)
+    }
+  }
+  render() {
+    const rowProps = getRowProps(this.props)
+    return (
+      <div className={ rowProps.className + ' header-fixed header-blue' } ref={node => this.fixedHeader = node}>
         {/* Logo */}
         <Col className="header-logo-wrapper" xs>
-          <Link to={genLink(this.props.lang, '/')}>
-          {(this.props.lang !== 'fa')
-            ? <img className="header-logo" src="/logos/logo-blue.svg" alt="blue logo" ref={node => this.logo = node}/>
-            : <img className="header-logo" src="/logos/fa-logo-blue.svg" alt="blue logo" ref={node => this.logo = node}/>
-          }
-          </Link>
+          <Logo lang={this.props.lang} color="blue"/>
         </Col>
         {/* Navigation */}
         <Menu menu={this.props.menu} url={this.props.url}/>
@@ -106,10 +158,48 @@ class Header extends React.Component {
   }
 }
 
-Header.PropTypes = {
+class Logo extends React.Component {
+  render() {
+    return (
+      <Link to={genLink(this.props.lang, '/')}>
+      {(this.props.lang !== 'fa')
+        ? <img className="header-logo" src={'/logos/logo-' + this.props.color + '.svg'} alt={this.props.color + 'logo'}/>
+        : <img className="header-logo" src={'/logos/fa-logo-' + this.props.color + '.svg'} alt={this.props.color + 'logo'}/>
+      }
+      </Link>
+    )
+  }
+}
+
+HeaderWrapper.PropTypes = {
   lang: PropTypes.string.isRequired,
   menu: PropTypes.object.isRequired,
   url: PropTypes.string
 }
 
-export default Header
+// Paths which header should be hidden on them
+const hiddenOnPaths = [
+  '/enterprise',
+  '/fa/enterprise'
+]
+
+// Map redux state to component props
+const mapStateToProps = (state) => {
+  return {
+    visibility: state.headerVisibility,
+    type: state.headerType
+  }
+}
+
+// Map redux action to component props
+const mapDispatchToProps = dispatch => {
+  return {
+    hideHeader: () => dispatch({ type: 'invisibleHeader' }),
+    showHeader: () => dispatch({ type: 'visibleHeader' })
+  }
+}
+
+// Connected component
+const ConnectedHeader = connect(mapStateToProps, mapDispatchToProps)(HeaderWrapper)
+
+export { ConnectedHeader }

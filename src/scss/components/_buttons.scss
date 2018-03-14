@@ -31,8 +31,12 @@
   background: $newyellow !important;
 }
 .button-white {
-  color: $cyan;
-  background: #fff;
+  color: $cyan !important;
+  background: #fff !important;
+  &:hover {
+    color: #fff !important;
+    background: $cyan !important;
+  }
 }
 .button-dark {
   color: #fff;

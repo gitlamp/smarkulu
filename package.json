@@ -27,7 +27,9 @@
     "ptz-i18n": "^0.2.5",
     "react-flexbox-grid": "git+ssh://git@git.taskulu.com:sina/react-flexbox-grid.git",
     "react-intl": "^2.4.0",
-    "react-owl-carousel2": "^0.3.0"
+    "react-owl-carousel2": "^0.3.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2"
   },
   "keywords": [
     "gatsby"
