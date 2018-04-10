@@ -4,6 +4,7 @@ import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
 import $ from 'jquery'
 import { Grid, Row, Col } from 'react-flexbox-grid'
+import CountUp, { startAnimation } from 'react-countup'
 
 import SEO from '../components/SEO'
 import { toPersianDigits } from '../components/functions'
@@ -15,8 +16,10 @@ class Pricing extends React.Component {
     super(props)
     this.state = {
       currency: 'تومان',
-      professionalPrice: 9000,
-      businessPrice: 25000,
+      startProfessionalPrice: 0,
+      startBusinessPrice: 0,
+      endProfessionalPrice: 9000,
+      endBusinessPrice: 25000,
       monthlyChecked: true,
       annuallyChecked: false
     }
@@ -31,16 +34,21 @@ class Pricing extends React.Component {
   }
   switch(e) {
     var target = e.target.id
+    startAnimation(this.myCountUp)
     if(target == 'monthly') {
       this.setState({
-        professionalPrice: 9000,
-        businessPrice: 25000
+        startProfessionalPrice: 6000,
+        startBusinessPrice: 20000,
+        endProfessionalPrice: 9000,
+        endBusinessPrice: 25000
       })
     }
     if(target == 'annually') {
       this.setState({
-        professionalPrice: 6000,
-        businessPrice: 20000
+        startProfessionalPrice: 9000,
+        startBusinessPrice: 25000,
+        endProfessionalPrice: 6000,
+        endBusinessPrice: 20000
       })
     }
   }
@@ -106,7 +114,16 @@ class Pricing extends React.Component {
                     <h2 className="plan-title">{node.body.plan.professional.header}</h2>
                     <p className="plan-text">{node.body.plan.professional.desc}</p>
                     <div className="plan-price">
-                      {toPersianDigits(this.state.professionalPrice) + ' ' + this.state.currency}
+                      <CountUp
+                        className="number"
+                        start={this.state.startProfessionalPrice}
+                        end={this.state.endProfessionalPrice}
+                        duration={1}
+                        formattingFn={toPersianDigits}
+                        suffix={this.state.currency}
+                        ref={(countUp) => this.myCountUp = countUp}/>
+                      <span className="number">{this.state.currency}</span>
+                      {/* {toPersianDigits(this.state.professionalPrice) + ' ' + this.state.currency} */}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.professional.span}</span>
                     </div>
@@ -130,7 +147,16 @@ class Pricing extends React.Component {
                     <h2 className="plan-title">{node.body.plan.business.header}</h2>
                     <p className="plan-text">{node.body.plan.business.desc}</p>
                     <div className="plan-price">
-                      {toPersianDigits(this.state.businessPrice) + ' ' + this.state.currency}
+                      <CountUp
+                        className="number"
+                        start={this.state.startBusinessPrice}
+                        end={this.state.endBusinessPrice}
+                        duration={1}
+                        formattingFn={toPersianDigits}
+                        prefix={this.state.currency}
+                        ref={(countUp) => this.myCountUp = countUp}/>
+                      <span className="number">{this.state.currency}</span>
+                      {/* {toPersianDigits(this.state.businessPrice) + ' ' + this.state.currency} */}
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.business.span}</span>
                     </div>

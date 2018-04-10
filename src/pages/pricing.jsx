@@ -4,18 +4,21 @@ import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
 import $ from 'jquery'
 import { Grid, Row, Col } from 'react-flexbox-grid'
+import CountUp, { startAnimation } from 'react-countup'
 
 import SEO from '../components/SEO'
-import { Copy, Img } from '../components/Elements'
-import { TwoColumn, Above } from '../components/Partials'
+import { Copy } from '../components/Elements'
+import { Above } from '../components/Partials'
 
 class Pricing extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       currency: '$',
-      professionalPrice: 9,
-      businessPrice: 25,
+      startProfessionalPrice: 0,
+      startBusinessPrice: 0,
+      endProfessionalPrice: 9,
+      endBusinessPrice: 25,
       monthlyChecked: true,
       annuallyChecked: false
     }
@@ -30,16 +33,21 @@ class Pricing extends React.Component {
   }
   switch(e) {
     var target = e.target.id
+    startAnimation(this.myCountUp)
     if(target == 'monthly') {
       this.setState({
-        professionalPrice: 9,
-        businessPrice: 25
+        startProfessionalPrice: 6,
+        startBusinessPrice: 20,
+        endProfessionalPrice: 9,
+        endBusinessPrice: 25
       })
     }
     if(target == 'annually') {
       this.setState({
-        professionalPrice: 6,
-        businessPrice: 20
+        startProfessionalPrice: 9,
+        startBusinessPrice: 25,
+        endProfessionalPrice: 6,
+        endBusinessPrice: 20
       })
     }
   }
@@ -105,7 +113,13 @@ class Pricing extends React.Component {
                     <h2 className="plan-title">{node.body.plan.professional.header}</h2>
                     <p className="plan-text">{node.body.plan.professional.desc}</p>
                     <div className="plan-price">
-                      {`${this.state.currency}${this.state.professionalPrice}`}
+                      <CountUp
+                        className="number"
+                        start={this.state.startProfessionalPrice}
+                        end={this.state.endProfessionalPrice}
+                        duration={2}
+                        prefix={this.state.currency}
+                        ref={(countUp) => this.myCountUp = countUp}/>
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.professional.span}</span>
                     </div>
@@ -129,7 +143,13 @@ class Pricing extends React.Component {
                     <h2 className="plan-title">{node.body.plan.business.header}</h2>
                     <p className="plan-text">{node.body.plan.business.desc}</p>
                     <div className="plan-price">
-                    {`${this.state.currency}${this.state.businessPrice}`}
+                      <CountUp
+                        className="number"
+                        start={this.state.startBusinessPrice}
+                        end={this.state.endBusinessPrice}
+                        duration={2}
+                        prefix={this.state.currency}
+                        ref={(countUp) => this.myCountUp = countUp}/>
                       <FormattedMessage id="pricing.mode"/>
                       <span>{node.body.plan.business.span}</span>
                     </div>

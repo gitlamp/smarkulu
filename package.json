@@ -25,6 +25,7 @@
     "normalize.scss": "^0.1.0",
     "popper.js": "^1.13.0",
     "ptz-i18n": "^0.2.5",
+    "react-countup": "^3.0.3",
     "react-flexbox-grid": "git+ssh://git@git.taskulu.com:sina/react-flexbox-grid.git",
     "react-intl": "^2.4.0",
     "react-owl-carousel2": "^0.3.0",
