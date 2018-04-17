@@ -2,14 +2,13 @@ import React from 'react'
 import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
 import { Grid, Row, Col } from 'react-flexbox-grid'
-import Helmet from 'react-helmet'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
 
 import SEO from '../components/SEO'
 import Input from '../components/Input'
 import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above, Logos } from '../components/Partials'
+import { Above, Logos } from '../components/Partials'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -55,26 +54,32 @@ class IndexPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-            <Above full center="xs" column style={{alignItems: 'center'}}>
-              <Col xs>
+            <Above home center="xs" hasGradient>
+              <Grid>
+                <Row>
+                  <Col xs={12} lg={6}>
                 <h2 className="home-hero">
-                  {node.body.hero.body1}
+                      {node.body.hero.body}
                   <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
-                  <span>{node.body.hero.body2}</span>
                 </h2>
                 <Input placeholder="Enter your email address"/>
               </Col>
-              <Col xs className="proto">
-                <div className="proto-content"></div>
-                <Img src="/img/home-hero.png" alt="browser frame"/>
+                  <Col xs={12} lg={6} className="proto">
+                    <div className="proto-content">
+                    <Img src="/img/project-preview-en.png" alt="taskulu desktop"/>
+                    </div>
+                    <Img src="/img/macbook-mockup.svg" alt="browser frame"/>
               </Col>
+                </Row>
+              </Grid>
             </Above>
             <Logos
               src={node.body.customerLogos.logos}
               header={node.body.customerLogos.header}
               md={2}
               xs={4}
-              middle="xs"/>
+              middle="xs"
+              center="xs"/>
             <Row tagName="section" center="xs">
               <Col xs={8} style={{backgroundImage: "url('/img/make-own-project.svg')"}} className="homewhy">
                 <Copy child={node.body.why.eazy.title} type="whyheader" element="h3" align="left" />
@@ -116,12 +121,9 @@ class IndexPage extends React.Component {
             <Row column style={{alignItems: "center"}} tagName="section" center="xs" className="block-cta">
               <Col xs={10} lg={6}>
                 <h2 className="content-subheader">
-                  {/* {[0,1,2].map((item) => {
-                      <FormattedMessage id={node.body.demoCTA.headerParts[0]} />
-                      })} */}
-                  <FormattedMessage id={node.body.demoCTA.headerParts[0]} /> &nbsp;
-           <FormattedMessage id={node.body.demoCTA.headerParts[1]} /> &nbsp;
-           {node.body.demoCTA.headerParts[2]}
+                  {node.body.demoCTA.headerParts[0]} &nbsp;
+                  <FormattedMessage id={node.body.demoCTA.headerParts[1]}/> &nbsp;
+                  {node.body.demoCTA.headerParts[2]}
                 </h2>
               </Col>
               <Col xs={10} lg={6}>
@@ -161,7 +163,7 @@ export const pageQuery = graphql `
           body {
             hero {
               header
-              body1
+              body
               items
             }
             why {
@@ -198,7 +200,6 @@ export const pageQuery = graphql `
               }
             }
             demoCTA {
-              header
               headerParts
               body
               cta

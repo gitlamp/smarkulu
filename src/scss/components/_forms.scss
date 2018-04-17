@@ -1,19 +1,23 @@
 .goregister {
   position: relative;
+  /*rtl:ignore*/
+  direction: ltr;
   max-width: 35rem;
   margin: 0 auto;
   border-radius: 6px;
+  /*rtl:ignore*/
   text-align: left;
-  background-color: trasnparent;
+  background-color: $white;
   box-shadow: 0 8px 15px 0 rgba(36,50,66,.5);
   input {
     padding: 1.2rem 2rem;
     border: 0;
     background: none;
+    /*rtl:ignore*/
     text-align: left;
     width: 70%;
     min-height: 4.6rem;
-    color: #fff;
+    color: $wet-asphalt;
     font-family: $subtitle-font;
     font-size: $body;
     &:focus {
@@ -23,6 +27,7 @@
   }
   .button {
     position: absolute;
+    /*rtl:ignore*/
     right: .4rem;
     top: 50%;
     transform: translateY(-50%);

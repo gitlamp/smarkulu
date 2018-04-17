@@ -7,13 +7,12 @@ header:
 body:
   hero:
     header: "Teamwork solution for everyone"
-    body1: "Manage your "
+    body: "Manage Your "
     items:
       - "Tasks"
       - "Projects"
       - "Teams"
       - "Organizations"
-
   why:
     header: |
       In organizations, marketing agencies,
@@ -82,12 +81,7 @@ body:
         text: "Make decisions easier with understandable reports."
   demoCTA:
     body: |
-      نسخه‌های حرفه‌ای و سازمانی تسکولو به تیم‌ها و سازمان‌هایی در سرتاسر دنیا کمک کرده‌است تا بهترین نتیجه را بگیرند. می‌خواهید بدانید چطور؟
-      <br/></br/>
-      برای اطلاعات بیشتر با کارشناسان فروش ما مشورت کنید.
-
     cta: btn.register
-    header: count.users.alphanumeric
     headerParts:
         -
           "We helped over"
@@ -95,5 +89,4 @@ body:
           count.users.alphanumeric
         -
           "users all around the world"
-
 ...
