@@ -24,19 +24,20 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
           {
             test: /\.(sass|scss)$/,
             exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
-            loaders: ['style-loader', 'css-loader', 'sass-loader']
+            loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
           },
           {
             test: /\.useable\.scss$/,
             exclude: /\.rtl\.useable\.scss$/,
-            loaders: ['style-loader/useable', 'css-loader', 'sass-loader']
+            loaders: ['style-loader/useable', 'css-loader?sourceMap', 'sass-loader?sourceMap']
           },
           {
             test: /\.rtl\.useable.scss$/,
-            loaders: ['style-loader/useable', 'rtlcss-loader', 'sass-loader']
+            loaders: ['style-loader/useable', 'rtlcss-loader?sourceMap', 'sass-loader?sourceMap']
           }
         ]
       },
+      devtool: 'source-map',
       resolve: {
         alias: {
           normalize: 'normalize.scss/normalize.scss',
