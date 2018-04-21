@@ -27,33 +27,21 @@ img.isgray {
  * Smarkulu Classes
  */
 .above {
+  position: relative;
   &.normal {
-    padding-top: 15rem;
+    padding-top: 150px;
+    padding-bottom: 150px;
     min-height: 70vh;
   }
   &.full {
-    padding-top: 15rem;
+    padding-top: 150px;
+    padding-bottom: 150px;
     min-height: 100vh;
   }
   &.compact {
-    padding-top: 10rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
     min-height: 30vh;
-  }
-  &.home {
-    background: $g-blue-green;
-    padding-top: 15rem;
-    min-height: 100vh;
-    position: relative;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      width: 100%;
-      min-height: 200px;
-      background: url('/img/home-curve.svg') no-repeat top;
-      background-size: cover;
-      z-index: 1;
-    }
   }
   .content {
     max-width: 80rem;
@@ -80,6 +68,34 @@ img.isgray {
     margin: 4rem auto 0 auto;
     max-width: 80%;
     z-index: 10;
+  }
+}
+
+.skew {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: -50px;
+    transform: skewY(-4deg);
+    background-color: #fff;
+    z-index: -1;
+  }
+}
+
+.curved {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    min-height: 200px;
+    background: url('/img/home-curve.svg') no-repeat top;
+    background-size: cover;
+    z-index: 1;
   }
 }
 
@@ -202,6 +218,9 @@ img.isgray {
     background-color: $newgreen;
     padding-top: 6rem;
     padding-bottom: 6rem;
+    &-dark {
+      background-color: $wet-asphalt;
+    }
   }
   &-tour {
     padding-top: 8rem;
@@ -369,7 +388,7 @@ img.isgray {
       background-color: $newgreen;
     }
     &.business {
-      background: linear-gradient(160deg, rgba(251,201,99,1) 0%, rgba(238,86,104,1) 15%, rgba(238,86,104,1) 100%);;
+      background: linear-gradient(160deg, rgba(251,201,99,1) 0%, rgba(238,86,104,1) 25%, rgba(238,86,104,1) 100%);;
     }
     &.dedicated {
       background-color: $newblue;
@@ -627,12 +646,24 @@ img.isgray {
     box-shadow: 0 5px 20px 0 rgba(36,50,66,.14);
   }
   .team-image {
+    position: relative;
     width: 15rem;
     height: 15rem;
     margin: 0 auto;
     border-radius: 100%;
     overflow: hidden;
     cursor: pointer;
+  }
+  .team-char {
+    position: absolute;
+    top: 50%;
+    /*rtl:begin:ignore*/
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /*rtl:end:ignore*/
+    font-family: $subtitle-font;
+    font-size: 6rem;
+    color: $wet-asphalt;
   }
   .team-name {
     color: $wet-asphalt;
@@ -815,12 +846,6 @@ img.isgray {
     .double-divided-col-body {
       margin: 0 auto !important;
     }
-  }
-}
-
-@media #{$smview} {
-  .above.normal {
-    min-height: 40vh;
   }
 }
 

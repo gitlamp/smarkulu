@@ -17,44 +17,22 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  &--bordered {
+    border: 3px solid $wet-asphalt;
+  }
   &:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     transform: translateY(-1px);
   }
 }
-.button-normal {
-  color: #fff !important;
-  background: $cyan !important;
-}
-.button-submit {
-  color: #fff !important;
-  background: $newyellow !important;
-}
-.button-white {
-  color: $cyan !important;
-  background: #fff !important;
-  &:hover {
-    color: #fff !important;
-    background: $cyan !important;
-  }
-}
-.button-dark {
-  color: #fff;
-  background: $wet-asphalt;
-}
-.button-dark-border {
-  color: $wet-asphalt;
-  border: 3px solid $wet-asphalt;
-  background: #fff;
-  &:hover {
-    color: #fff;
-    background: $wet-asphalt;
-  }
-}
+@include buttonColorGenerator('normal', #fff, $cyan, null, null);
+@include buttonColorGenerator('submit', #fff, $newyellow, null, null);
+@include buttonColorGenerator('white', $cyan, #fff, #fff, $cyan);
+@include buttonColorGenerator('blue', #fff, $newblue, $newblue, #fff);
+@include buttonColorGenerator('dark', #fff, $wet-asphalt, $wet-asphalt, #fff);
+@include buttonColorGenerator('light', $wet-asphalt, #fff, #fff, $wet-asphalt);
 .block-cta .button {
-  padding: 1.3rem 2.6rem;
+  padding: 13px 26px;
   font-weight: 900;
   font-size: 1.8rem;
-  background-color: $newred;
-  color: #fff;
 }

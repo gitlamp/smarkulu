@@ -54,7 +54,7 @@ class IndexPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-            <Above home center="xs" hasGradient>
+            <Above className="gradient-blue-green curved" center="xs" full hasGradient>
               <Grid>
                 <Row>
                   <Col xs={12} lg={6}>
@@ -127,8 +127,8 @@ class IndexPage extends React.Component {
                 </h2>
               </Col>
               <Col xs={10} lg={6}>
-                <Copy type="announce-white" element="p" child={node.body.demoCTA.body}/>
-                <CTA className="button-white" name="btn.demo" href="/enterprise" type="internal" langKey={langKey}/>
+                <Copy type="announce-white" element="p" child={node.body.demoCTA.body} noEscape/>
+                <CTA className="button-blue" name="btn.demo" href="/enterprise" type="internal" langKey={langKey}/>
               </Col>
             </Row>
           </div>

@@ -23,10 +23,6 @@ class Above extends React.Component{
       this.setState({
         class: this.state.class + ' compact'
       })
-    } else if (this.props.home) {
-      this.setState({
-        class: this.state.class + ' home'
-      })
     } else {
       this.setState({
         class: this.state.class + ' normal'

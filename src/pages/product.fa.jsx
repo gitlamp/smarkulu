@@ -23,8 +23,8 @@ const Product = (props) => {
             <Grid>
               <Row start="sm" center="xs">
                 <Col xs={10} sm={12}>
-                  <Copy type="header" element="h1" child={node.body.hero.header}/>
-                  <Copy type="title" element="p" child={node.body.hero.desc}/>
+                  <Copy type="header" element="h1" child={node.body.hero.header} noEscape/>
+                  <Copy type="title" element="p" child={node.body.hero.desc} noEscape/>
                 </Col>
               </Row>
             </Grid>

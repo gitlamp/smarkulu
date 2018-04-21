@@ -35,10 +35,10 @@ class AnalyticsPage extends React.Component {
               </Col>
             </Above>
             <Row column center="xs" className="block-cta">
-              <Col xs="5">
+              <Col xs={12}>
                 <Copy element="h3" type="announce-white" child={node.body.upgradeCTA.body} />
               </Col>
-              <Col xs="5">
+              <Col xs={12}>
                 <CTA name={node.body.upgradeCTA.cta} className="button-white" type="internal" href="/pricing" langKey={langKey} />
               </Col>
             </Row>
@@ -72,11 +72,11 @@ class AnalyticsPage extends React.Component {
             </TwoColumn>
             <Row column center="xs" className="block-cta">
               <Col>
-                <Copy type="announce-white" element="h3" child={node.body.demoCTA.body} />
+                <Copy type="announce-white" element="h3" child={node.body.demoCTA.body} noEscape/>
               </Col>
               <Col>
-                <CTA type="login" name="btn.start" className="button-white button--besides" langKey={langKey} />&nbsp;
-                <CTA type="internal" href="/enterprise" name={node.body.demoCTA.cta} className="button-white button--besides" langKey={langKey} />
+                <CTA type="login" name="btn.start" className="button-submit button--besides" langKey={langKey} />&nbsp;
+                <CTA type="internal" href="/enterprise" name={node.body.demoCTA.cta} className="button-blue button--besides" langKey={langKey} />
               </Col>
             </Row>
           </div>)}

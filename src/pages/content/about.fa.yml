@@ -26,75 +26,53 @@ body:
       jobTitle: "مهندس محصول"
       twitter: "https://twitter.com/hmn_hf"
       linkedin: "https://ir.linkedin.com/in/hmnhf"
-      front: "homayoun-front"
-      back: "homayoun-back"
     -
       name: "آزاده نوربخش"
       jobTitle: "مدیر موفقیت مشتریان"
       twitter: "https://twitter.com/azazadeh"
       linkedin: "https://ir.linkedin.com/in/azadehnourbakhsh"
-      front: "azadeh-front"
-      back: "azadeh-back"
     -
       name: "سینا صباغ"
       jobTitle: "مدیر مارکتینگ"
       twitter: "https://twitter.com/sinasabbagh"
       linkedin: "https://ir.linkedin.com/in/sina-sabbagh-b566b896"
-      front: "sina-front"
-      back: "sina-back"
     -
       name: "روزبه میرزایی"
       jobTitle: "توسعه کسب و کار"
       linkedin: "https://www.linkedin.com/in/roozbeh-mirzaee-97810812a"
-      front: "roozbeh-front"
-      back: "roozbeh-back"
     -
       name: "امیرحسین اقدسی"
       jobTitle: "توسعه کسب و کار"
       twitter:
       linkedin:
-      front: "amirhossein-front"
-      back: "amirhossein-back"
     -
       name: "علی فضائلی"
       jobTitle: "مدیر محصول"
       twitter:
       linkedin:
-      front: "ali-front"
-      back: "ali-back"
     -
       name: "امیرعلی ساری‌اصلانی"
       jobTitle: "کارشناس مارکتینگ"
       twitter:
       linkedin:
-      front: "amirali-front"
-      back: "amirali-back"
     -
       name: "نگار گلجان"
       jobTitle: "کارشناس فروش"
       twitter:
       linkedin:
-      front: "negar-front"
-      back: "negar-back"
     -
       name: "مهرداد اسدی"
       jobTitle: "کارشناس موفقیت مشتری"
       twitter:
       linkedin:
-      front: "mehrdad-front"
-      back: "mehrdad-back"
     -
       name: "مهرداد محمدی"
       jobTitle: "کارشناس موفقیت مشتری"
       twitter:
       linkedin:
-      front: "mehrdad-front"
-      back: "mehrdad-back"
     -
       name: "بیلبو"
       jobTitle: "مِه!"
-      front: "bilbo-front"
-      back: "bilbo-back"
   mission:
     header: "ما که هستیم و چه می‌خواهیم؟"
     body: |

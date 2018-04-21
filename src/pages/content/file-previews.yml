@@ -54,7 +54,7 @@ body:
     subheader: "Let’s talk and find out!"
     cta: "btn.demo"
   formatsViewer:
-    header: "title"
+    header: "All File Formats"
     cat:
       -
         title: "Documents"

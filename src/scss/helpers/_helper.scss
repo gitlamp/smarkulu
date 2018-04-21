@@ -35,6 +35,17 @@
   }
 }
 
+@mixin buttonColorGenerator($type, $txtColor, $bgColor, $hoverTxtColor, $hoverBgColor) {
+  .button-#{$type} {
+    color: $txtColor !important;
+    background-color: $bgColor !important;
+      &:hover {
+        color: $hoverTxtColor !important;
+        background-color: $hoverBgColor !important;
+      }
+  }
+}
+
 /**
  * Social icons
  */
@@ -59,15 +70,47 @@
 /**
  * Gradients
  */
+.gradient-back-base {
+  position: relative;
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+  p {
+    color: $clouds;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    /*rtl:ignore*/
+    left: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
 .gradient-blue-green {
-  background: $g-blue-green;
+  @extend .gradient-back-base;
+  &::before {
+    background: $g-blue-green;
+  }
 }
 .gradient-red-yellow {
-  background: $g-red-yellow;
+  @extend .gradient-back-base;
+  &::before {
+    background: $g-red-yellow;
+  }
 }
 .gradient-yellow-green {
-  background: $g-yellow-green;
+  @extend .gradient-back-base;
+  &::before {
+    background: $g-yellow-green;
+  }
 }
 .gradient-blue-red {
-  background: $g-blue-red;
+  @extend .gradient-back-base;
+  &::before {
+    background: $g-blue-red;
+  }
 }
