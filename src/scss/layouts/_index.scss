@@ -190,6 +190,11 @@ img.isgray {
   &-content {
     @extend %body;
   }
+  &-filter {
+    color: #eee;
+    font-weight: 700;
+    margin: 0;
+  }
   &-description {
     @extend %body;
     line-height: 1.8;
@@ -314,6 +319,12 @@ img.isgray {
       margin-left: 1rem;
     }
   }
+}
+.industry-overview {
+  align-items:center;
+}
+.industry-filter {
+  margin: 0 10px;
 }
 .features-card {
   min-height: 12rem;
@@ -815,6 +826,12 @@ img.isgray {
     .double-divided-col-body {
       margin: 0 auto !important;
     }
+  }
+  .content-filter {
+    font-size: 1.8rem;
+  }
+  .industry-filter {
+    flex-basis: 40%;
   }
 }
 

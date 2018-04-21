@@ -9,6 +9,7 @@ body:
     header: "از هر صنعتی و در هر تخصصی، همه می‌توانند کارهای خود را با تسکولو پیش ببرند."
   industries:
     marketing:
+      id: "marketing"
       header: "بازاریابی و تبلیغات"
       items:
         -
@@ -51,6 +52,7 @@ body:
           company: "Respinatech"
           alt: ""
     ecommerce:
+      id: "ecommerce"
       header: "تجارت الکترونیک"
       items:
         -
@@ -90,6 +92,7 @@ body:
           company: "DigiKala"
           alt: ""
     education:
+      id: "education"
       header: "آموزش"
       items:
         -
@@ -126,6 +129,7 @@ body:
           company: "TMU"
           alt: ""
     manufacturing:
+      id: "manufacturing"
       header: "تولید"
       items:
         -
@@ -162,6 +166,7 @@ body:
           company: "Solico"
           alt: ""
     vas:
+      id: "vas"
       header: "خدمات ارزش افزوده"
       items:
         -
@@ -192,6 +197,7 @@ body:
           company: "AkhbarRasmi"
           alt: ""
     media:
+      id: "media"
       header: "بازی‌سازی و سرگرمی"
       items:
         -
@@ -213,6 +219,7 @@ body:
           company: "Avagames"
           alt: ""
     professionalService:
+      id: "professional-services"
       header: "خدمات تخصصی"
       items:
         -
@@ -231,6 +238,7 @@ body:
           company: "Moravia"
           alt: ""
     financialService:
+      id: "financial-services"
       header: "خدمات مالی"
       items:
         -
@@ -246,6 +254,7 @@ body:
           company: "SinaInsurance"
           alt: ""
     architecture:
+      id: "architecture"
       header: "معماری و طراحی"
       items:
         -
@@ -258,6 +267,7 @@ body:
           company: "StudioAbbasi"
           alt: ""
     IT:
+      id: "IT"
       header: "فناوری اطلاعات و توسعه نرم‌افزار"
       items:
         -
@@ -303,6 +313,7 @@ body:
           company: "HesabKetab"
           alt: ""
     communication:
+      id: "communication"
       header: "ارتباطات"
       items:
         -
@@ -315,6 +326,7 @@ body:
           company: "Asiatech"
           alt: ""
     government:
+      id: "government"
       header: "بخش عمومی"
       items:
         -
@@ -327,6 +339,7 @@ body:
           company: "PMO"
           alt: ""
     nonProfit:
+      id: "non-profit"
       header: "عام‌المنفعه"
       items:
         -
