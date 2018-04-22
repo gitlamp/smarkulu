@@ -562,7 +562,7 @@ img.isgray {
   min-height: 100vh;
   &-col {
     position: relative;
-    padding: 8rem 0;
+    padding: 80px 0;
     text-align: left;
     &-header, &-body, &-list {
       margin-left: auto;
@@ -570,28 +570,38 @@ img.isgray {
       width: 80%;
     }
     &-header {
-      margin-top: 8rem;
-      margin-bottom: 4rem;
+      margin-top: 80px;
+      margin-bottom: 40px;
     }
     &-list {
-      margin-top: 6rem;
+      margin-top: 60px;
     }
     &-body {
-      margin-left: 6rem;
       font-family: $subtitle-font;
       font-size: $head4;
       li {
-        margin-left: 3rem;
-        font-size: $body;
-        list-style: disc;
+        margin-left: 30px;
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        list-style: none;
+        &:before {
+          content: '';
+          background-image: url('/img/bullet.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          display: inline-block;
+          width: 1.6rem;
+          height: 1.4rem;
+          margin-right: 5px;
+        }
         &:first-of-type {
-          margin-top: 1rem;
+          margin-top: 10px;
         }
       }
     }
     &-item {
       margin: 0;
-      margin-bottom: 4rem;
+      margin-bottom: 40px;
       .content-head, .content-body {
         width: 100%;
       }
