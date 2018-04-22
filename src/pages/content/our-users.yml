@@ -2,13 +2,15 @@
 header:
   lang: en
   slug: /our-users
-  title: "Our members"
+  title: "Our Users"
   desc: "From any industry, from any specialty, see which Iranian and foreign companies have become more productive with Taskulu."
 body:
   hero:
-    header: "From every industry and every specialty, everyone can do their tasks with Taskulu."
+    header: "Loved across industries and sectors."
+    subheader: "used too!"
   industries:
     marketing:
+      id: "marketing"
       header: "Marketing and Advertising"
       items:
         -
@@ -51,6 +53,7 @@ body:
           company: "Respinatech"
           alt: ""
     ecommerce:
+      id: "ecommerce"
       header: "Ecommerce - Online Services"
       items:
         -
@@ -90,6 +93,7 @@ body:
           company: "DigiKala"
           alt: ""
     education:
+      id: "education"
       header: "Education - Research"
       items:
         -
@@ -126,6 +130,7 @@ body:
           company: "TMU"
           alt: ""
     manufacturing:
+      id: "manufacturing"
       header: "Manufacturing - Consumer Goods"
       items:
         -
@@ -162,6 +167,7 @@ body:
           company: "Solico"
           alt: ""
     vas:
+      id: "vas"
       header: "Content Creation - VAS"
       items:
         -
@@ -192,6 +198,7 @@ body:
           company: "AkhbarRasmi"
           alt: ""
     media:
+      id: "media"
       header: "Media - Entertainment"
       items:
         -
@@ -213,6 +220,7 @@ body:
           company: "Avagames"
           alt: ""
     professionalService:
+      id: "professional-services"
       header: "Professional Services"
       items:
         -
@@ -231,6 +239,7 @@ body:
           company: "Moravia"
           alt: ""
     financialService:
+      id: "financial-services"
       header: "Financial Services"
       items:
         -
@@ -246,6 +255,7 @@ body:
           company: "SinaInsurance"
           alt: ""
     architecture:
+      id: "architecture"
       header: "Architecture - Design"
       items:
         -
@@ -258,6 +268,7 @@ body:
           company: "StudioAbbasi"
           alt: ""
     IT:
+      id: "IT"
       header: "Information Technology - Software Development"
       items:
         -
@@ -303,6 +314,7 @@ body:
           company: "HesabKetab"
           alt: ""
     communication:
+      id: "communication"
       header: "Communication"
       items:
         -
@@ -315,6 +327,7 @@ body:
           company: "Asiatech"
           alt: ""
     government:
+      id: "government"
       header: "Government - Public Services"
       items:
         -
@@ -327,6 +340,7 @@ body:
           company: "PMO"
           alt: ""
     nonProfit:
+      id: "non-profit"
       header: "Non-profit Organizations"
       items:
         -
