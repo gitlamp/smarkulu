@@ -32,7 +32,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
             loaders: ['style-loader/useable', 'css-loader', 'sass-loader']
           },
           {
-            test: /\.rtl\.useable.scss$/,
+            test: /\.rtl\.useable\.scss$/,
             loaders: ['style-loader/useable', 'rtlcss-loader', 'sass-loader']
           }
         ]
