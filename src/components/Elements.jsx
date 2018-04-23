@@ -12,7 +12,8 @@ class Copy extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      type: 'content-' + this.props.type + ' '
+      class: '',
+      type: 'content-' + this.props.type
     }
   }
   componentWillMount() {
@@ -30,7 +31,7 @@ class Copy extends React.Component {
       element = React.createElement(
         this.props.element,
         {
-          className: this.state.type + this.props.className,
+          className: this.state.type + this.state.class,
           style: align,
           dangerouslySetInnerHTML: {__html: this.props.child}
         }
@@ -39,7 +40,7 @@ class Copy extends React.Component {
       element = React.createElement(
         this.props.element,
         {
-          className: this.state.type + this.props.className,
+          className: this.state.type + this.state.class,
           style: align
         },
         this.props.child || this.props.children
