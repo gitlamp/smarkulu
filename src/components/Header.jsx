@@ -180,7 +180,9 @@ HeaderWrapper.PropTypes = {
 // Paths which header should be hidden on them
 const hiddenOnPaths = [
   '/enterprise',
-  '/fa/enterprise'
+  '/fa/enterprise',
+  '/contact',
+  '/fa/contact'
 ]
 
 // Map redux state to component props
