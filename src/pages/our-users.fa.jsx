@@ -14,7 +14,7 @@ const OurUsers = (props) => {
       {data.allContentYaml.edges.map(({node}) =>
         <div key={node.id}>
           <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-          <Above className="gradient-red-yellow skew" xs={12} center="xs" normal hasGradient>
+          <Above className="gradient-red-yellow skewed-bottom" xs={12} center="xs" normal hasGradient>
             <Col xs={11} sm={8}>
               <Copy type="header" element="h1" child={node.body.hero.header}/>
             </Col>

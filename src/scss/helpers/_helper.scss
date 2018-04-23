@@ -68,6 +68,55 @@
 }
 
 /**
+ * Section Background Colors
+ */
+.background-picton-blue {
+  background-color: $picton-blue;
+  h1, h2, h3, h4, h5, h6 {
+    color: $wet-asphalt;
+  }
+  p {
+    color: $clouds;
+  }
+}
+.background-san-mario {
+  background-color: $san-marino;
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+  p {
+    color: #d3d7de;
+  }
+}
+.background-shamrock {
+  background-color: $shamrock;
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+  p {
+    color: #000;
+  }
+}
+.background-golden-road {
+  background-color: $golden-road;
+  h1, h2, h3, h4, h5, h6 {
+    color: $wet-asphalt;
+  }
+  p {
+    color: $asbestos;
+  }
+}
+.background-mandy {
+  background-color: $mandy;
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+  }
+  p {
+    color: $clouds;
+  }
+}
+
+/**
  * Gradients
  */
 .gradient-back-base {

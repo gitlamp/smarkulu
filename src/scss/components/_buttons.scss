@@ -26,9 +26,9 @@
   }
 }
 @include buttonColorGenerator('normal', #fff, $cyan, null, null);
-@include buttonColorGenerator('submit', #fff, $newyellow, null, null);
+@include buttonColorGenerator('submit', #fff, $golden-road, #000, null);
 @include buttonColorGenerator('white', $cyan, #fff, #fff, $cyan);
-@include buttonColorGenerator('blue', #fff, $newblue, $newblue, #fff);
+@include buttonColorGenerator('blue', #fff, $san-marino, $san-marino, #fff);
 @include buttonColorGenerator('dark', #fff, $wet-asphalt, $wet-asphalt, #fff);
 @include buttonColorGenerator('light', $wet-asphalt, #fff, #fff, $wet-asphalt);
 .block-cta .button {

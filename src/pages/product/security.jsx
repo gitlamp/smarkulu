@@ -25,7 +25,7 @@ class SecurityPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above center="xs" compact>
+            <Above center="xs" compact className="gradient-yellow-green curved" hasGradient>
               <Col xs={10} md={5}>
                 <Copy element="h1" type="header" child={node.body.hero.header} />
                 <CTA type="login" name={node.body.hero.cta} className="button-submit" langKey={langKey} />

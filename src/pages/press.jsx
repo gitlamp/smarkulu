@@ -15,7 +15,7 @@ const Press = (props) => {
       {data.allContentYaml.edges.map(({node}) =>
         <div key={node.id}>
           <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-          <Above center="xs">
+          <Above center="xs" className="background-san-mario skewed-bottom" hasGradient>
             <Col xs={12}>
               <Copy type="header" element="h1" child={node.body.hero.header}/>
               <Copy type="content" element="p" child={node.body.hero.body}/>

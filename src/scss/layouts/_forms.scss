@@ -14,10 +14,10 @@
 }
 .double-divided .hasBackground {
   & .mauticform-error, & .mauticform-errormsg {
-    color: $newyellow;
+    color: $golden-road;
   }
   & .mauticform-button {
-    color: $newgreen;
+    color: $shamrock;
   }
   & .mauticform-input:focus, & .mauticform-selectbox:focus, & .mauticform-textarea:focus {
     outline: none;
@@ -27,18 +27,18 @@
     color: #313131;
   }
   & .form-banner {
-    color: $newgreen;
+    color: $shamrock;
   }
 }
 .mauticform-message {
-  color: $newgreen;
+  color: $shamrock;
   text-align: center;
   font-size: 2rem;
   font-family: $title-font;
 }
 .mauticform-errormsg {
     display: block;
-    color: $newred;
+    color: $mandy;
     margin-top: 2px;
     font-size: 1.2rem;
 }
@@ -50,7 +50,7 @@
   text-align: center;
 }
 .mauticform-button {
-  color: $newgreen;
+  color: $shamrock;
   font-size: 2.4rem;
   border-radius: 3rem;
   border: none;

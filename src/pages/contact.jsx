@@ -22,7 +22,7 @@ const Contact = (props) => {
                   {node.body.contact.map((item, i) =>
                     <li className="double-divided-col-item" key={i}>
                       <Copy type="title" element="h2" child={item.header}/>
-                      <Copy type="sub" element="p" child={item.body}/>
+                      <Copy type="sub" element="p" child={item.body} noEscape/>
                     </li>
                   )}
                 </ul>

@@ -19,7 +19,7 @@ class AboutPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above className="gradient-blue-red skew" center="xs" hasGradient>
+            <Above className="gradient-blue-red skewed-bottom" center="xs" hasGradient>
               <Col xs={10}>
                 <Copy type="header" element="h1" child={node.body.header} />
               </Col>
@@ -45,7 +45,7 @@ class AboutPage extends React.Component {
                 </Row>
               </Col>
             </Row>
-            <Row tagName="section" center="xs">
+            <Row tagName="section" center="xs" className="background-mandy">
               <Col xs={6}>
                 <Copy type="header" element="h2" child={node.body.mission.header} />
                 <Copy type="content" align="left" element="p" child={node.body.mission.body} noEscape/>
