@@ -4,10 +4,11 @@ import { FormattedMessage } from 'react-intl'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
+import Img from 'gatsby-image'
 
 import SEO from '../components/SEO'
 import Input from '../components/Input'
-import { Copy, CTA, Img } from '../components/Elements'
+import { Copy, CTA } from '../components/Elements'
 import { Above, Logos } from '../components/Partials'
 
 class IndexPage extends React.Component {
@@ -66,9 +67,9 @@ class IndexPage extends React.Component {
                   </Col>
                   <Col xs={12} lg={6} className="proto">
                     <div className="proto-content">
-                      <Img src="/img/project-preview-fa.png" alt="taskulu desktop"/>
+                      <Img sizes={data.product.sizes} />
                     </div>
-                    <Img src="/img/macbook-mockup.svg" alt="laptop"/>
+                      <Img sizes={data.wireframe.sizes} />
                   </Col>
                 </Row>
               </Grid>
@@ -106,7 +107,7 @@ class IndexPage extends React.Component {
                    <Col xs={10} md lg={3} key={i}>
                      <div className="features-card">
                        <div className="features-card-icon">
-                         <Img src={item.icon} width="40%" />
+                         <img src={item.icon} width="40%" />
                        </div>
                        <div className="features-card-txt content-title">
                          {item.text}
@@ -141,7 +142,7 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 /**
- * Require data from fa yaml
+ * Require data from fa yaml and images
  */
 export const pageQuery = graphql `
   query IndexFaPage {
@@ -206,6 +207,16 @@ export const pageQuery = graphql `
             }
           }
         }
+      }
+    }
+    wireframe: imageSharp( id: { regex: "/macbook-mockup/" } ) {
+      sizes {
+        ...GatsbyImageSharpSizes_noBase64
+      }
+    }
+    product: imageSharp( id: { regex: "/project-preview-fa/" } ) {
+      sizes {
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }

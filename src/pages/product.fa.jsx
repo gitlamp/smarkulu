@@ -3,9 +3,10 @@ import graphql from 'graphql'
 import Link from 'gatsby-link'
 import { FormattedMessage } from 'react-intl'
 import { Grid, Row, Col } from 'react-flexbox-grid'
+import Img from 'gatsby-image'
 
 import SEO from '../components/SEO'
-import { Copy, Img } from '../components/Elements'
+import { Copy } from '../components/Elements'
 import { TwoColumn, Above } from '../components/Partials'
 
 const Product = (props) => {
@@ -36,14 +37,14 @@ const Product = (props) => {
                   <Copy type="title" align="right" element="h2" child={node.body.section1.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section1.body}/>
                 </div>
-                <Img src="/img/product-flexible.png" alt="No IMG"/>
+                <Img sizes={data.flexible.sizes} />
               </TwoColumn>
             </Grid>
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
               <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[8,4], lg:[8,4] }}>
-                <Img src="/img/product-easy.png" alt="No IMG"/>
+                <Img sizes={data.easy.sizes} />
                 <div>
                   <Copy type="title" align="right" element="h2" child={node.body.section2.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section2.body}/>
@@ -58,7 +59,7 @@ const Product = (props) => {
                   <Copy type="title" align="right" element="h2" child={node.body.section3.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section3.body}/>
                 </div>
-                <Img src="/img/product-performance.png" alt="No IMG"/>
+                <Img sizes={data.performance.sizes} />
               </TwoColumn>
             </Grid>
           </Row>
@@ -151,6 +152,21 @@ query ProductFaPage {
           }
         }
       }
+    }
+  }
+  flexible: imageSharp( id: { regex: "/product-flexible/" } ) {
+    sizes {
+      ...GatsbyImageSharpSizes_noBase64
+    }
+  }
+  easy: imageSharp( id: { regex: "/product-easy/" } ) {
+    sizes {
+      ...GatsbyImageSharpSizes_noBase64
+    }
+  }
+  performance: imageSharp( id: { regex: "/product-performance/" } ) {
+    sizes {
+      ...GatsbyImageSharpSizes_noBase64
     }
   }
 }

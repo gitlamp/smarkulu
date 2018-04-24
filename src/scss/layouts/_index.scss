@@ -79,23 +79,27 @@ img.isgray {
     content: '';
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: 150px;
     bottom: -50px;
-    transform: skewY(-4deg);
+    transform: skewY(-3deg);
     background-color: #fff;
   }
 }
 
-.skew-top {
+.skewed-top {
   position: relative;
+  margin-top: 150px;
   &::before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: 150px;
     top: -50px;
-    transform: skewY(-4deg);
-    background-color: #fff;
+    transform: skewY(-3deg);
+    background-color: $wet-asphalt;
+  }
+  > * {
+    z-index: 2;
   }
 }
 
@@ -794,22 +798,28 @@ img.isgray {
     border-radius: 6px;
     background: $white;
     box-shadow: 0 5px 20px 0 rgba(36,50,66,.14);
-  }
-  .press-image {
-    width: 100%;
-    img {
-      min-height: 160px;
+    .press-image {
+      position: relative;
+      width: 100%;
+      margin: 0 5px 10px;
+      overflow: hidden;
     }
-  }
-  .press-title {
-    color: $asbestos;
-  }
-  .press-src {
-    color: $wet-asphalt;
-  }
-  .press-title, .press-src {
-    width: 100%;
-    margin: 0 1rem 1rem;
+    .press-title {
+      position: relative;
+      color: $asbestos;
+    }
+    .press-src {
+      position: relative;
+      color: $wet-asphalt;
+    }
+    .press-title, .press-src {
+      width: 100%;
+      margin: 0 10px 10px;
+      &--ltr {
+        /*rtl:ignore*/
+        direction: ltr;
+      }
+    }
   }
 }
 /**

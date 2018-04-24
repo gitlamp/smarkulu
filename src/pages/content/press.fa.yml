@@ -44,16 +44,16 @@ body:
       -
         title: "Could Iran Be A Software Growth Market?"
         source: "forbes"
-        img: "/img/press-forbes.png"
+        img: "press-forbes.png"
         link: http://www.forbes.com/sites/adrianbridgwater/2015/11/09/could-iran-be-a-software-growth-market/
       -
         title: "Startup Istanbul 2015: Meet the winners"
         source: "Etohum"
-        img: "/img/press-startup-istanbul.jpg"
+        img: "press-startup-istanbul.jpg"
         link: http://www.etohum.com/blog/startup-istanbul-2015-meet-the-winners/
       -
         title: "Rollenbasiertem Projektmanagement"
         source: "T3n magazine"
-        img: "/img/press-t3n.jpg"
+        img: "press-t3n.jpg"
         link: http://t3n.de/news/projektmanagement-taskulu-trello-alternative-581805/
 ...

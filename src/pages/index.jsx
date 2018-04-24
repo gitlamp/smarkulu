@@ -4,10 +4,11 @@ import { FormattedMessage } from 'react-intl'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
+import Img from 'gatsby-image'
 
 import SEO from '../components/SEO'
 import Input from '../components/Input'
-import { Copy, CTA, Img } from '../components/Elements'
+import { Copy, CTA } from '../components/Elements'
 import { Above, Logos } from '../components/Partials'
 
 class IndexPage extends React.Component {
@@ -62,14 +63,14 @@ class IndexPage extends React.Component {
                       {node.body.hero.body}
                   <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
                 </h2>
-                <Input placeholder="Enter your email address"/>
-              </Col>
+                  <Input placeholder="Enter your email address"/>
+                  </Col>
                   <Col xs={12} lg={6} className="proto">
                     <div className="proto-content">
-                    <Img src="/img/project-preview-en.png" alt="taskulu desktop"/>
+                      <Img sizes={data.product.sizes} alt="taskulu desktop"/>
                     </div>
-                    <Img src="/img/macbook-mockup.svg" alt="browser frame"/>
-              </Col>
+                      <Img sizes={data.wireframe.sizes}/>
+                  </Col>
                 </Row>
               </Grid>
             </Above>
@@ -106,7 +107,7 @@ class IndexPage extends React.Component {
                    <Col xs={10} md lg={3} key={i}>
                      <div className="features-card">
                        <div className="features-card-icon">
-                         <Img src={item.icon} width="40%" />
+                         <img src={item.icon} width="40%" />
                        </div>
                        <div className="features-card-txt content-title">
                          {item.text}
@@ -141,7 +142,7 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 /**
- * Require data from fa yaml
+ * Require data from fa yaml and images
  */
 export const pageQuery = graphql `
   query IndexEnPage {
@@ -206,6 +207,16 @@ export const pageQuery = graphql `
             }
           }
         }
+      }
+    }
+    wireframe: imageSharp( id: { regex: "/macbook-mockup/" } ) {
+      sizes {
+        ...GatsbyImageSharpSizes_noBase64
+      }
+    }
+    product: imageSharp( id: { regex: "/project-preview-en/" } ) {
+      sizes {
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }
