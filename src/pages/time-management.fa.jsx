@@ -1,15 +1,11 @@
 import React from 'react'
 import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import Helmet from 'react-helmet'
-import $ from 'jquery'
-import { TweenLite } from 'gsap'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
-import Input from '../components/Input'
 import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above, Logos } from '../components/Partials'
+import { TwoColumn, Above } from '../components/Partials'
 
 class TimeManagementPage extends React.Component {
   constructor(props) {
@@ -19,7 +15,6 @@ class TimeManagementPage extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>

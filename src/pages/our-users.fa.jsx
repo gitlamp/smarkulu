@@ -8,7 +8,7 @@ import { Above, Logos } from '../components/Partials'
 
 const OurUsers = (props) => {
   const { data } = props
-  const { slug, langKey } = props.pathContext
+  const langKey = props.pathContext.langKey
   return (
     <div>
       {data.allContentYaml.edges.map(({node}) =>

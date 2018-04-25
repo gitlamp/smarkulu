@@ -13,7 +13,6 @@ class AboutPage extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
