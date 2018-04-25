@@ -1,27 +1,26 @@
 import { createStore as reduxCreateStore } from 'redux'
 
 const reducer = (state, action) => {
-  if(action.type == 'invisibleHeader') {
-    return Object.assign({}, state, {
-      headerVisibility: false
-    })
+  switch (action.type) {
+    case 'invisibleHeader':
+      return Object.assign({}, state, {
+            headerVisibility: false
+          })
+    case 'visibleHeader':
+      return Object.assign({}, state, {
+            headerVisibility: true
+          })
+    case 'whiteHeader':
+      return Object.assign({}, state, {
+            headerType: 'white'
+          })
+    case 'blueHeader':
+      return Object.assign({}, state, {
+            headerType: 'blue'
+          })
+    default:
+      return state;
   }
-  if(action.type == 'visibleHeader') {
-    return Object.assign({}, state, {
-      headerVisibility: true
-    })
-  }
-  if(action.type == 'whiteHeader') {
-    return Object.assign({}, state, {
-      headerType: 'white'
-    })
-  }
-  if(action.type == 'blueHeader') {
-    return Object.assign({}, state, {
-      headerType: 'blue'
-    })
-  }
-  return state
 }
 
 const initialState = {
