@@ -68,6 +68,7 @@ class SEO extends React.Component {
       openGraph.publisher = 'https://facebook.com/TaskuluHQ'
       twitter.site = '@taskulu'
       this.setState({
+        title: 'Taskulu | ' + this.props.title,
         dir: 'ltr',
         style: '/styles/main.css',
         openGraph,
@@ -79,6 +80,7 @@ class SEO extends React.Component {
       openGraph.publisher = 'https://facebook.com/taskuluir'
       twitter.site = '@taskulu_ir'
       this.setState({
+        title: 'تسکولو | ' + this.props.title,
         dir: 'rtl',
         style: '/styles/main-rtl.css',
         openGraph,
