@@ -81,7 +81,10 @@ body:
         text: "Make decisions easier with understandable reports."
   demoCTA:
     body: |
-    cta: btn.register
+      Our premium plans helped team across the globe to get results.<br/>
+      Want to know how?<br/>
+      Our sales consultants are ready to help!
+    cta: btn.demo
     headerParts:
         -
           "We helped over"
