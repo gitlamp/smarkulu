@@ -27,7 +27,6 @@ module.exports = {
             {label: 'footer.menu.product', slug:'/product'},
             {label: 'footer.menu.companies', slug:'/our-users'},
             {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.customer-success', slug:'/customer-success'},
             {label: 'footer.menu.demo', slug:'/enterprise'},
           ]
         },
@@ -68,7 +67,6 @@ module.exports = {
             {label: 'footer.menu.product', slug:'/product'},
             {label: 'footer.menu.companies', slug:'/our-users'},
             {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.customer-success', slug:'/customer-success'},
             {label: 'footer.menu.demo', slug:'/enterprise'},
           ]
         },
