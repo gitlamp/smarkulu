@@ -1,6 +1,6 @@
 import React from 'react'
 import graphql from 'graphql'
-import { Row, Col } from 'react-flexbox-grid'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
@@ -17,8 +17,23 @@ const OurUsers = (props) => {
           <Above xs={12} center="xs">
             <Col xs={11} sm={8}>
               <Copy type="header" element="h1" child={node.body.hero.header}/>
+              <Copy type="subheader" element="h3" child={node.body.hero.subheader}/>
             </Col>
           </Above>
+          <Grid id="#industries-overview">
+            <Row center="xs" className="industry-overview">
+              {Object.keys(node.body.industries).map((i) => {
+                 var item = node.body.industries[i],
+                     filterTitle = item.header.split(" -")[0] //this is very brittle!
+                 return (
+                   <Col xs={6} sm={3} md={2} className="industry-filters">
+                     <a class="" href={"#" + item.id} className="button button-filter">
+                       <Copy element="p" type="filter" child={filterTitle} />
+                     </a>
+                   </Col>
+                 )})}
+            </Row>
+          </Grid>
           <Row tagName="section">
             <Logos src={node.body.industries.marketing.items} header={node.body.industries.marketing.header} sm={2} xs={4} middle="xs" center="xs"/>
             <Logos src={node.body.industries.ecommerce.items} header={node.body.industries.ecommerce.header} sm={2} xs={4} middle="xs" center="xs"/>
@@ -64,9 +79,11 @@ query OurUsersPage {
         body {
           hero {
             header
+            subheader
           }
           industries {
             marketing {
+              id
               header
               items {
                 company
@@ -74,6 +91,7 @@ query OurUsersPage {
               }
             }
             ecommerce {
+              id
               header
               items {
                 company
@@ -81,6 +99,7 @@ query OurUsersPage {
               }
             }
             education {
+              id
               header
               items {
                 company
@@ -88,6 +107,7 @@ query OurUsersPage {
               }
             }
             manufacturing {
+              id
               header
               items {
                 company
@@ -95,6 +115,7 @@ query OurUsersPage {
               }
             }
             vas {
+              id
               header
               items {
                 company
@@ -102,6 +123,7 @@ query OurUsersPage {
               }
             }
             media {
+              id
               header
               items {
                 company
@@ -109,6 +131,7 @@ query OurUsersPage {
               }
             }
             professionalService {
+              id
               header
               items {
                 company
@@ -116,6 +139,7 @@ query OurUsersPage {
               }
             }
             financialService {
+              id
               header
               items {
                 company
@@ -123,6 +147,7 @@ query OurUsersPage {
               }
             }
             architecture {
+              id
               header
               items {
                 company
@@ -130,6 +155,7 @@ query OurUsersPage {
               }
             }
             IT {
+              id
               header
               items {
                 company
@@ -137,6 +163,7 @@ query OurUsersPage {
               }
             }
             communication {
+              id
               header
               items {
                 company
@@ -144,6 +171,7 @@ query OurUsersPage {
               }
             }
             government {
+              id
               header
               items {
                 company
@@ -151,6 +179,7 @@ query OurUsersPage {
               }
             }
             nonProfit {
+              id
               header
               items {
                 company
