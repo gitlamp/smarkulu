@@ -7,12 +7,14 @@ header:
 body:
   header: "Taskulu for Organizations"
   list:
-    header: "Sales consultants are ready to:"
+    header: |
+      Are you considering buying Taskulu?<br/>
+      Our sales consultants are ready to:
     items:
-      - "Listen to your organization's specific working conditions and needs"
-      - "Teach you how Taskulu works"
-      - "Offer you the best suggestions to increase team productivity, based on the experience of our successful members in your industry and business area"
-      - "Help you choose the best solutions according to your needs"
-      - "Answer your questions about the Taskulu"
-      - "Plan for a long-lastig friendship with you"
+      - "Listen to your organization's specific working conditions and needs,"
+      - "Showcase how Taskulu works for your business,"
+      - "Offer you a handful of best practices based on experiences of our successful users in your industry,"
+      - "Help you choose a solution that works for you,"
+      - "Answer your questions about the Taskulu,"
+      - "Plan for a long-lastig friendship with you."
 ...

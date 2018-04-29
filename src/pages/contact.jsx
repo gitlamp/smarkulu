@@ -16,33 +16,36 @@ const Contact = (props) => {
             pagePath={langKey}
             title={node.header.title}
             generalDesc={node.header.desc}/>
-            <Row tagName="section" className="double-divided">
-              <Col xs={12} sm={6} lg={4} className="double-divided-col hasBackground">
-                <ul className="double-divided-col-list">
-                  {node.body.contact.map((item, i) =>
-                    <li className="double-divided-col-item" key={i}>
-                      <Copy type="title" element="h2" child={item.header}/>
-                      <Copy type="sub" element="p" child={item.body}/>
-                    </li>
-                  )}
-                </ul>
-              </Col>
-              <Col xs={12} sm={6} lg={8} className="double-divided-col">
-                <div className="centered">
-                  <Copy type="header" element="h3" child={node.body.support.header}/>
-                  <Copy type="content" element="p" child={node.body.support.body}/>
-                </div>
-              </Col>
-            </Row>
-            <Row tagName="section" center="xs">
-              <Col xs={12} lg={8}>
-                <Copy type="header" element="h2" child={node.body.demo.header}/>
-                <Copy type="content" element="p" child={node.body.demo.body}/>
-                <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
-              </Col>
-            </Row>
+          <Row tagName="section" className="double-divided">
+            <Col xs={12} sm={6} lg={4} className="double-divided-col hasBackground">
+              <ul className="double-divided-col-list">
+                {node.body.contact.map((item, i) =>
+                  <li className="double-divided-col-item" key={i}>
+                    <Copy type="title" element="h2" child={item.header}/>
+                    <Copy type="sub" element="p" child={item.body}/>
+                  </li>
+                )}
+              </ul>
+            </Col>
+            <Col xs={12} sm={6} lg={8} className="double-divided-col contact">
+              <div className="centered">
+                <Copy type="content" element="h3" child={node.body.support.subheader}/>
+                <Copy type="header" element="p" child={node.body.support.header}/>
+              </div>
+            </Col>
+          </Row>
+          <Row column className="block-cta" style={{alignItems: "center"}} tagName="section" center="xs">
+            <Col xs={12} lg={6}>
+              <Copy type="subheader" element="h2" child={node.body.demo.header}/>
+            </Col>
+            <Col xs={12} lg={6}>
+              <Copy type="announce-white" element="p" child={node.body.demo.body}/>
+              <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+            </Col>
+          </Row>
+
         </div>
-    )}
+      )}
     </div>
   )
 }
@@ -75,8 +78,8 @@ query ContactPage {
             body
           }
           support {
+            subheader
             header
-            body
           }
           demo {
             header

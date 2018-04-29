@@ -20,7 +20,7 @@ const Enterprise = (props) => {
               <Col xs={12} sm={6} className="double-divided-col">
                 <Copy type="header" element="h1" className="double-divided-col-header" child={node.body.header}/>
                 <ul className="double-divided-col-body">
-                  {node.body.list.header}
+                  <div style={{lineHeight:1.8,fontSize:2.1+'rem',marginBottom: 20+'px'}} dangerouslySetInnerHTML={{__html: node.body.list.header}} />
                   {node.body.list.items.map((item, i) =>
                     <li key={i}>{item}</li>
                   )}

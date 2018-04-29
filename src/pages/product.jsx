@@ -23,7 +23,7 @@ const Product = (props) => {
             <Grid>
               <Row start="sm" center="xs">
                 <Col xs={10} sm={12}>
-                  <Copy type="header" element="h2" child={node.body.hero.header}/>
+                  <Copy type="header" element="h1" child={node.body.hero.header}/>
                   <Copy type="subheader" element="p" child={node.body.hero.desc}/>
                 </Col>
               </Row>
@@ -33,20 +33,20 @@ const Product = (props) => {
             <Grid>
               <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
-                  <Copy type="header" element="h2" child={node.body.section1.header}/>
-                  <Copy type="content" element="p" child={node.body.section1.body}/>
+                  <Copy type="title" element="h2" align="left" child={node.body.section1.header}/>
+                  <Copy type="description" element="p"  align="left" child={node.body.section1.body}/>
                 </div>
-                <Img src="#" alt="No IMG"/>
+                <Img src="/img/product-flexible.png" alt="flexible task management"/>
               </TwoColumn>
             </Grid>
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
               <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[8,4], lg:[8,4] }}>
-                <Img src="#" alt="No IMG"/>
+                <Img src="/img/product-easy.png" alt="easy task management"/>
                 <div>
-                  <Copy type="header" element="h2" child={node.body.section2.header}/>
-                  <Copy type="content" element="p" child={node.body.section2.body}/>
+                  <Copy type="title" element="h2"  align="left" child={node.body.section2.header}/>
+                  <Copy type="description" element="p"  align="left" child={node.body.section2.body}/>
                 </div>
               </TwoColumn>
             </Grid>
@@ -55,10 +55,10 @@ const Product = (props) => {
             <Grid>
               <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
                 <div>
-                  <Copy type="header" element="h2" child={node.body.section3.header}/>
-                  <Copy type="content" element="p" child={node.body.section3.body}/>
+                  <Copy type="title" element="h2"  align="left" child={node.body.section3.header}/>
+                  <Copy type="description" element="p"  align="left" child={node.body.section3.body}/>
                 </div>
-                <Img src="#" alt="No IMG"/>
+                <Img src="/img/product-performance.png" alt="performance management"/>
               </TwoColumn>
             </Grid>
           </Row>
@@ -66,31 +66,31 @@ const Product = (props) => {
             <Grid>
               <Row>
                 {node.body.features.items.map((item, i) => {
-                  // Check if there's learn more link
-                  let button
-                  if(item.link.length !== 0) {
-                    button =  <FormattedMessage id="link.learnmore">
-                                {(txt) =>
-                                  <Link to={item.link} className="button button-white">
-                                    {txt}
-                                    <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                  </Link>
-                                }
-                              </FormattedMessage>
-                  }
+                   // Check if there's learn more link
+                   let button
+                   if(item.link.length !== 0) {
+                     button =  <FormattedMessage id="link.learnmore">
+                       {(txt) =>
+                         <Link to={item.link} className="button button-white">
+                           {txt}
+                           <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                         </Link>
+                       }
+                     </FormattedMessage>
+                   }
 
-                  return (
-                    <Col xs={6} sm={4} lg={4} className="features" key={i}>
-                      <div className="features-head">
-                        <span className="features-icon">
-                          <span className={`taskulu-icon ${item.icon}`}></span>
-                        </span>
-                        <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
-                      </div>
-                      <Copy type="content" element="p" className="features-desc" child={item.desc}/>
-                      {button}
-                    </Col>
-                  )
+                   return (
+                     <Col xs={6} sm={4} lg={4} className="features" key={i}>
+                       <div className="features-head">
+                         <span className="features-icon">
+                           <span className={`taskulu-icon ${item.icon}`}></span>
+                         </span>
+                         <Copy type="subheader" element="h3" className="features-title" child={item.title}/>
+                       </div>
+                       <Copy type="content" element="p" className="features-desc" child={item.desc}/>
+                       {button}
+                     </Col>
+                   )
                 })}
               </Row>
             </Grid>
