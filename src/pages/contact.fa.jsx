@@ -7,7 +7,7 @@ import { Copy, CTA } from '../components/Elements'
 
 const Contact = (props) => {
   const { data } = props
-  const { slug, langKey } = props.pathContext
+  const langKey = props.pathContext.langKey
   return (
     <div>
       {data.allContentYaml.edges.map(({node}) =>
@@ -40,7 +40,7 @@ const Contact = (props) => {
             </Col>
             <Col xs={12} lg={6}>
               <Copy type="announce-white" element="p" child={node.body.demo.body}/>
-              <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+              <CTA className="button-blue" name="link.learnmore" href="/enterprise" type="internal" langKey={langKey}/>
             </Col>
           </Row>
         </div>

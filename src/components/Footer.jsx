@@ -70,12 +70,12 @@ class Footer extends React.Component {
           </Row>
           {/* Render socials */}
           <Row>
-            <Col md={6} lg={6}>
+            <Col xs={12} sm={6} lg={6}>
               <FormattedMessage id="social.follow"/>
               <br/>
               {socialItems}
             </Col>
-            <Col md={6} lg={6} className="footer-download">
+            <Col xs={12} sm={6} lg={6} className="footer-download">
               <a className="footer-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
                 <img src="/logos/download_google_play.svg" alt=""/>
               </a>
@@ -86,7 +86,7 @@ class Footer extends React.Component {
           </Row>
         </Col>
         <Col xs={12} className="footer-end">
-          <Row center="xs" start="lg">
+          <Row center="xs" start="sm">
             <FormattedMessage id="footer.terms">
             {(txt) =>
             <a href={genLink(langKey, '/terms')}>{txt}</a>

@@ -20,7 +20,6 @@ class FilePreviews extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
@@ -37,7 +36,7 @@ class FilePreviews extends React.Component {
                 <Copy type="header" element="h2">
                  <div dangerouslySetInnerHTML={{__html: node.body.intro.header}}/>
                 </Copy>
-                <Copy type="body" element="p" child={node.body.intro.body}/>
+                <Copy type="description" element="p" child={node.body.intro.body}/>
               </Col>
               <Col xs={11}>
                 <Row center="xs">
@@ -47,18 +46,18 @@ class FilePreviews extends React.Component {
                       <div>
                         <img src={item.img} alt={item.title}/>
                       </div>
-                      <Copy type="body" element="h6" child={item.title}/>
+                      <Copy type="sub" element="h6" child={item.title}/>
                     </Col>
                   )
                 })}
                 </Row>
               </Col>
             </Row>
-            <Row tagName="section" center="xs" style={{ backgroundColor: '#46bea9' }}>
+            <Row tagName="section" center="xs" className="block-cta">
               <Col xs={6}>
                 <Copy type="header" element="h3" child={node.body.demoCTA.header}/>
                 <Copy type="subheader" element="h4" child={node.body.demoCTA.subheader}/>
-                <CTA className="button-normal" type="internal" name={node.body.demoCTA.cta} langKey={langKey}/>
+                <CTA className="button-blue" type="internal" name={node.body.demoCTA.cta} langKey={langKey}/>
               </Col>
             </Row>
             <Row tagName="section" center="xs">

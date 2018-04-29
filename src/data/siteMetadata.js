@@ -27,7 +27,6 @@ module.exports = {
             {label: 'footer.menu.product', slug:'/product'},
             {label: 'footer.menu.companies', slug:'/our-users'},
             {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.customer-success', slug:'/customer-success'},
             {label: 'footer.menu.demo', slug:'/enterprise'},
           ]
         },
@@ -68,7 +67,6 @@ module.exports = {
             {label: 'footer.menu.product', slug:'/product'},
             {label: 'footer.menu.companies', slug:'/our-users'},
             {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.customer-success', slug:'/customer-success'},
             {label: 'footer.menu.demo', slug:'/enterprise'},
           ]
         },
@@ -118,17 +116,7 @@ module.exports = {
       // Linkedin
       {
         icon: 'fa fa-linkedin-square linkedin-highlight',
-        link: 'linkedin'
-      },
-      // Telegram
-      {
-        icon: 'fa fa-telegram telegram-highlight',
-        link: 'telegram'
-      },
-      // Instagram
-      {
-        icon: 'fa fa-instagram instagram-highlight',
-        link: 'instagram'
+        link: 'https://www.linkedin.com/company/taskulu'
       }
     ],
     fa: [
@@ -145,29 +133,17 @@ module.exports = {
       // Linkedin
       {
         icon: 'fa fa-linkedin-square linkedin-highlight',
-        link: 'linkedin'
+        link: 'https://www.linkedin.com/company/تسکولو'
       },
       // Telegram
       {
         icon: 'fa fa-telegram telegram-highlight',
-        link: 'telegram'
+        link: 'https://t.me/taskulu_ir'
       },
       // Instagram
       {
         icon: 'fa fa-instagram instagram-highlight',
-        link: 'instagram'
-      }
-    ]
-  },
-  test: {
-    "a": [
-      {
-        label: 1
-      }
-    ],
-    "b": [
-      {
-        label: 2
+        link: 'https://www.instagram.com/taskulu_ir/'
       }
     ]
   }

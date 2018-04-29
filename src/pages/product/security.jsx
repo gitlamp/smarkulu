@@ -1,15 +1,10 @@
 import React from 'react'
 import graphql from 'graphql'
-import { FormattedMessage } from 'react-intl'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import Helmet from 'react-helmet'
-import $ from 'jquery'
-import { TweenLite } from 'gsap'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../../components/SEO'
-import Input from '../../components/Input'
 import { Copy, CTA, Img } from '../../components/Elements'
-import { TwoColumn, Above, Logos } from '../../components/Partials'
+import { TwoColumn, Above } from '../../components/Partials'
 
 class SecurityPage extends React.Component {
   constructor(props) {
@@ -19,13 +14,12 @@ class SecurityPage extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above center="xs" compact>
+            <Above center="xs" compact className="gradient-yellow-green curved" hasGradient>
               <Col xs={10} md={5}>
                 <Copy element="h1" type="header" child={node.body.hero.header} />
                 <CTA type="login" name={node.body.hero.cta} className="button-submit" langKey={langKey} />
@@ -43,7 +37,7 @@ class SecurityPage extends React.Component {
               <div>
                 <Copy element="h2" type="title"  align="left" child={node.body.endToEnd.header} />
                 <Copy element="h5" type="sub"  align="left" child={node.body.endToEnd.subheader} />
-                <Copy element="p" type="description" align="left" child={node.body.endToEnd.body} />
+                <Copy element="p" type="description" align="left" child={node.body.endToEnd.body} noEscape/>
               </div>
             </TwoColumn>
             <TwoColumn ratio={{xs: [10,10], sm:[4,6]}} center="xs" className="block-tour">
@@ -71,14 +65,14 @@ class SecurityPage extends React.Component {
               <Img src={node.body.audits.img} alt={node.body.audits.alt} />
               <div>
                 <Copy element="h2" type="title" child={node.body.audits.header}  align="left" />
-                <Copy element="p" type="description" align="left" child={node.body.audits.body} />
+                <Copy element="p" type="description" align="left" child={node.body.audits.body} noEscape/>
               </div>
             </TwoColumn>
             <Row column center="xs" className="block-cta">
               <Col>
                 <Copy element="h3" type="announce-white" child={node.body.demoCTA.header} />
                 <Copy element="h4" type="announce-white" child={node.body.demoCTA.subheader} />
-                <CTA type="internal" name={node.body.demoCTA.cta} href="/enterprise" className="button-white" langKey={langKey} />
+                <CTA type="internal" name={node.body.demoCTA.cta} href="/enterprise" className="button-blue" langKey={langKey} />
               </Col>
             </Row>
           </div>)}

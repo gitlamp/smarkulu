@@ -30,10 +30,10 @@
     }
   }
   .header-menu-mobile-icon {
-    width: 3rem;
-    height: 4rem;
+    width: 30px;
+    height: 40px;
     border: none;
-    margin-right: 1rem;
+    margin: 0;
     padding: 0;
     line-height: 1;
     font-size: 3rem;
@@ -46,7 +46,7 @@
       margin-bottom: 4px;
       border-radius: 10px;
       background-color: $wet-asphalt;
-      transition: $default-transition;
+      transition: all .2s ease-in;
       &:first-of-type, &:last-of-type {
         width: 25px;
       }
@@ -59,15 +59,15 @@
         background-color: #fff;
         margin: 0;
         &:first-of-type {
-          width: 3rem;
+          width: 30px;
           transform: rotate(-45deg);
         }
         &:nth-of-type(2) {
           display: none;
         }
         &:last-of-type {
-          width: 3rem;
-          margin-top: -.4rem;
+          width: 30px;
+          margin-top: -4px;
           transform: rotate(45deg)
         }
       }

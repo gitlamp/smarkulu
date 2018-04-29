@@ -1,13 +1,14 @@
 import React from 'react'
 import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import { Row, Col } from 'react-flexbox-grid'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
+import Img from 'gatsby-image'
 
 import SEO from '../components/SEO'
 import Input from '../components/Input'
-import { Copy, CTA, Img } from '../components/Elements'
+import { Copy, CTA } from '../components/Elements'
 import { Above, Logos } from '../components/Partials'
 
 class IndexPage extends React.Component {
@@ -48,14 +49,13 @@ class IndexPage extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-            <Above home center="xs" hasGradient>
-              <Grid>
+            <Above className="gradient-blue-green curved"  center="xs" full hasGradient>
+              <Col xs={10}>
                 <Row>
                   <Col xs={12} lg={6}>
                     <h2 className="home-hero">
@@ -66,12 +66,12 @@ class IndexPage extends React.Component {
                   </Col>
                   <Col xs={12} lg={6} className="proto">
                     <div className="proto-content">
-                      <Img src="/img/project-preview-fa.png" alt="taskulu desktop"/>
+                      <Img sizes={data.product.sizes} />
                     </div>
-                    <Img src="/img/macbook-mockup.svg" alt="laptop"/>
+                      <Img sizes={data.wireframe.sizes} />
                   </Col>
                 </Row>
-              </Grid>
+              </Col>
             </Above>
             <Logos
               src={node.body.customerLogos.logos}
@@ -103,10 +103,10 @@ class IndexPage extends React.Component {
               </Col>
               {node.body.indexFeatures.items.map((item, i) => {
                  return (
-                   <Col xs={10} md lg={3} key={i}>
+                   <Col xs={10} md={3} lg={3} key={i}>
                      <div className="features-card">
                        <div className="features-card-icon">
-                         <Img src={item.icon} width="40%" />
+                         <img src={item.icon} width="40%" />
                        </div>
                        <div className="features-card-txt content-title">
                          {item.text}
@@ -127,8 +127,8 @@ class IndexPage extends React.Component {
                 </h2>
               </Col>
               <Col xs={10} lg={6}>
-                <Copy type="announce-white" element="p" child={node.body.demoCTA.body}/>
-                <CTA className="button-white" name="btn.demo" href="/enterprise" type="internal" langKey={langKey}/>
+                <Copy type="announce-white" element="p" child={node.body.demoCTA.body} noEscape/>
+                <CTA className="button-blue" name="btn.demo" href="/enterprise" type="internal" langKey={langKey}/>
               </Col>
             </Row>
           </div>
@@ -141,7 +141,7 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 /**
- * Require data from fa yaml
+ * Require data from fa yaml and images
  */
 export const pageQuery = graphql `
   query IndexFaPage {
@@ -206,6 +206,16 @@ export const pageQuery = graphql `
             }
           }
         }
+      }
+    }
+    wireframe: imageSharp( id: { regex: "/macbook-mockup/" } ) {
+      sizes {
+        ...GatsbyImageSharpSizes_noBase64
+      }
+    }
+    product: imageSharp( id: { regex: "/project-preview-fa/" } ) {
+      sizes {
+        ...GatsbyImageSharpSizes_withWebp
       }
     }
   }

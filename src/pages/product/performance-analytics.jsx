@@ -1,15 +1,10 @@
 import React from 'react'
 import graphql from 'graphql'
-import { FormattedMessage } from 'react-intl'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import Helmet from 'react-helmet'
-import $ from 'jquery'
-import { TweenLite } from 'gsap'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../../components/SEO'
-import Input from '../../components/Input'
 import { Copy, CTA, Img } from '../../components/Elements'
-import { TwoColumn, Above, Logos } from '../../components/Partials'
+import { TwoColumn, Above } from '../../components/Partials'
 
 class AnalyticsPage extends React.Component {
   constructor(props) {
@@ -19,7 +14,6 @@ class AnalyticsPage extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
@@ -72,11 +66,11 @@ class AnalyticsPage extends React.Component {
             </TwoColumn>
             <Row column center="xs" className="block-cta">
               <Col>
-                <Copy type="announce-white" element="h3" child={ node.body.demoCTA.body} />
+                <Copy type="announce-white" element="h3" child={ node.body.demoCTA.body} noEscape/>
               </Col>
               <Col>
-                <CTA type="login" name="btn.start" className="button-white button--besides" langKey={langKey} />&nbsp;
-                <CTA type="internal" href="/enterprise" name={node.body.demoCTA.cta} className="button-white button--besides" langKey={langKey} />
+                <CTA type="login" name="btn.start" className="button-submit button--besides" langKey={langKey} />&nbsp;
+                <CTA type="internal" href="/enterprise" name={node.body.demoCTA.cta} className="button-blue button--besides" langKey={langKey} />
               </Col>
             </Row>
           </div>)}

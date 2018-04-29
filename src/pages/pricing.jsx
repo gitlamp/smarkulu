@@ -9,6 +9,7 @@ import CountUp, { startAnimation } from 'react-countup'
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
 import { Above } from '../components/Partials'
+import { genLink } from '../components/functions'
 
 class Pricing extends React.Component {
   constructor(props) {
@@ -54,7 +55,6 @@ class Pricing extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
@@ -97,7 +97,7 @@ class Pricing extends React.Component {
                     </div>
                       <FormattedMessage id="btn.register">
                       {(txt) =>
-                        <Link to="" className="button button-white">{txt}</Link>
+                        <a href={`${process.env.LOGIN_LINK}` + langKey} className="button button-white">{txt}</a>
                       }
                       </FormattedMessage>
                     <div className="plan-list">
@@ -125,7 +125,7 @@ class Pricing extends React.Component {
                     </div>
                       <FormattedMessage id="btn.register">
                       {(txt) =>
-                        <Link to="" className="button button-white">{txt}</Link>
+                        <a href={`${process.env.LOGIN_LINK}` + langKey} className="button button-white">{txt}</a>
                       }
                       </FormattedMessage>
                     <div className="plan-list">
@@ -155,7 +155,7 @@ class Pricing extends React.Component {
                     </div>
                       <FormattedMessage id="btn.register">
                       {(txt) =>
-                        <Link to="" className="button button-white">{txt}</Link>
+                        <a href={`${process.env.LOGIN_LINK}` + langKey} className="button button-white">{txt}</a>
                       }
                       </FormattedMessage>
                     <div className="plan-list">
@@ -175,7 +175,7 @@ class Pricing extends React.Component {
                     </div>
                       <FormattedMessage id="btn.contact">
                         {(txt) =>
-                          <Link to="" className="button button-white">{txt}</Link>
+                          <Link to={genLink(langKey, '/enterprise')} className="button button-white">{txt}</Link>
                         }
                       </FormattedMessage>
                     <div className="plan-list">
@@ -192,7 +192,7 @@ class Pricing extends React.Component {
             <Grid>
               <Row center="xs">
                 <Col xs={10} sm={10} lg={8} className="faq">
-                  <Copy type="header" element="h2" child={node.body.faq.header}/>
+                  <Copy className="center-xs" type="header" element="h2" child={node.body.faq.header}/>
                   <div className="faq-question-wrapper">
                     <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.services.header}/>
                     {node.body.faq.services.items.map((item, i) =>
@@ -204,7 +204,7 @@ class Pricing extends React.Component {
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer} noEscape/>
                           </div>
                         </div>
                       </div>
@@ -221,7 +221,7 @@ class Pricing extends React.Component {
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer} noEscape/>
                           </div>
                         </div>
                       </div>
@@ -238,7 +238,7 @@ class Pricing extends React.Component {
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer} noEscape/>
                           </div>
                         </div>
                       </div>
@@ -255,7 +255,7 @@ class Pricing extends React.Component {
                         </div>
                         <div className="question-body">
                           <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer}/>
+                            <Copy type="content" element="p" child={item.answer} noEscape/>
                           </div>
                         </div>
                       </div>

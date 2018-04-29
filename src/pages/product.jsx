@@ -10,7 +10,7 @@ import { TwoColumn, Above } from '../components/Partials'
 
 const Product = (props) => {
   const { data } = props
-  const { slug, langKey } = props.pathContext
+  const langKey = props.pathContext.langKey
   return (
     <div>
       {data.allContentYaml.edges.map(({node}) =>
@@ -23,8 +23,8 @@ const Product = (props) => {
             <Grid>
               <Row start="sm" center="xs">
                 <Col xs={10} sm={12}>
-                  <Copy type="header" element="h1" child={node.body.hero.header}/>
-                  <Copy type="subheader" element="p" child={node.body.hero.desc}/>
+                  <Copy type="header" element="h1" child={node.body.hero.header} noEscape/>
+                  <Copy type="subheader" element="p" child={node.body.hero.desc} noEscape/>
                 </Col>
               </Row>
             </Grid>

@@ -12,7 +12,8 @@ class Copy extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      type: 'content-' + this.props.type + ' '
+      class: '',
+      type: 'content-' + this.props.type
     }
   }
   componentWillMount() {
@@ -24,18 +25,28 @@ class Copy extends React.Component {
   }
   render() {
     const align = this.props.align ? ({textAlign: this.props.align}) : null
-    return React.createElement(
-      // Type of html tag
-      this.props.element,
-      // All props defined on element
-      {
-        className: this.state.type + this.props.className,
-        style: align,
-        dangerouslySetInnerHTML: {__html: this.props.child }
-      }
-      // Pass the children inside element
-
-    )
+    let element = ''
+    // In case of dangerouslySetInnerHTML
+    if(this.props.noEscape) {
+      element = React.createElement(
+        this.props.element,
+        {
+          className: this.state.type + this.state.class,
+          style: align,
+          dangerouslySetInnerHTML: {__html: this.props.child}
+        }
+      )
+    } else {
+      element = React.createElement(
+        this.props.element,
+        {
+          className: this.state.type + this.state.class,
+          style: align
+        },
+        this.props.child || this.props.children
+      )
+    }
+    return element
   }
 }
 

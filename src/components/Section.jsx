@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
-import { Row, Col } from 'react-flexbox-grid'
-
 
 class Section extends React.Component {
   constructor() {

@@ -1,15 +1,11 @@
 import React from 'react'
 import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import Helmet from 'react-helmet'
-import $ from 'jquery'
-import { TweenLite } from 'gsap'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
-import Input from '../components/Input'
 import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above, Logos } from '../components/Partials'
+import { TwoColumn, Above } from '../components/Partials'
 
 class TimeManagementPage extends React.Component {
   constructor(props) {
@@ -19,7 +15,6 @@ class TimeManagementPage extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
@@ -37,7 +32,7 @@ class TimeManagementPage extends React.Component {
             <TwoColumn ratio={{xs: [12,12], sm:[5,5]}} center="xs">
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.intro1.header} />
-                <Copy element="p" type="description" align="right" child={ node.body.intro1.body } />
+                <Copy element="p" type="description" align="right" child={node.body.intro1.body} noEscape />
               </div>
               <Img src={node.body.intro1.img} alt={node.body.intro1.alt} width="80%" />
             </TwoColumn>
@@ -45,7 +40,7 @@ class TimeManagementPage extends React.Component {
               <Img src={node.body.intro2.img} alt={node.body.intro2.alt} width="80%" />
               <div>
                 <Copy element="h2" type="title" align="right" child={node.body.intro2.header} />
-                <Copy element="p" type="description" align="right" child={ node.body.intro2.body } />
+                <Copy element="p" type="description" align="right" child={ node.body.intro2.body } noEscape />
               </div>
             </TwoColumn>
             <Row className="block-announce" center="xs">
@@ -67,14 +62,12 @@ class TimeManagementPage extends React.Component {
             <Row column center="xs" className="block-cta">
               <Col>
                 <Copy type="announce-white" element="h3" >
-                  <span>
-                    <FormattedMessage id={node.body.joinCTA.headerParts[0]} /> &nbsp;
-           <FormattedMessage id={node.body.joinCTA.headerParts[1]} /> &nbsp;
-           {node.body.joinCTA.headerParts[2]}
-                  </span>
+                  {node.body.joinCTA.headerParts[0]} &nbsp;
+                  <FormattedMessage id={node.body.joinCTA.headerParts[1]} /> &nbsp;
+                  {node.body.joinCTA.headerParts[2]}
                 </Copy>
-                <CTA type="login" name={node.body.joinCTA.cta1} className="button-white" langKey={langKey} />&nbsp;
-                <CTA type="internal" href="/enterprise" name={node.body.joinCTA.cta2} className="button-white" langKey={langKey} />
+                <CTA type="login" name={node.body.joinCTA.cta1} className="button-submit button--besides" langKey={langKey} />&nbsp;
+                <CTA type="internal" href="/enterprise" name={node.body.joinCTA.cta2} className="button-blue button--besides" langKey={langKey} />
               </Col>
             </Row>
           </div>)}

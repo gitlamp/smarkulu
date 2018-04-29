@@ -3,8 +3,8 @@
   .footer-row {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-top: 50px;
+    padding-bottom: 30px;
     text-align: left;
     color: #fff;
     font-family: $subtitle-font;
@@ -14,11 +14,11 @@
       padding: 0;
       /*rtl:raw:
       margin-right: 0;
-      margin-left: 1.45rem;
+      margin-left: 14px;
       */
-      margin-bottom: 4rem;
+      margin-bottom: 40px;
       .footer-list-item {
-        padding-left: .5rem;
+        padding-left: 5px;
         a {
           text-decoration: none;
           color: #fff;
@@ -40,8 +40,8 @@
       color: #fff;
       line-height: 1;
       font-size: 2.8rem;
-      margin-top: 1.2rem;
-      margin-right: 1rem;
+      margin-top: 12px;
+      margin-right: 10px;
       cursor: pointer;
     }
     .footer-download {
@@ -49,17 +49,16 @@
       justify-content: flex-end;
       .footer-download-app {
         display: inline-block;
-        margin-right: 1rem;
-        height: 0;
+        margin-right: 10px;
         img {
-          width: 14rem;
+          width: 120px;
           margin: 0;
         }
       }
     }
   }
   .footer-end {
-    padding: 1.5rem 7rem;
+    padding: 15px 70px;
     background: $sun-flower;
     color: #3f3f3f;
     font-family: $subtitle-font;
@@ -87,9 +86,6 @@
 }
 
 @media #{$smonly} {
-  .footer .footer-row {
-    display: none;
-  }
   .footer .footer-end {
     justify-content: center;
   }
@@ -97,7 +93,22 @@
 
 @media #{$xsonly} {
   .footer .footer-row {
-    display: none;
+    .footer-list {
+      flex: 1 1 45%;
+      margin-left: 0;
+      .footer-list-item {
+        a {
+          font-size: 2rem;
+        }
+        &:first-child {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .footer-download {
+      justify-content: flex-start;
+      margin-top: 20px;
+    }
   }
   .footer .footer-end {
     padding: 1.5rem 2rem;
