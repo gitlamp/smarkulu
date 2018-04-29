@@ -1,7 +1,7 @@
 import React from 'react'
 import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import { Row, Col } from 'react-flexbox-grid'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
 import Img from 'gatsby-image'
@@ -55,7 +55,7 @@ class IndexPage extends React.Component {
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
             <Above className="gradient-blue-green curved" center="xs" full hasGradient>
-              <Grid>
+              <Col xs={10}>
                 <Row>
                   <Col xs={12} lg={6}>
                 <h2 className="home-hero">
@@ -71,7 +71,7 @@ class IndexPage extends React.Component {
                       <Img sizes={data.wireframe.sizes}/>
                   </Col>
                 </Row>
-              </Grid>
+              </Col>
             </Above>
             <Logos
               src={node.body.customerLogos.logos}
@@ -103,7 +103,7 @@ class IndexPage extends React.Component {
               </Col>
               {node.body.indexFeatures.items.map((item, i) => {
                  return (
-                   <Col xs={10} md lg={3} key={i}>
+                   <Col xs={10} md={3} lg={3} key={i}>
                      <div className="features-card">
                        <div className="features-card-icon">
                          <img src={item.icon} width="40%" />

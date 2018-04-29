@@ -38,7 +38,7 @@ const Contact = (props) => {
               <Col xs={12} lg={8}>
                 <Copy type="header" element="h2" child={node.body.demo.header}/>
                 <Copy type="content" element="p" child={node.body.demo.body}/>
-                <CTA className="button-submit" name="link.learnmore" href="#" type="internal" langKey={langKey}/>
+                <CTA className="button-blue" name="link.learnmore" href="/enterprise" type="internal" langKey={langKey}/>
               </Col>
             </Row>
         </div>
