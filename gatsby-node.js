@@ -15,25 +15,24 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       loaders: ['modernizr-loader', 'json-loader']
     })
     config.merge({
+      output: {
+        publicPath: 'http://localhost:8000/'
+      },
       module: {
         loaders: [
           {
-            test: /\.(eot|svg|ttf|woff|woff2)$/,
-            loader: 'file-loader?name=./fonts/[name].[ext]'
-          },
-          {
             test: /\.(sass|scss)$/,
             exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
-            loaders: ['style-loader', 'css-loader', 'sass-loader']
+            loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader']
           },
           {
             test: /\.useable\.scss$/,
             exclude: /\.rtl\.useable\.scss$/,
-            loaders: ['style-loader/useable', 'css-loader', 'sass-loader']
+            loaders: ['style-loader/useable', 'css-loader?sourceMap', 'sass-loader']
           },
           {
-            test: /\.rtl\.useable\.scss$/,
-            loaders: ['style-loader/useable', 'rtlcss-loader', 'sass-loader']
+            test: /\.rtl\.useable.scss$/,
+            loaders: ['style-loader/useable', 'rtlcss-loader?sourceMap', 'sass-loader']
           }
         ]
       },
