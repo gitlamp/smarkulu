@@ -2,14 +2,13 @@ import React from 'react'
 import Link from 'gatsby-link'
 import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
-import $ from 'jquery'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import CountUp, { startAnimation } from 'react-countup'
 
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
 import { Above } from '../components/Partials'
-import { genLink } from '../components/functions'
+import { genLink, expandDetails } from '../components/functions'
 
 class Pricing extends React.Component {
   constructor(props) {
@@ -26,11 +25,7 @@ class Pricing extends React.Component {
     this.switch = this.switch.bind(this)
   }
   componentDidMount() {
-    $('.question-tab').on('click', function() {
-      $(this).children().toggleClass('active')
-      $(this).parent().toggleClass('parent-white')
-      $(this).next('.question-body').slideToggle()
-    })
+    expandDetails('faq-tab','faq-tab-answer')
   }
   switch(e) {
     var target = e.target.id
@@ -195,17 +190,13 @@ class Pricing extends React.Component {
                   <Copy className="center-xs" type="header" element="h2" child={node.body.faq.header}/>
                   <div className="faq-question-wrapper">
                     <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.services.header}/>
-                    {node.body.faq.services.items.map((item, i) =>
-                      <div key={i}>
-                        <div className="question-tab">
-                          <div className="question-tab-inner">
-                            <Copy type="title" element="p" child={item.question}/>
-                          </div>
+                    {node.body.faq.services.items.map((item) =>
+                      <div key={item.question} className="faq-tab">
+                        <div className="faq-tab-question">
+                          <Copy type="title" element="p" child={item.question}/>
                         </div>
-                        <div className="question-body">
-                          <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer} noEscape/>
-                          </div>
+                        <div className="faq-tab-answer">
+                          <Copy type="content" element="p" child={item.answer} noEscape/>
                         </div>
                       </div>
                     )}
@@ -213,16 +204,12 @@ class Pricing extends React.Component {
                   <div className="faq-question-wrapper">
                   <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.payments.header}/>
                     {node.body.faq.payments.items.map(item =>
-                      <div key={item.question}>
-                        <div className="question-tab">
-                          <div className="question-tab-inner">
-                            <Copy type="title" element="p" child={item.question}/>
-                          </div>
+                      <div key={item.question} className="faq-tab">
+                        <div className="faq-tab-question">
+                          <Copy type="title" element="p" child={item.question}/>
                         </div>
-                        <div className="question-body">
-                          <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer} noEscape/>
-                          </div>
+                        <div className="faq-tab-answer">
+                          <Copy type="content" element="p" child={item.answer} noEscape/>
                         </div>
                       </div>
                     )}
@@ -230,16 +217,12 @@ class Pricing extends React.Component {
                   <div className="faq-question-wrapper">
                     <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.security.header}/>
                     {node.body.faq.security.items.map(item =>
-                      <div key={item.question}>
-                        <div className="question-tab">
-                          <div className="question-tab-inner">
-                            <Copy type="title" element="p" child={item.question}/>
-                          </div>
+                      <div key={item.question} className="faq-tab">
+                        <div className="faq-tab-question">
+                          <Copy type="title" element="p" child={item.question}/>
                         </div>
-                        <div className="question-body">
-                          <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer} noEscape/>
-                          </div>
+                        <div className="faq-tab-answer">
+                          <Copy type="content" element="p" child={item.answer} noEscape/>
                         </div>
                       </div>
                     )}
@@ -247,16 +230,12 @@ class Pricing extends React.Component {
                   <div className="faq-question-wrapper">
                     <Copy type="subheader" element="h3" className="question-type" child={node.body.faq.legality.header}/>
                     {node.body.faq.legality.items.map(item =>
-                      <div key={item.question}>
-                        <div className="question-tab">
-                          <div className="question-tab-inner">
-                            <Copy type="title" element="p" child={item.question}/>
-                          </div>
+                      <div key={item.question} className="faq-tab">
+                        <div className="faq-tab-question">
+                          <Copy type="title" element="p" child={item.question}/>
                         </div>
-                        <div className="question-body">
-                          <div className="question-body-inner">
-                            <Copy type="content" element="p" child={item.answer} noEscape/>
-                          </div>
+                        <div className="faq-tab-answer">
+                          <Copy type="content" element="p" child={item.answer} noEscape/>
                         </div>
                       </div>
                     )}

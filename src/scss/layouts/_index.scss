@@ -299,6 +299,34 @@
 .faq {
   padding: 3rem 0;
   text-align: left;
+  &-tab {
+    padding: 0 3rem;
+    border-top: 1px solid $silver;
+    border-left: 1px solid #f6f8f9;
+    border-right: 1px solid #f6f8f9;
+    cursor: pointer;
+    &.active {
+      transition: $default-transition;
+      background: $white;
+    }
+    &-question {
+      position: relative;
+      padding: 2rem 0;
+      @extend %expand-icon;
+    }
+    &-answer {
+      display: none;
+      padding: 2rem 3rem;
+      .active & {
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: $cyan;
+      }
+    }
+  }
+
   .faq-question-wrapper {
     color: $wet-asphalt;
     p {
@@ -308,44 +336,6 @@
     .question-type {
       margin: 3rem 0;
       color: $wet-asphalt;
-    }
-    .parent-white {
-      transition: $default-transition;
-      background: $white;
-    }
-    .question-tab {
-      position: relative;
-      padding: 0 3rem;
-      border-top: 1px solid $silver;
-      border-left: 1px solid #f6f8f9;
-      border-right: 1px solid #f6f8f9;
-      cursor: pointer;
-      .question-tab-inner {
-        padding: 2rem 0;
-        &:after {
-          content: '+';
-          position: absolute;
-          font-size: 2.5rem;
-          top: 1.6rem;
-          right: 1.6rem;
-        }
-        &.active {
-          &:after {
-            content: '-';
-          }
-        }
-      }
-    }
-    .question-body {
-      display: none;
-      padding: 0 3rem;
-      .question-body-inner {
-        padding: 2rem 0;
-        a {
-          text-decoration: none;
-          color: $cyan;
-        }
-      }
     }
   }
 }
@@ -482,32 +472,26 @@
       text-align: center;
     }
   }
-  .formats-cat {
-    position: relative;
-    padding: 2rem 3rem;
+  &-cat {
     margin: 0;
     border-top: 1px solid $silver;
     color: $wet-asphalt;
     cursor: pointer;
-    &:after {
-      content: '+';
-      position: absolute;
-      font-size: 2.5rem;
-      top: 1.3rem;
-      right: 2rem;
-    }
-    &.active {
-      &:after {
-        content: '-';
-      }
-    }
   }
-  .formats-items {
+  &-title {
+    position: relative;
+    padding: 2rem 3rem;
+    @extend %expand-icon;
+  }
+  &-list {
     display: none;
     flex-wrap: wrap;
     margin: 0;
     padding: 1rem 4rem 2rem;
     transition: display .3s ease;
+    .active & {
+      display: block;
+    }
     .formats-items-box {
       font-size: $body;
       display: inline-block;
