@@ -1,3 +1,6 @@
+//*********************
+// One Click Regiter form
+//*********************
 .goregister {
   position: relative;
   /*rtl:ignore*/
@@ -32,4 +35,89 @@
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+//*********************
+// Mautic Forms
+//*********************
+.form-wrapper {
+  max-width: 600px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.mauticform_wrapper {
+  width: 90%;
+  margin: 10px auto;
+  font-family: $subtitle-font;
+}
+.mauticform-error, .mauticform-message {
+  margin-bottom: 10px;
+}
+.double-divided .hasBackground {
+  & .mauticform-error, & .mauticform-errormsg {
+    color: $golden-road;
+  }
+  & .mauticform-button {
+    color: $shamrock;
+  }
+  & .mauticform-input:focus, & .mauticform-selectbox:focus, & .mauticform-textarea:focus {
+    outline: none;
+    border-bottom-color: #a2a2a2;
+  }
+  option {
+    color: #313131;
+  }
+  & .form-banner {
+    color: $shamrock;
+  }
+}
+.mauticform-message {
+  color: $shamrock;
+  text-align: center;
+  font-size: 2rem;
+  font-family: $title-font;
+}
+.mauticform-errormsg {
+    display: block;
+    color: $mandy;
+    margin-top: 2px;
+    font-size: 1.2rem;
+}
+.mauticform-row {
+    display: block;
+    margin-bottom: 20px;
+}
+.mauticform-button-wrapper {
+  text-align: center;
+}
+.mauticform-button {
+  color: $shamrock;
+  font-size: 2.4rem;
+  border-radius: 3rem;
+  border: none;
+  padding: 0.7rem 2rem;
+}
+.mauticform-selectbox, .mauticform-input, .mauticform-textarea {
+  width: 100%;
+  padding: 0.5em 0.5em;
+  border-bottom: 1px solid #CCC;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  background: transparent;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  }
+.form-banner {
+  font-size: 2rem;
+  font-family: $title-font;
+  background: #fff;
+  line-height: 3;
+  text-align: center;
+  font-weight: 700;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
