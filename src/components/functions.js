@@ -31,16 +31,15 @@ const toPersianDigits = (v) => {
  */
 const expandDetails = (parentDOM, childDOM, expandableDOM, allExpanded=true) => {
   let parent = `.${parentDOM}`,
-      $expandable = expandableDOM ? $(`.${expandableDOM}`) : $(parent)
-  //      $child = `$(.${childDOM})`
-
+      child = `.${childDOM}`,
+  $expandable = expandableDOM ? $(`.${expandableDOM}`) : $(parent)
   $expandable.on('click', function() {
     let $that = expandableDOM ? $(this).parents(parent) : $(this)
-     if(!allExpanded) {
+     if(!allExpanded && !$that.hasClass('active')) {
       $(parent).not(this).removeClass('active')
-      $(parent).not(this).children(`.${childDOM}`).slideUp()
+      $(parent).not(this).children(child).slideUp()
     }
-    $that.children(`.${childDOM}`).slideToggle()
+    $that.children(child).slideToggle()
     $that.toggleClass('active')
   })
 }

@@ -177,3 +177,15 @@
     content: '-';
   }
 }
+%custom-bullet {
+  &:before {
+    content: '';
+    background-image: url('/img/bullet.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.4rem;
+    margin-right: 5px;
+  }
+}

@@ -40,6 +40,10 @@
     @extend %head3;
     margin-bottom: 3rem;
   }
+  &-integration-title {
+    @extend %head2;
+    color: #414141;
+  }
   &-sub {
     @extend %head4;
   }

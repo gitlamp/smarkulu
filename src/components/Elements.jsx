@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl';
-
 import { genLink } from './functions'
-
 /**
  * Class to insert a Header and props for
  * inerting text, html tag and styles
@@ -93,6 +91,31 @@ class Img extends React.Component {
   }
 }
 
+class ShowMore extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {expanded: false}
+    this.expand = this.expand.bind(this)
+  }
+  expand() {
+    this.setState(prevState => ({expanded: !prevState.expanded}))
+  }
+  render() {
+    return(
+      <div className={this.props.className} onClick={this.expand}>
+      {!this.state.expanded ?
+       <FormattedMessage id={this.props.more}>
+         {txt => <span>{txt}</span>}
+       </FormattedMessage> :
+       <FormattedMessage id={this.props.less}>
+         {txt => <span>{txt}</span>}
+      </FormattedMessage>
+      }
+      </div>
+    )
+  }
+}
+
 Copy.propTypes = {
   child: PropTypes.string,
   type: PropTypes.string.isRequired,
@@ -112,4 +135,4 @@ Img.propTypes = {
   alt: PropTypes.string
 }
 
-export default { Copy, CTA, Img }
+export default { Copy, CTA, Img, ShowMore }

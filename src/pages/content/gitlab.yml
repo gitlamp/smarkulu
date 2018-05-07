@@ -1,18 +1,19 @@
 ---
 header:
   lang: en
-  slug: /product/gitlab
+  slug: /product/integrations/gitlab
   title: "Gitlab Integration"
+  linked: "Gitlab Commits"
   desc: "With The Gitlab Commits integration you can see the activity of your development team."
 body:
   hero:
     header: "Connect Gitlab repositories with Taskulu projects"
   desc: |
-    'Gitlab is an opensource projet that lets you manage and collaborate with your team on your source code.<br/>With The Gitlab Commits integration you can see the activity of your development team:<br/>
+    Gitlab is an opensource projet that lets you manage and collaborate with your team on your source code.<br/><br/>With The Gitlab Commits integration you can see the activity of your development team:<br/><br/>
     <ul>
     <li>Post your Git commit messages as comments on related tasks,</li>
     <li>Change the status of task while committing your code changes.</li>
-    </ul>'
+    </ul>
   getStarted:
     title: 'Get Started'
     desc: |

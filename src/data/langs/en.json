@@ -10,6 +10,9 @@
   "footer.privacy": "Privacy",
   "pricing.mode": "per user",
 
+  "expand.more": "Show More",
+  "expand.less": "Show Less",
+
   "btn.seeMore": "Learn More",
   "btn.register": "Sign up",
   "btn.login": "Login",
