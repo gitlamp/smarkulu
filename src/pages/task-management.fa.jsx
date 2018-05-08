@@ -1,13 +1,12 @@
 import React from 'react'
 import graphql from 'graphql'
-import { FormattedMessage } from 'react-intl'
 import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
 import { Copy, CTA, Img } from '../components/Elements'
 import { TwoColumn, Above } from '../components/Partials'
 
-class TimeManagementPage extends React.Component {
+class TaskManagementPage extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -20,8 +19,9 @@ class TimeManagementPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above end="xs">
-              <Col xs={4} xsOffset={1}>
+            <Above start="xs" className="skewed-bottom gradient-blue-red" compact hasGradient>
+              <Col xs={1} />
+              <Col xs={4}>
                 <Copy align="right" type="header" element="h1" child={node.body.hero.header} />
                 <Copy align="right" type="title" element="h4" child={node.body.hero.subheader} />
                 <div style={{textAlign: "center"}}>
@@ -30,30 +30,21 @@ class TimeManagementPage extends React.Component {
               </Col>
             </Above>
             <TwoColumn ratio={{xs: [12,12], sm:[5,5]}} center="xs">
+              <Img src={node.body.intro.img} alt={node.body.intro.alt} width="80%" />
+
               <div>
-                <Copy element="h2" type="title" align="right" child={node.body.intro1.header} />
-                <Copy element="p" type="description" align="right" child={node.body.intro1.body} noEscape />
-              </div>
-              <Img src={node.body.intro1.img} alt={node.body.intro1.alt} width="80%" />
-            </TwoColumn>
-            <TwoColumn ratio={{xs: [12,12], sm:[5,5]}} center="xs">
-              <Img src={node.body.intro2.img} alt={node.body.intro2.alt} width="80%" />
-              <div>
-                <Copy element="h2" type="title" align="right" child={node.body.intro2.header} />
-                <Copy element="p" type="description" align="right" child={ node.body.intro2.body } noEscape />
+                <Copy element="h2" type="title" align="right" child={node.body.intro.header} />
+                <Copy element="p" type="description" align="right" child={node.body.intro.body} noEscape />
               </div>
             </TwoColumn>
             <Row className="block-announce gradient-blue-green" center="xs">
               <Col xs={10}>
                 <Copy element="h2" type="subheader" align="center" child={node.body.solution.header} />
+                <Copy element="p" type="description" align="center" child={node.body.solution.body} />
               </Col>
 
-              {node.body.solution.items.map((item) =>
+              {node.body.taskFeatures.map((item) =>
                 <Col xs={12} sm={6} md={4}>
-                  <div
-                    style={{height: "15rem",
-                            background: "no-repeat 100% url("+item.img+")"}}>
-                  </div>
                   <Copy type="title" element="h3" child={item.title} />
                   <Copy type="description" element="p" child={item.desc} />
                 </Col>
@@ -61,13 +52,9 @@ class TimeManagementPage extends React.Component {
             </Row>
             <Row column center="xs" className="block-cta">
               <Col>
-                <Copy type="announce-white" element="h3" >
-                  {node.body.joinCTA.headerParts[0]} &nbsp;
-                  <FormattedMessage id={node.body.joinCTA.headerParts[1]} /> &nbsp;
-                  {node.body.joinCTA.headerParts[2]}
-                </Copy>
-                <CTA type="login" name={node.body.joinCTA.cta1} className="button-submit button--besides" langKey={langKey} />&nbsp;
-                <CTA type="internal" href="/enterprise" name={node.body.joinCTA.cta2} className="button-blue button--besides" langKey={langKey} />
+                <Copy type="subheader" element="h3" child={node.body.tryCTA.header} />
+                <Copy type="description" element="p" child={node.body.tryCTA.subheader} />
+                <CTA type="login" name={node.body.tryCTA.cta} className="button-submit button--besides" langKey={langKey} />&nbsp;
               </Col>
             </Row>
           </div>)}
@@ -75,14 +62,14 @@ class TimeManagementPage extends React.Component {
   }
 }
 
-export default TimeManagementPage
+export default TaskManagementPage
 
 /**
  * Require data from fa yaml
  */
 export const pageQuery = graphql `
-query TimeManagementFaPage {
-  allContentYaml(filter: {header: {lang: {eq: "fa"}, slug: {eq: "/time-management"}}}) {
+query TaskManagementFaPage {
+  allContentYaml(filter: {header: {lang: {eq: "fa"}, slug: {eq: "/task-management"}}}) {
     edges {
       node {
         id
@@ -95,32 +82,25 @@ query TimeManagementFaPage {
             header
             subheader
             cta
-            background
           }
-          intro1 {
-            body
-            header
-            img
-            alt
-          }
-          intro2 {
+          intro {
             body
             header
             img
             alt
           }
           solution {
-            items {
-              title
-              desc
-              img
-            }
             header
+            body
           }
-          joinCTA {
-            headerParts
-            cta1
-            cta2
+          taskFeatures {
+            title
+            desc
+          }
+          tryCTA {
+            header
+            subheader
+            cta
           }
         }
       }
