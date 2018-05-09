@@ -61,29 +61,62 @@ class FilePreviews extends React.Component {
               </Col>
             </Row>
             <Row tagName="section" center="xs">
-              <Col xs={10} sm={8} className="formats-viewer">
-                <div className="content-header">{node.body.formatsViewer.header}</div>
-                {node.body.formatsViewer.cat.map((item, i) => {
-
-                  return (
-                    <div key={i}>
-                      <Copy type="sub" element="h4" className="formats-cat" child={item.title}/>
-                      <ul className="formats-items">
-                        {item.ext.map((ext, j) =>
-                          <li className="formats-items-box" key={j}>
-                            {ext}
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                  )
-                })}
+              <Col xs={6} sm={8} className="formats-viewer">
+                <FormatSearch head={node.body.formatsViewer.header} item={node.body.formatsViewer.formats}/>
               </Col>
             </Row>
           </div>
         )
         }
       </div>
+    )
+  }
+}
+
+class FormatSearch extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      searchVal: ''
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange(e) {
+    this.setState({
+      searchVal: e.target.value
+    })
+  }
+  render() {
+    let libraries = this.props.item
+    let searchVal = this.state.searchVal.trim().toLowerCase()
+    if (searchVal.length > 0) {
+      libraries = libraries.filter(item => {
+        return item.toLowerCase().match(searchVal)
+      })
+    }
+    return (
+      <Row center="xs">
+        <table id="table" className="noselect">
+          <tbody>
+            <tr>
+              <th className="column1">{this.props.head}</th>
+              <th>
+                <div className="search">
+                  <i className="fa fa-search" aria-hidden="true"></i>
+                  <input type="text" id="search" placeholder="Search Formats" value={this.state.searchVal} onChange={this.handleChange} autoComplete="off"/>
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td colSpan="2">
+              {libraries.map((item, i) => {
+                return <span className="formats" key={i}>{item}</span>
+              })}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </Row>
     )
   }
 }
@@ -130,10 +163,7 @@ query FilePreviews {
           }
           formatsViewer {
             header
-            cat {
-              title
-              ext
-            }
+            formats
           }
         }
       }
