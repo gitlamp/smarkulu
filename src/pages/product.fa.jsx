@@ -154,17 +154,17 @@ query ProductFaPage {
       }
     }
   }
-  flexible: imageSharp( id: { regex: "/product-flexible/" } ) {
+  flexible: imageSharp( id: { regex: "/product-flexible-fa/" } ) {
     sizes {
       ...GatsbyImageSharpSizes_noBase64
     }
   }
-  easy: imageSharp( id: { regex: "/product-easy/" } ) {
+  easy: imageSharp( id: { regex: "/product-easy-fa/" } ) {
     sizes {
       ...GatsbyImageSharpSizes_noBase64
     }
   }
-  performance: imageSharp( id: { regex: "/product-performance/" } ) {
+  performance: imageSharp( id: { regex: "/product-performance-fa/" } ) {
     sizes {
       ...GatsbyImageSharpSizes_noBase64
     }
