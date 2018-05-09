@@ -23,16 +23,16 @@ body:
   logos:
     header: "Taskulu logo"
     desc: "The blue logo works best on light backgrounds; the white one is designed for dark backgrounds."
-    enBlue: "/logos/logo-blue.svg"
+    enBlue: "logo-blue.png"
     enBlueSrc: "/files/logo-blue.zip"
-    enWhite: "/logos/logo-white.svg"
+    enWhite: "logo-white.png"
     enWhiteSrc: "/files/logo-white.zip"
   icons:
     header: "Taskulu icons"
     desc: "The blue icon works best on light backgrounds; the white one is designed for dark backgrounds."
-    iconBlue: "/logos/icon-blue.svg"
+    iconBlue: "icon-blue.png"
     iconBlueSrc: "/files/icon-blue.zip"
-    iconWhite: "/logos/icon-white.svg"
+    iconWhite: "icon-white.png"
     iconWhiteSrc: "/files/icon-white.zip"
   news:
     header: "Press coverage"

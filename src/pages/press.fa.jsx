@@ -38,7 +38,7 @@ const Press = (props) => {
                       <i className="fa fa-download" aria-hidden="true"></i>
                     </span>
                   </a>
-                  <img src={node.body.logos.faWhite} alt=""/>
+                  <ImageFinder images={data.taskuluLogos} name={node.body.logos.faWhite} alt="لوگوی سفید تسکولو"/>
                 </div>
                 <div className="download-box">
                   <a href={node.body.logos.faBlueSrc} className="download-box-overlay">
@@ -46,7 +46,7 @@ const Press = (props) => {
                       <i className="fa fa-download" aria-hidden="true"></i>
                     </span>
                   </a>
-                  <img src={node.body.logos.faBlue} alt=""/>
+                  <ImageFinder images={data.taskuluLogos} name={node.body.logos.faBlue} alt="لوگوی آبی تسکولو"/>
                 </div>
               </TwoColumn>
               <TwoColumn ratio={{ xs:[12,12], md:[6,6], sm:[4,4] }} center="xs">
@@ -56,7 +56,7 @@ const Press = (props) => {
                       <i className="fa fa-download" aria-hidden="true"></i>
                     </span>
                   </a>
-                  <img src={node.body.logos.enWhite} alt=""/>
+                  <ImageFinder images={data.taskuluLogos} name={node.body.logos.enWhite} alt="لوگوی سفید تسکولو"/>
                 </div>
                 <div className="download-box">
                   <a href={node.body.logos.enBlueSrc} className="download-box-overlay">
@@ -64,7 +64,7 @@ const Press = (props) => {
                       <i className="fa fa-download" aria-hidden="true"></i>
                     </span>
                   </a>
-                  <img src={node.body.logos.enBlue} alt=""/>
+                  <ImageFinder images={data.taskuluLogos} name={node.body.logos.enBlue} alt="لوگوی آبی تسکولو"/>
                 </div>
               </TwoColumn>
             </Col>
@@ -78,7 +78,7 @@ const Press = (props) => {
                       <i className="fa fa-download" aria-hidden="true"></i>
                     </span>
                   </a>
-                  <img src={node.body.icons.iconWhite} alt=""/>
+                  <ImageFinder images={data.taskuluIcons} name={node.body.icons.iconWhite} alt="آیکون سفید تسکولو"/>
                 </div>
                 <div className="download-box">
                   <a href={node.body.icons.iconBlueSrc} className="download-box-overlay">
@@ -86,7 +86,7 @@ const Press = (props) => {
                       <i className="fa fa-download" aria-hidden="true"></i>
                     </span>
                   </a>
-                  <img src={node.body.icons.iconBlue} alt=""/>
+                  <ImageFinder images={data.taskuluIcons} name={node.body.icons.iconBlue} alt="آیکون آبی تسکولو"/>
                 </div>
               </TwoColumn>
             </Col>
@@ -191,6 +191,48 @@ query PressFaPage {
         id
         sizes(maxHeight: 450, cropFocus: CENTER) {
           ...GatsbyImageSharpSizes_noBase64
+        }
+      }
+    }
+  }
+  taskuluLogos: allImageSharp(
+    filter: {
+      id: { regex: "/logo-/" }
+    }
+  ){
+    edges {
+      node {
+        id
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+  taskuluFaLogos: allImageSharp(
+    filter: {
+      id: { regex: "/fa-logo-/" }
+    }
+  ){
+    edges {
+      node {
+        id
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+  taskuluIcons: allImageSharp(
+    filter: {
+      id: { regex: "/icon-/" }
+    }
+  ){
+    edges {
+      node {
+        id
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
         }
       }
     }

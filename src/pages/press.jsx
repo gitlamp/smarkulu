@@ -39,7 +39,7 @@ const Press = (props) => {
                             <i className="fa fa-download" aria-hidden="true"></i>
                           </span>
                         </a>
-                        <img src={node.body.logos.enWhite} alt=""/>
+                        <ImageFinder images={data.taskuluLogos} name={node.body.logos.enWhite} alt="taskulu white logo"/>
                       </div>
                       <div className="download-box">
                         <a href={node.body.logos.enBlueSrc} className="download-box-overlay">
@@ -47,7 +47,7 @@ const Press = (props) => {
                             <i className="fa fa-download" aria-hidden="true"></i>
                           </span>
                         </a>
-                        <img src={node.body.logos.enBlue} alt=""/>
+                        <ImageFinder images={data.taskuluLogos} name={node.body.logos.enBlue} alt="taskulu blue logo"/>
                       </div>
                     </TwoColumn>
               <Copy type="title" element="h3" child={node.body.icons.header} align="left"/>
@@ -59,7 +59,7 @@ const Press = (props) => {
                             <i className="fa fa-download" aria-hidden="true"></i>
                           </span>
                         </a>
-                        <img src={node.body.icons.iconWhite} alt=""/>
+                        <ImageFinder images={data.taskuluIcons} name={node.body.icons.iconWhite} alt="taskulu white icon"/>
                       </div>
                       <div className="download-box">
                         <a href={node.body.icons.iconBlueSrc} className="download-box-overlay">
@@ -67,7 +67,7 @@ const Press = (props) => {
                             <i className="fa fa-download" aria-hidden="true"></i>
                           </span>
                         </a>
-                        <img src={node.body.icons.iconBlue} alt=""/>
+                        <ImageFinder images={data.taskuluIcons} name={node.body.icons.iconBlue} alt="taskulu blue icon"/>
                       </div>
                     </TwoColumn>
                   </Col>
@@ -168,6 +168,34 @@ query PressPage {
         id
         sizes(maxHeight: 450, cropFocus: CENTER) {
           ...GatsbyImageSharpSizes_noBase64
+        }
+      }
+    }
+  }
+  taskuluLogos: allImageSharp(
+    filter: {
+      id: { regex: "/logo-/" }
+    }
+  ){
+    edges {
+      node {
+        id
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+  taskuluIcons: allImageSharp(
+    filter: {
+      id: { regex: "/icon-/" }
+    }
+  ){
+    edges {
+      node {
+        id
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes
         }
       }
     }
