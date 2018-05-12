@@ -25,6 +25,13 @@ module.exports = {
         path: `${__dirname}/static/img`
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'logos',
+        path: `${__dirname}/static/logos`
+      }
+    },
     'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
