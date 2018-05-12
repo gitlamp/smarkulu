@@ -14,6 +14,9 @@
     padding-top: 100px;
     padding-bottom: 100px;
     min-height: 30vh;
+    &.mobile-app {
+      padding-bottom: 20px;
+    }
   }
   .content {
     max-width: 80rem;
