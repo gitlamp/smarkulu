@@ -32,7 +32,7 @@ const Product = (props) => {
           </Above>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }} center="xs">
                 <div>
                   <Copy type="title" element="h2" align="left" child={node.body.section1.header}/>
                   <Copy type="description" element="p"  align="left" child={node.body.section1.body}/>
@@ -43,7 +43,7 @@ const Product = (props) => {
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[8,4], lg:[8,4] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[8,4], lg:[8,4] }} center="xs" className="reverse-order">
                 <Img sizes={data.easy.sizes} alt="easy task management"/>
                 <div>
                   <Copy type="title" element="h2"  align="left" child={node.body.section2.header}/>
@@ -54,7 +54,7 @@ const Product = (props) => {
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }} center="xs">
                 <div>
                   <Copy type="title" element="h2"  align="left" child={node.body.section3.header}/>
                   <Copy type="description" element="p"  align="left" child={node.body.section3.body}/>

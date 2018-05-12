@@ -896,14 +896,6 @@ img.isgray {
     }
   }
 }
-.reverse-order {
-  &:first-child {
-    order: 2;
-  }
-  &:last-child {
-    order: 1;
-  }
-}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -983,6 +975,15 @@ img.isgray {
 
   .homewhy .content-wrapper span {
     display: none;
+  }
+
+  .reverse-order {
+    [class^="col-"]:first-child {
+      order: 2;
+    }
+    [class^="col-"]:last-child {
+      order: 1;
+    }
   }
 }
 /**
