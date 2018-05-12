@@ -5,6 +5,7 @@ import { Row, Col } from 'react-flexbox-grid'
 import $ from 'jquery'
 import { TweenLite } from 'gsap'
 import Img from 'gatsby-image'
+import { ImageFinder } from '../components/ImageFinder'
 
 import SEO from '../components/SEO'
 import Input from '../components/Input'
@@ -80,12 +81,22 @@ class IndexPage extends React.Component {
               xs={4}
               middle="xs"
               center="xs"/>
-            <Row tagName="section" center="xs">
-              <Col xs={8} style={{backgroundImage: "url('/img/make-own-project.svg')"}} className="homewhy">
-                <Copy child={node.body.why.eazy.title} type="whyheader" element="h3" align="left" />
+            <Row tagName="section" center="xs" middle="xs" className="homewhy">
+              <Col xs={12} lg={4} lgOffset={2} className="content-wrapper">
+                <span className="left"></span>
+                <Copy child={node.body.why.easy.title} type="whyheader" element="h3" align="center"/>
               </Col>
-              <Col xs={8} style={{backgroundImage: "url('/img/collaboration.svg')"}} className="homewhy">
-                <Copy style={{float: "left"}} align="left" child={node.body.why.scalable.title} type="whyheader" element="h3"/>
+              <Col xs={12} lg={6}>
+                <ImageFinder images={data.whyPhotos} name="why-easy.png"/>
+              </Col>
+            </Row>
+            <Row tagName="section" center="xs" middle="xs" className="homewhy reverse-order">
+              <Col xs={12} lg={4} lgOffset={2}>
+                <ImageFinder images={data.whyPhotos} name="why-scalable.png"/>
+              </Col>
+              <Col xs={12} lg={6} className="content-wrapper">
+                <span className="right"></span>
+                <Copy child={node.body.why.scalable.title} type="whyheader" element="h3" align="center" noEscape/>
               </Col>
             </Row>
             {langKey==='fa' ?
@@ -168,7 +179,7 @@ export const pageQuery = graphql `
             }
             why {
               header
-              eazy {
+              easy {
                 title
                 img
               }
@@ -216,6 +227,20 @@ export const pageQuery = graphql `
     product: imageSharp( id: { regex: "/project-preview-en/" } ) {
       sizes {
         ...GatsbyImageSharpSizes_withWebp
+      }
+    }
+    whyPhotos: allImageSharp (
+      filter: {
+        id: { regex: "/why-/" }
+      }
+    ){
+      edges {
+        node {
+          id
+          resolutions(width: 400, height: 400) {
+            ...GatsbyImageSharpResolutions_noBase64
+          }
+        }
       }
     }
   }

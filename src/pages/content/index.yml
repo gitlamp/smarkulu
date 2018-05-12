@@ -17,11 +17,11 @@ body:
     header: |
       In organizations, marketing agencies,
       <br/>or even game development companies
-    eazy:
+    easy:
       title: "Build Taskulu according to your needs and stand one step ahead."
       img: /img/make-own-project.png
     scalable:
-      title: "Whether 10 or 1000, get result together"
+      title: "Whether 10 or 1000,<br/> get result together"
       img: /img/collaboration.svg
   customerLogos:
     header: |

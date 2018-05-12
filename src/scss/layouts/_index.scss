@@ -136,12 +136,31 @@ img.isgray {
     opacity: 0;
   }
 }
-
 .homewhy {
-  background-repeat: no-repeat;
-  height: 100vh;
-  background-size: 80%;
-  background-position-x: right;
+  img {
+    z-index: 10;
+  }
+  .content-wrapper {
+    h3 {
+      position: relative;
+      z-index: 10;
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 90%;
+      background-color: $silver;
+      transform: translate(-50%,-50%);
+      z-index: 1;
+    }
+    span.left {
+      border-radius: 0 10px 10px 0;
+    }
+    span.right {
+      border-radius: 10px 0 0 10px;
+    }
+  }
 }
 .video-background {
   position: relative;
@@ -180,9 +199,8 @@ img.isgray {
     margin-bottom: 2rem;
   }
   &-whyheader {
-    font-size:4.4rem;
+    font-size: 4.4rem;
     text-align: right;
-    max-width: 40rem;
     font-family: IranSans;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     color: #fff;
@@ -878,6 +896,14 @@ img.isgray {
     }
   }
 }
+.reverse-order {
+  &:first-child {
+    order: 2;
+  }
+  &:last-child {
+    order: 1;
+  }
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -953,6 +979,10 @@ img.isgray {
   .video-background .fa-play-circle {
     font-size: 20rem;
     color: #fff;
+  }
+
+  .homewhy .content-wrapper span {
+    display: none;
   }
 }
 /**
