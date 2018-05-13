@@ -1,5 +1,8 @@
 .above {
   position: relative;
+  &.empty {
+    padding: 0
+  }
   &.normal {
     padding-top: 150px;
     padding-bottom: 150px;

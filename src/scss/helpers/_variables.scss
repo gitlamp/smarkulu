@@ -34,6 +34,9 @@ $g-red-yellow: linear-gradient(45deg, rgba(238, 86, 104,1) 0%, rgba(251, 201, 99
 $g-yellow-green: linear-gradient(45deg, rgba(251, 201, 99,1) 0%, rgba(48,192,166,1) 100%);
 $g-blue-red: linear-gradient(45deg, rgba(78,114,182,1) 0%, rgba(238, 86, 104,1)100%);
 
+//New Branding Gradients with 80% opacity
+$go-blue-green: linear-gradient(45deg, rgba(78,114,182,0.8) 0%, rgba(48,192,166,0.8) 100%);
+
 // Taskulu Colors
 $cyan: #04a9f4;
 $light-orange: #f59331;

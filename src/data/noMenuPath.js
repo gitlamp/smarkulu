@@ -1,10 +1,13 @@
 export const hiddenFooterPath = [
-  '/ebook/digital-construction',
-  '/ebook/shahrdari-mashhad',
-  '/ebook/performance-analytics'
+  '/fa/ebook/digital-construction',
+  '/fa/ebook/shahrdari-mashhad',
+  '/fa/ebook/performance-analytics'
 ]
 
 export const hiddenHeaderPath = [
   '/enterprise',
-  '/fa/enterprise'
+  '/fa/enterprise',
+  '/fa/ebook/digital-construction',
+  '/fa/ebook/shahrdari-mashhad',
+  '/fa/ebook/performance-analytics'
 ]

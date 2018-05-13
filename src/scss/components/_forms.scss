@@ -38,14 +38,43 @@
 }
 
 //*********************
-// Mautic Forms
+// Form container
 //*********************
 .form-wrapper {
   max-width: 600px;
   border: 1px solid #fff;
   border-radius: 20px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
+.form-banner {
+  background: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 700;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.form-footer {
+  background: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 700;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.form-title {
+  font-family: $title-font;
+  font-size: 1.6rem;
+  line-height: 2.5;
+}
+.form-subtitle {
+  font-family: $title-font;
+  font-size: 1.2 rem;
+  line-height: 2;
+}
+//*********************
+// Mautic Forms
+//*********************
 .mauticform_wrapper {
   width: 90%;
   margin: 10px auto;
@@ -111,13 +140,3 @@
   font-size: 1.8rem;
   font-weight: 700;
   }
-.form-banner {
-  font-size: 2rem;
-  font-family: $title-font;
-  background: #fff;
-  line-height: 3;
-  text-align: center;
-  font-weight: 700;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}

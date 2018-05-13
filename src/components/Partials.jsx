@@ -23,6 +23,10 @@ class Above extends React.Component{
       this.setState({
         class: this.state.class + ' compact'
       })
+    } else if(this.props.empty) {
+      this.setState({
+        class: this.state.class + ' empty'
+      })
     } else {
       this.setState({
         class: this.state.class + ' normal'
