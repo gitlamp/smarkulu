@@ -43,7 +43,7 @@ class TimeManagementPage extends React.Component {
                 <Copy element="p" type="description" align="right" child={ node.body.intro2.body } noEscape />
               </div>
             </TwoColumn>
-            <Row className="block-announce" center="xs">
+            <Row className="block-announce gradient-blue-green" center="xs">
               <Col xs={10}>
                 <Copy element="h2" type="subheader" align="center" child={node.body.solution.header} />
               </Col>

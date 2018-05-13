@@ -1,21 +1,23 @@
 import React from 'react'
 import graphql from 'graphql'
 import { Row, Col } from 'react-flexbox-grid'
-import $ from 'jquery'
+//import $ from 'jquery'
 
 import SEO from '../../components/SEO'
 import { Copy, CTA } from '../../components/Elements'
 import { Above } from '../../components/Partials'
+import { expandDetails } from '../../components/functions'
 
 class FilePreviews extends React.Component {
   constructor() {
     super()
   }
   componentDidMount() {
-    $('.formats-cat').on('click', function() {
-      $(this).toggleClass('active')
-      $(this).next().slideToggle()
-    })
+    expandDetails('formats-cat', 'formats-list')
+    /* $('.formats-cat').on('click', function() {
+     *   $(this).toggleClass('active')
+     *   $(this).next().slideToggle()
+     * }) */
   }
   render() {
     const data = this.props.data
@@ -34,22 +36,22 @@ class FilePreviews extends React.Component {
             <Row tagName="section" center="xs">
               <Col xs={10}>
                 <Copy type="header" element="h2">
-                 <div dangerouslySetInnerHTML={{__html: node.body.intro.header}}/>
+                  <div dangerouslySetInnerHTML={{__html: node.body.intro.header}}/>
                 </Copy>
                 <Copy type="description" element="p" child={node.body.intro.body}/>
               </Col>
               <Col xs={11}>
                 <Row center="xs">
-                {node.body.intro.selectedFormats.map((item, i) => {
-                  return (
-                    <Col xs={2} key={i}>
-                      <div>
-                        <img src={item.img} alt={item.title}/>
-                      </div>
-                      <Copy type="sub" element="h6" child={item.title}/>
-                    </Col>
-                  )
-                })}
+                  {node.body.intro.selectedFormats.map((item, i) => {
+                     return (
+                       <Col xs={2} key={i}>
+                         <div>
+                           <img src={item.img} alt={item.title}/>
+                         </div>
+                         <Copy type="sub" element="h6" child={item.title}/>
+                       </Col>
+                     )
+                  })}
                 </Row>
               </Col>
             </Row>
@@ -66,8 +68,7 @@ class FilePreviews extends React.Component {
               </Col>
             </Row>
           </div>
-        )
-        }
+        )}
       </div>
     )
   }

@@ -8,23 +8,28 @@ body:
   hero:
     header: "Track time spent on tasks and set deadlines"
     cta: "btn.start"
-  features:
+  trackingFeatures:
     advanced:
-      title: "Advanced time tracking"
-      desc: "No matter what the nature of your work is, time management is an undeniable must in meeting your business goals. Taskulu makes it easy for you to allocate your team to tasks, label them by priority, specify deadlines, track time spent on each task and gain insight into your team’s performance."
-      img: ""
+      header: "Advanced time tracking"
+      body: "No matter what the nature of your work is, time management is an undeniable must in meeting your business goals. Taskulu makes it easy for you to allocate your team to tasks, label them by priority, specify deadlines, track time spent on each task and gain insight into your team’s performance."
+      img: "/img/taskulu-en-logging.png"
+      alt: "Taskulu advanced tracking with timelogs"
     reports:
-      title: "Reports and insights"
-      desc: "Trapped inside cross-functional internal and external processes and can’t figure out where your team performs well and where it needs extra attention? Taskulu gives you 360° real-time reports on every aspect of your project. You have the big picture and detailed view by task or team member, so all left for you to do is making decisions."
-      img: ""
-      cta: "/product/preformance-analytics"
+      header: "Reports and insights"
+      body: "Trapped inside cross-functional internal and external processes and can’t figure out where your team performs well and where it needs extra attention? Taskulu gives you 360° real-time reports on every aspect of your project. You have the big picture and detailed view by task or team member, so all left for you to do is making decisions."
+      img: "/img/taskulu-en-progress-by-project.png"
+      alt: "Taskulu analytics for real-time insights"
+      cta: "btn.seeMore"
     export:
-      title: "Export Reports"
-      desc: "Alternatively, you can export data to a spreadsheet and create your own reports. This is a great option if you’re an Excel fanatic and you need extra data analysis and visualization to support your decision making."
-      img: ""
+      header: "Export Reports"
+      body: "Alternatively, you can export data to a spreadsheet and create your own reports. This is a great option if you’re an Excel fanatic and you need extra data analysis and visualization to support your decision making."
+      img: "/img/taskulu-en-timelog-export.png"
+      alt: "Export timelogs for customized reports"
     updates:
-      title: "Live update on who’s doing what"
-      desc: "We all had those rush hours when we just needed an on-demand overview of the team’s workload. Having Taskulu as your collaboration tool, gives you just that. You can identify active tasks in a quick look and have a live list of who’s doing what without leaving the app."
+      header: "Live update on who’s doing what"
+      body: "We all had those rush hours when we just needed an on-demand overview of the team’s workload. Having Taskulu as your collaboration tool, gives you just that. You can identify active tasks in a quick look and have a live list of who’s doing what without leaving the app."
+      img: "/img/taskulu-en-sidebar-timelogs.png"
+      alt: "Taskulu find out who's doing what in your team"
   demoCTA:
     header: "Still Not Sure How Taskulu Can Boost Your Business?"
     body: "Let’s talk and find out!"

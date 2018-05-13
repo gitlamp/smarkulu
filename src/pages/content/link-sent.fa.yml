@@ -3,6 +3,7 @@ header:
   lang: fa
   slug: /link-sent
   title: "لینک دانلود ارسال شد"
+  desc: ""
 body:
   header: "متشکریم! لینک دانلود به آدرس ایمیل شما ارسال شد!"
 ...

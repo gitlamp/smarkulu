@@ -5,8 +5,11 @@ import { TweenLite } from 'gsap'
 import { Col, getRowProps } from 'react-flexbox-grid'
 import { connect } from 'react-redux'
 
+import { hiddenHeaderPath as hiddenOnPaths } from '../data/noMenuPath.js'
 import Menu from './Menu'
 import { genLink } from './functions'
+
+const fixedHeaderPos = 600
 
 class HeaderWrapper extends React.Component {
   constructor() {
@@ -34,19 +37,10 @@ class HeaderWrapper extends React.Component {
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.url !== nextProps.url) {
-      let targetPath
-
       hiddenOnPaths.forEach((path) => {
-        if (nextProps.url == path) {
-          targetPath = true
-        }
+        (nextProps.url == path) ?
+        this.props.hideHeader() : this.props.showHeader()
       })
-
-      if (targetPath) {
-        this.props.hideHeader()
-      } else {
-        this.props.showHeader()
-      }
     }
   }
   setWidth() {
@@ -67,7 +61,7 @@ class HeaderWrapper extends React.Component {
     return (
       <div>
         <FixedHeader mobileScreen={this.state.mobileScreen} {...this.props}/>
-        {(this.props.visibility && !this.state.mobileScreen) ? <Header {...this.props}/> : null}
+        {(!this.state.mobileScreen) ? <Header {...this.props}/> : null}
       </div>
     )
   }
@@ -83,7 +77,7 @@ const Header = (props) => {
         <Logo lang={props.lang} color={props.type}/>
       </Col>
       {/* Navigation */}
-      <Menu menu={props.menu} url={props.url}/>
+      {props.visibility ? <Menu menu={props.menu} url={props.url}/> : null}
     </div>
   )
 }
@@ -119,7 +113,7 @@ class FixedHeader extends React.Component {
     }
 
     const currentScrollPos = this.state.currentScrollPos
-    if (currentScrollPos <= 900) {
+    if (currentScrollPos <= fixedHeaderPos) {
       TweenLite.to(this.fixedHeader, 1, {top: '-200'})
     } else {
       TweenLite.to(this.fixedHeader, .2, {top: '0'})
@@ -152,7 +146,8 @@ class FixedHeader extends React.Component {
           <Logo lang={this.props.lang} color="blue"/>
         </Col>
         {/* Navigation */}
-        <Menu menu={this.props.menu} url={this.props.url}/>
+      {this.props.visibility ?
+       <Menu menu={this.props.menu} url={this.props.url}/> : null}
       </div>
     )
   }
@@ -163,8 +158,8 @@ class Logo extends React.Component {
     return (
       <Link to={genLink(this.props.lang, '/')}>
       {(this.props.lang !== 'fa')
-        ? <img className="header-logo" src={'/logos/logo-' + this.props.color + '.svg'} alt={this.props.color + 'logo'}/>
-        : <img className="header-logo" src={'/logos/fa-logo-' + this.props.color + '.svg'} alt={this.props.color + 'logo'}/>
+        ? <img className="header-logo" src={'/logos/logo-' + this.props.color + '.svg'} alt="Taskulu Logo" />
+        : <img className="header-logo" src={'/logos/fa-logo-' + this.props.color + '.svg'} alt="Taskulu Logo" />
       }
       </Link>
     )
@@ -176,12 +171,6 @@ HeaderWrapper.PropTypes = {
   menu: PropTypes.object.isRequired,
   url: PropTypes.string
 }
-
-// Paths which header should be hidden on them
-const hiddenOnPaths = [
-  '/enterprise',
-  '/fa/enterprise'
-]
 
 // Map redux state to component props
 const mapStateToProps = (state) => {

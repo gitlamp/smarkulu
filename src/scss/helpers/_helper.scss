@@ -163,3 +163,29 @@
     background: $g-blue-red;
   }
 }
+
+%expand-icon {
+  &:after{
+    content: '+';
+    position: absolute;
+    font-size: 2.5rem;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%)
+  }
+  .active &:after {
+    content: '-';
+  }
+}
+%custom-bullet {
+  &:before {
+    content: '';
+    background-image: url('/img/bullet.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.4rem;
+    margin-right: 5px;
+  }
+}

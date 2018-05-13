@@ -1,0 +1,24 @@
+.block {
+  &-cta {
+    background-color: $shamrock;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    &-dark {
+      background-color: $wet-asphalt;
+    }
+  }
+  &-tour {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+  div &-tour:last-child {
+    padding-bottom: 8rem;
+  }
+  &-announce {
+    color: #fff;
+    padding: 2rem 3rem;
+    & .content-subheader {
+      color: $silver;
+    }
+  }
+}

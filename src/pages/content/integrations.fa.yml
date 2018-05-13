@@ -8,26 +8,33 @@ body:
   hero:
     header: "برنامه‌های خود را به تسکولو وصل کنید"
     subheader: "با درونی‌سازی‌های عمیق و دوطرفه، همه برنامه‌های خود را به تسکولو وصل کنید و بهره‌وری بیشتری داشته باشید"
-  integrations:
+  allIntegrations:
     -
       header: "گوگل درایو"
       desc: "ذخیره‌سازی، مدیریت و ویرایش گروهی آنلاین فایل‌ها"
+      img: /img/integration-gdrive.png
     -
       header: "دراپ‌باکس"
       desc: "ذخیره‌سازی آنلاین اسناد و فایل‌ها"
+      img: /img/integration-dropbox.png
     -
       header: "تقویم گوگل"
       desc: "یک تقویم اشتراکی برای سررسید کارها در پروژه‌های شما"
+      img: /img/integration-gcalendar.png
     -
       header: "گیت‌هاب"
       desc: "فعالیت‌های تیم فنی و تغییرات کد خود را روی کار مربوط به آن ببینید و commit messageهای گیت‌هاب را به صورت دیدگاه روی کار ثبت کنید"
+      img: /img/integration-github.png
     -
       header: "گیت‌لب"
       desc: "فعالیت‌های تیم فنی و تغییرات کد خود را روی کار مربوط به آن ببینید و commit messageهای گیت‌لب را به صورت دیدگاه روی کار ثبت کنید"
+      img: /img/integration-gitlab.png
     -
       header: "Appear.in"
       desc: "ایجاد کنفرانس ویدیویی در اتاق‌های گفتگوی تسکولو"
+      img: /img/integration-appearin.png
     -
       header: "پاسخ با ایمیل"
       desc: "به دیدگاه‌ها و پیام‌ها نوشته شده در تسکولو از طریق ایمیل پاسخ دهید."
+      img: /img/integration-email.png
 ...

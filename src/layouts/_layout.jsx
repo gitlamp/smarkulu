@@ -48,7 +48,10 @@ const TemplateWrapper = (props) => {
         {children()}
 
         {/* Footer component */}
-        <Footer menu={menu.bottom} social={social}/>
+        <Footer
+          menu={menu.bottom}
+          social={social}
+          url={url} />
       </Grid>
     </IntlProvider>
     )

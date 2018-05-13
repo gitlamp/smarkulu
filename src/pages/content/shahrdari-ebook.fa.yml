@@ -1,7 +1,7 @@
 ---
 header:
   lang: fa
-  slug: /shahrdari-ebook
+  slug: /ebook/shahrdari-mashhad
   title: "شهرداری مشهد و تسکولو"
   desc: "شهرداری مشهد چطور از تسکولو استفاده می‌کند؟ در این کتابچه رایگان بخوانید"
 body:
@@ -16,9 +16,8 @@ body:
     body: "تسکولو یکی از بهترین ابزارهای مدیریت کارها در مجموعه‌ی ما بوده و کمک کرده تا ما فرایندها و ارتباط‌های مجموعه‌ را به‌شیوه‌ای کاملاً نظام‌مند، هوشمند و مدرن انجام بدهیم. استفاده از تسکولو برای کنترل و محاسبه پیشرفت کارهای داخلی، اولین پیشنهاد من برای مدیریت در هر مجموعه‌ی خواهد بود."
     by: "جمال حسن بارانی"
     position: "مدیر برنامه و بودجه شهرداری مشهد"
-  formBanner: |
-    "form.ebook.banner"
-    <br/>
-    <span style="font-size: 50%">"form.ebook.required"</span>
-  privacy: "form.ebook.privacy"
+  form:
+    banner: form.ebook.banner
+    required: form.ebook.required
+    privacy: form.ebook.privacy
 ...

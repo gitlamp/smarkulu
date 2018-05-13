@@ -1,0 +1,95 @@
+.above {
+  position: relative;
+  &.empty {
+    padding: 0
+  }
+  &.normal {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    min-height: 70vh;
+  }
+  &.full {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    min-height: 100vh;
+  }
+  &.compact {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    min-height: 30vh;
+    &.mobile-app {
+      padding-bottom: 20px;
+    }
+  }
+  .content {
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .content-head {
+    font-family: $title-font;
+    margin-bottom: 3rem;
+  }
+  .goregister {
+    margin: 0;
+  }
+  .proto-content {
+    position: absolute;
+    top: 6%;
+    /*rtl:ignore*/
+    left: 13.1%;
+    right: 13.1%;
+    width: 73.2%;
+    z-index: 20;
+  }
+  .proto {
+    position: relative;
+    margin: 4rem auto 0 auto;
+    max-width: 80%;
+    z-index: 10;
+  }
+}
+
+.skewed-bottom {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: -40px;
+    transform: skewY(-3deg);
+    background-color: #fff;
+  }
+}
+
+.skewed-top {
+  position: relative;
+  margin-top: 150px;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: -50px;
+    transform: skewY(-3deg);
+    background-color: $wet-asphalt;
+  }
+  > * {
+    z-index: 2;
+  }
+}
+
+.curved {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    min-height: 200px;
+    background: url('/img/home-curve.svg') no-repeat top;
+    background-size: cover;
+    z-index: 1;
+  }
+}

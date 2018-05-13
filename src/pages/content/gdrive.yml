@@ -1,14 +1,15 @@
 ---
 header:
   lang: en
-  slug: /product/gdrive
+  slug: /product/integrations/gdrive
+  linked: "Google Drive"
   title: "Google Drive Integration"
   desc: "With Google Drive you can store files online, access them anywhere and collaborate with others."
 body:
   hero:
     header: "Integrate Taskulu with Google Drive"
   desc: |
-    With Google Drive you can store files online, access them anywhere and collaborate with others.<br/>With Taskulu Google Drive integration you can:<br/>
+    With Google Drive you can store files online, access them anywhere and collaborate with others.<br/><br/>With Taskulu Google Drive integration you can:<br/><br/>
     <ul>
     <li>Attach files from Google Drive to your tasks,</li>
     <li>Automatically upload files you attach to your tasks to Google Drive and share them with your team,</li>
