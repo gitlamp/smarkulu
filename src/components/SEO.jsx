@@ -58,7 +58,7 @@ class SEO extends React.Component {
     const langKey = this.state.lang
     const openGraph = this.state.openGraph
     const twitter = this.state.twitter
-    if (this.props.generalDesc.length != 0) {
+    if (this.props.generalDesc && this.props.generalDesc.length != 0) {
       openGraph.description = this.props.generalDesc
       twitter.description = this.props.generalDesc
     }
