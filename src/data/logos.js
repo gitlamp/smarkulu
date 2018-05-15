@@ -73,7 +73,7 @@ export default {
   // Content Creation - VAS
   "Faranesh": "06-Content-Creation-VAS/CV101-Faranesh.jpg",
   "KiviMag": "06-Content-Creation-VAS/CV102-KiviMag.png",
-  "Namava": "06-Content-Creation-VAS/CV103-Namava.svg",
+  "Namava": "06-Content-Creation-VAS/CV103-Namava.png",
   "Artatel": "06-Content-Creation-VAS/CV301-Artatel.png",
   "Anarestan": "06-Content-Creation-VAS/CV401-Anarestan.png",
   "AEK": "06-Content-Creation-VAS/CV402-AEK.png",

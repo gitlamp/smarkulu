@@ -1,7 +1,7 @@
 ---
 header:
   lang: en
-  slug: /on-premise
+  slug: /on-premise-trello-alternative
   title: "Self-hosted Trello Alternative"
   desc: "Looking for a trello alternative? Then you should definitely check out this comparison table"
 body:
@@ -11,52 +11,7 @@ body:
   intro:
     header: "Using Taskulu as on-premise Trello alternative"
     desc: "Trello is a popular freemium task management tool that is growing rapidly in popularity. It comes with a clean interface, is easy to use and offers a number of integrations with other popular online services. Common issues about Trello include extreme simplicity, lack of file previews, problems with managing large teams and projects, lack of reporting features, and the fact that there is no self-hosted version of Trello. If you’ve been looking for a Trello alternative, take a look at this feature comparison chart:"
-  table:
-    items:
-      - 'Pricing'
-      - 'Max File Size'
-      - 'Task Management'
-      - 'Time Tracking'
-      - 'Chat'
-      - 'Reporting Dashboard'
-      - 'Role-based access control'
-      - 'File Previews'
-      - 'Self-hosted Edition'
-      - 'Private Cloud Edition'
-      - 'Mobile Apps'
-      - 'API'
-  trello:
-    header: 'Trello'
-    items:
-      - 'Free or $9.99/user'
-      - '10MB/250MB'
-      - '✔︎'
-      - '✖︎'
-      - '✖︎'
-      - '✖︎'
-      - '✖︎'
-      - '✖︎'
-      - '✖︎'
-      - '✖︎'
-      - '✔︎'
-      - '✔︎'
-  taskulu:
-    header: 'Taskulu'
-    items:
-      - '10 users free or $6/user'
-      - '10MB/500MB'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
-      - '✔︎'
   demoCTA:
     header: "Thousands of organizations are using Taskulu everyday."
     cta: "btn.demo"
-
 ...

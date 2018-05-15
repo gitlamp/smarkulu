@@ -20,12 +20,31 @@
     opacity: 0;
   }
 }
-
 .homewhy {
-  background-repeat: no-repeat;
-  height: 100vh;
-  background-size: 80%;
-  background-position-x: right;
+  img {
+    z-index: 10;
+  }
+  .content-wrapper {
+    h3 {
+      position: relative;
+      z-index: 10;
+    }
+    span {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 90%;
+      background-color: $silver;
+      transform: translate(-50%,-50%);
+      z-index: 1;
+    }
+    span.left {
+      border-radius: 0 10px 10px 0;
+    }
+    span.right {
+      border-radius: 10px 0 0 10px;
+    }
+  }
 }
 .video-background {
   position: relative;
@@ -648,16 +667,6 @@
   }
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-
 //*********************
 // Integrations
 //*********************
@@ -859,5 +868,18 @@
   .video-background .fa-play-circle {
     font-size: 20rem;
     color: #fff;
+  }
+
+  .homewhy .content-wrapper span {
+    display: none;
+  }
+
+  .reverse-order {
+    [class^="col-"]:first-child {
+      order: 2;
+    }
+    [class^="col-"]:last-child {
+      order: 1;
+    }
   }
 }

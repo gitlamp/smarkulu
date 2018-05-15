@@ -7,10 +7,10 @@ header:
 body:
   hero:
     header: "Terms of Use"
-  preamble: |-
-    'By using Taskulu (“Service”) you are agreeing to be bound by the following terms and conditions (“Terms of Service”).<br/>
-    Taskulu Pte. Ltd. (“Company”), reserves the rights to update and change these Terms of Service without notice.<br/>
-    Violation of any of the terms below may result in termination of your account.'
+  preamble: |
+      By using Taskulu (“Service”) you are agreeing to be bound by the following terms and conditions (“Terms of Service”).<br/>
+      Taskulu Pte. Ltd. (“Company”), reserves the rights to update and change these Terms of Service without notice.<br/>
+      Violation of any of the terms below may result in termination of your account.
   account:
     title: "Account terms"
     items:

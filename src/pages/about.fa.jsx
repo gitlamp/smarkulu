@@ -79,7 +79,10 @@ class PersonsImg extends React.Component {
   render() {
     let img = null
     if (this.props.front && this.props.back) {
-      img = <img src={this.state.faceSide} onMouseOver={this.MouseIn} onMouseOut={this.MouseOut} alt={this.props.person}/>
+      img = <img src={this.state.faceSide}
+                 onMouseOver={this.MouseIn}
+                 onMouseOut={this.MouseOut}
+                 alt={this.props.person}/>
     } else {
       img = <span className="team-char">
               <i className="fa fa-user-o" aria-hidden="true"></i>

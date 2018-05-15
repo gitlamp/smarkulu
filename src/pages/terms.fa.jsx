@@ -25,7 +25,7 @@ class TermsPage extends React.Component {
             </Above>
             <Row tagName="section" center="xs">
               <Col xs={10} sm={6}>
-                <Copy type="plain" element="div" child={node.body.preamble} />
+                <Copy type="plain" element="div" child={node.body.preamble} noEscape/>
               </Col>
               <Col xs={10}>
                 <Copy type="subheader" element="h3" child={node.body.account.title}/>
@@ -78,7 +78,7 @@ class TermsPage extends React.Component {
                 </ul>
               </Col>
               <Col xs={10} sm={6}>
-                <Copy type="plain" element="div" child={node.body.ending} />
+                <Copy type="plain" element="div" child={node.body.ending} noEscape/>
               </Col>
             </Row>
           </div>
@@ -95,7 +95,14 @@ export default TermsPage
  */
 export const pageQuery = graphql `
 query TermsFaPage {
-  allContentYaml(filter: {header: {lang: {eq: "fa"}, slug: {eq: "/terms"}}}) {
+  allContentYaml(
+    filter: {
+      header: {
+        lang: { eq: "fa" }
+        slug: { eq: "/terms" }
+      }
+    }
+  ) {
     edges {
       node {
         id
@@ -138,5 +145,4 @@ query TermsFaPage {
     }
   }
 }
-
 `

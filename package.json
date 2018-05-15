@@ -30,6 +30,7 @@
     "react-intl": "^2.4.0",
     "react-owl-carousel2": "^0.3.0",
     "react-redux": "^5.0.7",
+    "react-table": "^6.8.2",
     "redux": "^3.7.2"
   },
   "keywords": [

@@ -32,7 +32,7 @@ const Product = (props) => {
           </Above>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }} center="xs">
                 <div>
                   <Copy type="title" align="right" element="h2" child={node.body.section1.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section1.body}/>
@@ -54,7 +54,7 @@ const Product = (props) => {
           </Row>
           <Row tagName="section" center="xs">
             <Grid>
-              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }}>
+              <TwoColumn ratio={{ xs:[10,10], sm:[6,6], md:[4,8], lg:[4,8] }} center="xs">
                 <div>
                   <Copy type="title" align="right" element="h2" child={node.body.section3.header}/>
                   <Copy type="description" align="right" element="p" child={node.body.section3.body}/>
