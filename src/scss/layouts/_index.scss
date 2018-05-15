@@ -896,6 +896,24 @@ img.isgray {
     }
   }
 }
+.taskulu-table {
+  font-family: $subtitle-font;
+  font-size: $body;
+  border-radius: 6px;
+  margin: 100px 0;
+  .taskulu-table-header {
+    font-size: $head3;
+  }
+  .rt-td {
+    padding: 10px 0;
+  }
+  .tick {
+    color: $emerald;
+  }
+  .cross {
+    color: $alizarin;
+  }
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
