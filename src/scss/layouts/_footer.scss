@@ -58,20 +58,28 @@
     }
   }
   .footer-end {
-    padding: 15px 70px;
+    padding: 15px 40px;
     background: $sun-flower;
     color: #3f3f3f;
     font-family: $subtitle-font;
     font-size: $body;
+    div {
+      display: inline-block;
+      &:first-child {
+        width: 60%;
+      }
+      &:last-child {
+        text-align: right;
+        width: 40%;
+      }
+    }
     a {
       text-decoration: none;
       color: #3f3f3f;
+      margin-left: 20px;
       &:hover {
         border-bottom: 2px solid #3f3f3f;
       }
-    }
-    *:nth-child(n+2) {
-      margin-left: 2rem;
     }
   }
 }

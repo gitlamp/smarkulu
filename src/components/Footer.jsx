@@ -86,7 +86,7 @@ class Footer extends React.Component {
           </Row>
         </Col>
         <Col xs={12} className="footer-end">
-          <Row center="xs" start="sm">
+          <div>
             <FormattedMessage id="footer.terms">
             {(txt) =>
             <a href={genLink(langKey, '/terms')}>{txt}</a>
@@ -97,8 +97,10 @@ class Footer extends React.Component {
             <a href={genLink(langKey, '/privacy')}>{txt}</a>
             }
             </FormattedMessage>
+          </div>
+          <div>
             <span>Copyright	&copy; 2017 Taskulu</span>
-          </Row>
+          </div>
         </Col>
       </Row>
     )
