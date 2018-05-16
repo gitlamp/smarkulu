@@ -60,6 +60,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-intercom`,
+      options: {
+        appId: 'lt4p09ux',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
