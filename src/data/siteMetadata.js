@@ -46,7 +46,6 @@ module.exports = {
           items: [
             {label: 'footer.menu.security', slug:'/security'},
             {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
-            {label: 'footer.menu.time.management', slug:'/time-management'},
           ]
         },
         {
@@ -84,7 +83,6 @@ module.exports = {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'footer.menu.security', slug:'/security'},
             {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
             {label: 'footer.menu.time.management', slug:'/time-management'},
           ]
