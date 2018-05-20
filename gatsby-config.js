@@ -36,6 +36,7 @@ module.exports = {
     'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-meta-redirect',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
