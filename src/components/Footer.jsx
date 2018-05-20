@@ -91,7 +91,7 @@ class Footer extends React.Component {
             {(txt) =>
             <a href={genLink(langKey, '/terms')}>{txt}</a>
             }
-            </FormattedMessage>
+            </FormattedMessage>&nbsp;
             <FormattedMessage id="footer.privacy">
             {(txt) =>
             <a href={genLink(langKey, '/privacy')}>{txt}</a>
