@@ -37,15 +37,17 @@ module.exports = {
             {label: 'footer.menu.company', slug:'/about'},
             {label: 'footer.menu.contact', slug:'/contact'},
             {label: 'footer.menu.press', slug:'/press'},
-            {label: 'footer.menu.blog', slug:'/blog'},
           ]
         },
         {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'footer.menu.security', slug:'/security'},
             {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
+            {label: 'footer.menu.integrations', slug:'/product/inegrations'},
+            {label: 'footer.menu.security', slug:'/product/security'},
+            {label: 'footer.menu.file.previews', slug:'/product/file-previews'},
+            {label: 'footer.menu.time.tracking', slug:'/product/time-tracking'},
           ]
         },
         {
@@ -53,7 +55,7 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.help', slug:'help.taskulu.com'},
-            {label: 'footer.menu.academy', slug:'academy.taskulu.com'},
+            {label: 'footer.menu.blog', slug:'/blog'},
           ]
         }
       ],
@@ -76,7 +78,6 @@ module.exports = {
             {label: 'footer.menu.company', slug:'/about'},
             {label: 'footer.menu.contact', slug:'/contact'},
             {label: 'footer.menu.press', slug:'/press'},
-            {label: 'footer.menu.blog', slug:'/blog'},
           ]
         },
         {
@@ -84,7 +85,9 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
-            {label: 'footer.menu.time.management', slug:'/time-management'},
+            {label: 'footer.menu.integrations', slug:'/product/inegrations'},
+            {label: 'footer.menu.time.management', slug:'/product/time-management'},
+            {label: 'footer.menu.task.management', slug:'/product/task-management'},
           ]
         },
         {
@@ -92,7 +95,10 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.help', slug:'help.taskulu.com'},
-            {label: 'footer.menu.academy', slug:'academy.taskulu.com'},
+            {label: 'footer.menu.blog', slug:'/blog'},
+            {label: 'footer.menu.construction', slug:'/ebook/digital-construction'},
+            {label: 'footer.menu.performance.analytics', slug:'/ebook/performance-analytics'},
+            {label: 'footer.menu.mashhad', slug:'/ebook/shahrdari-mashhad'},
           ]
         }
       ]

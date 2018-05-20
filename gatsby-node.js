@@ -150,10 +150,16 @@ exports.createPages = ({ boundActionCreators }) => {
     }
     redirectBatch.push(
       {f: `${lang}/industries`, t: `${lang}/our-users`},
-      {f: `/fa/shahrdari`, t: `/fa/shahrdari-ebook`},
+      {f: `${lang}/industries/marketing`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/software-development`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/construction`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/media-production`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/game-development`, t: `${lang}/our-users`},
+      {f: `/fa/shahrdari`, t: `/fa/ebook/shahrdari-mashhad`},
       {f: `${lang}/security`, t: `${lang}/product/security`},
       {f: `${lang}/integrations`, t: `${lang}/product/integrations`},
       {f: `${lang}/integrations/github-commit`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/gitlab-commit`, t: `${lang}/product/integrations`},
       {f: `${lang}/integrations/dropbox`, t: `${lang}/product/integrations`},
       {f: `${lang}/integrations/email`, t: `${lang}/product/integrations`},
       {f: `${lang}/integrations/appearin`, t: `${lang}/product/integrations`},
@@ -162,8 +168,8 @@ exports.createPages = ({ boundActionCreators }) => {
       {f: `/fa/product/تحلیلگر-عملکرد`, t: `/fa/product/performance-analytics`},
       {f: `/fa/تایم-شیت`, t: `/fa/timesheet`},
       {f: `/fa/مدیریت-زمان`, t: `/fa/time-management`},
-      {f: `/fa/کتابچه-مدیریت-پروژه-عمرانی`, t: `/fa/digital-construction-ebook`},
-      {f: `/fa/کتابچه-مدیریت-عملکرد`, t: `/fa/preformance-analytics-ebook`},
+      {f: `/fa/کتابچه-مدیریت-پروژه-عمرانی`, t: `/fa/ebook/digital-construction`},
+      {f: `/fa/کتابچه-مدیریت-عملکرد`, t: `/fa/ebook/preformance-analytics`},
       {f: `/fa/مدیریت-وظایف`, t: `/fa/task-management`}
     )
   })
