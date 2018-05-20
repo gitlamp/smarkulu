@@ -82,20 +82,20 @@ class IndexPage extends React.Component {
               middle="xs"
               center="xs"/>
             <Row tagName="section" center="xs" middle="xs" className="homewhy">
+              <span className="left"></span>
               <Col xs={12} lg={6} className="content-wrapper">
-                <span className="left"></span>
                 <Copy child={node.body.why.easy.title} type="whyheader" element="h3" align="center"/>
               </Col>
-              <Col xs={12} lg={4} lgOffset={2}>
+              <Col xs={12} lg={4} lgOffset={2} style={{ textAlign: 'center' }}>
                 <ImageFinder images={data.whyPhotos} name="why-easy.png"/>
               </Col>
             </Row>
             <Row tagName="section" center="xs" middle="xs" className="homewhy reverse-order">
-              <Col xs={12} lg={6}>
+              <span className="right"></span>
+              <Col xs={12} lg={6} style={{ textAlign: 'center' }}>
                 <ImageFinder images={data.whyPhotos} name="why-scalable.png"/>
               </Col>
               <Col xs={12} lg={4} lgOffset={2} className="content-wrapper">
-                <span className="right"></span>
                 <Copy child={node.body.why.scalable.title} type="whyheader" element="h3" align="center" noEscape/>
               </Col>
             </Row>

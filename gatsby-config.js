@@ -36,6 +36,7 @@ module.exports = {
     'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-meta-redirect',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -58,6 +59,12 @@ module.exports = {
         langKeyDefault: 'en',
         useLangKeyLayout: true
       }
+    },
+    {
+      resolve: `gatsby-plugin-intercom`,
+      options: {
+        appId: 'lt4p09ux',
+      },
     },
     {
       resolve: 'gatsby-plugin-google-fonts',

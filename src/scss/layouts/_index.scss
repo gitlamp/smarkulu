@@ -21,29 +21,22 @@
   }
 }
 .homewhy {
-  img {
-    z-index: 10;
+  span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+    height: 70%;
+    background-color: $silver;
+    z-index: -1;
   }
-  .content-wrapper {
-    h3 {
-      position: relative;
-      z-index: 10;
-    }
-    span {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      height: 90%;
-      background-color: $silver;
-      transform: translate(-50%,-50%);
-      z-index: 1;
-    }
-    span.left {
-      border-radius: 0 10px 10px 0;
-    }
-    span.right {
-      border-radius: 10px 0 0 10px;
-    }
+  span.left {
+    border-radius: 0 10px 10px 0;
+    left: 0;
+  }
+  span.right {
+    border-radius: 10px 0 0 10px;
+    right: 0;
   }
 }
 .video-background {
@@ -679,7 +672,6 @@
     background-color: #ddd;
     border-radius: 10px;
   }
-  &-desc{}
   &-detail{
     display: none;
     .active & {
@@ -776,6 +768,67 @@
       font-size: 6rem;
     }
   }
+}
+
+//*********************
+// Intercom
+//*********************
+#intercom-container {
+  right: 0px!important;
+  left: auto!important;
+}
+#intercom-container .intercom-launcher-discovery-frame {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-container .intercom-messenger-frame {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-container .intercom-launcher-frame {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-container .intercom-launcher-badge-frame {
+  right: 62px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-container .intercom-notifications {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-container .intercom-chat {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-container .intercom-notifications-frame {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-launcher-enabled .intercom-borderless-frame {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app .intercom-launcher-frame {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-app-launcher-enabled .intercom-messenger-frame {
+  right: 20px !important;
+  left: auto !important;
+}
+#intercom-container .intercom-gradient {
+  content: '' !important;
+  position: fixed !important;
+  width: 500px !important;
+  height: 500px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  pointer-events: none !important;
+  background-image: none !important;
+  background: radial-gradient(ellipse at bottom left,rgba(29,39,54,.16) 0,rgba(29,39,54,0) 72%);
+  z-index: 2147482999 !important;
 }
 
 //*********************

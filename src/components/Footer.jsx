@@ -78,7 +78,6 @@ class Footer extends React.Component {
     const socialItems = this.getSocialItems(this.props.social)
     return (
       <Row className="footer">
-      { this.props.visibility ?
         <Col xs={10} className="footer-row">
           {/* Render footer menu */}
           <Row>
@@ -100,23 +99,26 @@ class Footer extends React.Component {
               </a>
             </Col>
           </Row>
-        </Col> : null }
-      <Col xs={12} className="footer-end">
-      <Row center="xs" start="sm">
-      { this.props.visibility ?
-        <span>
-        <FormattedMessage id="footer.terms">
-        {(txt) =>
-          <a href={genLink(langKey, '/terms')}>{txt}</a>
-        }
-        </FormattedMessage>
-        <FormattedMessage id="footer.privacy">
-        {(txt) =>
-          <a href={genLink(langKey, '/privacy')}>{txt}</a>
-        }
-            </FormattedMessage></span> : null }
-      <span>Copyright	&copy; 2017 Taskulu</span>
-      </Row>
+        </Col>
+        <Col xs={12} className="footer-end">
+          <div>
+          { this.props.visibility ?
+            <span>
+              <FormattedMessage id="footer.terms">
+              {(txt) =>
+              <a href={genLink(langKey, '/terms')}>{txt}</a>
+              }
+              </FormattedMessage>&nbsp;
+              <FormattedMessage id="footer.privacy">
+              {(txt) =>
+              <a href={genLink(langKey, '/privacy')}>{txt}</a>
+              }
+              </FormattedMessage>
+            </span> : null }
+          </div>
+          <div>
+            <span>Copyright	&copy; 2017 Taskulu</span>
+          </div>
         </Col>
       </Row>
     )

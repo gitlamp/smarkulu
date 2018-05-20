@@ -69,7 +69,7 @@ export default TaskManagementPage
  */
 export const pageQuery = graphql `
 query TaskManagementFaPage {
-  allContentYaml(filter: {header: {lang: {eq: "fa"}, slug: {eq: "/task-management"}}}) {
+  allContentYaml(filter: {header: {lang: {eq: "fa"}, slug: {eq: "/product/task-management"}}}) {
     edges {
       node {
         id

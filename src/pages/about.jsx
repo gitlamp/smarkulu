@@ -18,7 +18,7 @@ class AboutPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above className="gradient-blue-red skewed-bottom" center="xs" hasGradient>
+            <Above className="gradient-blue-green skewed-bottom" center="xs" hasGradient>
               <Col xs={10}>
                 <Copy type="header" element="h1" child={node.body.header} />
               </Col>

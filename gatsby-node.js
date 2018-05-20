@@ -150,18 +150,34 @@ exports.createPages = ({ boundActionCreators }) => {
     }
     redirectBatch.push(
       {f: `${lang}/industries`, t: `${lang}/our-users`},
-      {f: `${lang}/product/%D8%AA%D8%AD%D9%84%DB%8C%D9%84%DA%AF%D8%B1-%D8%B9%D9%85%D9%84%DA%A9%D8%B1%D8%AF`, t: `${lang}/product/performance-analytics`},
-      {f: `${lang}/%d8%aa%d8%a7%db%8c%d9%85-%d8%b4%db%8c%d8%aa`, t: `${lang}/timesheet`},
-      {f: `${lang}/%d9%85%d8%af%db%8c%d8%b1%db%8c%d8%aa-%d8%b2%d9%85%d8%a7%d9%86`, t: `${lang}/time-management`},
-      {f: `/time-management`, t: `/fa/time-management`},
-      {f: `${lang}/security`, t: `${lang}/product/security`}
+      {f: `${lang}/industries/marketing`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/software-development`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/construction`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/media-production`, t: `${lang}/our-users`},
+      {f: `${lang}/industries/game-development`, t: `${lang}/our-users`},
+      {f: `/fa/shahrdari`, t: `/fa/ebook/shahrdari-mashhad`},
+      {f: `${lang}/security`, t: `${lang}/product/security`},
+      {f: `${lang}/integrations`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/github-commit`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/gitlab-commit`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/dropbox`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/email`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/appearin`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/gdrive`, t: `${lang}/product/integrations`},
+      {f: `${lang}/integrations/gcal`, t: `${lang}/product/integrations`},
+      {f: `/fa/product/تحلیلگر-عملکرد`, t: `/fa/product/performance-analytics`},
+      {f: `/fa/تایم-شیت`, t: `/fa/timesheet`},
+      {f: `/fa/مدیریت-زمان`, t: `/fa/time-management`},
+      {f: `/fa/کتابچه-مدیریت-پروژه-عمرانی`, t: `/fa/ebook/digital-construction`},
+      {f: `/fa/کتابچه-مدیریت-عملکرد`, t: `/fa/ebook/preformance-analytics`},
+      {f: `/fa/مدیریت-وظایف`, t: `/fa/task-management`}
     )
   })
 
   redirectBatch.forEach(({ f, t }) => {
     createRedirect({
       fromPath: f,
-      redirectInBrowser: true,
+      isPermanent: true,
       toPath: t
     })
   })

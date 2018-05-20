@@ -82,7 +82,7 @@ export default TimeManagementPage
  */
 export const pageQuery = graphql `
 query TimeManagementFaPage {
-  allContentYaml(filter: {header: {lang: {eq: "fa"}, slug: {eq: "/time-management"}}}) {
+  allContentYaml(filter: {header: {lang: {eq: "fa"}, slug: {eq: "/product/time-management"}}}) {
     edges {
       node {
         id

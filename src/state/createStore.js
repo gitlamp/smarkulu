@@ -24,8 +24,16 @@ const reducer = (state, action) => {
       })
     case 'blueHeader':
       return Object.assign({}, state, {
-        headerType: 'blue'
-      })
+            headerType: 'blue'
+          })
+    case 'setLangToEn':
+      return Object.assign({}, state, {
+            lang: 'en'
+        })
+    case 'setLangToFa':
+      return Object.assign({}, state, {
+            lang: 'fa'
+        })
     default:
       return state;
   }
