@@ -1,6 +1,7 @@
 import React from 'react'
 import graphql from 'graphql'
 import { Row, Col } from 'react-flexbox-grid'
+import { connect } from 'react-redux'
 
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
@@ -42,7 +43,10 @@ const Enterprise = (props) => {
   )
 }
 
-export default Enterprise
+// Connected component
+const ConnectedEnterprise = connect(null, dispatch => dispatch({ type: 'mixedHeader1' }))(Enterprise)
+
+export default ConnectedEnterprise
 
 /**
  * Require data from fa yaml

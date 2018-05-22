@@ -2,22 +2,18 @@ import { createStore as reduxCreateStore } from 'redux'
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'invisibleFooter':
-      return Object.assign({}, state, {
-        footerVisibility: false
-      })
-    case 'visibleFooter':
-      return Object.assign({}, state, {
-        footerVisibility: true
-      })
+
+    /* Header Visibility State */
     case 'invisibleHeader':
       return Object.assign({}, state, {
         headerVisibility: false
       })
     case 'visibleHeader':
       return Object.assign({}, state, {
-        headerVisibility: true
-      })
+            headerVisibility: true
+          })
+
+    /* Header Color State */
     case 'whiteHeader':
       return Object.assign({}, state, {
         headerType: 'white'
@@ -26,6 +22,16 @@ const reducer = (state, action) => {
       return Object.assign({}, state, {
             headerType: 'blue'
           })
+    case 'mixedHeader1':
+      return Object.assign({}, state, {
+            headerType: 'mixed-1'
+          })
+    case 'mixedHeader2':
+      return Object.assign({}, state, {
+            headerType: 'mixed-2'
+          })
+
+    /* Global Language  State */
     case 'setLangToEn':
       return Object.assign({}, state, {
             lang: 'en'
@@ -34,6 +40,7 @@ const reducer = (state, action) => {
       return Object.assign({}, state, {
             lang: 'fa'
         })
+
     default:
       return state;
   }
@@ -41,8 +48,7 @@ const reducer = (state, action) => {
 
 const initialState = {
   headerVisibility: true,
-  footerVisibility: true,
-  headerType: 'blue'
+  headerType: 'white',
 }
 
 const createStore = () => reduxCreateStore(reducer, initialState)

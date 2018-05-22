@@ -935,4 +935,12 @@
       order: 1;
     }
   }
+
+  @media #{$smview} {
+    .homewhy {
+      span {
+        display: none;
+      }
+    }
+  }
 }

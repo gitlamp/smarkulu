@@ -1,6 +1,7 @@
 import React from 'react'
 import graphql from 'graphql'
 import { Row, Col } from 'react-flexbox-grid'
+import { connect } from 'react-redux'
 
 import SEO from '../components/SEO'
 import { Copy, CTA } from '../components/Elements'
@@ -22,7 +23,7 @@ const Contact = (props) => {
                 {node.body.contact.map((item, i) =>
                   <li className="double-divided-col-item" key={i}>
                     <Copy type="title" element="h2" child={item.header}/>
-                    <Copy type="sub" element="p" child={item.body}/>
+                    <Copy type="sub" element="p" child={item.body} noEscape/>
                   </li>
                 )}
               </ul>
@@ -49,7 +50,10 @@ const Contact = (props) => {
   )
 }
 
-export default Contact
+// Connected component
+const ConnectedContact = connect(null, dispatch => dispatch({ type: 'mixedHeader2' }))(Contact)
+
+export default ConnectedContact
 
 /**
  * Require data from fa yaml
