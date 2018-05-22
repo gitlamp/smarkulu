@@ -14,7 +14,7 @@ const Privacy = (props) => {
       {data.allContentYaml.edges.map(({node}) =>
         <div key={node.id}>
           <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc}/>
-          <Above center="xs" className="background-shamrock" hasGradient>
+          <Above center="xs" className="background-shamrock" hasGradient compact>
             <Col xs={12}>
               <Copy type="header" element="h1" child={node.body.hero.header}/>
             </Col>

@@ -83,19 +83,19 @@ class IndexPage extends React.Component {
               center="xs"/>
             <Row tagName="section" center="xs" middle="xs" className="homewhy">
               <span className="left"></span>
-              <Col xs={12} lg={4} className="content-wrapper">
+              <Col xs={10} lg={4} className="content-wrapper">
                 <Copy child={node.body.why.easy.title} type="whyheader" element="h3" align="center"/>
               </Col>
-              <Col xs={12} lg={6} style={{ textAlign: 'center' }}>
+              <Col xs={10} lg={6} style={{ textAlign: 'center' }}>
                 <ImageFinder images={data.whyPhotos} name="why-easy.png"/>
               </Col>
             </Row>
             <Row tagName="section" center="xs" middle="xs" className="homewhy reverse-order">
               <span className="right"></span>
-              <Col xs={12} lg={4} lgOffset={2} style={{ textAlign: 'center' }}>
+              <Col xs={10} lg={4} lgOffset={2} style={{ textAlign: 'center' }}>
                 <ImageFinder images={data.whyPhotos} name="why-scalable.png"/>
               </Col>
-              <Col xs={12} lg={6} className="content-wrapper">
+              <Col xs={10} lg={6} className="content-wrapper">
                 <Copy child={node.body.why.scalable.title} type="whyheader" element="h3" align="center" noEscape/>
               </Col>
             </Row>
@@ -237,7 +237,7 @@ export const pageQuery = graphql `
       edges {
         node {
           id
-          resolutions(width: 400, height: 400) {
+          resolutions(width: 350, height: 350) {
             ...GatsbyImageSharpResolutions_noBase64
           }
         }
