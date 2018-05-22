@@ -160,11 +160,22 @@ class FixedHeader extends React.Component {
 
 class Logo extends React.Component {
   render() {
+    const defineColor = (prop) => {
+      switch (prop) {
+        case 'white':
+        case 'blue':
+          return prop;
+        case 'mixed-1':
+          return 'blue'
+        case 'mixed-2':
+          return 'white'
+      }
+    }
     return (
       <Link to={genLink(this.props.lang, '/')}>
       {(this.props.lang !== 'fa')
-        ? <img className="header-logo" src={'/logos/logo-' + this.props.color + '.svg'} alt={this.props.color + 'logo'}/>
-        : <img className="header-logo" src={'/logos/fa-logo-' + this.props.color + '.svg'} alt={this.props.color + 'logo'}/>
+        ? <img className="header-logo" src={'/logos/logo-' + defineColor(this.props.color) + '.svg'} alt={this.props.color + 'logo'}/>
+        : <img className="header-logo" src={'/logos/fa-logo-' + defineColor(this.props.color) + '.svg'} alt={this.props.color + 'logo'}/>
       }
       </Link>
     )
@@ -177,10 +188,11 @@ HeaderWrapper.PropTypes = {
   url: PropTypes.string
 }
 
-// Paths which header should be hidden on them
 const hiddenOnPaths = [
-  '/enterprise',
-  '/fa/enterprise'
+  /*
+   * Write an internal route you want to have header hidden
+   * like --> '/home/product/'
+   */
 ]
 
 // Map redux state to component props
