@@ -43,6 +43,7 @@
   "scripts": {
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "sync": "gatsby build && ./server-sync.sh",
     "develop": "gatsby develop",
     "build:serve": "gatsby build && gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"

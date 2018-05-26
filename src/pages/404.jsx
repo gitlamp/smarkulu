@@ -31,16 +31,16 @@ const NotFoundPage = (props) => {
         {(process.env.NODE_ENV === `production`) ? <link rel="stylesheet" href={style}/> : null}
       </Helmet>
       <Grid>
-      <Above center="xs">
-        <TwoColumn ratio={{ xs:[12,12], sm:[6,6] }}>
-          <div>
-            <h1 className="content-subheader"><div dangerouslySetInnerHTML={{__html: header}} /></h1>
-            <br/>
-            <a className="button button-normal" onclick="javasrcipt:window.history.go(-1)">{button}</a>
-          </div>
-          <img src={img} width="100%" />
-        </TwoColumn>
-      </Above>
+        <Above center="xs">
+          <TwoColumn ratio={{ xs:[12,12], sm:[6,6] }}>
+            <div>
+              <h1 className="content-subheader"><div dangerouslySetInnerHTML={{__html: header}} /></h1>
+              <br/>
+              <a className="button button-normal" href="javascript:history.back()">{button}</a>
+            </div>
+            <img src={img} width="100%" />
+          </TwoColumn>
+        </Above>
       </Grid>
     </div>
   )
