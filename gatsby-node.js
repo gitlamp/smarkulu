@@ -1,5 +1,6 @@
 const Webpack = require("webpack")
 const path = require("path")
+const slash = require("slashjs")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var languages = require('./src/data/languages')
 
@@ -10,134 +11,135 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 
   switch (stage) {
     case 'develop':
-    config.loader('modernizr', {
-      test: /\.modernizrrc$/,
-      loaders: ['modernizr-loader', 'json-loader']
-    })
-    config.merge({
-      output: {
-        publicPath: 'http://localhost:8000/'
-      },
-      module: {
-        loaders: [
-          {
-            test: /\.(sass|scss)$/,
-            exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
-            loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader']
-          },
-          {
-            test: /\.useable\.scss$/,
-            exclude: /\.rtl\.useable\.scss$/,
-            loaders: ['style-loader/useable', 'css-loader?sourceMap', 'sass-loader']
-          },
-          {
-            test: /\.rtl\.useable.scss$/,
-            loaders: ['style-loader/useable', 'rtlcss-loader?sourceMap', 'sass-loader']
+      config.loader('modernizr', {
+        test: /\.modernizrrc$/,
+        loaders: ['modernizr-loader', 'json-loader']
+      })
+      config.merge({
+        output: {
+          publicPath: 'http://localhost:8000/'
+        },
+        module: {
+          loaders: [
+            {
+              test: /\.(sass|scss)$/,
+              exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
+              loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader']
+            },
+            {
+              test: /\.useable\.scss$/,
+              exclude: /\.rtl\.useable\.scss$/,
+              loaders: ['style-loader/useable', 'css-loader?sourceMap', 'sass-loader']
+            },
+            {
+              test: /\.rtl\.useable.scss$/,
+              loaders: ['style-loader/useable', 'rtlcss-loader?sourceMap', 'sass-loader']
+            }
+          ]
+        },
+        resolve: {
+          alias: {
+            normalize: 'normalize.scss/normalize.scss',
+            owlcarousel: 'react-owl-carousel2/lib',
+            modernizr$: path.resolve(__dirname, '.modernizrrc'),
+            TweenLite: 'gsap',
+            CSSPlugin: 'gsap',
+            Draggable: path.resolve(__dirname, '/node_modules/gsap/src/uncompressed/utils/Draggable.js'),
+            ScrollToPlugin: path.resolve(__dirname, '/node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js')
           }
-        ]
-      },
-      resolve: {
-        alias: {
-          normalize: 'normalize.scss/normalize.scss',
-          owlcarousel: 'react-owl-carousel2/lib',
-          modernizr$: path.resolve(__dirname, '.modernizrrc'),
-          TweenLite: 'gsap',
-          CSSPlugin: 'gsap',
-          Draggable: path.resolve(__dirname, '/node_modules/gsap/src/uncompressed/utils/Draggable.js'),
-          ScrollToPlugin: path.resolve(__dirname, '/node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js')
         }
-      }
-    })
-    config.plugin('jquery', Webpack.DefinePlugin, [{
-      $: 'jquery',
-      jquery: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default']
-    }])
-    config.plugin('gsap', Webpack.DefinePlugin, [{
-      TweenMax: 'gsap'
-    }])
-    break;
+      })
+      config.plugin('jquery', Webpack.DefinePlugin, [{
+        $: 'jquery',
+        jquery: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default']
+      }])
+      config.plugin('gsap', Webpack.DefinePlugin, [{
+        TweenMax: 'gsap'
+      }])
+      break;
 
     case 'develop-html':
-    break;
+      break;
 
     case 'build-css':
-    config.loader('style', {
-      test: /\.(sass|scss)$/,
-      exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
-      loader: baseStyles.extract(['css-loader?minimize', 'sass-loader'])
-    })
-    config.loader('usable-style', {
-      test: /\.useable\.scss$/,
-      exclude: /\.rtl\.useable\.scss$/,
-      loader: main.extract(['css-loader?minimize', 'sass-loader'])
-    })
-    config.loader('rtl-style', {
-      test: /\.rtl\.useable.scss$/,
-      loader: rtlMain.extract(['rtlcss-loader?minimize', 'sass-loader'])
-    })
-    config.merge({
-      resolve: {
-        alias: {
-          normalize: 'normalize.scss/normalize.scss',
-          owlcarousel: 'react-owl-carousel2/lib'
-        }
-      },
-      plugins : [
-        baseStyles,
-        main,
-        rtlMain
-      ]
-    })
-    break;
+      config.loader('style', {
+        test: /\.(sass|scss)$/,
+        exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
+        loader: baseStyles.extract(['css-loader?minimize', 'sass-loader'])
+      })
+      config.loader('usable-style', {
+        test: /\.useable\.scss$/,
+        exclude: /\.rtl\.useable\.scss$/,
+        loader: main.extract(['css-loader?minimize', 'sass-loader'])
+      })
+      config.loader('rtl-style', {
+        test: /\.rtl\.useable.scss$/,
+        loader: rtlMain.extract(['rtlcss-loader?minimize', 'sass-loader'])
+      })
+      config.merge({
+        resolve: {
+          alias: {
+            normalize: 'normalize.scss/normalize.scss',
+            owlcarousel: 'react-owl-carousel2/lib'
+          }
+        },
+        plugins : [
+          baseStyles,
+          main,
+          rtlMain
+        ]
+      })
+      break;
 
     case 'build-html':
-    config.loader('style', {
-      test: /\.(sass|scss)$/,
-      loader: 'null-loader'
-    })
-    config.loader('owl.carousel', {
-      test: /owl\.carousel\.js/,
-      loader: 'null-loader'
-    })
-    config.merge({
-      module: {
-        loaders: {
-          test: /\.(eot|svg|ttf|woff|woff2)$/,
-          loader: 'file-loader?name=/fonts/[name].[ext]'
+      config.loader('style', {
+        test: /\.(sass|scss)$/,
+        loader: 'null-loader'
+      })
+      config.loader('owl.carousel', {
+        test: /owl\.carousel\.js/,
+        loader: 'null-loader'
+      })
+      config.merge({
+        module: {
+          loaders: {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,
+            loader: 'file-loader?name=/fonts/[name].[ext]'
+          }
+        },
+        resolve: {
+          alias: {
+            normalize: 'normalize.scss/normalize.scss',
+            owlcarousel: 'react-owl-carousel2/lib'
+          }
         }
-      },
-      resolve: {
-        alias: {
-          normalize: 'normalize.scss/normalize.scss',
-          owlcarousel: 'react-owl-carousel2/lib'
-        }
-      }
-    })
-    break;
+      })
+      break;
 
     case 'build-javascript':
-    config.loader('style', {
-      test: /\.(sass|scss)$/,
-      loader: 'null-loader'
-    })
-    config.merge({
-      resolve: {
-        alias: {
-          normalize: 'normalize.scss/normalize.scss',
-          owlcarousel: 'react-owl-carousel2/lib'
+      config.loader('style', {
+        test: /\.(sass|scss)$/,
+        loader: 'null-loader'
+      })
+      config.merge({
+        resolve: {
+          alias: {
+            normalize: 'normalize.scss/normalize.scss',
+            owlcarousel: 'react-owl-carousel2/lib'
+          }
         }
-      }
-    })
-    break;
+      })
+      break;
   }
   return config
 }
 
-exports.createPages = ({ boundActionCreators }) => {
+exports.createPages = ({ graphql, boundActionCreators }) => {
 
+  //Create Redirects
   const { createRedirect } = boundActionCreators
   const langs = languages.langs
   let redirectBatch = []
@@ -180,5 +182,50 @@ exports.createPages = ({ boundActionCreators }) => {
       isPermanent: true,
       toPath: t
     })
+  })
+
+  //Create blog posts
+  const { createPage } = boundActionCreators
+  return new Promise((resolve, reject) => {
+    const postTemplate = path.resolve('src/templates/blog-post.js')
+    resolve(
+      graphql(
+        `
+        {
+          allWordpressPost {
+            edges {
+              node {
+                id
+                title
+                date
+                children {
+                  id
+                }
+                categories {
+                  name
+                }
+                slug
+                tags {
+                  name
+                }
+              }
+            }
+          }
+        }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+        result.data.allWordpressPost.edges.forEach(edge => {
+          createPage({
+            path: `/fa/blog/${edge.node.slug}`,
+            component: path.resolve('src/templates/blog-post.js')
+          })
+        })
+        return
+      })
+    )
   })
 }

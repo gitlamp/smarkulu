@@ -74,6 +74,18 @@ module.exports = {
           'Open Sans'
         ]
       }
+    },
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: 'taskulu.com/fa',
+        protocol: 'https',
+        hostingWPCOM: false,
+        useACF: false,
+        verboseOutput: true,
+        perPage: 50
+
+      }
     }
   ]
 }
