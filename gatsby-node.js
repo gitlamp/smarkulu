@@ -1,6 +1,5 @@
 const Webpack = require("webpack")
 const path = require("path")
-const slash = require("slashjs")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var languages = require('./src/data/languages')
 
@@ -187,45 +186,74 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   //Create blog posts
   const { createPage } = boundActionCreators
   return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('src/templates/blog-post.js')
-    resolve(
+//    resolve(
       graphql(
         `
-        {
-          allWordpressPost {
-            edges {
-              node {
-                id
-                title
-                date
-                children {
+          {
+            allWordpressPost {
+              edges {
+                node {
                   id
-                }
-                categories {
-                  name
-                }
-                slug
-                tags {
-                  name
+                  title
+                  date
+                  categories {
+                    name
+                    count
+                  }
+                  slug
+                  tags {
+                    name
+                    count
+                  }
+                  yoast {
+                    metakeywords
+                  }
+                  featured_media {
+                    source_url
+                  }
+                  author {
+                    id
+                    name
+
+                    link
+                    avatar_urls {
+                      wordpress_96
+                    }
+                  }
+                  content
                 }
               }
             }
           }
-        }
         `
       ).then(result => {
         if (result.errors) {
           console.log(result.errors)
           reject(result.errors)
         }
+        const tags = []
+
         result.data.allWordpressPost.edges.forEach(edge => {
+          let slug = decodeURIComponent(edge.node.categories[0].name + '/' + edge.node.slug)
+          edge.node.tags.forEach(tag => {
+            tags.push(tag.name)
+          })
           createPage({
-            path: `/fa/blog/${edge.node.slug}`,
+            path: `/fa/${slug}`,
             component: path.resolve('src/templates/blog-post.js')
           })
         })
-        return
+        const tagsSet = new Set(tags)
+        tagsSet.forEach(tag => {
+          tag = decodeURIComponent(tag)
+          createPage({
+            path: `/fa/blog/tags/${tag}`,
+            component: path.resolve('src/templates/tag.js')
+            })
+        })
+        //        return
+        resolve()
       })
-    )
+//    )
   })
 }

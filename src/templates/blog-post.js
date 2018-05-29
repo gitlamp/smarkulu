@@ -19,6 +19,8 @@ class BlogPost extends React.Component {
     const post = this.props.data.wordpressPost
     return(
       <div>
+      <Helmet title={post.title} />
+      <SEO pagePath={langKey} title={post.title} generalDesc={post.yoast.metakeywords} />
       <h1><div dangerouslySetInnerHTML={{__html: post.title}} /></h1>
       <div dangerouslySetInnerHTML={{__html: post.content}} />
       </div>
@@ -33,6 +35,15 @@ export const postQuery = graphql`
     wordpressPost(id: { eq: $id}) {
       title
       content
+      yoast {
+        metakeywords
+      }
+      featured_media {
+        source_url
+      }
+      tags {
+        name
+      }
     }
   }
 `

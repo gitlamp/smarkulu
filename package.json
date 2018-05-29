@@ -5,7 +5,7 @@
   "author": "Amirali <amirali@taskulu.com>",
   "dependencies": {
     "eslint": "^4.19.1",
-    "gatsby": "^1.9.246",
+    "gatsby": "^1.9.250",
     "gatsby-image": "^1.0.47",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-google-analytics": "^1.0.28",
@@ -34,8 +34,7 @@
     "react-owl-carousel2": "^0.3.0",
     "react-redux": "^5.0.7",
     "react-table": "^6.8.2",
-    "redux": "^3.7.2",
-    "slashjs": "^1.0.0"
+    "redux": "^3.7.2"
   },
   "keywords": [
     "gatsby"
