@@ -232,12 +232,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors)
         }
         const tags = []
-
+//        console.log(result.data.allWordpressPost.edges)
         result.data.allWordpressPost.edges.forEach(edge => {
+
           let slug = decodeURIComponent(edge.node.categories[0].name + '/' + edge.node.slug)
-          edge.node.tags.forEach(tag => {
-            tags.push(tag.name)
-          })
+          if(edge.node.tags) {
+            edge.node.tags.forEach(tag => {
+              tags.push(tag.name)
+            })
+          }
           createPage({
             path: `/fa/${slug}`,
             component: path.resolve('src/templates/blog-post.js')

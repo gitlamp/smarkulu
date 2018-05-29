@@ -50,7 +50,7 @@ export default BlogFaPage
  * Require data from fa yaml
  */
 export const pageQuery = graphql `
-query BlogFaPage {
+query TagFaPage {
   allWordpressPost(filter: {categories: {name: {eq: "وبلاگ"}}}) {
     edges {
       node {
