@@ -5,7 +5,7 @@
   "author": "Amirali <amirali@taskulu.com>",
   "dependencies": {
     "eslint": "^4.19.1",
-    "gatsby": "^1.9.250",
+    "gatsby": "^1.9.269",
     "gatsby-image": "^1.0.47",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-google-analytics": "^1.0.28",
@@ -56,6 +56,7 @@
     "imports-loader": "^0.7.1",
     "install": "^0.10.1",
     "json-loader": "^0.5.7",
+    "lodash": "^4.17.10",
     "modernizr": "^3.6.0",
     "modernizr-loader": "^1.0.1",
     "node-sass": "^4.7.2",
