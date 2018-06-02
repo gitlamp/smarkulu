@@ -1,5 +1,6 @@
 const Webpack = require("webpack")
 const path = require("path")
+const _ = require("lodash")
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var languages = require('./src/data/languages')
 
@@ -138,8 +139,9 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
 
-  //Create Redirects
-  const { createRedirect } = boundActionCreators
+  const { createRedirect, createPage } = boundActionCreators
+
+  // Create Redirects
   const langs = languages.langs
   let redirectBatch = []
 
@@ -183,10 +185,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
   })
 
-  //Create blog posts
-  const { createPage } = boundActionCreators
+  // Create blog posts
   return new Promise((resolve, reject) => {
-//    resolve(
       graphql(
         `
           {
@@ -194,33 +194,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               edges {
                 node {
                   id
-                  title
-                  date
                   categories {
                     name
-                    count
                   }
                   slug
                   tags {
                     name
-                    count
                   }
-                  yoast {
-                    metakeywords
-                  }
-                  featured_media {
-                    source_url
-                  }
-                  author {
-                    id
-                    name
-
-                    link
-                    avatar_urls {
-                      wordpress_96
-                    }
-                  }
-                  content
                 }
               }
             }
@@ -232,8 +212,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors)
         }
         const tags = []
-//        console.log(result.data.allWordpressPost.edges)
-        result.data.allWordpressPost.edges.forEach(edge => {
+        _.each(result.data.allWordpressPost.edges, edge => {
 
           let slug = decodeURIComponent(edge.node.categories[0].name + '/' + edge.node.slug)
           if(edge.node.tags) {
@@ -243,20 +222,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
           createPage({
             path: `/fa/${slug}`,
-            component: path.resolve('src/templates/blog-post.js')
+            component: path.resolve('./src/templates/blog-post.js')
           })
         })
         const tagsSet = new Set(tags)
-        tagsSet.forEach(tag => {
+        _.each(tagsSet, tag => {
           tag = decodeURIComponent(tag)
           createPage({
             path: `/fa/blog/tags/${tag}`,
-            component: path.resolve('src/templates/tag.js')
+            component: path.resolve('./src/templates/tag.js')
             })
         })
-        //        return
         resolve()
       })
-//    )
   })
 }

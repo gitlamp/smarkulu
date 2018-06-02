@@ -83,8 +83,13 @@ module.exports = {
         hostingWPCOM: false,
         useACF: false,
         verboseOutput: true,
-        perPage: 50
-
+        perPage: 50,
+        concurrentRequests: 10,
+        excludedRoutes: [
+          '/yoast/*/configurator',
+          '/*/*/users',
+          '/*/*/settings'
+        ]
       }
     }
   ]

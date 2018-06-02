@@ -1,28 +1,21 @@
 import React from 'react'
 import graphql from 'graphql'
-import { FormattedMessage } from 'react-intl'
-import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
-import Input from '../components/Input'
-import { Copy, CTA } from '../components/Elements'
-import { Above, Logos } from '../components/Partials'
 
 class BlogPost extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  componentWillMount() {
-    console.log('will mount')
+  constructor() {
+    super()
   }
   render() {
     const post = this.props.data.wordpressPost
+    const langKey = this.props.pathContext.langKey
     return(
       <div>
       <Helmet title={post.title} />
       <SEO pagePath={langKey} title={post.title} generalDesc={post.yoast.metakeywords} />
-      <h1><div dangerouslySetInnerHTML={{__html: post.title}} /></h1>
-      <div dangerouslySetInnerHTML={{__html: post.content}} />
+      <div dangerouslySetInnerHTML={{__html: `<h1>${post.title}</h1>`}}/>
+      <div dangerouslySetInnerHTML={{__html: post.content}}/>
       </div>
     )
   }

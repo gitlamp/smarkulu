@@ -1,32 +1,31 @@
 import React from 'react'
 import graphql from 'graphql'
-import { FormattedMessage } from 'react-intl'
 import { Grid, Row, Col } from 'react-flexbox-grid'
-import Helmet from 'react-helmet'
-import $ from 'jquery'
-import { TweenLite } from 'gsap'
 
 import SEO from '../components/SEO'
-import Input from '../components/Input'
-import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above, Logos } from '../components/Partials'
+import { Copy } from '../components/Elements'
+import { Above } from '../components/Partials'
+import { FormattedMessage } from 'react-intl';
 
 class BlogFaPage extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
   }
-
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const meta = data.site.siteMetadata
+    const meta = data.site.siteMetadata.blog.fa
+    console.log(data)
     return (
       <div>
-        <Helmet title={meta.blogTitle} />
-        <SEO pagePath={langKey} title={meta.blogTitle} generalDesc={meta.blogDesc} />
-        <Above compact>
-          <Copy element="h1" type="header" child={meta.blogHeader} />
-          <Copy element="h2" type="subheader" child={meta.blogDesc} />
+        <SEO pagePath={langKey} title={meta.title} generalDesc={meta.description}/>
+        <Above compact center="xs">
+            <FormattedMessage id="blog.title">
+              {title => <Col xs={12}><Copy element="h1" type="header" child={title}/></Col>}
+            </FormattedMessage>
+            <FormattedMessage id="blog.desc">
+              {desc => <Col xs={12}><Copy element="h2" type="subheader" child={desc}/></Col>}
+            </FormattedMessage>
         </Above>
         <Grid>
           <Row>
@@ -35,7 +34,7 @@ class BlogFaPage extends React.Component {
                 <Col>
                   <img src={node.featured_media} />
                   <Copy element="h1" type="subheader" child={node.title} />
-                  <Copy element="p" type="content" child={node.excerpt} />
+                  <Copy element="p" type="content" child={node.excerpt} noEscape/>
                 </Col>
               </div>)}
           </Row>
@@ -51,6 +50,16 @@ export default BlogFaPage
  */
 export const pageQuery = graphql `
 query BlogFaPage {
+  site {
+    siteMetadata {
+      blog {
+        fa {
+          title
+          description
+        }
+      }
+    }
+  }
   allWordpressPost(filter: {categories: {name: {eq: "وبلاگ"}}}) {
     edges {
       node {
@@ -60,13 +69,6 @@ query BlogFaPage {
         title
         excerpt
       }
-    }
-  }
-  site {
-    siteMetadata {
-      blogTitle
-      blogHeader
-      blogDesc
     }
   }
 }
