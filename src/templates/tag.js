@@ -1,63 +1,52 @@
 import React from 'react'
 import graphql from 'graphql'
-import { FormattedMessage } from 'react-intl'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
 import { Above } from '../components/Partials'
+import { toPersianDigits } from '../components/functions'
 
-class BlogFaPage extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    const data = this.props.data
-    const langKey = this.props.pathContext.langKey
-    const tag = this.props.pathContext.id
-    const tagTitle = `پست‌های وبلاگ تسکولو با تگ ${tag}`
-    return (
-      <div>
-      <SEO pagePath={langKey} title={tagTitle} generalDesc={tagTitle} />
-        <Above compact>
-          <Copy element="h1" type="header" child={tagTitle} />
-        </Above>
+const Tag = ({ pathContext, data }) => {
+  const { count, name } = pathContext
+  const postNumber = toPersianDigits(count)
+  const tagTitle = postNumber + ' پست با تگ ' + name
+  return (
+    <div>
+      <SEO pagePath="fa" title={`پست‌های تسکولو با تگ ${name}`} generalDesc={tagTitle} />
+      <Above compact center="xs">
+        <Copy element="h1" type="header" child={tagTitle} />
+      </Above>
+      <Row tagName="section">
         <Grid>
-          <Row>
-            {data.allWordpressPost.edges.map(({node}) =>
-              <div key={node.id}>
-              <Col>
-              <img src={node.featured_media} />
+        {data.allWordpressPost.edges.map(({node}) =>
+
+          <div key={node.wordpress_id}>
+            <Col>
               <Copy element="h1" type="subheader" child={node.title} />
               <Copy element="p" type="content" child={node.excerpt} />
-              </Col>
-              </div>
-            )}
-        </Row>
+            </Col>
+          </div>
+        )}
         </Grid>
-      </div>)
-  }
+      </Row>
+    </div>
+  )
 }
 
-export default BlogFaPage
+export default Tag
 
 /**
- * Require data from fa yaml
+ * Require tag data
  */
 export const pageQuery = graphql `
-query TagFaPage {
-  allWordpressPost(filter: {categories: {name: {eq: "وبلاگ"}}}) {
+query TagPage($id: String) {
+  allWordpressPost(filter: {tags: {id: {eq: $id}}}) {
     edges {
       node {
-        featured_media {
-          source_url
-        }
+        wordpress_id
         title
         excerpt
-        tags {
-          name
-        }
       }
     }
   }

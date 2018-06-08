@@ -141,7 +141,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   const { createRedirect, createPage } = boundActionCreators
 
-  // Create Redirects
+  // ==== Redirects ====
   const langs = languages.langs
   let redirectBatch = []
 
@@ -184,8 +184,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       toPath: t
     })
   })
+  // ==== End Redirects ====
 
-  // Create blog posts
+  // ==== Blog Posts ====
   return new Promise((resolve, reject) => {
       graphql(
         `
@@ -198,9 +199,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     name
                   }
                   slug
-                  tags {
-                    name
-                  }
                 }
               }
             }
@@ -211,29 +209,67 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           console.log(result.errors)
           reject(result.errors)
         }
-        const tags = []
+
+        let postCategory
+
         _.each(result.data.allWordpressPost.edges, edge => {
 
-          let slug = decodeURIComponent(edge.node.categories[0].name + '/' + edge.node.slug)
-          if(edge.node.tags) {
-            edge.node.tags.forEach(tag => {
-              tags.push(tag.name)
-            })
-          }
+          let slug = decodeURIComponent(postCategory + '/' + edge.node.slug)
+
+          edge.node.categories.map(category => {
+            postCategory = category.name
+          })
           createPage({
-            path: `/fa/${slug}`,
-            component: path.resolve('./src/templates/blog-post.js')
+            path: `/fa/${slug}/`,
+            component: path.resolve('./src/templates/blog-post.js'),
+            layout: 'fa',
+            context: {
+              id: edge.node.id
+            }
           })
         })
-        const tagsSet = new Set(tags)
-        _.each(tagsSet, tag => {
-          tag = decodeURIComponent(tag)
-          createPage({
-            path: `/fa/blog/tags/${tag}`,
-            component: path.resolve('./src/templates/tag.js')
-            })
-        })
-        resolve()
       })
+      // ==== End Blog Posts ====
+
+      // ==== Blog Tags ====
+      .then(() => {
+        graphql(
+          `
+            {
+              allWordpressTag {
+                edges {
+                  node {
+                    id
+                    name
+                    count
+                  }
+                }
+              }
+            }
+          `
+        ).then(result => {
+          if (result.errors) {
+            console.log(result.errors)
+            reject(result.errors)
+          }
+
+          _.each(result.data.allWordpressTag.edges, edge => {
+            const decodedTag = decodeURIComponent(edge.node.name)
+            createPage({
+              path: `/blog/tags/${decodedTag}`,
+              component: path.resolve('./src/templates/tag.js'),
+              layout: 'fa',
+              context: {
+                id: edge.node.id,
+                name: edge.node.name,
+                count: edge.node.count
+              }
+            })
+          })
+        })
+      })
+        // ==== End Blog Tags ====
+
+      resolve()
   })
 }

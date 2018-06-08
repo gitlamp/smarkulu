@@ -1,0 +1,46 @@
+.blog-post {
+  margin-bottom: 50px;
+  &:nth-child(2n+1) {
+    justify-content: flex-start
+  }
+  &:nth-child(2n) {
+    justify-content: flex-end;
+  }
+  .post-card {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    border-radius: 6px;
+    box-shadow: 0 5px 20px 0 rgba(36,50,66,.14);
+    overflow: hidden;
+    .post-card-image {
+      position: relative;
+      width: 30%;
+      overflow: hidden;
+    }
+    .post-card-content {
+      width: 70%;
+      padding: 20px 30px;
+      .post-title {
+        padding: 0;
+        margin: 0 0 20px 0;
+      }
+      .post-desc {
+        color: $asbestos;
+        font-size: $sub;
+      }
+    }
+  }
+}
+
+@media #{$xsonly} {
+  .blog-post .post-card {
+    flex-wrap: wrap;
+    .post-card-image, .post-card-content {
+      width: 100%;
+    }
+    .post-card-image {
+      height: 150px;
+    }
+  }
+}

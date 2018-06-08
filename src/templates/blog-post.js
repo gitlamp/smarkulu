@@ -1,7 +1,10 @@
 import React from 'react'
 import graphql from 'graphql'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
+import { Copy } from '../components/Elements'
+import { Above } from '../components/Partials'
 
 class BlogPost extends React.Component {
   constructor() {
@@ -9,13 +12,19 @@ class BlogPost extends React.Component {
   }
   render() {
     const post = this.props.data.wordpressPost
-    const langKey = this.props.pathContext.langKey
     return(
       <div>
-      <Helmet title={post.title} />
-      <SEO pagePath={langKey} title={post.title} generalDesc={post.yoast.metakeywords} />
-      <div dangerouslySetInnerHTML={{__html: `<h1>${post.title}</h1>`}}/>
-      <div dangerouslySetInnerHTML={{__html: post.content}}/>
+        <SEO pagePath="fa" title={post.title} generalDesc={post.yoast.metakeywords} />
+        <Above normal center="xs">
+          <Copy element="h1" type="header" child={post.title}/>
+        </Above>
+        <Row>
+          <Col xs={3}></Col>
+          <Col xs={8} xsOffset={1}>
+            <Copy element="p" type="content" child={post.content} noEscape/>
+            {/* <div dangerouslySetInnerHTML={{__html: post.content}}/> */}
+          </Col>
+        </Row>
       </div>
     )
   }
@@ -31,9 +40,9 @@ export const postQuery = graphql`
       yoast {
         metakeywords
       }
-      featured_media {
-        source_url
-      }
+      #featured_media {
+      #  source_url
+      #}
       tags {
         name
       }

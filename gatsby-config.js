@@ -84,11 +84,11 @@ module.exports = {
         useACF: false,
         verboseOutput: true,
         perPage: 50,
-        concurrentRequests: 10,
         excludedRoutes: [
           '/yoast/*/configurator',
           '/*/*/users',
-          '/*/*/settings'
+          '/*/*/settings',
+          '/*/*/media'
         ]
       }
     }
