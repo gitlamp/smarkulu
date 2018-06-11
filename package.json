@@ -26,12 +26,12 @@
     "intl": "^1.2.5",
     "jquery": "^3.2.1",
     "normalize.scss": "^0.1.0",
-    "popper.js": "^1.13.0",
     "ptz-i18n": "^0.2.5",
     "react-countup": "^3.0.3",
     "react-flexbox-grid": "git+ssh://git@git.taskulu.com:sina/react-flexbox-grid.git",
     "react-intl": "^2.4.0",
     "react-owl-carousel2": "^0.3.0",
+    "react-popper": "^0.10.4",
     "react-redux": "^5.0.7",
     "react-table": "^6.8.2",
     "redux": "^3.7.2"

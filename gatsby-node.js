@@ -54,7 +54,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         jquery: 'jquery',
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default']
       }])
       config.plugin('gsap', Webpack.DefinePlugin, [{
         TweenMax: 'gsap'
