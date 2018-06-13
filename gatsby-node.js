@@ -255,7 +255,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           _.each(result.data.allWordpressTag.edges, edge => {
             const decodedTag = decodeURIComponent(edge.node.name)
             createPage({
-              path: `/blog/tags/${decodedTag}`,
+              path: `/fa/blog/tags/${decodedTag}`,
               component: path.resolve('./src/templates/tag.js'),
               layout: 'fa',
               context: {
