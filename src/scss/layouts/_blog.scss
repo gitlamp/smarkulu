@@ -316,6 +316,38 @@
   }
 }
 
+//*********************
+// Tags List Style
+//*********************
+.blog-tags-list {
+  padding: 100px 0;
+  padding-left: 50px;
+  li {
+    font-family: $subtitle-font;
+    font-size: $head3;
+    a {
+      text-decoration: none;
+    }
+    h4 {
+      display: inline-block;
+      margin: 0;
+      margin-left: 10px;
+    }
+    &::before {
+      content: '';
+      background-image: url('/img/bullet.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 1.6rem;
+      height: 1.4rem;
+      margin-left: 5px;
+    }
+    span {
+      margin-left: 5px;
+    }
+  }
+}
 
 @media #{$xsonly} {
   .posts-view .post-card {

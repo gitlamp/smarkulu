@@ -27,6 +27,7 @@
   "blog.desc": "",
   "blog.tag.title.prefix": "Taskulu blog posts which include",
   "blog.tag.title": "Tags",
+  "blog.tags.list.title": "Tags List",
 
   "header.menu.product": "Product",
   "header.menu.pricing": "Pricing",
