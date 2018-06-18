@@ -19,8 +19,7 @@ const Tag = ({ pathContext, data }) => {
       </Above>
       <Row tagName="section">
         <Grid>
-        {data.allWordpressPost.edges.map(({node}) =>
-
+        {data.allWordpressPost && data.allWordpressPost.edges.map(({node}) =>
           <div key={node.wordpress_id}>
             <Col>
               <Copy element="h1" type="subheader" child={node.title} />

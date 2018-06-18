@@ -86,7 +86,6 @@ module.exports = {
         perPage: 50,
         excludedRoutes: [
           '/yoast/*/configurator',
-          '/*/*/users',
           '/*/*/settings',
           '/*/*/media'
         ]

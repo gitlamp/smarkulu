@@ -59,7 +59,7 @@ class BlogPost extends React.Component {
                   onMouseLeave={this.toggleAuthorDesc}>
                   <img src={post.author.avatar_urls.wordpress_96}/>
                 </Target>
-                {this.state.showAuthorDesc && <Popper
+                {this.state.showAuthorDesc && post.author.description && <Popper
                   className="description"
                   placement="right"
                   modifiers={{
@@ -82,8 +82,8 @@ class BlogPost extends React.Component {
               {tagLabel => (
                 <ul className="blog-tags-wrapper">
                   <li><h3>{`${tagLabel}:`}</h3></li>
-                  {post.tags.map(tag =>
-                    <li>
+                  {post.tags && post.tags.map((tag, i) =>
+                    <li key={i}>
                       <i className="fa fa-hashtag" aria-hidden="true"></i>
                       <Link to={`/fa/blog/tags/${tag.name}`}>{tag.name}</Link>
                       <span>{toPersianDigits(tag.count)}</span>
@@ -111,7 +111,13 @@ export const postQuery = graphql`
         metakeywords
       }
       #featured_media {
-      #  source_url
+      # localFile {
+      #   childImageSharp {
+      #     sizes {
+      #       ...GatsbyImageSharpSizes_noBase64
+      #     }
+      #   }
+      # }
       #}
       tags {
         name

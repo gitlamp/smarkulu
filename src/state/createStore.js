@@ -24,16 +24,16 @@ const reducer = (state, action) => {
       })
     case 'blueHeader':
       return Object.assign({}, state, {
-            headerType: 'blue'
-          })
+        headerType: 'blue'
+      })
     case 'setLangToEn':
       return Object.assign({}, state, {
-            lang: 'en'
-        })
+        lang: 'en'
+      })
     case 'setLangToFa':
       return Object.assign({}, state, {
-            lang: 'fa'
-        })
+        lang: 'fa'
+      })
     default:
       return state;
   }
@@ -42,7 +42,8 @@ const reducer = (state, action) => {
 const initialState = {
   headerVisibility: true,
   footerVisibility: true,
-  headerType: 'blue'
+  headerType: 'blue',
+  blogPostsToShow: 12
 }
 
 const createStore = () => reduxCreateStore(reducer, initialState)
