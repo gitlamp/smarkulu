@@ -1,10 +1,11 @@
 import React from 'react'
 import graphql from 'graphql'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import { Grid } from 'react-flexbox-grid'
+import Link from 'gatsby-link'
+import { connect } from 'react-redux'
 
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
-import { Above } from '../components/Partials'
 import { toPersianDigits } from '../components/functions'
 
 const Tag = ({ pathContext, data }) => {
@@ -12,28 +13,30 @@ const Tag = ({ pathContext, data }) => {
   const postNumber = toPersianDigits(count)
   const tagTitle = postNumber + ' پست با تگ ' + name
   return (
-    <div>
+    <Grid>
       <SEO pagePath="fa" title={`پست‌های تسکولو با تگ ${name}`} generalDesc={tagTitle} />
-      <Above compact center="xs">
+      <div className="blog-tags-post-related">
         <Copy element="h1" type="header" child={tagTitle} />
-      </Above>
-      <Row tagName="section">
-        <Grid>
-        {data.allWordpressPost && data.allWordpressPost.edges.map(({node}) =>
-          <div key={node.wordpress_id}>
-            <Col>
-              <Copy element="h1" type="subheader" child={node.title} />
-              <Copy element="p" type="content" child={node.excerpt} />
-            </Col>
-          </div>
-        )}
-        </Grid>
-      </Row>
-    </div>
+        <ul>
+          {data.allWordpressPost && data.allWordpressPost.edges.map(({node}) =>
+            <li key={node.wordpress_id}>
+              {node.categories.map((cat, i) =>
+              <Link to={`/fa/${cat.name}/${node.slug}`} key={i}>
+                <h4 dangerouslySetInnerHTML={{ __html: node.title }}/>
+              </Link>
+              )}
+            </li>
+          )}
+        </ul>
+      </div>
+    </Grid>
   )
 }
 
-export default Tag
+// Connected component
+const ConnectedTag = connect(null, dispatch => dispatch({ type: 'blueHeader' }))(Tag)
+
+export default ConnectedTag
 
 /**
  * Require tag data
@@ -45,7 +48,10 @@ query TagPage($id: String) {
       node {
         wordpress_id
         title
-        excerpt
+        slug
+        categories {
+          name
+        }
       }
     }
   }

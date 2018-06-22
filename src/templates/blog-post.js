@@ -27,7 +27,8 @@ class BlogPost extends React.Component {
   render() {
     const data = this.props.data
     const post = this.props.data.wordpressPost
-    console.log(post.tags)
+    const popularPosts = this.props.data.allWordpressWordpressPopularPostsPopularPosts
+    const postCategory = 'وبلاگ'
     return(
       <div className="blog-post">
         <SEO pagePath="fa" title={post.title} generalDesc={post.yoast.metakeywords} />
@@ -49,7 +50,36 @@ class BlogPost extends React.Component {
           </Grid>
         </Above>
         <Row tagName="section" center="xs">
-          <Col sm={3}></Col>
+          <Col sm={3} className="blog-side">
+            <div className="side-post">
+              <Copy className="side-post-header" element="h3" type="sub" child="پست‌های پربازدید"/>
+              <ul>
+                {popularPosts.edges.map(({node}, i) =>
+                  <li className="popular-post" key={i}>
+                    <Img
+                      sizes={data.testImage.sizes}
+                      style={{
+                        position: "absolute",
+                        left: 0,
+                        top: 0,
+                        width: "100%",
+                        height: "100%",
+                        zIndex: "-2",
+                        filter: "blur(1px)"
+                      }}
+                      fadeIn
+                      />
+                    <div className="popular-post-number">
+                      <span>{toPersianDigits(i+1)}</span>
+                    </div>
+                    <Link to={`/fa/${postCategory}/${node.slug}`} className="popular-post-title">
+                      <h4>{node.title}</h4>
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </Col>
           <Col xs={10} sm={8} smOffset={1} className="post-body">
             <div className="post-publication">
               <Manager className="post-author">
@@ -77,7 +107,7 @@ class BlogPost extends React.Component {
               <Copy element="h3" type="sub" child={post.author.name}/>
               <span className="post-publish-date">{post.date}</span>
             </div>
-            <Copy element="p" type="content" child={post.content} noEscape/>
+            <div dangerouslySetInnerHTML={{ __html: post.content }}/>
             <FormattedMessage id="blog.tag.title">
               {tagLabel => (
                 <ul className="blog-tags-wrapper">
@@ -104,6 +134,7 @@ export default BlogPost
 export const postQuery = graphql`
   query currentPostQuery($id: String) {
     wordpressPost(id: { eq: $id}) {
+      wordpress_id
       title
       content
       date(formatString: "D[, ]MMMM[, ]YYYY",locale: "fa")
@@ -134,6 +165,14 @@ export const postQuery = graphql`
     testImage: imageSharp(id: { regex: "/product-flexible-en/"}) {
       sizes {
         ...GatsbyImageSharpSizes_noBase64
+      }
+    }
+    allWordpressWordpressPopularPostsPopularPosts(filter: {categories: {eq: 66 }}) {
+      edges {
+        node {
+          title
+          slug
+        }
       }
     }
   }

@@ -213,11 +213,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         _.each(result.data.allWordpressPost.edges, edge => {
 
-          let slug = decodeURIComponent(postCategory + '/' + edge.node.slug)
-
           edge.node.categories.map(category => {
             postCategory = category.name
           })
+
+          let slug = decodeURIComponent(postCategory + '/' + edge.node.slug)
+
           createPage({
             path: `/fa/${slug}/`,
             component: path.resolve('./src/templates/blog-post.js'),

@@ -3,6 +3,7 @@ import graphql from 'graphql'
 import { Grid } from 'react-flexbox-grid'
 import { FormattedMessage } from 'react-intl'
 import Link from 'gatsby-link'
+import { connect } from 'react-redux'
 
 import { Copy } from '../../components/Elements.jsx'
 import { toPersianDigits } from '../../components/functions'
@@ -33,7 +34,10 @@ const TagsList = (props) => {
   )
 }
 
-export default TagsList
+// Connected component
+const ConnectedTagList = connect(null, dispatch => dispatch({ type: 'blueHeader' }))(TagsList)
+
+export default ConnectedTagList
 
 export const pageQuery = graphql `
  query TagsList {

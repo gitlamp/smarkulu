@@ -61,17 +61,7 @@
 //*********************
 .blog-post {
   .post-image-overlay {
-    &::before {
-      content: '';
-      position: absolute;
-      display: block;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba($color: #000000, $alpha: .5);
-      z-index: -1;
-    }
+    @include overlay(#000, .5);
   }
   .post-title {
     color: #fff;
@@ -82,14 +72,26 @@
     margin-bottom: 100px;
     color: $wet-asphalt;
     text-align: left;
+    padding: 0 20px;
     a {
+      font-family: $subtitle-font;
+      font-size: $head4;
       color: $peter-river;
     }
     h1, h2, h3, h4, h5, h6 {
-      color: $wet-asphalt;
+      font-family: $title-font;
+      font-size: $head3;
     }
-    ul {
-      list-style-type: disc;
+    p {
+      font-family: $body-font;
+      font-size: $body;
+      line-height: 30px;
+    }
+    ul, ol {
+      font-family: $body-font;
+      font-size: $body;
+    }
+    ul, ol {
       li {
         margin-left: 10px;
       }
@@ -173,6 +175,8 @@
       border-radius: 6px;
       box-shadow: 0 5px 20px 0 rgba(36,50,66,.14);
       overflow: hidden;
+      font-family: $title-font;
+      font-size: $head4;
       img {
         position: absolute;
         top: 0;
@@ -190,6 +194,24 @@
         font-size: 1.3em;
         font-weight: bold;
         line-height: 1.6em;
+      }
+      .btn {
+        @extend .button;
+        margin: 20px 0;
+      }
+      .btn-cta {
+        @extend .button-submit;
+      }
+    }
+    .post-cta {
+      background-color: $midnight-blue;
+      text-align: center;
+      color: #fff;
+      .btn {
+        @extend .button;
+      }
+      .btn-cta {
+        @extend .button-normal;
       }
     }
     .blog-tags-wrapper {
@@ -323,6 +345,85 @@
 }
 
 //*********************
+// Blog Sidebar
+//*********************
+.blog-side {
+  .side-post {
+    padding: 0 20px;
+    /*rtl:ignore*/
+    border-left: 1px solid $silver;
+    text-align: left;
+    .side-post-header {
+      color: $wet-asphalt;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 5px solid $wet-asphalt;
+      width: 100%;
+    }
+    ul {
+      margin: 0 10px;
+    }
+    .popular-post {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 10px ;
+      margin-bottom: 20px;
+      min-height: 80px;
+      @include overlay(#000, .6);
+      &::before {
+        border-radius: 4px;
+      }
+      .popular-post-number {
+        margin: 0;
+        width: 15%;
+        text-align: center;
+        overflow: hidden;
+        span {
+          font-family: $subtitle-font;
+          font-weight: $bold;
+          font-size: 1.5rem;
+          color: $wet-asphalt;
+          display: block;
+          border-radius: 6px;
+          padding-top: 5px;
+          width: 30px;
+          height: 30px;
+          background-color: #fff;
+        }
+      }
+      .popular-post-title {
+        /*rtl:ignore*/
+        display: block;
+        text-decoration: none;
+        padding: 0 10px;
+        width: 85%;
+        color: #fff;
+        &:hover {
+          text-decoration: underline;
+          transition: $default-transition;
+        }
+        h4 {
+          font-family: $subtitle-font;
+          font-weight: $regular;
+          font-size: 1.3rem;
+          width: 100%;
+          margin: 0;
+        }
+      }
+      .popular-post-desc {
+        width: 100%;
+        font-family: $body-font;
+        font-size: 1.1rem;
+        color: $asbestos;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+//*********************
 // Tags List Style
 //*********************
 .blog-tags-list {
@@ -333,6 +434,11 @@
     font-size: $head3;
     a {
       text-decoration: none;
+      color: $asbestos;
+      transition: $default-transition;
+      &:hover {
+        color: $cyan;
+      }
     }
     h4 {
       display: inline-block;
@@ -345,6 +451,8 @@
       background-size: contain;
       background-repeat: no-repeat;
       display: inline-block;
+      vertical-align: top;
+      margin-top: 5px;
       width: 1.6rem;
       height: 1.4rem;
       margin-left: 5px;
@@ -353,6 +461,10 @@
       margin-left: 5px;
     }
   }
+}
+
+.blog-tags-post-related {
+  @extend .blog-tags-list
 }
 
 @media #{$xsonly} {
@@ -384,5 +496,8 @@
         }
       }
     }
+  }
+  .blog-side {
+    display: none;
   }
 }
