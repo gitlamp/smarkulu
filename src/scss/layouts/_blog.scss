@@ -490,6 +490,16 @@
   }
 }
 
+//*********************
+// Talkyard
+//*********************
+.talkyard-comments {
+  margin-top: 30px;
+  p:last-child {
+    display: none;
+  }
+}
+
 @media #{$xsonly} {
   .posts-view .post-card {
     flex-wrap: wrap;

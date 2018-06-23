@@ -90,6 +90,12 @@ module.exports = {
           '/*/*/media'
         ]
       }
+    },
+    {
+      resolve: `@debiki/gatsby-plugin-talkyard`,
+      options: {
+        talkyardServerUrl: `https://comments-for-taskulu-com.talkyard.net/`
+      }
     }
   ]
 }

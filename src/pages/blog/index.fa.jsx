@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 import { FormattedMessage } from 'react-intl'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import $ from 'jquery'
 
 import SEO from '../../components/SEO'
 import { Copy } from '../../components/Elements'

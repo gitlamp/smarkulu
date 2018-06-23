@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Amirali <amirali@taskulu.com>",
   "dependencies": {
+    "@debiki/gatsby-plugin-talkyard": "^0.5.7",
     "eslint": "^4.19.1",
     "gatsby": "^1.9.269",
     "gatsby-image": "^1.0.47",

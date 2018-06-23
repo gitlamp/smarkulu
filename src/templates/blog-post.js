@@ -6,6 +6,7 @@ import { Popper, Manager, Target } from 'react-popper'
 import Link from 'gatsby-link'
 import { FormattedMessage } from 'react-intl'
 import $ from 'jquery'
+import TalkyardCommentsIframe from '@debiki/gatsby-plugin-talkyard'
 import { FacebookIcon,
          LinkedinIcon,
          TelegramIcon,
@@ -22,6 +23,7 @@ import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
 import { Above } from '../components/Partials'
 import { toPersianDigits } from '../components/functions'
+
 
 class BlogPost extends React.Component {
   constructor(){
@@ -144,7 +146,9 @@ class BlogPost extends React.Component {
               <Copy element="h3" type="sub" child={post.author.name}/>
               <span className="post-publish-date">{post.date}</span>
             </div>
+
             <div dangerouslySetInnerHTML={{ __html: post.content }}/>
+
             <FormattedMessage id="blog.tag.title">
               {tagLabel => (
                 <ul className="blog-tags-wrapper">
@@ -159,6 +163,9 @@ class BlogPost extends React.Component {
                 </ul>
               )}
             </FormattedMessage>
+
+            <TalkyardCommentsIframe discussionId={post.wordpress_id}/>
+
             <ul className="share-button-wrapper">
               <li>
                 <TwitterShareButton url={post.link} title={post.title}>
