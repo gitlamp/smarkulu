@@ -33,6 +33,7 @@
     "react-owl-carousel2": "^0.3.0",
     "react-popper": "^0.10.4",
     "react-redux": "^5.0.7",
+    "react-share": "^2.2.0",
     "react-table": "^6.8.2",
     "redux": "^3.7.2"
   },

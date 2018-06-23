@@ -4,7 +4,19 @@ import { Grid, Row, Col } from 'react-flexbox-grid'
 import Img from 'gatsby-image'
 import { Popper, Manager, Target } from 'react-popper'
 import Link from 'gatsby-link'
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl'
+import $ from 'jquery'
+import { FacebookIcon,
+         LinkedinIcon,
+         TelegramIcon,
+         TwitterIcon,
+         WhatsappIcon,
+         FacebookShareButton,
+         LinkedinShareButton,
+         TelegramShareButton,
+         TwitterShareButton,
+         WhatsappShareButton
+        } from 'react-share'
 
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
@@ -15,6 +27,7 @@ class BlogPost extends React.Component {
   constructor(){
     super()
     this.toggleAuthorDesc = this.toggleAuthorDesc.bind(this)
+    this.toggleShareButtons = this.toggleShareButtons.bind(this)
     this.state = {
       showAuthorDesc: false
     }
@@ -24,11 +37,35 @@ class BlogPost extends React.Component {
       showAuthorDesc: !prevStat.showAuthorDesc
     }))
   }
+  toggleShareButtons() {
+    const currentScroll = window.scrollY
+    const screenHeight = window.innerHeight
+    const footerPostion = $('.footer').offset().top
+    if (currentScroll > 600 && ((currentScroll + screenHeight) < footerPostion) ) {
+      $('.share-button-wrapper').fadeIn(150)
+    } else {
+      $('.share-button-wrapper').fadeOut(150)
+    }
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', this.toggleShareButtons)
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.toggleShareButtons)
+  }
   render() {
     const data = this.props.data
     const post = this.props.data.wordpressPost
     const popularPosts = this.props.data.allWordpressWordpressPopularPostsPopularPosts
     const postCategory = 'وبلاگ'
+    const shareButtonStyle = {
+      size: 40,
+      round: true,
+      logoFillColor: '#34495e',
+      iconBgStyle: {
+        opacity: 0,
+      }
+    }
     return(
       <div className="blog-post">
         <SEO pagePath="fa" title={post.title} generalDesc={post.yoast.metakeywords} />
@@ -50,7 +87,7 @@ class BlogPost extends React.Component {
           </Grid>
         </Above>
         <Row tagName="section" center="xs">
-          <Col sm={3} className="blog-side">
+          <Col md={3} className="blog-side">
             <div className="side-post">
               <Copy className="side-post-header" element="h3" type="sub" child="پست‌های پربازدید"/>
               <ul>
@@ -80,7 +117,7 @@ class BlogPost extends React.Component {
               </ul>
             </div>
           </Col>
-          <Col xs={10} sm={8} smOffset={1} className="post-body">
+          <Col xs={10} md={8} mdOffset={1} className="post-body">
             <div className="post-publication">
               <Manager className="post-author">
                 <Target
@@ -122,6 +159,29 @@ class BlogPost extends React.Component {
                 </ul>
               )}
             </FormattedMessage>
+            <ul className="share-button-wrapper">
+              <li>
+                <TwitterShareButton url={post.link} title={post.title}>
+                  <TwitterIcon {...shareButtonStyle}/>
+                </TwitterShareButton>
+                <LinkedinShareButton
+                  url={post.link}
+                  title={post.title}
+                  description={post.yoast.metakeywords}>
+                  <LinkedinIcon {...shareButtonStyle}/>
+                </LinkedinShareButton>
+                <FacebookShareButton url={post.link}>
+                  <FacebookIcon {...shareButtonStyle}/>
+                </FacebookShareButton>
+                <TelegramShareButton url={post.link} title={post.title}>
+                  <TelegramIcon {...shareButtonStyle}/>
+                </TelegramShareButton>
+                <WhatsappShareButton url={post.link} title={post.title}>
+                  <WhatsappIcon {...shareButtonStyle}>
+                  </WhatsappIcon>
+                </WhatsappShareButton>
+              </li>
+            </ul>
           </Col>
         </Row>
       </div>
@@ -137,8 +197,10 @@ export const postQuery = graphql`
       wordpress_id
       title
       content
+      link
       date(formatString: "D[, ]MMMM[, ]YYYY",locale: "fa")
       yoast {
+        title
         metakeywords
       }
       #featured_media {
