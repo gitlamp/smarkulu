@@ -26,7 +26,7 @@ body:
         desc: "Create tasks easily and never lose track."
         icon: icon-tasks
         title: "Tasks"
-        link: "#"
+        link: ""
       -
         desc: "Whether a project-oriented or process-oriented company or just a small team with daily tasks, you can use projects to manage corresponding tasks."
         icon: icon-project
@@ -71,7 +71,7 @@ body:
         desc: "Preview task documents in [almost] any file format, wherever you are, without leaving your browser."
         icon: icon-preview
         title: File preview
-        link: ""
+        link: "/product/file-previews"
       -
         desc: "Add your team members to the projects and organizations and collaborate to get the job done."
         icon: icon-add-member
@@ -131,7 +131,7 @@ body:
         desc: "Security of your data is guaranteed on a whole new level. The entirety of your project is encrypted and only decrypts only for project members on any device they use."
         icon: icon-end2end
         title: End-to-end encryption
-        link: ""
+        link: "/product/security"
       -
         desc: "Keep sensitive information on Taskulu securely. Hackers can't reach your data without having your mobile phone, even if they get your password."
         icon: icon-mobile-auth
@@ -146,7 +146,7 @@ body:
         desc: "On Android and IOS :)"
         icon: icon-mobile-app
         title: Mobile Application
-        link: ""
+        link: "/product/mobile-app"
       -
         desc: "Work chat speeds up getting things done, but only if it's tightly integrated with your project management tool."
         icon: icon-chat
@@ -161,12 +161,12 @@ body:
         desc: "Keep track of the time you spent on your project and manage costs of human capital with ease."
         icon: icon-timelog
         title: Logging time spent
-        link: ""
+        link: "/product/time-tracking"
       -
         desc: "Filter timelog records by deadline and members and export it as a spreadsheet for any customized report you want. "
         icon: icon-reports
         title: Timelog reports
-        link: ""
+        link: "/product/time-tracking"
       -
         desc: "A practically concise perspective of project activities and progress, delivered to project manager's inbox weekly."
         icon: icon-weekly-reports
@@ -196,5 +196,5 @@ body:
         desc: "A data-driven path to peak performance"
         icon: icon-analytics
         title: Taskulu Analytics
-        link: ""
+        link: "/product/performance-analytics"
 ...

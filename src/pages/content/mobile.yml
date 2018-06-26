@@ -12,7 +12,6 @@ body:
     header: "Take your tasks everywhere!"
     desc: |
       On Android and iOs, your data on Taskulu is with you anywhere you go. This make it easy to be on track with your team immediately. With our <a href="/product/security/">end-to-end encryption</a> capability, you can trust your data won’t be in the wrong hands. Also, you can use the same apps to connect to your <a href="/on-premise/">self-hosted Taskulu</a> servers.
-    img: /img/taskulu-mobile-app.png
     iTunes: |
       https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8
     iTunesLogo: /logos/download_apple_store.svg

@@ -146,7 +146,7 @@ class Logos extends React.Component {
                       </FormattedMessage>
 
     return (
-      <Row tagName="section" className={"complogos " + this.props.className} center="xs">
+      <Row tagName="section" className={"complogos " + this.props.className} center="xs" id={this.props.id}>
         {
           (this.props.header) ?
           (

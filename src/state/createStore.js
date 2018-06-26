@@ -13,6 +13,16 @@ const reducer = (state, action) => {
             headerVisibility: true
           })
 
+    /* Footer Visibility State */
+    case 'invisibleFooter':
+      return Object.assign({}, state, {
+        footerVisibility: false
+      })
+    case 'visibleFooter':
+      return Object.assign({}, state, {
+        footerVisibility: true
+      })
+
     /* Header Color State */
     case 'whiteHeader':
       return Object.assign({}, state, {
@@ -48,7 +58,8 @@ const reducer = (state, action) => {
 
 const initialState = {
   headerVisibility: true,
-  headerType: 'white',
+  footerVisibility: true,
+  headerType: 'white'
 }
 
 const createStore = () => reduxCreateStore(reducer, initialState)

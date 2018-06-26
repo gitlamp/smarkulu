@@ -7,13 +7,13 @@ module.exports = {
   sourceCodeLink: `https://git.taskulu.com/amirali/smarkulu.git`,
   menu: {
     header: [
-      {label: 'header.menu.product', slug: '/product'},
-      {label: 'header.menu.pricing', slug: '/pricing'},
+      {label: 'header.menu.product', slug: '/product/'},
+      {label: 'header.menu.pricing', slug: '/pricing/'},
       {
         label: 'header.menu.industries',
-        slug: '/our-users',
+        slug: '/our-users/',
         items: [
-          {label: 'header.menu.marketing', slug: '/industries/marketing'}
+          {label: 'header.menu.marketing', slug: '/industries/marketing/'}
         ]
       },
     ],
@@ -24,30 +24,30 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.home', slug:'/'},
-            {label: 'footer.menu.product', slug:'/product'},
-            {label: 'footer.menu.companies', slug:'/our-users'},
-            {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.demo', slug:'/enterprise'},
+            {label: 'footer.menu.product', slug:'/product/'},
+            {label: 'footer.menu.companies', slug:'/our-users/'},
+            {label: 'footer.menu.pricing', slug:'/pricing/'},
+            {label: 'footer.menu.demo', slug:'/enterprise/'},
           ]
         },
         {
           label: 'col-label-2',
           slug: '',
           items: [
-            {label: 'footer.menu.company', slug:'/about'},
-            {label: 'footer.menu.contact', slug:'/contact'},
-            {label: 'footer.menu.press', slug:'/press'},
+            {label: 'footer.menu.company', slug:'/about/'},
+            {label: 'footer.menu.contact', slug:'/contact/'},
+            {label: 'footer.menu.press', slug:'/press/'},
           ]
         },
         {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
-            {label: 'footer.menu.integrations', slug:'/product/inegrations'},
-            {label: 'footer.menu.security', slug:'/product/security'},
-            {label: 'footer.menu.file.previews', slug:'/product/file-previews'},
-            {label: 'footer.menu.time.tracking', slug:'/product/time-tracking'},
+            {label: 'footer.menu.analytics', slug:'/product/performance-analytics/'},
+            {label: 'footer.menu.integrations', slug:'/product/inegrations/'},
+            {label: 'footer.menu.security', slug:'/product/security/'},
+            {label: 'footer.menu.file.previews', slug:'/product/file-previews/'},
+            {label: 'footer.menu.time.tracking', slug:'/product/time-tracking/'},
           ]
         },
         {
@@ -55,7 +55,7 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.help', slug:'help.taskulu.com'},
-            {label: 'footer.menu.blog', slug:'/blog'},
+            {label: 'footer.menu.blog', slug:'/blog/'},
           ]
         }
       ],
@@ -65,29 +65,29 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.home', slug:'/'},
-            {label: 'footer.menu.product', slug:'/product'},
-            {label: 'footer.menu.companies', slug:'/our-users'},
-            {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.demo', slug:'/enterprise'},
+            {label: 'footer.menu.product', slug:'/product/'},
+            {label: 'footer.menu.companies', slug:'/our-users/'},
+            {label: 'footer.menu.pricing', slug:'/pricing/'},
+            {label: 'footer.menu.demo', slug:'/enterprise/'},
           ]
         },
         {
           label: 'col-label-2',
           slug: '',
           items: [
-            {label: 'footer.menu.company', slug:'/about'},
-            {label: 'footer.menu.contact', slug:'/contact'},
-            {label: 'footer.menu.press', slug:'/press'},
+            {label: 'footer.menu.company', slug:'/about/'},
+            {label: 'footer.menu.contact', slug:'/contact/'},
+            {label: 'footer.menu.press', slug:'/press/'},
           ]
         },
         {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
-            {label: 'footer.menu.integrations', slug:'/product/inegrations'},
-            {label: 'footer.menu.time.management', slug:'/product/time-management'},
-            {label: 'footer.menu.task.management', slug:'/product/task-management'},
+            {label: 'footer.menu.analytics', slug:'/product/performance-analytics/'},
+            {label: 'footer.menu.integrations', slug:'/product/inegrations/'},
+            {label: 'footer.menu.time.management', slug:'/product/time-management/'},
+            {label: 'footer.menu.task.management', slug:'/product/task-management/'},
           ]
         },
         {
@@ -95,10 +95,10 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.help', slug:'help.taskulu.com'},
-            {label: 'footer.menu.blog', slug:'/blog'},
-            {label: 'footer.menu.construction', slug:'/ebook/digital-construction'},
-            {label: 'footer.menu.performance.analytics', slug:'/ebook/performance-analytics'},
-            {label: 'footer.menu.mashhad', slug:'/ebook/shahrdari-mashhad'},
+            {label: 'footer.menu.blog', slug:'/blog/'},
+            {label: 'footer.menu.construction', slug:'/ebook/digital-construction/'},
+            {label: 'footer.menu.performance.analytics', slug:'/ebook/performance-analytics/'},
+            {label: 'footer.menu.mashhad', slug:'/ebook/shahrdari-mashhad/'},
           ]
         }
       ]

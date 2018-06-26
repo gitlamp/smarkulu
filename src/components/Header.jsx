@@ -5,6 +5,7 @@ import { TweenLite } from 'gsap'
 import { Col, getRowProps } from 'react-flexbox-grid'
 import { connect } from 'react-redux'
 
+import { hiddenHeaderPath as hiddenOnPaths } from '../data/noMenuPath.js'
 import Menu from './Menu'
 import { genLink } from './functions'
 
@@ -20,7 +21,7 @@ class HeaderWrapper extends React.Component {
   }
   componentWillMount() {
     // Check if the header should be hidden
-    hiddenOnPaths.forEach((path) => {
+    hiddenOnPaths.forEach(path => {
       if (this.props.url == path) {
         this.props.hideHeader()
       }
@@ -36,10 +37,15 @@ class HeaderWrapper extends React.Component {
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.url !== nextProps.url) {
+      let targetPath
       hiddenOnPaths.forEach((path) => {
-        (nextProps.url == path) ?
-        this.props.hideHeader() : this.props.showHeader()
+        if (nextProps.url == path) targetPath = true
       })
+      if (targetPath) {
+        this.props.hideHeader()
+      } else {
+        this.props.showHeader()
+      }
     }
   }
   setWidth() {
@@ -181,13 +187,6 @@ HeaderWrapper.PropTypes = {
   menu: PropTypes.object.isRequired,
   url: PropTypes.string
 }
-
-const hiddenOnPaths = [
-  /*
-   * Write an internal route you want to have header hidden
-   * like --> '/home/product/'
-   */
-]
 
 // Map redux state to component props
 const mapStateToProps = (state) => {

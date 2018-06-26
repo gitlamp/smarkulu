@@ -1,6 +1,7 @@
 import React from 'react'
 import graphql from 'graphql'
 import { Row, Col } from 'react-flexbox-grid'
+import Img from 'gatsby-image'
 
 import SEO from '../../components/SEO'
 import { Copy } from '../../components/Elements'
@@ -28,9 +29,7 @@ class MobilePage extends React.Component {
             </Above>
             <Row className="mobile-download">
               <Col xs={6}>
-                <div>
-                  <img src={node.body.intro.img} height="80%" />
-                </div>
+                <Img sizes={data.mobileAPP.sizes} alt="Taskulu Application" />
               </Col>
               <Col xs={6} className="mobile-stores">
                 <a href={node.body.intro.iTunes} className="mobile-store">
@@ -69,7 +68,6 @@ query MobilePage {
           intro {
             header
             desc
-            img
             iTunes
             iTunesLogo
             play
@@ -82,6 +80,11 @@ query MobilePage {
           }
         }
       }
+    }
+  }
+  mobileAPP: imageSharp( id: { regex: "/taskulu-mobile-app/" } ) {
+    sizes {
+      ...GatsbyImageSharpSizes_noBase64
     }
   }
 }

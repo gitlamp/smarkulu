@@ -37,7 +37,7 @@
   font-size: 1.8rem;
 }
 @include buttonColorGenerator('normal', #fff, $cyan, null, null);
-@include buttonColorGenerator('submit', #fff, $golden-road, #000, null);
+@include buttonColorGenerator('submit', $wet-asphalt, $golden-road, $golden-road, $wet-asphalt);
 @include buttonColorGenerator('white', $cyan, #fff, #fff, $cyan);
 @include buttonColorGenerator('blue', #fff, $san-marino, $san-marino, #fff);
 @include buttonColorGenerator('dark', #fff, $wet-asphalt, $wet-asphalt, #fff);

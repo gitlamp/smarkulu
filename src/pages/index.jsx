@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 import { ImageFinder } from '../components/ImageFinder'
 
 import SEO from '../components/SEO'
-import Input from '../components/Input'
+// import Input from '../components/Input'
 import { Copy, CTA } from '../components/Elements'
 import { Above, Logos } from '../components/Partials'
 
@@ -58,12 +58,13 @@ class IndexPage extends React.Component {
             <Above className="gradient-blue-green curved" center="xs" full hasGradient>
               <Col xs={10}>
                 <Row>
-                  <Col xs={12} lg={6}>
+                  <Col xs={12} lg={6} className="start-lg">
                 <h2 className="home-hero">
                       {node.body.hero.body}
                   <div className="text-switcher">{node.body.hero.items.map(item => <span key={item}>{item}</span>)}</div>
                 </h2>
-                  <Input placeholder="Enter your email address"/>
+                  {/* <Input placeholder="Enter your email address"/> */}
+                  <CTA langKey={langKey} type="login" className="button-submit" name="btn.register"/>
                   </Col>
                   <Col xs={12} lg={6} className="proto">
                     <div className="proto-content">

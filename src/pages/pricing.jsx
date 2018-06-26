@@ -170,7 +170,7 @@ class Pricing extends React.Component {
                     </div>
                       <FormattedMessage id="btn.contact">
                         {(txt) =>
-                          <Link to={genLink(langKey, '/enterprise')} className="button button-white">{txt}</Link>
+                          <Link to={genLink(langKey, '/enterprise/')} className="button button-white">{txt}</Link>
                         }
                       </FormattedMessage>
                     <div className="plan-list">

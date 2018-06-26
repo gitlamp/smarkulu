@@ -3,9 +3,9 @@ import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
 import { Row, Col } from 'react-flexbox-grid'
 
-import SEO from '../components/SEO'
-import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above } from '../components/Partials'
+import SEO from '../../components/SEO'
+import { Copy, CTA, Img } from '../../components/Elements'
+import { TwoColumn, Above } from '../../components/Partials'
 
 class TimeManagementPage extends React.Component {
   constructor(props) {
@@ -20,10 +20,10 @@ class TimeManagementPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above end="xs">
-              <Col xs={4} xsOffset={1}>
-                <Copy align="right" type="header" element="h1" child={node.body.hero.header} />
-                <Copy align="right" type="title" element="h4" child={node.body.hero.subheader} />
+            <Above center="xs">
+              <Col xs={4}>
+                <Copy align="center" type="header" element="h1" child={node.body.hero.header} />
+                <Copy align="center" type="title" element="h4" child={node.body.hero.subheader} />
                 <div style={{textAlign: "center"}}>
                   <CTA type="login" name={node.body.hero.cta} langKey={langKey} className="button-submit" />
                 </div>

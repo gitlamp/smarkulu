@@ -67,16 +67,16 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.loader('style', {
       test: /\.(sass|scss)$/,
       exclude: [/\.useable\.scss$/, /\.rtl\.useable\.scss$/],
-      loader: baseStyles.extract(['css-loader?minimize', 'sass-loader'])
+      loader: baseStyles.extract(['css-loader', 'sass-loader?minimize'])
     })
     config.loader('usable-style', {
       test: /\.useable\.scss$/,
       exclude: /\.rtl\.useable\.scss$/,
-      loader: main.extract(['css-loader?minimize', 'sass-loader'])
+      loader: main.extract(['css-loader', 'sass-loader?minimize'])
     })
     config.loader('rtl-style', {
       test: /\.rtl\.useable.scss$/,
-      loader: rtlMain.extract(['rtlcss-loader?minimize', 'sass-loader'])
+      loader: rtlMain.extract(['rtlcss-loader', 'sass-loader?minimize'])
     })
     config.merge({
       resolve: {
@@ -167,10 +167,10 @@ exports.createPages = ({ boundActionCreators }) => {
       {f: `${lang}/integrations/gcal`, t: `${lang}/product/integrations`},
       {f: `/fa/product/تحلیلگر-عملکرد`, t: `/fa/product/performance-analytics`},
       {f: `/fa/تایم-شیت`, t: `/fa/timesheet`},
-      {f: `/fa/مدیریت-زمان`, t: `/fa/time-management`},
+      {f: `/fa/مدیریت-زمان`, t: `/fa/product/time-management`},
       {f: `/fa/کتابچه-مدیریت-پروژه-عمرانی`, t: `/fa/ebook/digital-construction`},
       {f: `/fa/کتابچه-مدیریت-عملکرد`, t: `/fa/ebook/preformance-analytics`},
-      {f: `/fa/مدیریت-وظایف`, t: `/fa/task-management`}
+      {f: `/fa/مدیریت-وظایف`, t: `/fa/product/task-management`}
     )
   })
 

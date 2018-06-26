@@ -26,7 +26,7 @@ body:
         desc: "به آسانی کار‌هایی که باید انجام شوند را ایجاد کنید و هیچ وقت آن‌ها را فراموش نکنید."
         icon: icon-tasks
         title: کارها
-        link: "#"
+        link: "/fa/product/task-management"
       -
         desc: "کارهای روزانه، پروژه‌محور یا فرآیندمحور خود را مطابق نیازهای کاری‌تان مرتب کنید و به همراه تیم‌تان روی آن‌ها کار کنید."
         icon: icon-project
@@ -161,12 +161,12 @@ body:
         desc: "همه زمان صرف شده روی پروژه خود را ثبت کنید و هزینه‌های نیروی انسانی را بهتر مدیریت کنید."
         icon: icon-timelog
         title: "ثبت زمان‌های کاری"
-        link: ""
+        link: "/fa/product/time-management"
       -
         desc: "زمان‌های کاری ثبت شده را براساس دوره زمانی و نفر فیلتر کنید و از آن‌ها خروجی اکسل بگیرید."
         icon: icon-reports
         title: "گزارش‌گیری از زمان‌های کاری"
-        link: ""
+        link: "/fa/product/time-management"
       -
         desc: "دورنمای مفیدی از پیشرفت پروژه و وضعیت اعضای پروژه در ایمیل‌های هفتگی جهت اطلاع مدیران عزیز پروژه."
         icon: icon-weekly-reports
@@ -196,5 +196,5 @@ body:
         desc: "مدیریت عملکرد و بهره‌وری برای اساس داده‌های واقعی"
         icon: icon-analytics
         title: "تحلیل‌گر تسکولو"
-        link: ""
+        link: "/fa/product/performance-analytics"
 ...

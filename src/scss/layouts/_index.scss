@@ -426,7 +426,7 @@
 .team {
   margin-bottom: 3rem;
   .team-card {
-    padding: 2.5rem 1rem;
+    padding: 30px 20px;
     height: 100%;
     border-radius: 6px;
     background-color: #fff;
@@ -453,9 +453,13 @@
     color: $wet-asphalt;
   }
   .team-name {
+    margin-bottom: 0;
     color: $wet-asphalt;
   }
   .team-job-title {
+    font-family: $subtitle-font;
+    font-size: 1.4rem;
+    margin-bottom: 40px;
     color: $concrete;
   }
   .team-social-icon {

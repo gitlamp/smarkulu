@@ -19,10 +19,10 @@ class TimeTrackingPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above center="xs gradient-red-yellow" hasGradient>
+            <Above center="xs" className="gradient-red-yellow" hasGradient>
               <Col xs={5}>
-                <Copy align="left" element="h1" type="header" child={node.body.hero.header} />
-                <CTA name={node.body.hero.cta} className="button-white" type="login" langKey={langKey} />
+                <Copy element="h1" type="header" child={node.body.hero.header} />
+                <CTA name={node.body.hero.cta} className="button-submit" type="login" langKey={langKey} />
               </Col>
             </Above>
             <TwoColumn ratio={{xs: [10,10], sm:[4,5]}} center="xs" className="block-tour">

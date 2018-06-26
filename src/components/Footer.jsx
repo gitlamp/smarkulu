@@ -9,17 +9,26 @@ import { hiddenFooterPath as hiddenOnPaths } from '../data/noMenuPath.js'
 import { genLink } from '../components/functions'
 
 class Footer extends React.Component {
+  constructor() {
+    super()
+  }
   componentWillMount() {
-    hiddenOnPaths.forEach((path) => {
+    hiddenOnPaths.forEach(path => {
       if(path == this.props.url)
           this.props.hideFooter()
     })
   }
   componentWillReceiveProps(nextProps) {
-    if(this.props.url != nextProps.url) {
+    if(this.props.url !== nextProps.url) {
+      let targetPath
       hiddenOnPaths.forEach(path => {
-        (path.url == nextProps) ? this.props.hideFooter() : this.props.showFooter()
+        if (nextProps.url == path) targetPath = true
       })
+      if (targetPath) {
+        this.props.hideFooter()
+      } else {
+        this.props.showFooter()
+      }
     }
   }
   getMenuItems (menu, langKey) {
@@ -76,51 +85,55 @@ class Footer extends React.Component {
     const langKey = this.props.intl.locale
     const menuItems = this.getMenuItems(this.props.menu, langKey)
     const socialItems = this.getSocialItems(this.props.social)
+    const footer =
+        <Row className="footer">
+          <Col xs={10} className="footer-row">
+            {/* Render footer menu */}
+            <Row>
+              {menuItems}
+            </Row>
+            {/* Render socials */}
+            <Row>
+              <Col xs={12} sm={6} lg={6}>
+                <FormattedMessage id="social.follow"/>
+                <br/>
+                {socialItems}
+              </Col>
+              <Col xs={12} sm={6} lg={6} className="footer-download">
+                <a className="footer-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
+                  <img src="/logos/download_google_play.svg" alt=""/>
+                </a>
+                <a className="footer-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
+                  <img src="/logos/download_apple_store.svg" alt=""/>
+                </a>
+              </Col>
+            </Row>
+          </Col>
+          <Col xs={12} className="footer-end">
+            <div>
+            { this.props.visibility ?
+              <span>
+                <FormattedMessage id="footer.terms">
+                {(txt) =>
+                <a href={genLink(langKey, '/terms')}>{txt}</a>
+                }
+                </FormattedMessage>&nbsp;
+                <FormattedMessage id="footer.privacy">
+                {(txt) =>
+                <a href={genLink(langKey, '/privacy')}>{txt}</a>
+                }
+                </FormattedMessage>
+              </span> : null }
+            </div>
+            <div>
+              <span>Copyright	&copy; 2017 Taskulu</span>
+            </div>
+          </Col>
+        </Row>
     return (
-      <Row className="footer">
-        <Col xs={10} className="footer-row">
-          {/* Render footer menu */}
-          <Row>
-            {menuItems}
-          </Row>
-          {/* Render socials */}
-          <Row>
-            <Col xs={12} sm={6} lg={6}>
-              <FormattedMessage id="social.follow"/>
-              <br/>
-              {socialItems}
-            </Col>
-            <Col xs={12} sm={6} lg={6} className="footer-download">
-              <a className="footer-download-app" href="https://play.google.com/store/apps/details?id=com.taskulu.app" target="_blank">
-                <img src="/logos/download_google_play.svg" alt=""/>
-              </a>
-              <a className="footer-download-app" href="https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8" target="_blank">
-                <img src="/logos/download_apple_store.svg" alt=""/>
-              </a>
-            </Col>
-          </Row>
-        </Col>
-        <Col xs={12} className="footer-end">
-          <div>
-          { this.props.visibility ?
-            <span>
-              <FormattedMessage id="footer.terms">
-              {(txt) =>
-              <a href={genLink(langKey, '/terms')}>{txt}</a>
-              }
-              </FormattedMessage>&nbsp;
-              <FormattedMessage id="footer.privacy">
-              {(txt) =>
-              <a href={genLink(langKey, '/privacy')}>{txt}</a>
-              }
-              </FormattedMessage>
-            </span> : null }
-          </div>
-          <div>
-            <span>Copyright	&copy; 2017 Taskulu</span>
-          </div>
-        </Col>
-      </Row>
+      <div>
+        {this.props.visibility && footer}
+      </div>
     )
   }
 }
@@ -137,8 +150,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    hideFooter: () => dispatch({ type: 'invisibleFooter'}),
-    showFooter: () => dispatch({type: 'visibleFooter'})
+    hideFooter: () => dispatch({ type: 'invisibleFooter' }),
+    showFooter: () => dispatch({ type: 'visibleFooter' })
   }
 }
 

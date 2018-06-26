@@ -28,11 +28,9 @@ class AnalyticsPage extends React.Component {
                 <Img src={node.body.hero.img} alt={node.body.hero.alt} />
               </Col>
             </Above>
-            <Row column center="xs" className="block-cta">
-              <Col xs="5">
+            <Row center="xs" className="block-cta">
+              <Col xs={5}>
                 <Copy element="h3" type="announce-white" child={node.body.upgradeCTA.body} />
-              </Col>
-              <Col xs="5">
                 <CTA name={node.body.upgradeCTA.cta} className="button-white" type="internal" href="/pricing" langKey={langKey} />
               </Col>
             </Row>

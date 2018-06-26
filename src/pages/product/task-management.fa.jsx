@@ -2,9 +2,9 @@ import React from 'react'
 import graphql from 'graphql'
 import { Row, Col } from 'react-flexbox-grid'
 
-import SEO from '../components/SEO'
-import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above } from '../components/Partials'
+import SEO from '../../components/SEO'
+import { Copy, CTA, Img } from '../../components/Elements'
+import { TwoColumn, Above } from '../../components/Partials'
 
 class TaskManagementPage extends React.Component {
   constructor(props) {
@@ -19,12 +19,11 @@ class TaskManagementPage extends React.Component {
         {data.allContentYaml.edges.map(({node}) =>
           <div key={node.id}>
             <SEO pagePath={langKey} title={node.header.title} generalDesc={node.header.desc} />
-            <Above start="xs" className="skewed-bottom gradient-blue-red" compact hasGradient>
-              <Col xs={1} />
-              <Col xs={4}>
+            <Above center="xs" className="skewed-bottom gradient-blue-red" normal hasGradient>
+              <Col xs={4} xsOffset={6}>
                 <Copy align="right" type="header" element="h1" child={node.body.hero.header} />
-                <Copy align="right" type="title" element="h4" child={node.body.hero.subheader} />
-                <div style={{textAlign: "center"}}>
+                <Copy align="right" type="sub" element="p" child={node.body.hero.subheader} />
+                <div style={{textAlign: "right"}}>
                   <CTA type="login" name={node.body.hero.cta} langKey={langKey} className="button-submit" />
                 </div>
               </Col>

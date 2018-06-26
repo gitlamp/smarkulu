@@ -35,18 +35,18 @@ const OurUsers = (props) => {
             </Row>
           </Grid>
           <Row tagName="section">
-            <Logos src={node.body.industries.marketing.items} header={node.body.industries.marketing.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.ecommerce.items} header={node.body.industries.ecommerce.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.education.items} header={node.body.industries.education.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.manufacturing.items} header={node.body.industries.manufacturing.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.vas.items} header={node.body.industries.vas.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.media.items} header={node.body.industries.media.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.professionalService.items} header={node.body.industries.professionalService.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.architecture.items} header={node.body.industries.architecture.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.IT.items} header={node.body.industries.IT.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.communication.items} header={node.body.industries.communication.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.government.items} header={node.body.industries.government.header} sm={2} xs={4} middle="xs" center="xs"/>
-            <Logos src={node.body.industries.nonProfit.items} header={node.body.industries.nonProfit.header} sm={2} xs={4} middle="xs" center="xs"/>
+            <Logos src={node.body.industries.marketing.items} header={node.body.industries.marketing.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.marketing.id} />
+            <Logos src={node.body.industries.ecommerce.items} header={node.body.industries.ecommerce.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.ecommerce.id} />
+            <Logos src={node.body.industries.education.items} header={node.body.industries.education.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.education.id} />
+            <Logos src={node.body.industries.manufacturing.items} header={node.body.industries.manufacturing.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.manufacturing.id} />
+            <Logos src={node.body.industries.vas.items} header={node.body.industries.vas.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.vas.id} />
+            <Logos src={node.body.industries.media.items} header={node.body.industries.media.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.media.id} />
+            <Logos src={node.body.industries.professionalService.items} header={node.body.industries.professionalService.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.professionalService.id} />
+            <Logos src={node.body.industries.architecture.items} header={node.body.industries.architecture.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.architecture.id} />
+            <Logos src={node.body.industries.IT.items} header={node.body.industries.IT.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.IT.id} />
+            <Logos src={node.body.industries.communication.items} header={node.body.industries.communication.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.communication.id} />
+            <Logos src={node.body.industries.government.items} header={node.body.industries.government.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.government.id} />
+            <Logos src={node.body.industries.nonProfit.items} header={node.body.industries.nonProfit.header} sm={2} xs={4} middle="xs" center="xs" id={node.body.industries.nonProfit.id} />
           </Row>
         </div>
       )}
