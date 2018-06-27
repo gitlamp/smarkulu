@@ -73,7 +73,7 @@ class BlogPost extends React.Component {
         <SEO pagePath="fa" title={post.title} generalDesc={post.yoast.metakeywords} />
         <Above className="skewed-bottom" center="xs" hasGradient normal>
           <Img
-            sizes={data.testImage.sizes}
+            sizes={post.featured_media.localFile.childImageSharp.sizes}
             outerWrapperClassName="post-image-overlay"
             style={{
               position: "absolute",
@@ -95,19 +95,6 @@ class BlogPost extends React.Component {
               <ul>
                 {popularPosts.edges.map(({node}, i) =>
                   <li className="popular-post" key={i}>
-                    <Img
-                      sizes={data.testImage.sizes}
-                      style={{
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        width: "100%",
-                        height: "100%",
-                        zIndex: "-2",
-                        filter: "blur(1px)"
-                      }}
-                      fadeIn
-                      />
                     <div className="popular-post-number">
                       <span>{toPersianDigits(i+1)}</span>
                     </div>
@@ -210,15 +197,15 @@ export const postQuery = graphql`
         title
         metakeywords
       }
-      #featured_media {
-      # localFile {
-      #   childImageSharp {
-      #     sizes {
-      #       ...GatsbyImageSharpSizes_noBase64
-      #     }
-      #   }
-      # }
-      #}
+      featured_media {
+       localFile {
+         childImageSharp {
+           sizes {
+             ...GatsbyImageSharpSizes_noBase64
+           }
+         }
+       }
+      }
       tags {
         name
         count
@@ -229,11 +216,6 @@ export const postQuery = graphql`
         avatar_urls {
           wordpress_96
         }
-      }
-    }
-    testImage: imageSharp(id: { regex: "/product-flexible-en/"}) {
-      sizes {
-        ...GatsbyImageSharpSizes_noBase64
       }
     }
     allWordpressWordpressPopularPostsPopularPosts(filter: {categories: {eq: 66 }}) {

@@ -69,7 +69,7 @@ class PostsViewer extends React.Component {
                   <div className={`${rowProps.className}`} key={node.wordpress_id}>
                     <Col xs={12} md={8} className="post-card">
                       <Img
-                        resolutions={data.testImage.resolutions}
+                        resolutions={node.featured_media.localFile.childImageSharp.resolutions}
                         style={{
                           position: "absolute",
                           left: 0,
@@ -81,7 +81,7 @@ class PostsViewer extends React.Component {
                         }}/>
                       <div className="post-card-image">
                         <Img
-                        resolutions={data.testImage.resolutions}
+                        resolutions={node.featured_media.localFile.childImageSharp.resolutions}
                         style={{
                           position: "absolute",
                           left: 0,
@@ -146,25 +146,20 @@ query BlogFaPage {
       }
     }
   }
-  testImage: imageSharp( id: { regex: "/product-flexible-en/" } ) {
-    resolutions {
-      ...GatsbyImageSharpResolutions_noBase64
-    }
-  }
   allWordpressPost(filter: {categories: {name: {eq: "وبلاگ"}}}) {
     edges {
       node {
         wordpress_id
-        #featured_media {
-        #  source_url
-        #  localFile {
-        #    childImageSharp {
-        #       resolutions {
-        #         ...GatsbyImageSharpResolutions_noBase64
-        #       }
-        #    }
-        #  }
-        #}
+        featured_media {
+          source_url
+          localFile {
+            childImageSharp {
+               resolutions {
+                 ...GatsbyImageSharpResolutions_noBase64
+               }
+            }
+          }
+        }
         title
         excerpt
       }
