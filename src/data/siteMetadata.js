@@ -3,6 +3,19 @@ const languages = require('./languages')
 module.exports = {
   title: `Taskulu`,
   siteUrl: `https://taskulu.com`,
+  blog: {
+    en: {
+      title: 'Taskulu Blog',
+      description: ''
+    },
+    fa: {
+      title: 'وبلاگ',
+      description: 'نوشته‌هایی در مورد مدیریت، بهره‌وری و افزایش بازدهی تیمی'
+    }
+  },
+  blogTitle: 'blog.title',
+  blogHeader: 'blog.header',
+  blogDesc: 'blog.desc',
   description: `Flexible task management, realtime chat, time logs and deep integrations. Taskulu helps you get results and scale your team performance.`,
   sourceCodeLink: `https://git.taskulu.com/amirali/smarkulu.git`,
   menu: {

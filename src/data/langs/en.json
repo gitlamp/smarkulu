@@ -22,6 +22,13 @@
   "btn.demo": "Request a Demo",
   "btn.product": "View Features",
 
+  "blog.title": "Blog",
+  "blog.header": "Taskulu Blog",
+  "blog.desc": "",
+  "blog.tag.title.prefix": "Taskulu blog posts which include",
+  "blog.tag.title": "Tags",
+  "blog.tags.list.title": "Tags List",
+
   "header.menu.product": "Product",
   "header.menu.pricing": "Pricing",
   "header.menu.industries": "Our Users",

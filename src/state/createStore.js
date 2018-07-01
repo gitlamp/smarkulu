@@ -44,8 +44,8 @@ const reducer = (state, action) => {
     /* Global Language  State */
     case 'setLangToEn':
       return Object.assign({}, state, {
-            lang: 'en'
-        })
+        lang: 'en'
+      })
     case 'setLangToFa':
       return Object.assign({}, state, {
             lang: 'fa'

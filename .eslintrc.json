@@ -1,32 +1,33 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
-        "node": true
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "sourceType": "module"
-    },
-    "plugins": [
-      "react"
-    ],
-    "rules": {
-        "no-const-assign": "warn",
-        "no-this-before-super": "warn",
-        "no-undef": "warn",
-        "no-unreachable": "warn",
-        "no-unused-vars": "warn",
-        "constructor-super": "warn",
-        "valid-typeof": "warn",
-        "no-extra-semi": "error",
-        "react/react-in-jsx-scope": "error",
-        "react/jsx-uses-react": "warn",
-        "react/jsx-uses-vars": "warn"
-    },
-    "extends": "eslint:recommended"
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-const-assign": "warn",
+    "no-this-before-super": "warn",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "no-unused-vars": "warn",
+    "constructor-super": "warn",
+    "valid-typeof": "warn",
+    "no-extra-semi": "error",
+    "react/react-in-jsx-scope": "error",
+    "react/jsx-uses-react": "warn",
+    "react/jsx-uses-vars": "warn",
+    "no-console": "warn"
+  },
+  "extends": "eslint:recommended"
 }
