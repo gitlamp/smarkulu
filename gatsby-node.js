@@ -16,9 +16,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         loaders: ['modernizr-loader', 'json-loader']
       })
       config.merge({
-        output: {
-          publicPath: 'http://localhost:8000/'
-        },
         module: {
           loaders: [
             {
