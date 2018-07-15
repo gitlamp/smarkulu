@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import _ from 'lodash'
 
 import SEO from '../../components/SEO'
-import { Copy } from '../../components/Elements'
+import { Copy, CTA } from '../../components/Elements'
 import { Above } from '../../components/Partials'
 
 class PostsViewer extends React.Component {
@@ -104,7 +104,10 @@ class PostsViewer extends React.Component {
                         </div>
                         <div className="post-card-content">
                           <Copy className="post-title" element="h1" type="subheader" child={node.title} noEscape/>
-                          <Copy className="post-desc" element="p" type="sub" child={node.excerpt.split(/<\/?p[^>]*>/g)[1]} noEscape/>
+                          <Copy className="post-desc" element="p" type="sub" child={node.excerpt.split(/<\/?p[^>]*>/g)[1].split(/<\/?a[^>]*>/g)[0]} noEscape/>
+                          {node.categories.map(({name}, i) =>
+                            <CTA type="internal" href={`/${name}/${node.slug}/`} langKey="fa" className="button-white" name="btn.readMore" key={i}/>
+                          )}
                         </div>
                       </Col>
                     </div>
@@ -163,6 +166,12 @@ query BlogFaPage {
     edges {
       node {
         wordpress_id
+        title
+        excerpt
+        slug
+        categories {
+          name
+        }
         featured_media {
           localFile {
             childImageSharp {
@@ -172,8 +181,6 @@ query BlogFaPage {
             }
           }
         }
-        title
-        excerpt
       }
     }
   }
