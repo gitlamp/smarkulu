@@ -57,7 +57,7 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.analytics', slug:'/product/performance-analytics/'},
-            {label: 'footer.menu.integrations', slug:'/product/inegrations/'},
+            {label: 'footer.menu.integrations', slug:'/product/integrations/'},
             {label: 'footer.menu.security', slug:'/product/security/'},
             {label: 'footer.menu.file.previews', slug:'/product/file-previews/'},
             {label: 'footer.menu.time.tracking', slug:'/product/time-tracking/'},
@@ -98,7 +98,7 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.analytics', slug:'/product/performance-analytics/'},
-            {label: 'footer.menu.integrations', slug:'/product/inegrations/'},
+            {label: 'footer.menu.integrations', slug:'/product/itnegrations/'},
             {label: 'footer.menu.time.management', slug:'/product/time-management/'},
             {label: 'footer.menu.task.management', slug:'/product/task-management/'},
           ]
