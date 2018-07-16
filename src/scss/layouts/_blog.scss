@@ -31,7 +31,7 @@
     .post-card-content {
       background-color: rgba($color: #000000, $alpha: .7);
       width: 60%;
-      padding: 20px 30px;
+      padding: 40px 30px;
       text-align: left;
       .post-title {
         padding: 0;
@@ -42,15 +42,6 @@
         color: $asbestos;
         font-size: $sub;
         color: $silver;
-        a {
-          @extend .button;
-          @extend .button-white;
-          display: block;
-          width: 100px;
-          margin-top: 16px;
-          font-size: 1.2rem;
-          white-space: nowrap;
-        }
       }
     }
   }
@@ -60,6 +51,7 @@
 // Single Post
 //*********************
 .blog-post {
+  position: relative;
   .post-image-overlay {
     @include overlay(#000, .5);
   }

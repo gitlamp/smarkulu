@@ -40,9 +40,9 @@ class BlogPost extends React.Component {
     }))
   }
   toggleShareButtons() {
-    const currentScroll = window.scrollY
-    const screenHeight = window.innerHeight
-    const footerPostion = $('.footer').offset().top
+    const currentScroll = window.scrollY,
+          screenHeight = window.innerHeight,
+          footerPostion = $('.footer').offset().top
     if (currentScroll > 600 && ((currentScroll + screenHeight) < footerPostion) ) {
       $('.share-button-wrapper').fadeIn(150)
     } else {
@@ -56,24 +56,35 @@ class BlogPost extends React.Component {
     window.removeEventListener('scroll', this.toggleShareButtons)
   }
   render() {
-    const data = this.props.data
-    const post = this.props.data.wordpressPost
-    const popularPosts = this.props.data.allWordpressWordpressPopularPostsPopularPosts
-    const postCategory = 'وبلاگ'
-    const shareButtonStyle = {
-      size: 40,
-      round: true,
-      logoFillColor: '#34495e',
-      iconBgStyle: {
-        opacity: 0,
+    const post = this.props.data.wordpressPost,
+          popularPosts = this.props.data.allWordpressWordpressPopularPostsPopularPosts,
+          postCategory = 'وبلاگ',
+          shareButtonStyle = {
+            size: 40,
+            round: true,
+            logoFillColor: '#34495e',
+            iconBgStyle: {
+              opacity: 0,
+            }
+          },
+          noIMGSource = this.props.data.noImg.sizes
+    let postImageSrc
+
+    try {
+      if (post.featured_media.localFile) {
+        postImageSrc = post.featured_media.localFile.childImageSharp.sizes
       }
+    } catch (e) {
+      e.preventDefault
+      console.error(`There is a problem with image source of post with ${post.wordpress_id} ID`)
     }
-    return(
+
+    return (
       <div className="blog-post">
         <SEO pagePath="fa" title={post.title} generalDesc={post.yoast.metakeywords} />
         <Above className="skewed-bottom" center="xs" hasGradient normal>
           <Img
-            sizes={post.featured_media.localFile.childImageSharp.sizes}
+            sizes={postImageSrc ? postImageSrc : noIMGSource}
             outerWrapperClassName="post-image-overlay"
             style={{
               position: "absolute",
@@ -198,13 +209,14 @@ export const postQuery = graphql`
         metakeywords
       }
       featured_media {
-       localFile {
-         childImageSharp {
-           sizes {
-             ...GatsbyImageSharpSizes_noBase64
-           }
-         }
-       }
+        source_url
+        localFile {
+          childImageSharp {
+            sizes {
+              ...GatsbyImageSharpSizes_noBase64
+            }
+          }
+        }
       }
       tags {
         name
@@ -224,6 +236,11 @@ export const postQuery = graphql`
           title
           slug
         }
+      }
+    }
+    noImg: imageSharp( id: { regex: "/no-image/" } ) {
+      sizes {
+        ...GatsbyImageSharpSizes_noBase64
       }
     }
   }

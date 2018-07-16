@@ -59,7 +59,8 @@ const reducer = (state, action) => {
 const initialState = {
   headerVisibility: true,
   footerVisibility: true,
-  headerType: 'white'
+  headerType: 'white',
+  blogPostsToShow: 12
 }
 
 const createStore = () => reduxCreateStore(reducer, initialState)

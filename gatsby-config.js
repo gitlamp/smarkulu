@@ -83,10 +83,10 @@ module.exports = {
         hostingWPCOM: false,
         useACF: false,
         verboseOutput: true,
-        perPage: 50,
         excludedRoutes: [
           '/yoast/*/configurator',
-          '/*/*/settings'
+          '/*/*/settings',
+          '/*/*/pages'
         ]
       }
     },

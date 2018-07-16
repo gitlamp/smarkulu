@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import _ from 'lodash'
 
 import SEO from '../../components/SEO'
-import { Copy } from '../../components/Elements'
+import { Copy, CTA } from '../../components/Elements'
 import { Above } from '../../components/Partials'
 
 class PostsViewer extends React.Component {
@@ -16,15 +16,14 @@ class PostsViewer extends React.Component {
     if (this.props.postsToShow) var postsToShow = this.props.postsToShow
     this.state = {
       showingMore: postsToShow > 12,
-      postsToShow,
-      showLoading: false
+      showLoading: false,
+      postsToShow
     }
     this.update = this.update.bind(this)
     this.handleScroll = this.handleScroll.bind(this)
   }
   update() {
-    const distanceToBottom =
-      document.documentElement.offsetHeight - ( window.scrollY + window.innerHeight )
+    const distanceToBottom = document.documentElement.offsetHeight - ( window.scrollY + window.innerHeight )
 
     if (this.state.showingMore && distanceToBottom < 300) {
       this.setState({
@@ -46,10 +45,11 @@ class PostsViewer extends React.Component {
     window.removeEventListener('srcoll', this.handleScrol)
   }
   render() {
-    const data = this.props.data
-    const posts = data.allWordpressPost.edges
-    const meta = data.site.siteMetadata.blog.fa
-    const rowProps = getRowProps(this.props)
+    const data = this.props.data,
+          posts = data.allWordpressPost.edges,
+          meta = data.site.siteMetadata.blog.fa,
+          rowProps = getRowProps(this.props),
+          noIMGSource = data.noImg.resolutions
     return (
       <div>
         <SEO pagePath="fa" title={meta.title} generalDesc={meta.description}/>
@@ -65,38 +65,54 @@ class PostsViewer extends React.Component {
           <Grid className="posts-view">
             {_.chunk(posts.slice(0, this.state.postsToShow), 4)
               .map(chunk =>
-                chunk.map(({node}) =>
-                  <div className={`${rowProps.className}`} key={node.wordpress_id}>
-                    <Col xs={12} md={8} className="post-card">
-                      <Img
-                        resolutions={node.featured_media.localFile.childImageSharp.resolutions}
-                        style={{
-                          position: "absolute",
-                          left: 0,
-                          top: 0,
-                          width: "100%",
-                          height: "100%",
-                          zIndex: -1,
-                          filter: 'blur(2px)'
-                        }}/>
-                      <div className="post-card-image">
+                chunk.map(({node}) => {
+                  let postImageSrc
+
+                  try {
+                    if (node.featured_media.localFile) {
+                      postImageSrc = node.featured_media.localFile.childImageSharp.resolutions
+                    }
+                  } catch (e) {
+                    e.preventDefault
+                    console.error(`There is a problem with image source of post with ${node.wordpress_id} ID`)
+                  }
+
+                  return (
+                    <div className={`${rowProps.className}`} key={node.wordpress_id}>
+                      <Col xs={12} md={8} className="post-card">
                         <Img
-                        resolutions={node.featured_media.localFile.childImageSharp.resolutions}
-                        style={{
-                          position: "absolute",
-                          left: 0,
-                          top: 0,
-                          width: "100%",
-                          height: "100%"
-                        }}/>
-                      </div>
-                      <div className="post-card-content">
-                        <Copy className="post-title" element="h1" type="subheader" child={node.title} noEscape/>
-                        <Copy className="post-desc" element="p" type="sub" child={node.excerpt.split(/<\/?p[^>]*>/g)[1]} noEscape/>
-                      </div>
-                    </Col>
-                  </div>
-                )
+                          resolutions={postImageSrc ? postImageSrc : noIMGSource}
+                            style={{
+                              position: "absolute",
+                              left: 0,
+                              top: 0,
+                              width: "100%",
+                              height: "100%",
+                              zIndex: -1,
+                              filter: 'blur(2px)'
+                            }}/>
+                        <div className="post-card-image">
+                          <Img
+                            resolutions={postImageSrc ? postImageSrc : noIMGSource}
+                                style={{
+                                  position: "absolute",
+                                  left: 0,
+                                  top: 0,
+                                  width: "100%",
+                                  height: "100%"
+                                }}/>
+                        </div>
+                        <div className="post-card-content">
+                          <Copy className="post-title" element="h1" type="subheader" child={node.title} noEscape/>
+                          <Copy className="post-desc" element="p" type="sub" child={node.excerpt.split(/<\/?p[^>]*>/g)[1].split(/<\/?a[^>]*>/g)[0]} noEscape/>
+                          {node.categories.map(({name}, i) =>
+                            <CTA type="internal" href={`/${name}/${node.slug}/`} langKey="fa" className="button-white" name="btn.readMore" key={i}/>
+                          )}
+                        </div>
+                      </Col>
+                    </div>
+                  )
+                })
               )
             }
             {!this.state.showingMore && (
@@ -150,8 +166,13 @@ query BlogFaPage {
     edges {
       node {
         wordpress_id
+        title
+        excerpt
+        slug
+        categories {
+          name
+        }
         featured_media {
-          source_url
           localFile {
             childImageSharp {
                resolutions {
@@ -160,9 +181,12 @@ query BlogFaPage {
             }
           }
         }
-        title
-        excerpt
       }
+    }
+  }
+  noImg: imageSharp( id: { regex: "/no-image/" } ) {
+    resolutions {
+      ...GatsbyImageSharpResolutions_noBase64
     }
   }
 }
