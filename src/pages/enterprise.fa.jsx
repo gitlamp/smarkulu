@@ -3,6 +3,7 @@ import graphql from 'graphql'
 import { Row, Col } from 'react-flexbox-grid'
 import { connect } from 'react-redux'
 
+import Form from '../components/Forms2'
 import SEO from '../components/SEO'
 import { Copy } from '../components/Elements'
 
@@ -23,23 +24,23 @@ const Enterprise = (props) => {
                 <Copy type="sub" element="h3" child={node.body.subheader}/>
                 <Copy type="header" element="h1" child={node.body.header}/>
               </div>
-                <ul className="double-divided-col-body">
-                  {node.body.list.header}
-                  {node.body.list.items.map((item, i) =>
-                    <li key={i}>{item}</li>
-                  )}
-                </ul>
+              <ul className="double-divided-col-body">
+                {node.body.list.header}
+                {node.body.list.items.map((item, i) =>
+                  <li key={i}>{item}</li>
+                )}
+              </ul>
             </Col>
             <Col xs={12} sm={6} className="double-divided-col hasBackground">
               <div className="form-wrapper">
                 <div className="form-banner">{node.body.form.banner}</div>
-                <script type="text/javascript" src="//m.taskulu.com/form/generate.js?id=11"></script>
+                <Form formContent={data.form} />
               </div>
             </Col>
           </Row>
-              </div>
-      )}
         </div>
+      )}
+    </div>
   )
 }
 
@@ -81,6 +82,9 @@ query EnterpriseFaPage {
         }
       }
     }
+  }
+  form: mauticForm(name: {regex: "/Demo.*fa/"}) {
+    ...mauticFormData
   }
 }
 `
