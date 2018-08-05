@@ -26,6 +26,15 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-mautic',
+      options: {
+        baseUrl: 'https://m.taskulu.com',
+        auth: 'basic',
+        publicKey: 'admin',
+        secretKey: '0aMGj2SWHRbwo8Pv8ksM'
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'logos',
