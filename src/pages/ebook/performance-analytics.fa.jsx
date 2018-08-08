@@ -81,7 +81,7 @@ query PerfromancePage {
       }
     }
   }
-  form: mauticForm(name: {regex: "/Demo.*fa/"}) {
+  form: mauticForm(name: {regex: "/Performance.*/"}) {
     ...mauticFormData
   }
 }

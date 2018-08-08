@@ -92,7 +92,7 @@ query ShahrdariPage {
       }
     }
   }
-  form: mauticForm(name: {regex: "/Demo.*fa/"}) {
+  form: mauticForm(name: {regex: "/Shahrdari.*/"}) {
     ...mauticFormData
   }
 }

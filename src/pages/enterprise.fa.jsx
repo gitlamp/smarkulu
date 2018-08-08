@@ -83,7 +83,7 @@ query EnterpriseFaPage {
       }
     }
   }
-  form: mauticForm(name: {regex: "/Demo.*fa/"}) {
+  form: mauticForm(name: {regex: "/Demo.*Fa/"}) {
     ...mauticFormData
   }
 }
