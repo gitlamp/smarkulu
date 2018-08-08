@@ -19,6 +19,7 @@
     "gatsby-plugin-sharp": "^1.6.43",
     "gatsby-plugin-sitemap": "^1.2.20",
     "gatsby-source-filesystem": "^1.5.29",
+    "gatsby-source-mautic": "^0.7.2",
     "gatsby-source-wordpress": "^2.0.85",
     "gatsby-transformer-remark": "^1.7.39",
     "gatsby-transformer-sharp": "^1.6.23",
@@ -49,9 +50,11 @@
     "sync": "gatsby build && ./server-sync.sh",
     "develop": "gatsby develop",
     "build:serve": "gatsby build && gatsby serve",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "jest": "jest"
   },
   "devDependencies": {
+    "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-react-app": "^1.0.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",

@@ -3,6 +3,7 @@ import graphql from 'graphql'
 import { FormattedMessage } from 'react-intl'
 import { Row, Col } from 'react-flexbox-grid'
 
+import Form from '../../components/Forms2'
 import SEO from '../../components/SEO'
 import { Copy } from '../../components/Elements'
 import { Above } from '../../components/Partials'
@@ -42,7 +43,7 @@ class ShahrdariPage extends React.Component {
                     </div>
                   </div>
                   <div>
-                    <script type="text/javascript" src="//m.taskulu.com/form/generate.js?id=11"></script>
+                    <Form formContent={data.form} />
                   </div>
                   <div className="form-footer">
                     <div className="form-subtitle">
@@ -90,6 +91,9 @@ query ShahrdariPage {
         }
       }
     }
+  }
+  form: mauticForm(name: {regex: "/Demo.*fa/"}) {
+    ...mauticFormData
   }
 }
 `
