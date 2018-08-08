@@ -101,21 +101,21 @@ class BlogPost extends React.Component {
         </Above>
         <Row tagName="section" center="xs">
           <Col md={3} className="blog-side">
-            <div className="side-post">
-              <Copy className="side-post-header" element="h3" type="sub" child="پست‌های پربازدید"/>
-              <ul>
+            {/* <div className="side-post">
+                <Copy className="side-post-header" element="h3" type="sub" child="پست‌های پربازدید"/>
+                <ul>
                 {popularPosts.edges.map(({node}, i) =>
-                  <li className="popular-post" key={i}>
-                    <div className="popular-post-number">
-                      <span>{toPersianDigits(i+1)}</span>
-                    </div>
-                    <Link to={`/fa/${postCategory}/${node.slug}`} className="popular-post-title">
-                      <h4>{node.title}</h4>
-                    </Link>
-                  </li>
+                <li className="popular-post" key={i}>
+                <div className="popular-post-number">
+                <span>{toPersianDigits(i+1)}</span>
+                </div>
+                <Link to={`/fa/${postCategory}/${node.slug}`} className="popular-post-title">
+                <h4>{node.title}</h4>
+                </Link>
+                </li>
                 )}
-              </ul>
-            </div>
+                </ul>
+                </div> */}
           </Col>
           <Col xs={10} md={8} mdOffset={1} className="post-body">
             <div className="post-publication">
@@ -227,14 +227,6 @@ export const postQuery = graphql`
         description
         avatar_urls {
           wordpress_96
-        }
-      }
-    }
-    allWordpressWordpressPopularPostsPopularPosts(filter: {categories: {eq: 66 }}) {
-      edges {
-        node {
-          title
-          slug
         }
       }
     }
