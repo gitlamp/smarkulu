@@ -1,0 +1,78 @@
+.content {
+  margin-bottom: 2rem;
+  text-align: left;
+  &-video-copy {
+    font-size: 4.4rem;
+    font-family: IranSans;
+    color: #fff;
+    text-decoration: none;
+  }
+  &-head {
+    @extend %head1;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  &-header {
+    @extend %head1;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  &-whyheader {
+    font-size:4.4rem;
+    text-align: right;
+    font-family: IranSans;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: #fff;
+  }
+  //for now this one is for CTAs
+  &-announce-white {
+    @extend %head3;
+    padding-bottom: 2rem;
+    color: $clouds;
+  }
+  &-subheader {
+    @extend %head2;
+    padding-top: 2rem;
+  }
+  //body is used in Section.jsx (obsolete)
+  &-title {
+    @extend %head3;
+    margin-bottom: 3rem;
+  }
+  &-integration-title {
+    @extend %head2;
+    color: #414141;
+  }
+  &-sub {
+    @extend %head4;
+  }
+  // content plain is used in terms page
+  &-plain {
+    @extend %body;
+    text-align: left;
+    line-height: 1.4;
+    & li {
+      padding-left: 10px;
+      padding-bottom: 5px;
+    }
+    .numbered {
+      list-style: decimal #{"/*rtl:persian*/"};
+    }
+    .bullet {
+      list-style: disc
+    }
+  }
+  &-content {
+    @extend %body;
+  }
+  &-filter {
+    color: #eee;
+    font-weight: 700;
+    margin: 0;
+  }
+  &-description {
+    @extend %body;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+}

@@ -2,15 +2,15 @@
  * Font faces
  */
 // IranSans
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb', normal, 400);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_UltraLight', normal, 200);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Light', normal, 300);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Medium', normal, 500);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Bold', normal, 700);
-@include font-face(IranSans, '/fonts/WebFonts/IRANSansWeb_Black', normal, 900);
+@include font-face(IranSans, '../../static/fonts/WebFonts/IRANSansWeb', normal, 400);
+@include font-face(IranSans, '../../static/fonts/WebFonts/IRANSansWeb_UltraLight', normal, 200);
+@include font-face(IranSans, '../../static/fonts/WebFonts/IRANSansWeb_Light', normal, 300);
+@include font-face(IranSans, '../../static/fonts/WebFonts/IRANSansWeb_Medium', normal, 500);
+@include font-face(IranSans, '../../static/fonts/WebFonts/IRANSansWeb_Bold', normal, 700);
+@include font-face(IranSans, '../../static/fonts/WebFonts/IRANSansWeb_Black', normal, 900);
 // IranYekan
-@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Light', normal, 300);
-@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Bold', normal, 700);
-@include font-face(IranYekan, '/fonts/WebFonts/IranyekanWeb_Regular', normal, 400);
+@include font-face(IranYekan, '../../static/fonts/WebFonts/IranyekanWeb_Light', normal, 300);
+@include font-face(IranYekan, '../../static/fonts/WebFonts/IranyekanWeb_Bold', normal, 700);
+@include font-face(IranYekan, '../../static/fonts/WebFonts/IranyekanWeb_Regular', normal, 400);
 // Fontawesome
-@include font-face(Fontawesome, '/fonts/FontAwesome/fontawesome-webfont', normal, normal);
+@include font-face(Fontawesome, '../../static/fonts/FontAwesome/fontawesome-webfont', normal, normal);

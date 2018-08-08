@@ -8,26 +8,33 @@ body:
   hero:
     header: "Make your apps connected"
     subheader: "With deep, 2-way integrations, you can connect Taskulu to all your apps and get more productive"
-  integrations:
+  allIntegrations:
     -
       header: "Google Drive"
       desc: "Online document collaboration and file storage"
+      img: /img/integration-gdrive.png
     -
       header: "Dropbox"
       desc: "Online document and file storage"
+      img: /img/integration-dropbox.png
     -
       header: "Google Calendar"
       desc: "A shared calendar for your project deadlines"
+      img: /img/integration-gcalendar.png
     -
       header: "Github Commits"
       desc: "See your coding activity on related tasks and post Github commit messages as comments"
+      img: /img/integration-github.png
     -
       header: "Gitlab Commits"
       desc: "See your coding activity on related tasks and post Gitlab commit messages as comments"
+      img: /img/integration-gitlab.png
     -
-      header: "Appear.in"
+      header: "Appearin"
       desc: "Start video conferences from chat rooms"
+      img: /img/integration-appearin.png
     -
       header: "Email Reply"
       desc: "Reply to comments and messages by replying to the notification email"
+      img: /img/integration-email.png
 ...

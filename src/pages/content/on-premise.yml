@@ -1,7 +1,7 @@
 ---
 header:
   lang: en
-  slug: /on-premise
+  slug: /product/on-premise
   title: "Taskulu Self-hosted"
   desc: "You can host Taskulu on your own servers for full control over your data. Learn more."
 body:
@@ -9,41 +9,48 @@ body:
     header: "Taskulu Self-Hosted"
     subheader: "Host Taskulu on your own servers and take full control over your data and security."
     cta: "btn.demo"
-    benefits:
-      header: "On Premise Taskulu Benefits"
-      items:
-        -
-          title: "Stay Secure"
-          desc: |
-            'Hosting Taskulu on your own servers gives you full control over your data and how it is accessed. Data in transfer is carried out via an SSL connection and all data at rest is also encrypted.<br/>
-            <ul>
-            <li>Two factor autnetication (SMS and Google Authenticator).</li>
-            <li>SSL encrypted connections with 256 bit keys.</li>
-            <li>RSA encryption</li>
-            <li>Web app firewalls</li>
-            <li>Custom backup schedules</li>
-            <li>Backup encryption</li></ul>'
-        -
-          title: "Work without interruption"
-          desc: "With clustered database servers and load balanced webservers minimize downtime and increase team productivity. Simply add more pods and scale Taskulu up and down easily – just like you can do on cloud."
-        -
-          title: "Customize for your needs"
-          desc: |
-            <ul>
-            <li>Localize to any language</li>
-            <li>RESTful APIs</li>
-            <li>Easy to integrate with any external service (ERP, File management, etc)</li>
-            <li>Branding (logo, colors schemes, etc)</li></ul>
-        -
-          title: "Easy deployment and maintenance"
-          desc: |
-            'Taskulu is quite easy to deploy and maintain – simply import the Taskulu VM image and use the built in admin interface to adjust configuration and deploy updates.<br/>
-            <ul>
-            <li>OVA VMware image (runs on Linux or Windows virtual machine)</li>
-            <li>OVA VirtualBox image (runs on Linux, Windows or MacOS)</li>
-            </ul>'
+  benefits:
+    header: "On Premise Taskulu Benefits"
+    secure:
+      title: "Stay Secure"
+      desc: |
+        Hosting Taskulu on your own servers gives you full control over your data and how it is accessed. Data in transfer is carried out via an SSL connection and all data at rest is also encrypted.<br/>
+        <ul>
+        <li>Two factor autnetication (SMS and Google Authenticator).</li>
+        <li>SSL encrypted connections with 256 bit keys.</li>
+        <li>RSA encryption</li>
+        <li>Web app firewalls</li>
+        <li>Custom backup schedules</li>
+        <li>Backup encryption</li></ul>
+      img: /img/taskulu-on-premise-secure.png
+      alt: "Taskulu on-premise is secure"
+    nointerrupt:
+      title: "Work without interruption"
+      desc: "With clustered database servers and load balanced webservers minimize downtime and increase team productivity. Simply add more pods and scale Taskulu up and down easily – just like you can do on cloud."
+      img: /img/taskulu-on-premise-uninterrupted.png
+      alt: "Taskulu on-premise never interrupts your work"
+    customize:
+      title: "Customized for your needs"
+      desc: |
+        <ul>
+        <li>Localize to any language</li>
+        <li>RESTful APIs</li>
+        <li>Easy to integrate with any external service (ERP, File management, etc)</li>
+        <li>Branding (logo, colors schemes, etc)</li></ul>
+      img: /img/taskulu-on-premise-integrated.png
+      alt: "Taskulu on-premise is customizable"
+    deploy:
+      title: "Easy deployment and maintenance"
+      desc: |
+        Taskulu is quite easy to deploy and maintain – simply import the Taskulu VM image and use the built in admin interface to adjust configuration and deploy updates.<br/>
+        <ul>
+        <li>OVA VMware image (runs on Linux or Windows virtual machine)</li>
+        <li>OVA VirtualBox image (runs on Linux, Windows or MacOS)</li>
+        </ul>
+      img: /img/taskulu-on-premise-maintenance.png
+      alt: "Taskulu on-premise is easy to deploy and maintain"
   demoCTA:
     header: "Thousands of organizations are using Taskulu everyday."
-    cta: "btn.cta"
+    cta: "btn.start"
 
 ...

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Row, Col, getRowProps, getColumnProps } from 'react-flexbox-grid'
 import { FormattedMessage } from 'react-intl';
 import $ from 'jquery'
+import { connect } from 'react-redux'
 
 import logoList from '../data/logos'
 class Above extends React.Component{
@@ -13,6 +14,7 @@ class Above extends React.Component{
     }
   }
   componentWillMount() {
+    // Check for setting appropriate height
     if (this.props.full) {
       this.setState({
         class: this.state.class + ' full'
@@ -21,14 +23,21 @@ class Above extends React.Component{
       this.setState({
         class: this.state.class + ' compact'
       })
-    } else if (this.props.home) {
+    } else if(this.props.empty) {
       this.setState({
-        class: this.state.class + ' home'
+        class: this.state.class + ' empty'
       })
     } else {
       this.setState({
         class: this.state.class + ' normal'
       })
+    }
+
+    // If Above has gradient then change header type
+    if (this.props.hasGradient) {
+      this.props.whiteHeader()
+    } else {
+      this.props.blueHeader()
     }
   }
   render() {
@@ -96,6 +105,7 @@ class TwoColumn extends React.Component {
       <div className={rowProps.className}>
         {(children && children.length == 2)
         ? renderedChild
+        /*eslint no-console: "off"*/
         : console.error('Warning: `TwoColumn` has less or more than 2 child')
         }
       </div>
@@ -136,7 +146,7 @@ class Logos extends React.Component {
                       </FormattedMessage>
 
     return (
-      <Row tagName="section" className={"complogos " + this.props.className} center="xs">
+      <Row tagName="section" className={"complogos " + this.props.className} center="xs" id={this.props.id}>
         {
           (this.props.header) ?
           (
@@ -176,4 +186,15 @@ Above.propTypes = {
   full: PropTypes.bool
 }
 
-export { Above, TwoColumn, Logos }
+// Map redux action to component props
+const mapDispatchToProps = dispatch => {
+  return {
+    whiteHeader: () => dispatch({ type: 'whiteHeader' }),
+    blueHeader: () => dispatch({ type: 'blueHeader' })
+  }
+}
+
+// Connected component
+const ConnectedAbove = connect(null, mapDispatchToProps)(Above)
+
+export { ConnectedAbove as Above, TwoColumn, Logos }

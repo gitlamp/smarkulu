@@ -18,7 +18,7 @@ body:
     header: |
       در سازمان‌های دولتی، شرکت‌های بازاریابی
       <br/> یا حتی تیم‌های بازی‌سازی
-    eazy:
+    easy:
       title: "تسکولو را مطابق نیازتان بسازید و کارها و پروژه‌ها را پیش ببرید"
       img: /img/make-own-project.png
     scalable:
@@ -62,33 +62,31 @@ body:
       -
         company: "SarmaAfarin"
         alt: "سرما آفرین"
-  customers: 
+  customers:
     header: "ببینید تسکولو چطور به شرکت‌ها کمک می‌کند"
     img: /img/saeed.png
     src: https://www.aparat.com/v/YkwI9
-  collaboration: 
+  collaboration:
     header: "همه اطلاعات را یک جا ببینید، از آخرین فعالیت‌های افراد باخبر باشید، و با ایجاد ارتباط موثر در تیم کاری خود، با هم نتیجه بگیرید"
-  indexFeatures: 
+  indexFeatures:
     header: "همه امکاناتی که برای بهره‌وری بیشتر احتیاج دارید"
     items:
-      - 
+      -
         icon: /img/create-project.svg
         text: "پروژه‌ها و کارهایتان را تعریف کنید."
-      - 
+      -
         icon: /img/invite-teams.svg
         text: "همکارانتان را دعوت کنید و کارها را به آن‌ها بسپارید."
-      - 
+      -
         icon: /img/analytic-reports.svg
         text: "با گزارش‌های قابل فهم، راحت‌تر تصمیم‌گیری کنید."
-  demoCTA: 
+  demoCTA:
     body: |
-      نسخه‌های حرفه‌ای و سازمانی تسکولو به تیم‌ها و سازمان‌هایی در سرتاسر دنیا کمک کرده‌است تا بهترین نتیجه را بگیرند. می‌خواهید بدانید چطور؟
-      <br/></br/>
+      نسخه‌های حرفه‌ای و سازمانی تسکولو به تیم‌ها و سازمان‌هایی در سرتاسر دنیا کمک کرده‌است تا بهترین نتیجه را بگیرند.<br/>
+      می‌خواهید بدانید چطور؟<br/>
       برای اطلاعات بیشتر با کارشناسان فروش ما مشورت کنید.
-
-    cta: btn.register
-    header: count.users.alphanumeric
-    headerParts: 
+    cta: btn.demo
+    headerParts:
         -
           "به بیش از"
         -

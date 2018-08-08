@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl';
-
 import { genLink } from './functions'
-
 /**
  * Class to insert a Header and props for
  * inerting text, html tag and styles
@@ -12,7 +10,8 @@ class Copy extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      type: 'content-' + this.props.type + ' '
+      class: '',
+      type: 'content-' + this.props.type
     }
   }
   componentWillMount() {
@@ -24,18 +23,28 @@ class Copy extends React.Component {
   }
   render() {
     const align = this.props.align ? ({textAlign: this.props.align}) : null
-    return React.createElement(
-      // Type of html tag
-      this.props.element,
-      // All props defined on element
-      {
-        className: this.state.type + this.props.className,
-        style: align,
-        dangerouslySetInnerHTML: {__html: this.props.child }
-      }
-      // Pass the children inside element
-
-    )
+    let element = ''
+    // In case of dangerouslySetInnerHTML
+    if(this.props.noEscape) {
+      element = React.createElement(
+        this.props.element,
+        {
+          className: this.state.type + this.state.class,
+          style: align,
+          dangerouslySetInnerHTML: {__html: this.props.child}
+        }
+      )
+    } else {
+      element = React.createElement(
+        this.props.element,
+        {
+          className: this.state.type + this.state.class,
+          style: align
+        },
+        this.props.child || this.props.children
+      )
+    }
+    return element
   }
 }
 
@@ -82,6 +91,31 @@ class Img extends React.Component {
   }
 }
 
+class ShowMore extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {expanded: false}
+    this.expand = this.expand.bind(this)
+  }
+  expand() {
+    this.setState(prevState => ({expanded: !prevState.expanded}))
+  }
+  render() {
+    return(
+      <div className={this.props.className} onClick={this.expand}>
+      {!this.state.expanded ?
+       <FormattedMessage id={this.props.more}>
+         {txt => <span>{txt}</span>}
+       </FormattedMessage> :
+       <FormattedMessage id={this.props.less}>
+         {txt => <span>{txt}</span>}
+      </FormattedMessage>
+      }
+      </div>
+    )
+  }
+}
+
 Copy.propTypes = {
   child: PropTypes.string,
   type: PropTypes.string.isRequired,
@@ -101,4 +135,4 @@ Img.propTypes = {
   alt: PropTypes.string
 }
 
-export default { Copy, CTA, Img }
+export default { Copy, CTA, Img, ShowMore }

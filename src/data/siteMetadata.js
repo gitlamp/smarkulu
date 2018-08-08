@@ -3,17 +3,30 @@ const languages = require('./languages')
 module.exports = {
   title: `Taskulu`,
   siteUrl: `https://taskulu.com`,
+  blog: {
+    en: {
+      title: 'Taskulu Blog',
+      description: ''
+    },
+    fa: {
+      title: 'وبلاگ',
+      description: 'نوشته‌هایی در مورد مدیریت، بهره‌وری و افزایش بازدهی تیمی'
+    }
+  },
+  blogTitle: 'blog.title',
+  blogHeader: 'blog.header',
+  blogDesc: 'blog.desc',
   description: `Flexible task management, realtime chat, time logs and deep integrations. Taskulu helps you get results and scale your team performance.`,
   sourceCodeLink: `https://git.taskulu.com/amirali/smarkulu.git`,
   menu: {
     header: [
-      {label: 'header.menu.product', slug: '/product'},
-      {label: 'header.menu.pricing', slug: '/pricing'},
+      {label: 'header.menu.product', slug: '/product/'},
+      {label: 'header.menu.pricing', slug: '/pricing/'},
       {
         label: 'header.menu.industries',
-        slug: '/our-users',
+        slug: '/our-users/',
         items: [
-          {label: 'header.menu.marketing', slug: '/industries/marketing'}
+          {label: 'header.menu.marketing', slug: '/industries/marketing/'}
         ]
       },
     ],
@@ -24,30 +37,30 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.home', slug:'/'},
-            {label: 'footer.menu.product', slug:'/product'},
-            {label: 'footer.menu.companies', slug:'/our-users'},
-            {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.customer-success', slug:'/customer-success'},
-            {label: 'footer.menu.demo', slug:'/enterprise'},
+            {label: 'footer.menu.product', slug:'/product/'},
+            {label: 'footer.menu.companies', slug:'/our-users/'},
+            {label: 'footer.menu.pricing', slug:'/pricing/'},
+            {label: 'footer.menu.demo', slug:'/enterprise/'},
           ]
         },
         {
           label: 'col-label-2',
           slug: '',
           items: [
-            {label: 'footer.menu.company', slug:'/about'},
-            {label: 'footer.menu.contact', slug:'/contact'},
-            {label: 'footer.menu.press', slug:'/press'},
-            {label: 'footer.menu.blog', slug:'/blog'},
+            {label: 'footer.menu.company', slug:'/about/'},
+            {label: 'footer.menu.contact', slug:'/contact/'},
+            {label: 'footer.menu.press', slug:'/press/'},
           ]
         },
         {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'footer.menu.security', slug:'/security'},
-            {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
-            {label: 'footer.menu.time.management', slug:'/time-management'},
+            {label: 'footer.menu.analytics', slug:'/product/performance-analytics/'},
+            {label: 'footer.menu.integrations', slug:'/product/integrations/'},
+            {label: 'footer.menu.security', slug:'/product/security/'},
+            {label: 'footer.menu.file.previews', slug:'/product/file-previews/'},
+            {label: 'footer.menu.time.tracking', slug:'/product/time-tracking/'},
           ]
         },
         {
@@ -55,7 +68,7 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.help', slug:'help.taskulu.com'},
-            {label: 'footer.menu.academy', slug:'academy.taskulu.com'},
+            {label: 'footer.menu.blog', slug:'/blog/'},
           ]
         }
       ],
@@ -65,30 +78,29 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.home', slug:'/'},
-            {label: 'footer.menu.product', slug:'/product'},
-            {label: 'footer.menu.companies', slug:'/our-users'},
-            {label: 'footer.menu.pricing', slug:'/pricing'},
-            {label: 'footer.menu.customer-success', slug:'/customer-success'},
-            {label: 'footer.menu.demo', slug:'/enterprise'},
+            {label: 'footer.menu.product', slug:'/product/'},
+            {label: 'footer.menu.companies', slug:'/our-users/'},
+            {label: 'footer.menu.pricing', slug:'/pricing/'},
+            {label: 'footer.menu.demo', slug:'/enterprise/'},
           ]
         },
         {
           label: 'col-label-2',
           slug: '',
           items: [
-            {label: 'footer.menu.company', slug:'/about'},
-            {label: 'footer.menu.contact', slug:'/contact'},
-            {label: 'footer.menu.press', slug:'/press'},
-            {label: 'footer.menu.blog', slug:'/blog'},
+            {label: 'footer.menu.company', slug:'/about/'},
+            {label: 'footer.menu.contact', slug:'/contact/'},
+            {label: 'footer.menu.press', slug:'/press/'},
           ]
         },
         {
           label: 'col-label-3',
           slug: '',
           items: [
-            {label: 'footer.menu.security', slug:'/security'},
-            {label: 'footer.menu.analytics', slug:'/product/performance-analytics'},
-            {label: 'footer.menu.time.management', slug:'/time-management'},
+            {label: 'footer.menu.analytics', slug:'/product/performance-analytics/'},
+            {label: 'footer.menu.integrations', slug:'/product/itnegrations/'},
+            {label: 'footer.menu.time.management', slug:'/product/time-management/'},
+            {label: 'footer.menu.task.management', slug:'/product/task-management/'},
           ]
         },
         {
@@ -96,7 +108,10 @@ module.exports = {
           slug: '',
           items: [
             {label: 'footer.menu.help', slug:'help.taskulu.com'},
-            {label: 'footer.menu.academy', slug:'academy.taskulu.com'},
+            {label: 'footer.menu.blog', slug:'/blog/'},
+            {label: 'footer.menu.construction', slug:'/ebook/digital-construction/'},
+            {label: 'footer.menu.performance.analytics', slug:'/ebook/performance-analytics/'},
+            {label: 'footer.menu.mashhad', slug:'/ebook/shahrdari-mashhad/'},
           ]
         }
       ]
@@ -118,17 +133,7 @@ module.exports = {
       // Linkedin
       {
         icon: 'fa fa-linkedin-square linkedin-highlight',
-        link: 'linkedin'
-      },
-      // Telegram
-      {
-        icon: 'fa fa-telegram telegram-highlight',
-        link: 'telegram'
-      },
-      // Instagram
-      {
-        icon: 'fa fa-instagram instagram-highlight',
-        link: 'instagram'
+        link: 'https://www.linkedin.com/company/taskulu'
       }
     ],
     fa: [
@@ -145,29 +150,17 @@ module.exports = {
       // Linkedin
       {
         icon: 'fa fa-linkedin-square linkedin-highlight',
-        link: 'linkedin'
+        link: 'https://www.linkedin.com/company/تسکولو'
       },
       // Telegram
       {
         icon: 'fa fa-telegram telegram-highlight',
-        link: 'telegram'
+        link: 'https://t.me/taskulu_ir'
       },
       // Instagram
       {
         icon: 'fa fa-instagram instagram-highlight',
-        link: 'instagram'
-      }
-    ]
-  },
-  test: {
-    "a": [
-      {
-        label: 1
-      }
-    ],
-    "b": [
-      {
-        label: 2
+        link: 'https://www.instagram.com/taskulu_ir/'
       }
     ]
   }

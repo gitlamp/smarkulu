@@ -1,15 +1,10 @@
 import React from 'react'
 import graphql from 'graphql'
-import { FormattedMessage } from 'react-intl'
-import { Grid, Row, Col } from 'react-flexbox-grid'
-import Helmet from 'react-helmet'
-import $ from 'jquery'
-import { TweenLite } from 'gsap'
+import { Row, Col } from 'react-flexbox-grid'
 
 import SEO from '../components/SEO'
-import Input from '../components/Input'
-import { Copy, CTA, Img } from '../components/Elements'
-import { TwoColumn, Above, Logos } from '../components/Partials'
+import { Copy } from '../components/Elements'
+import { Above } from '../components/Partials'
 
 class TermsPage extends React.Component {
   constructor(props) {
@@ -18,7 +13,6 @@ class TermsPage extends React.Component {
   render() {
     const data = this.props.data
     const langKey = this.props.pathContext.langKey
-    const slug = this.props.pathContext.slug
     return (
       <div>
         {data.allContentYaml.edges.map(({node}) =>
@@ -31,7 +25,7 @@ class TermsPage extends React.Component {
             </Above>
             <Row tagName="section" center="xs">
               <Col xs={10} sm={6}>
-                <Copy type="plain" element="div" child={node.body.preamble} />
+                <Copy type="plain" element="div" child={node.body.preamble} noEscape/>
               </Col>
               <Col xs={10}>
                 <Copy type="subheader" element="h3" child={node.body.account.title}/>
@@ -84,7 +78,7 @@ class TermsPage extends React.Component {
                 </ul>
               </Col>
               <Col xs={10} sm={6}>
-                <Copy type="plain" element="div" child={node.body.ending} />
+                <Copy type="plain" element="div" child={node.body.ending} noEscape/>
               </Col>
             </Row>
           </div>
@@ -101,7 +95,14 @@ export default TermsPage
  */
 export const pageQuery = graphql `
 query TermsEnPage {
-  allContentYaml(filter: {header: {lang: {eq: "en"}, slug: {eq: "/terms"}}}) {
+  allContentYaml(
+    filter: {
+      header: {
+        lang: { eq: "en" }
+        slug: { eq: "/terms" }
+      }
+    }
+  ){
     edges {
       node {
         id

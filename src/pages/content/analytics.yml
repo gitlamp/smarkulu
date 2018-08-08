@@ -35,6 +35,6 @@ body:
       img: /img/taskulu-en-analytics-filter.png
       alt: "Taskulu Analytics filters for projects, members, tags"
   demoCTA:
-    body: "Need more information about Taskulu Analytics? we're happy to schedule a demo."
+    body: "Need more information about Taskulu Analytics?<br> we're happy to schedule a demo."
     cta: "btn.demo"
 ...

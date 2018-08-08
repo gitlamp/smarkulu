@@ -12,89 +12,60 @@ body:
       jobTitle: "بنیانگذار و مدیرعامل"
       twitter: "https://twitter.com/farhad_hf"
       linkedin: "https://ir.linkedin.com/in/fhedayatifard"
-      front: "farhad-front"
-      back: "farhad-back"
+      front: "/img/staff-farhad1.jpg"
+      back: "/img/staff-farhad2.jpg"
     -
       name: "کاظم کشاورز"
       jobTitle: "بنیانگذار و مدیر فنی"
       twitter: "https://twitter.com/_otik"
       linkedin: "https://ir.linkedin.com/in/keykakito"
-      front: "kazem-front"
-      back: "kazem-back"
+      front: "/img/staff-kazem1.jpg"
+      back: "/img/staff-kazem2.jpg"
     -
       name: "همایون هدایتی‌فر"
       jobTitle: "مهندس محصول"
       twitter: "https://twitter.com/hmn_hf"
       linkedin: "https://ir.linkedin.com/in/hmnhf"
-      front: "homayoun-front"
-      back: "homayoun-back"
+      front: "/img/staff-homayoun1.jpg"
+      back: "/img/staff-homayoun2.jpg"
     -
       name: "آزاده نوربخش"
       jobTitle: "مدیر موفقیت مشتریان"
       twitter: "https://twitter.com/azazadeh"
       linkedin: "https://ir.linkedin.com/in/azadehnourbakhsh"
-      front: "azadeh-front"
-      back: "azadeh-back"
+      front: "/img/staff-azadeh1.jpg"
+      back: "/img/staff-azadeh2.jpg"
     -
       name: "سینا صباغ"
       jobTitle: "مدیر مارکتینگ"
       twitter: "https://twitter.com/sinasabbagh"
       linkedin: "https://ir.linkedin.com/in/sina-sabbagh-b566b896"
-      front: "sina-front"
-      back: "sina-back"
+      front: "/img/staff-sina1.jpg"
+      back: "/img/staff-sina2.jpg"
     -
       name: "روزبه میرزایی"
       jobTitle: "توسعه کسب و کار"
       linkedin: "https://www.linkedin.com/in/roozbeh-mirzaee-97810812a"
-      front: "roozbeh-front"
-      back: "roozbeh-back"
+      front: "/img/staff-roozbeh1.png"
+      back: "/img/staff-roozbeh2.png"
     -
       name: "امیرحسین اقدسی"
       jobTitle: "توسعه کسب و کار"
       twitter:
       linkedin:
-      front: "amirhossein-front"
-      back: "amirhossein-back"
     -
       name: "علی فضائلی"
       jobTitle: "مدیر محصول"
       twitter:
       linkedin:
-      front: "ali-front"
-      back: "ali-back"
     -
       name: "امیرعلی ساری‌اصلانی"
-      jobTitle: "کارشناس مارکتینگ"
+      jobTitle: "کارشناس مارکتینگ و توسعه‌دهنده وب"
       twitter:
       linkedin:
-      front: "amirali-front"
-      back: "amirali-back"
-    -
-      name: "نگار گلجان"
-      jobTitle: "کارشناس فروش"
-      twitter:
-      linkedin:
-      front: "negar-front"
-      back: "negar-back"
-    -
-      name: "مهرداد اسدی"
-      jobTitle: "کارشناس موفقیت مشتری"
-      twitter:
-      linkedin:
-      front: "mehrdad-front"
-      back: "mehrdad-back"
-    -
-      name: "مهرداد محمدی"
-      jobTitle: "کارشناس موفقیت مشتری"
-      twitter:
-      linkedin:
-      front: "mehrdad-front"
-      back: "mehrdad-back"
     -
       name: "بیلبو"
       jobTitle: "مِه!"
-      front: "bilbo-front"
-      back: "bilbo-back"
   mission:
     header: "ما که هستیم و چه می‌خواهیم؟"
     body: |

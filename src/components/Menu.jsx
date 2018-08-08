@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl'
 import { Row, Col, getRowProps } from 'react-flexbox-grid'
 import $ from 'jquery'
-import { TweenLite, Cubic, Power0 } from 'gsap'
+import { TweenLite, Cubic } from 'gsap'
 
 class Menu extends React.Component {
   constructor(props) {

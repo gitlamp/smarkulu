@@ -1,7 +1,8 @@
 ---
 header:
   lang: en
-  slug: /product/gcalendar
+  slug: /product/integrations/gcalendar
+  linked: "Google Calendar"
   title: "Google Calendar Integration"
   desc: "With Google Calendar you can create shared calendars with your team, create events and manage deadlines."
 body:

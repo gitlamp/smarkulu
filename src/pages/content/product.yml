@@ -2,197 +2,199 @@
 header:
   lang: en
   slug: /product
-  title: Product
-  desc: Get a tour of Taskulu features and see how it can help you become more productive.
-body: 
-  hero: 
-    header: 
-    desc: 
-  section1: 
-    body: 
-    header: 
-  section2: 
-    body: 
-    header: 
-  section3: 
-    body: 
-    header: 
-  features: 
-    header: 
-    items: 
-      - 
-        desc: 
+  title: Features
+  desc: "All the features you want for managing your company or team, packed in an easy-to-understand design. Learn more about Taskulu features."
+body:
+  hero:
+    header: |
+      <strong>Taskulu</strong>&nbsp;<span style="font-family: mono">/tas'kŭlŭ/</span><br/>
+    desc: |
+      (noun) all the features you need to run your team or company,<br/>packed in an elegant design
+  section1:
+    body: "Taskulu is flexible by design. Use Organizaions, Projects, Sheets, Lists, Tasks and Checklists to build Taskulu the way your team works."
+    header: "Multi-layered and flexible task management"
+  section3:
+    body: "Taskulu Analytics transform team efforts to realtime data. Stay updated on every front and spot bottlenecks before they affect your team's performance."
+    header: "Increase productivity with data-driven analysis"
+  section2:
+    body: "Anyone can work with Taskulu. Set proper access to lists and tasks, communicate with your team efficiently and get result together."
+    header: "Easy for everyone in your team"
+  features:
+    header: "Taskulu Features"
+    items:
+      -
+        desc: "Create tasks easily and never lose track."
         icon: icon-tasks
-        title: 
-        link: "#"
-      - 
-        desc: 
+        title: "Tasks"
+        link: ""
+      -
+        desc: "Whether a project-oriented or process-oriented company or just a small team with daily tasks, you can use projects to manage corresponding tasks."
         icon: icon-project
-        title: 
+        title: "Projects"
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Collect several related projects in one organization to keep members management in one place. You will also need a premium organization to use Taskulu Analytics."
         icon: icon-org
-        title: 
+        title: Organization
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Keep different concerns in a large project seperated and create a clean, accesible workspace for everybody in your team."
         icon: icon-sheets
-        title: 
+        title: Sheets
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Use lists to define your workflow, seperate parts of your work or just do whatever that works best for your special case."
         icon: icon-lists
-        title: 
+        title: Lists
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Define steps every task should go through, and make progress tracking visually easy."
         icon: icon-sections
-        title: 
+        title: Sections
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Assign as many label as you want to your tasks and easily filter them with Taskulu advanced search."
         icon: icon-label
-        title: 
+        title: Tags
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Set tasks priority and spot important tasks in a glance or filter them with  Taskulu advanced search."
         icon: icon-color
-        title: 
+        title: Color Labels
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Attach related files and documents to your task to share them with team members and receive feedbacks quickly."
         icon: icon-upload
-        title: 
+        title: Task's files and documents
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Preview task documents in [almost] any file format, wherever you are, without leaving your browser."
         icon: icon-preview
-        title: 
-        link: ""
-      - 
-        desc: 
+        title: File preview
+        link: "/product/file-previews"
+      -
+        desc: "Add your team members to the projects and organizations and collaborate to get the job done."
         icon: icon-add-member
-        title: 
+        title: Adding members
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Assign tasks to members to inform the team which task should be done by who."
         icon: icon-assign-task
-        title: 
+        title: "Assigning tasks to members"
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Discuss and resolve issues of any task with other team members, and get them done as fast as possible."
         icon: icon-task-comments
-        title: 
+        title: Task comments
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Set the due date of the task and avoid forgetting important milestone under high workload."
         icon: icon-deadline
-        title: 
+        title: Deadlines
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Create repetitive tasks once and copy it to create a completely new task."
         icon: icon-copy-tasks
-        title: 
+        title: Copying Tasks
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Share your tasks with anyone you like, even if they are not a member of the project."
         icon: icon-share-task
-        title: 
+        title: Sharing tasks
         link: ""
-      - 
-        desc: 
+      -
+        desc: "For tasks with multiple substeps, create as many as checklists you see fit and follow their progress."
         icon: icon-checklist
-        title: 
+        title: Checklists
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Archive the tasks you don't need anymore, to declutter your workspace while keep tasks accessible for future reference."
         icon: icon-archive-tasks
-        title: 
+        title: Archiving tasks
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Search all over the project and use advanced search filters to access everything in a wink."
         icon: icon-search
-        title: 
+        title: Advanced search
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Moving away to taskulu is not only a wise choice, but a simple one too."
         icon: icon-trello
-        title: 
+        title: Importing project from trello
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Receive a notification email before reaching a deadline and stop unnecessary delays"
         icon: icon-email-reminder
-        title: 
+        title: Deadline notification emails
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Security of your data is guaranteed on a whole new level. The entirety of your project is encrypted and only decrypts only for project members on any device they use."
         icon: icon-end2end
-        title: 
-        link: ""
-      - 
-        desc: 
+        title: End-to-end encryption
+        link: "/product/security"
+      -
+        desc: "Keep sensitive information on Taskulu securely. Hackers can't reach your data without having your mobile phone, even if they get your password."
         icon: icon-mobile-auth
-        title: 
+        title: "Mobile Authentication"
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Choose your preferred language and calendar, so Taskulu shows up the way you're most comfortable with."
         icon: icon-custom-cal
-        title: 
+        title: Language/Calendar customization
         link: ""
-      - 
-        desc: 
+      -
+        desc: "On Android and IOS :)"
         icon: icon-mobile-app
-        title: 
-        link: ""
-      - 
-        desc: 
+        title: Mobile Application
+        link: "/product/mobile-app"
+      -
+        desc: "Work chat speeds up getting things done, but only if it's tightly integrated with your project management tool."
         icon: icon-chat
-        title: 
+        title: Chat Rooms
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Turns out that last message is a task? Easily turn it into a task right from chatroom."
         icon: icon-make-task
-        title: 
+        title: Create task from instant messages
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Keep track of the time you spent on your project and manage costs of human capital with ease."
         icon: icon-timelog
-        title: 
-        link: ""
-      - 
-        desc: 
+        title: Logging time spent
+        link: "/product/time-tracking"
+      -
+        desc: "Filter timelog records by deadline and members and export it as a spreadsheet for any customized report you want. "
         icon: icon-reports
-        title: 
-        link: ""
-      - 
-        desc: 
+        title: Timelog reports
+        link: "/product/time-tracking"
+      -
+        desc: "A practically concise perspective of project activities and progress, delivered to project manager's inbox weekly."
         icon: icon-weekly-reports
-        title: 
+        title: Weekly reports
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Instead of creating many small projects and make managing an excruciating task, define teams and give each only access to the sheets and lists they need in the project."
         icon: icon-team-access
-        title: 
+        title: Teams and access
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Taskulu support is always ready to help you, but sometimes it's more convenient to not wait for the queue."
         icon: icon-support
-        title: 
+        title: Priority Support
         link: ""
-      - 
-        desc: 
+      -
+        desc: "We know learning and migrating to a new tool can be time-consuming, that's why our customer success team is ready to help you get the most out of Taskulu."
         icon: icon-success
-        title: 
+        title: Customer success service
         link: ""
-      - 
-        desc: 
+      -
+        desc: "Advanced management options for members and projects on our dedicated plan."
         icon: icon-admin-panel
-        title: 
+        title: Admin panel
         link: ""
-      - 
-        desc: 
+      -
+        desc: "A data-driven path to peak performance"
         icon: icon-analytics
-        title: 
-        link: ""
+        title: Taskulu Analytics
+        link: "/product/performance-analytics"
 ...

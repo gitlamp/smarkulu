@@ -12,89 +12,60 @@ body:
       jobTitle: "Founder & CEO"
       twitter: "https://twitter.com/farhad_hf"
       linkedin: "https://ir.linkedin.com/in/fhedayatifard"
-      front: "farhad-front"
-      back: "farhad-back"
+      front: "/img/staff-farhad1.jpg"
+      back: "/img/staff-farhad2.jpg"
     -
       name: "Kazem Keshavarz"
       jobTitle: "Founder & CTO"
       twitter: "https://twitter.com/_otik"
       linkedin: "https://ir.linkedin.com/in/keykakito"
-      front: "kazem-front"
-      back: "kazem-back"
+      front: "/img/staff-kazem1.jpg"
+      back: "/img/staff-kazem2.jpg"
     -
       name: "Homayoun Hedayatfard"
       jobTitle: "Product Engineer"
       twitter: "https://twitter.com/hmn_hf"
       linkedin: "https://ir.linkedin.com/in/hmnhf"
-      front: "homayoun-front"
-      back: "homayoun-back"
+      front: "/img/staff-homayoun1.jpg"
+      back: "/img/staff-homayoun2.jpg"
     -
       name: "Azadeh Nourbakhsh"
       jobTitle: "Customer Success Manager"
       twitter: "https://twitter.com/azazadeh"
       linkedin: "https://ir.linkedin.com/in/azadehnourbakhsh"
-      front: "azadeh-front"
-      back: "azadeh-back"
+      front: "/img/staff-azadeh1.jpg"
+      back: "/img/staff-azadeh2.jpg"
     -
       name: "Sina Sabbagh"
       jobTitle: "Marketing Manager"
       twitter: "https://twitter.com/sinasabbagh"
       linkedin: "https://ir.linkedin.com/in/sina-sabbagh-b566b896"
-      front: "sina-front"
-      back: "sina-back"
+      front: "/img/staff-sina1.jpg"
+      back: "/img/staff-sina2.jpg"
     -
       name: "Roozbeh Mirzaee"
       jobTitle: "Business Development"
       linkedin: "https://www.linkedin.com/in/roozbeh-mirzaee-97810812a"
-      front: "roozbeh-front"
-      back: "roozbeh-back"
+      front: "/img/staff-roozbeh1.png"
+      back: "/img/staff-roozbeh2.png"
     -
       name: "Amirhossein Aghdasi"
       jobTitle: "Business Development"
       twitter:
       linkedin:
-      front: "amirhossein-front"
-      back: "amirhossein-back"
     -
       name: "Ali Fazaeli"
       jobTitle: "Product Manager"
       twitter:
       linkedin:
-      front: "ali-front"
-      back: "ali-back"
     -
       name: "Amirali Sariaslani"
-      jobTitle: "Marketing Expert"
+      jobTitle: "Marketing Expert and Web Developer"
       twitter:
       linkedin:
-      front: "amirali-front"
-      back: "amirali-back"
-    -
-      name: "Negar Goljan"
-      jobTitle: "Sales Expert"
-      twitter:
-      linkedin:
-      front: "negar-front"
-      back: "negar-back"
-    -
-      name: "Mehrdad Asadi"
-      jobTitle: "Customer Success Expert"
-      twitter:
-      linkedin:
-      front: "mehrdad-front"
-      back: "mehrdad-back"
-    -
-      name: "Mehrdad Mohammadi"
-      jobTitle: "Customer Success Expert"
-      twitter:
-      linkedin:
-      front: "mehrdad-front"
-      back: "mehrdad-back"
     -
       name: "Bilbo"
       jobTitle: "Meh!"
-      front: "bilbo-front"
-      back: "bilbo-back"
   mission:
     header: "Who are we and What are we doing?"
     body: |

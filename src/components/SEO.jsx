@@ -58,7 +58,7 @@ class SEO extends React.Component {
     const langKey = this.state.lang
     const openGraph = this.state.openGraph
     const twitter = this.state.twitter
-    if (this.props.generalDesc.length != 0) {
+    if (this.props.generalDesc && this.props.generalDesc.length != 0) {
       openGraph.description = this.props.generalDesc
       twitter.description = this.props.generalDesc
     }
@@ -68,6 +68,7 @@ class SEO extends React.Component {
       openGraph.publisher = 'https://facebook.com/TaskuluHQ'
       twitter.site = '@taskulu'
       this.setState({
+        title: this.props.title + ' | Taskulu',
         dir: 'ltr',
         style: '/styles/main.css',
         openGraph,
@@ -79,6 +80,7 @@ class SEO extends React.Component {
       openGraph.publisher = 'https://facebook.com/taskuluir'
       twitter.site = '@taskulu_ir'
       this.setState({
+        title: this.props.title + ' | تسکولو',
         dir: 'rtl',
         style: '/styles/main-rtl.css',
         openGraph,

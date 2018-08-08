@@ -23,16 +23,16 @@ body:
   logos:
     header: "Taskulu logo"
     desc: "The blue logo works best on light backgrounds; the white one is designed for dark backgrounds."
-    enBlue: "/logos/logo-blue.svg"
+    enBlue: "logo-blue.png"
     enBlueSrc: "/files/logo-blue.zip"
-    enWhite: "/logos/logo-white.svg"
+    enWhite: "logo-white.png"
     enWhiteSrc: "/files/logo-white.zip"
   icons:
     header: "Taskulu icons"
     desc: "The blue icon works best on light backgrounds; the white one is designed for dark backgrounds."
-    iconBlue: "/logos/icon-blue.svg"
+    iconBlue: "icon-blue.png"
     iconBlueSrc: "/files/icon-blue.zip"
-    iconWhite: "/logos/icon-white.svg"
+    iconWhite: "icon-white.png"
     iconWhiteSrc: "/files/icon-white.zip"
   news:
     header: "Press coverage"
@@ -40,16 +40,16 @@ body:
       -
         title: "Could Iran Be A Software Growth Market?"
         source: "forbes"
-        img: "/img/press-forbes.png"
+        img: "press-forbes.png"
         link: http://www.forbes.com/sites/adrianbridgwater/2015/11/09/could-iran-be-a-software-growth-market/
       -
         title: "Startup Istanbul 2015: Meet the winners"
         source: "Etohum"
-        img: "/img/press-startup-istanbul.jpg"
+        img: "press-startup-istanbul.jpg"
         link: http://www.etohum.com/blog/startup-istanbul-2015-meet-the-winners/
       -
         title: "Rollenbasiertem Projektmanagement"
         source: "T3n magazine"
-        img: "/img/press-t3n.jpg"
+        img: "press-t3n.jpg"
         link: http://t3n.de/news/projektmanagement-taskulu-trello-alternative-581805/
 ...

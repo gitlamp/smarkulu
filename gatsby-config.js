@@ -26,10 +26,27 @@ module.exports = {
         path: `${__dirname}/static/img`
       }
     },
+    {
+      resolve: 'gatsby-source-mautic',
+      options: {
+        baseUrl: 'https://m.taskulu.com',
+        auth: 'basic',
+        publicKey: 'admin',
+        secretKey: '0aMGj2SWHRbwo8Pv8ksM'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'logos',
+        path: `${__dirname}/static/logos`
+      }
+    },
     'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-meta-redirect',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -54,12 +71,39 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-intercom`,
+      options: {
+        appId: 'lt4p09ux',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
           'Lato',
           'Open Sans'
         ]
+      }
+    },
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: 'taskulu.com/fa',
+        protocol: 'https',
+        hostingWPCOM: false,
+        useACF: false,
+        verboseOutput: true,
+        excludedRoutes: [
+          '/yoast/*/configurator',
+          '/*/*/settings',
+          '/*/*/pages'
+        ]
+      }
+    },
+    {
+      resolve: `@debiki/gatsby-plugin-talkyard`,
+      options: {
+        talkyardServerUrl: `https://comments-for-taskulu-com.talkyard.net/`
       }
     }
   ]

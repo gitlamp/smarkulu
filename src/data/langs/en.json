@@ -10,7 +10,11 @@
   "footer.privacy": "Privacy",
   "pricing.mode": "per user",
 
+  "expand.more": "Show More",
+  "expand.less": "Show Less",
+
   "btn.seeMore": "Learn More",
+  "btn.readMore": "Read More",
   "btn.register": "Sign up",
   "btn.login": "Login",
   "btn.login.and.register": "Login / Sign up",
@@ -18,6 +22,13 @@
   "btn.start": "Start Free",
   "btn.demo": "Request a Demo",
   "btn.product": "View Features",
+
+  "blog.title": "Blog",
+  "blog.header": "Taskulu Blog",
+  "blog.desc": "",
+  "blog.tag.title.prefix": "Taskulu blog posts which include",
+  "blog.tag.title": "Tags",
+  "blog.tags.list.title": "Tags List",
 
   "header.menu.product": "Product",
   "header.menu.pricing": "Pricing",
@@ -28,7 +39,6 @@
   "footer.menu.product": "Product",
   "footer.menu.companies": "Industries",
   "footer.menu.pricing": "Pricing",
-  "footer.menu.customer-success": "Customer Success",
   "footer.menu.demo": "Request a Demo",
   "footer.menu.company": "Who are we?",
   "footer.menu.contact": "Contact",
@@ -39,10 +49,13 @@
   "footer.menu.developers": "Developers",
   "footer.menu.content-providers": "Content Management",
   "footer.menu.help": "Help",
-  "footer.menu.academy": "Academy",
   "footer.menu.security": "Security",
   "footer.menu.analytics": "Analytics",
+  "footer.menu.integrations": "Integrations",
   "footer.menu.time.management": "Time Management",
+  "footer.menu.task.management": "Task Management",
+  "footer.menu.file.previews": "File Previews",
+  "footer.menu.time.tracking": "Time Tracking",
 
   "col-label-1": "Taskulu",
   "col-label-2": "About",

@@ -8,11 +8,16 @@ body:
   hero:
     header: "Taskulu Mobile Apps"
     cta: "btn.start"
-  body:
+  intro:
     header: "Take your tasks everywhere!"
-    desc: 'On Android and iOs, your data on Taskulu is with you anywhere you go. This make it easy to be on track with your team immediately. With our <a href="/product/security/">end-to-end encryption</a> capability, you can trust your data won’t be in the wrong hands. Also, you can use the same apps to connect to your <a href="/on-premise/">self-hosted Taskulu</a> servers.'
-    iTunes: https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8
-    play: https://play.google.com/store/apps/details?id=com.taskulu.app&hl=en
+    desc: |
+      On Android and iOs, your data on Taskulu is with you anywhere you go. This make it easy to be on track with your team immediately. With our <a href="/product/security/">end-to-end encryption</a> capability, you can trust your data won’t be in the wrong hands. Also, you can use the same apps to connect to your <a href="/on-premise/">self-hosted Taskulu</a> servers.
+    iTunes: |
+      https://itunes.apple.com/us/app/taskulu/id1129696826?mt=8
+    iTunesLogo: /logos/download_apple_store.svg
+    play: |
+      https://play.google.com/store/apps/details?id=com.taskulu.app&hl=en
+    playLogo: /logos/download_google_play.svg
   demoCTA:
     header: "Still Not Sure How Taskulu Can Boost Your Business?"
     subheader: "Let’s talk and find out!"
